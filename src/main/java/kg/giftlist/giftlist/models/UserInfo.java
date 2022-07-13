@@ -36,4 +36,12 @@ public class UserInfo {
 
     private String importantNote;
 
+    private String instagramLink;
+
+    private String telegramLink;
+
+    private String facebookLink;
+
+    private String vkLink;
+
 }
