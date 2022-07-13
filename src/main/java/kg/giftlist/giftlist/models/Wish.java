@@ -31,14 +31,18 @@ public class Wish {
 
     private Boolean block;
 
-    private Booking booking;
-
     private Boolean isHidden;
 
+    @ManyToOne
+    private Booking booking;
+
+    @ManyToOne
     private User user;
 
+    @ManyToOne
     private User fromUser;
 
+    @ManyToOne
     private Holiday holidays;
 
 }
