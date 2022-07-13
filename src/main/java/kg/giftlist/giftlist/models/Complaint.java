@@ -20,5 +20,6 @@ public class Complaint {
 
     private String text;
 
+    @OneToOne
     private User user;
 }
