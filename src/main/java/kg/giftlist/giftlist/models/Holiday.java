@@ -28,8 +28,10 @@ public class Holiday {
 
     private Boolean block;
 
+    @ManyToOne
     private User user;
 
+    @OneToMany
     private List<Wish> wishes;
 
 }
