@@ -21,14 +21,16 @@ public class Notification {
     @SequenceGenerator(name = "notification_gen", sequenceName = "notification_seq", allocationSize = 1)
     private Long id;
 
-    private User user;
-
     private String text;
 
     private LocalDate createdAt;
 
     private Boolean read;
 
+    @OneToOne
+    private User user;
+
+    @OneToMany
     private List<Type> types;
 
 }
