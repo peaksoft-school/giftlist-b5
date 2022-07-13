@@ -32,7 +32,7 @@ public class User {
 
     private Role role;
 
-    private Boolean block;
+    private Boolean isBlock;
 
     private FriendStatus friendStatus;
 
