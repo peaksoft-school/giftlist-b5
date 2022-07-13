@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -25,7 +24,7 @@ public class Notification {
 
     private LocalDate createdAt;
 
-    private Boolean read;
+    private Boolean isRead;
 
     @OneToOne
     private User user;
