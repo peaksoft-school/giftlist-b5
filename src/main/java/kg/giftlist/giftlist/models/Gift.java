@@ -31,12 +31,16 @@ public class Gift {
 
     private Status status;
 
+    @OneToOne
     private Country country;
 
+    @OneToOne
     private Category category;
 
+    @ManyToOne
     private User user;
 
+    @ManyToOne
     private User fromUser;
 
 }
