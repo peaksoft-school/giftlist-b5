@@ -18,8 +18,10 @@ public class RequestToFriends {
     @SequenceGenerator(name = "requestToFriends_gen", sequenceName = "requestToFriends_seq", allocationSize = 1)
     private Long id;
 
-    private String from;
+    @OneToOne
+    private User from;
 
-    private String to;
+    @OneToOne
+    private User to;
 
 }
