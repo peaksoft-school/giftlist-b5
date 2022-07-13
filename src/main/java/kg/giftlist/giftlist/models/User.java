@@ -31,6 +31,8 @@ public class User {
 
     private Role role;
 
+    private Boolean block;
+
     private List<User> friends = new ArrayList<>();
 
     private List<Wish> wishes = new ArrayList<>();
@@ -40,8 +42,6 @@ public class User {
     private List<Gift> holidays = new ArrayList<>();
 
     private Booking booking;
-
-    private Boolean block;
 
     private UserInfo userInfo;
 }
