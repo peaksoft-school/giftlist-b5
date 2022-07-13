@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "gifts")
@@ -27,7 +28,10 @@ public class Gift {
 
     private Boolean block;
 
-    private Boolean isBooking;
+    private LocalDateTime date;
+
+    @OneToOne
+    private Booking isBooking;
 
     private Status status;
 
