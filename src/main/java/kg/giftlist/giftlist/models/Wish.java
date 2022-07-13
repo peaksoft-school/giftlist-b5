@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,7 +26,9 @@ public class Wish {
 
     private String giftPhoto;
 
-    private LocalDateTime date;
+    private LocalDateTime createdAt;
+
+    private LocalDate wishDate;
 
     private String description;
 
