@@ -32,7 +32,7 @@ public class Wish {
 
     private String description;
 
-    private Boolean block;
+    private Boolean isBlock;
 
     private Boolean isHidden;
 
