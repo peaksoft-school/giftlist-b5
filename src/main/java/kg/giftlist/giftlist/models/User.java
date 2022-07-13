@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,6 +43,8 @@ public class User {
     private List<Gift> holidays = new ArrayList<>();
 
     private Booking booking;
+
+    private FriendStatus friendStatus;
 
     private UserInfo userInfo;
 }
