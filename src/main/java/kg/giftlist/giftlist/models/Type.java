@@ -19,6 +19,7 @@ public class Type {
     @SequenceGenerator(name = "type_gen", sequenceName = "type_seq", allocationSize = 1)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     private TypeStatus typeStatus;
 
     @OneToOne
