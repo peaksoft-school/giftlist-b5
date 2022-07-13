@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import kg.giftlist.giftlist.enums.TypeStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,5 +26,7 @@ public class Type {
     private Gift gift;
 
     private Holiday holiday;
+
+    private TypeStatus typeStatus;
 
 }
