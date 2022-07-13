@@ -20,10 +20,12 @@ public class Booking {
     @SequenceGenerator(name = "booking_gen",sequenceName = "booking_seq", allocationSize = 1)
     private Long id;
 
+    @OneToOne
     private User user;
 
+    @OneToMany
     private List<Wish> wishes = new ArrayList<>();
 
-
+    @OneToMany
     private List<Gift> gifts = new ArrayList<>();
 }
