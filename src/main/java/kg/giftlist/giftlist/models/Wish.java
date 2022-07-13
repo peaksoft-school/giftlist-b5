@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "wishes")
@@ -32,7 +31,9 @@ public class Wish {
 
     private Boolean block;
 
-    private Boolean hidden;
+    private Booking booking;
+
+    private Boolean isHidden;
 
     private User user;
 
