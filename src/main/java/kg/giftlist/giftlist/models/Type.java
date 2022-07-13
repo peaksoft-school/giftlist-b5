@@ -19,14 +19,18 @@ public class Type {
     @SequenceGenerator(name = "type_gen", sequenceName = "type_seq", allocationSize = 1)
     private Long id;
 
-    private Wish wish;
+    private TypeStatus typeStatus;
 
+    @OneToOne
     private User user;
 
+    @OneToOne
+    private Wish wish;
+
+    @OneToOne
     private Gift gift;
 
+    @OneToOne
     private Holiday holiday;
-
-    private TypeStatus typeStatus;
 
 }
