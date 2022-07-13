@@ -28,6 +28,7 @@ public class UserInfo {
 
     private String phoneNumber;
 
+    @Enumerated(EnumType.STRING)
     private ClothingSize clothingSize;
 
     private int shoeSize;
