@@ -44,5 +44,4 @@ public class User {
     private Boolean block;
 
     private UserInfo userInfo;
-
 }
