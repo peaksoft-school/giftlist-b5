@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "usersInfo")
@@ -24,7 +24,7 @@ public class UserInfo {
 
     private String country;
 
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     private String phoneNumber;
 
