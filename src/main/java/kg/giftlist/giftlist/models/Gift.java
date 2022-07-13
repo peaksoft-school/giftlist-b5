@@ -30,6 +30,7 @@ public class Gift {
 
     private LocalDate date;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @OneToOne
