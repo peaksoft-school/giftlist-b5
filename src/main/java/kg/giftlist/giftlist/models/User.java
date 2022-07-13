@@ -30,10 +30,12 @@ public class User {
 
     private String password;
 
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     private Boolean isBlock;
 
+    @Enumerated(EnumType.STRING)
     private FriendStatus friendStatus;
 
     @OneToMany
