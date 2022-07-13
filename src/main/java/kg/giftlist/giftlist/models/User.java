@@ -34,17 +34,23 @@ public class User {
 
     private Boolean block;
 
-    private List<User> friends = new ArrayList<>();
-
-    private List<Wish> wishes = new ArrayList<>();
-
-    private List<Holiday> gifts = new ArrayList<>();
-
-    private List<Gift> holidays = new ArrayList<>();
-
-    private Booking booking;
-
     private FriendStatus friendStatus;
 
+    @OneToMany
+    private List<User> friends = new ArrayList<>();
+
+    @OneToMany
+    private List<Wish> wishes = new ArrayList<>();
+
+    @OneToMany
+    private List<Holiday> holidays = new ArrayList<>();
+
+    @OneToMany
+    private List<Gift> gifts = new ArrayList<>();
+
+    @OneToOne
+    private Booking booking;
+
+    @OneToOne
     private UserInfo userInfo;
 }
