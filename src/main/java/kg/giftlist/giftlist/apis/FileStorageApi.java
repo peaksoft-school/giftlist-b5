@@ -1,5 +1,6 @@
-package kg.giftlist.giftlist.config.s3;
+package kg.giftlist.giftlist.apis;
 
+import kg.giftlist.giftlist.config.s3.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -7,12 +8,12 @@ import org.springframework.web.multipart.MultipartFile;
 @CrossOrigin
 @RestController
 @RequestMapping("/api/storage/")
-public class FileStorageController {
+public class FileStorageApi {
 
     private StorageService amazonClient;
 
     @Autowired
-    FileStorageController(StorageService amazonClient) {
+    FileStorageApi(StorageService amazonClient) {
         this.amazonClient = amazonClient;
     }
 
