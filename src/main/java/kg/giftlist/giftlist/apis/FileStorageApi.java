@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/storage/")
+@RequestMapping("/api/upload/")
 public class FileStorageApi {
 
     private StorageService amazonClient;
@@ -17,12 +17,12 @@ public class FileStorageApi {
         this.amazonClient = amazonClient;
     }
 
-    @PostMapping("/uploadFile")
+    @PostMapping("/file")
     public String uploadFile(@RequestPart(value = "file") MultipartFile file) throws Exception {
         return this.amazonClient.uploadFile(file);
     }
 
-    @DeleteMapping("/deleteFile")
+    @DeleteMapping("/remove")
     public String deleteFile(@RequestPart(value = "url") String fileUrl) throws Exception {
         return this.amazonClient.deleteFileFromS3Bucket(fileUrl);
     }
