@@ -17,7 +17,8 @@ import java.io.IOException;
 import java.util.Date;
 
 @Service
-public class AmazonClient {
+public class StorageService {
+
     private AmazonS3 s3client;
     @Value("${s3.endpointUrl}")
     private String endpointUrl;
@@ -29,6 +30,7 @@ public class AmazonClient {
     private String secretKey;
     @Value("${s3.region}")
     private String region;
+
     @PostConstruct
     private void initializeAmazon() {
         AWSCredentials credentials
@@ -39,6 +41,7 @@ public class AmazonClient {
                 .withCredentials(new AWSStaticCredentialsProvider(credentials))
                 .build();
     }
+
     public String uploadFile(MultipartFile multipartFile)
             throws Exception {
         String fileUrl = "";
@@ -49,14 +52,17 @@ public class AmazonClient {
         file.delete();
         return fileUrl;
     }
+
     public String deleteFileFromS3Bucket(String fileUrl) {
         String fileName = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
         s3client.deleteObject(bucketName, fileName);
         return "Successfully deleted";
     }
+
     private void uploadFileTos3bucket(String fileName, File file) {
         s3client.putObject(bucketName, fileName, file);
     }
+
     private File convertMultiPartToFile(MultipartFile file)
             throws IOException {
         File convFile = new File(file.getOriginalFilename());
@@ -65,7 +71,8 @@ public class AmazonClient {
         fos.close();
         return convFile;
     }
+
     private String generateFileName(MultipartFile multiPart) {
-        return new Date().getTime() + "-" +   multiPart.getOriginalFilename().replace(" ", "_");
+        return new Date().getTime() + "-" + multiPart.getOriginalFilename().replace(" ", "_");
     }
 }
