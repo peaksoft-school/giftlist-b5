@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/upload/")
+@RequestMapping("/api/s3/")
 public class FileStorageApi {
 
     private StorageService amazonClient;
@@ -22,7 +22,7 @@ public class FileStorageApi {
         return this.amazonClient.uploadFile(file);
     }
 
-    @DeleteMapping("/remove")
+    @DeleteMapping("/file")
     public String deleteFile(@RequestPart(value = "url") String fileUrl) throws Exception {
         return this.amazonClient.deleteFileFromS3Bucket(fileUrl);
     }
