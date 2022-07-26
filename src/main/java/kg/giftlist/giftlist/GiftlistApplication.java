@@ -1,8 +1,14 @@
 package kg.giftlist.giftlist;
 
+import kg.giftlist.giftlist.enums.Role;
+import kg.giftlist.giftlist.models.User;
+import kg.giftlist.giftlist.repositories.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,4 +26,19 @@ public class GiftlistApplication {
 	public String greetingPage(){
 		return "<h1>Welcome to Giftlist application!!!<h1/>";
 	}
+
+
+//	@Bean
+//	CommandLineRunner runner(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+//        return args -> {
+//            User user = new User();
+//            user.setFirstName("Seit");
+//            user.setLastName("Narynbaev");
+//            user.setEmail("seit@gmail.com");
+//            user.setRole(Role.ADMIN);
+//            user.setPassword(passwordEncoder.encode("1234"));
+//            userRepository.save(user);
+//        };
+//	  }
+
 }
