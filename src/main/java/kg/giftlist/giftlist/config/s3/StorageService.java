@@ -24,9 +24,9 @@ public class StorageService {
     private String endpointUrl;
     @Value("${s3.bucketName}")
     private String bucketName;
-    @Value("${s3.accessKeyId}")
+    @Value("${aws_access_key_id}")
     private String accessKeyId;
-    @Value("${s3.secretKey}")
+    @Value("${aws_secret_access_key}")
     private String secretKey;
     @Value("${s3.region}")
     private String region;
