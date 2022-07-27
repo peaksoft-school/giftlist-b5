@@ -88,6 +88,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>giftlist</finalName>
 	</build>
 
 </project>
