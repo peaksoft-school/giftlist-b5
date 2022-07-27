@@ -22,19 +22,8 @@ public class GiftlistApplication {
 		System.out.println("Welcome colleagues, project name is Giftlist!");
 	}
 
-
-
-//	@Bean
-//	CommandLineRunner runner(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-//        return args -> {
-//            User user = new User();
-//            user.setFirstName("Seit");
-//            user.setLastName("Narynbaev");
-//            user.setEmail("seit@gmail.com");
-//            user.setRole(Role.ADMIN);
-//            user.setPassword(passwordEncoder.encode("1234"));
-//            userRepository.save(user);
-//        };
-//	  }
-
+	@GetMapping("/")
+	public String greetingPage(){
+		return "<h1>Welcome to Giftlist application!!!<h1/>";
+	}
 }
