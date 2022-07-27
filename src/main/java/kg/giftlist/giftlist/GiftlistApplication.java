@@ -22,10 +22,6 @@ public class GiftlistApplication {
 		System.out.println("Welcome colleagues, project name is Giftlist!");
 	}
 
-	@GetMapping("/")
-	public String greetingPage(){
-		return "<h1>Welcome to Giftlist application!!!<h1/>";
-	}
 
 
 //	@Bean
