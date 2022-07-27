@@ -6,7 +6,7 @@ import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.dto.user.UserResponse;
 import org.springframework.stereotype.Service;
 
-@Service
+
 public interface UserService {
 
     public AuthResponse authenticate(AuthRequest authRequest);

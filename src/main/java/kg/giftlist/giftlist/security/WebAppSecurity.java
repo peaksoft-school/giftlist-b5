@@ -48,6 +48,7 @@ public class WebAppSecurity {
 
         http.cors().and().csrf().disable()
                 .authorizeRequests( auth -> auth
+                        .antMatchers("/api/public/**").permitAll()
                         .antMatchers("/swagger", "/swagger-ui/index.html").permitAll()
                         .anyRequest()
                         .permitAll()
