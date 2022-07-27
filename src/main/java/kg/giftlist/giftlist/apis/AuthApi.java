@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("domain/api/users")
+@RequestMapping("domain/api/public")
 @RequiredArgsConstructor
-public class UserApi {
+public class AuthApi {
     private final UserServiceImpl service;
 
     @PostMapping("/register")
