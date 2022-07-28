@@ -30,7 +30,7 @@ public class HolidayApi {
         return service.update(id, request);
     }
 
-    @GetMapping("/find/{id}")
+    @GetMapping("/{id}")
     public HolidayResponse findById(@PathVariable Long id) {
         return service.findById(id);
     }
