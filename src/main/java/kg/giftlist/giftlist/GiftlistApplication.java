@@ -1,8 +1,14 @@
 package kg.giftlist.giftlist;
 
+import kg.giftlist.giftlist.enums.Role;
+import kg.giftlist.giftlist.models.User;
+import kg.giftlist.giftlist.repositories.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
