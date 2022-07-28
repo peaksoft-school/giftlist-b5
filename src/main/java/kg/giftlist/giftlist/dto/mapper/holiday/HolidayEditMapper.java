@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.mappers;
+package kg.giftlist.giftlist.dto.mapper.holiday;
 
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.models.Holiday;
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class HolidayEditMapper {
+
     public Holiday create(HolidayRequest holidayRequest) {
         if (holidayRequest == null) {
             return null;
@@ -18,11 +19,10 @@ public class HolidayEditMapper {
         return holiday;
 
     }
-    public void update(Holiday holiday, HolidayRequest holidayRequest){
-       holiday.setPhoto(holidayRequest.getPhoto());
-       holiday.setName(holidayRequest.getName());
-       holiday.setHolidayDate(holidayRequest.getDate());
 
-
+    public void update(Holiday holiday, HolidayRequest holidayRequest) {
+        holiday.setPhoto(holidayRequest.getPhoto());
+        holiday.setName(holidayRequest.getName());
+        holiday.setHolidayDate(holidayRequest.getDate());
     }
 }

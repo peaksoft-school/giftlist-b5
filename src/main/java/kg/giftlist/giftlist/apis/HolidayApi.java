@@ -1,5 +1,7 @@
 package kg.giftlist.giftlist.apis;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.models.Holiday;
@@ -13,32 +15,33 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/holiday")
-//@PreAuthorize("hasAuthority('ADMIN')")
+@CrossOrigin
+@Tag(name = "HOLIDAY API", description = "Any user can create, update or delete holidays")
 public class HolidayApi {
     private final HolidayService service;
-
 
     @PostMapping
     public HolidayResponse create(@RequestBody HolidayRequest request) {
         return service.create(request);
     }
-    @PutMapping("/update/{id}")
+
+    @PutMapping("/{id}")
     public HolidayResponse update(@PathVariable Long id, @RequestBody HolidayRequest request) {
         return service.update(id, request);
     }
 
-    @PutMapping("/find/{id}")
+    @GetMapping("/find/{id}")
     public HolidayResponse findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public HolidayResponse delete(@PathVariable Long id) {
         return service.deleteById(id);
     }
 
     @GetMapping
-    public List<HolidayResponse> getHolidays(){
+    public List<HolidayResponse> getHolidays() {
         return service.getHolidays();
     }
 

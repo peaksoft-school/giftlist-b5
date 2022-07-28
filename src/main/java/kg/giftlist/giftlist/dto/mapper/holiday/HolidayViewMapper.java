@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.mappers;
+package kg.giftlist.giftlist.dto.mapper.holiday;
 
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.models.Holiday;
@@ -10,6 +10,7 @@ import java.util.List;
 
 @Component
 public class HolidayViewMapper {
+
     public HolidayResponse viewHoliday(Holiday holiday) {
         if (holiday == null) {
             return null;
@@ -22,6 +23,7 @@ public class HolidayViewMapper {
 
         return response;
     }
+
         public List<HolidayResponse> view(List<Holiday> holidays) {
             List<HolidayResponse> responses = new ArrayList<>();
             for (Holiday holiday : holidays) {

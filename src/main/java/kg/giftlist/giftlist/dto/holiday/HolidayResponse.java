@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class HolidayResponse {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "holiday_gen",sequenceName = "holiday_seq", allocationSize = 1)
