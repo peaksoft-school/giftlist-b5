@@ -1,5 +1,7 @@
 package kg.giftlist.giftlist.apis;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.user.UserRequest;
