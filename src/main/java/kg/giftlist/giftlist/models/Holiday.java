@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,5 +34,11 @@ public class Holiday {
 
     @OneToMany
     private List<Wish> wishes;
+
+    public Holiday(HolidayRequest request) {
+        this.name = request.getName();
+        this.photo = request.getPhoto();
+        this.holidayDate = request.getDate();
+    }
 
 }
