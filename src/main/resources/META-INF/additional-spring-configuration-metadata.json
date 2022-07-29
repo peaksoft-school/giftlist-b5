@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "s3.endpointUrl",
+      "type": "java.lang.String",
+      "description": "Description for s3.endpointUrl."
+  }
+  ] }
