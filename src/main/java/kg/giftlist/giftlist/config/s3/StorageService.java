@@ -1,78 +1,80 @@
-//package kg.giftlist.giftlist.config.s3;
-//
-//import com.amazonaws.auth.AWSCredentials;
-//import com.amazonaws.auth.AWSStaticCredentialsProvider;
-//import com.amazonaws.auth.BasicAWSCredentials;
-//
-//import com.amazonaws.services.s3.AmazonS3;
-//import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-//import org.springframework.beans.factory.annotation.*;
-//import org.springframework.stereotype.Service;
-//import org.springframework.web.multipart.MultipartFile;
-//
-//import javax.annotation.PostConstruct;
-//import java.io.File;
-//import java.io.FileOutputStream;
-//import java.io.IOException;
-//import java.util.Date;
-//
-//@Service
-//public class StorageService {
-//
-//    private AmazonS3 s3client;
-//    @Value("${s3.endpointUrl}")
-//    private String endpointUrl;
-//    @Value("${s3.bucketName}")
-//    private String bucketName;
-//    @Value("${aws_access_key_id}")
-//    private String accessKeyId;
-//    @Value("${aws_secret_access_key}")
-//    private String secretKey;
-//    @Value("${s3.region}")
-//    private String region;
-//
-//    @PostConstruct
-//    private void initializeAmazon() {
-//        AWSCredentials credentials
-//                = new BasicAWSCredentials(this.accessKeyId, this.secretKey);
-//        this.s3client = AmazonS3ClientBuilder
-//                .standard()
-//                .withRegion(region)
-//                .withCredentials(new AWSStaticCredentialsProvider(credentials))
-//                .build();
-//    }
-//
-//    public String uploadFile(MultipartFile multipartFile)
-//            throws Exception {
-//        String fileUrl = "";
-//        File file = convertMultiPartToFile(multipartFile);
-//        String fileName = generateFileName(multipartFile);
-//        fileUrl = endpointUrl + "/" + bucketName + "/" + fileName;
-//        uploadFileTos3bucket(fileName, file);
-//        file.delete();
-//        return fileUrl;
-//    }
-//
-//    public String deleteFileFromS3Bucket(String fileUrl) {
-//        String fileName = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
-//        s3client.deleteObject(bucketName, fileName);
-//        return "Successfully deleted";
-//    }
-//
-//    private void uploadFileTos3bucket(String fileName, File file) {
-//        s3client.putObject(bucketName, fileName, file);
-//    }
-//
-//    private File convertMultiPartToFile(MultipartFile file)
-//            throws IOException {
-//        File convFile = new File(file.getOriginalFilename());
-//        FileOutputStream fos = new FileOutputStream(convFile);
-//        fos.write(file.getBytes());
-//        fos.close();
-//        return convFile;
-//    }
-//
-//    private String generateFileName(MultipartFile multiPart) {
-//        return new Date().getTime() + "-" + multiPart.getOriginalFilename().replace(" ", "_");
-//    }
-//}
+package kg.giftlist.giftlist.config.s3;
+
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectInputStream;
+import com.amazonaws.util.IOUtils;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Random;
+
+@Service
+@Slf4j
+@RequiredArgsConstructor
+public class StorageService {
+
+    @Value("${s3.bucketName}")
+    private String bucketName;
+    private final AmazonS3 s3Client;
+
+    public String uploadFile(MultipartFile file) {
+        File fileObj = convertMultiPartFileToFile(file);
+        String fileName =new Random().nextInt(100000000)+""+System.currentTimeMillis() + fileObj.hashCode() + "." + getFileExtension(fileObj);
+        fileName = fileName.replace('-', ' ');
+        fileName = fileName.replaceAll("\\s+", "");
+        s3Client.putObject(new PutObjectRequest(bucketName, fileName, fileObj));
+        fileObj.delete();
+        return fileName;
+    }
+
+    private static String getFileExtension(File file) {
+        String fileName = file.getName();
+        if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+            return fileName.substring(fileName.lastIndexOf(".") + 1);
+        else return "";
+    }
+
+    public byte[] downloadFile(String fileName) {
+        S3Object s3Object = s3Client.getObject(bucketName, fileName);
+        S3ObjectInputStream inputStream = s3Object.getObjectContent();
+        try {
+            byte[] content = IOUtils.toByteArray(inputStream);
+            return content;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void deleteFile(String fileName) {
+        s3Client.deleteObject(bucketName,fileName);
+        try {
+            s3Client.deleteObject(bucketName, fileName);
+        } catch (AmazonServiceException ex) {
+            log.info("failed to delete file = {} from amazon s3 bucket", fileName);
+            throw new AmazonServiceException(
+                    String.format("failed to delete file [%s] from amazon", fileName)
+            );
+        }
+
+    }
+
+    private File convertMultiPartFileToFile(MultipartFile file) {
+        File convertedFile = new File(file.getOriginalFilename());
+        try (FileOutputStream fos = new FileOutputStream(convertedFile)) {
+            fos.write(file.getBytes());
+        } catch (IOException e) {
+            log.error("Error converting multipartFile to file ", e);
+        }
+        return convertedFile;
+    }
+}
