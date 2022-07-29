@@ -7,25 +7,24 @@ import kg.giftlist.giftlist.dto.user.UserResponse;
 import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("domain/api/public")
+@RequestMapping("api/public")
 @RequiredArgsConstructor
+@CrossOrigin
+@Tag(name = "Authentication API", description = "Users with role \"Admin\", \"User\" can authenticate")
 public class AuthApi {
     private final UserServiceImpl service;
 
+    @Operation(summary = "Registration ", description = "Any user can register")
     @PostMapping("/register")
-    @PreAuthorize("permitAll()")
     public UserResponse register(@RequestBody UserRequest request) {
         return service.create(request);
     }
 
+    @Operation(summary = "Sign in ", description = "Any user can login")
     @PostMapping("/login")
-    @PreAuthorize("permitAll()")
     public AuthResponse authenticate(@RequestBody AuthRequest authRequest) {
         return service.authenticate(authRequest);
     }
