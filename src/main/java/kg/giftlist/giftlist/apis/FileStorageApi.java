@@ -4,6 +4,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.config.s3.StorageService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("api/files")
 @RequiredArgsConstructor
 @CrossOrigin
+
 @Tag(name = "AWS S3 API", description = "Any user can upload, download or delete files")
 public class FileStorageApi {
+
 
     private final StorageService storageService;
 
