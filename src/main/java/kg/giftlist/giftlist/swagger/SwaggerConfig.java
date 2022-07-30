@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .components(new Components()
                         .addSecuritySchemes("Bearer Token", apiKeySecuritySchema()))
-                .info(new Info().title("Company Rest API")
+                .info(new Info().title("Giftlist Rest API")
                         .description("The project "))
                 .security(List.of(new SecurityRequirement().addList("Bearer Token")));
     }
