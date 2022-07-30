@@ -7,6 +7,7 @@ import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.models.Holiday;
 import kg.giftlist.giftlist.repositories.HolidayRepository;
 import kg.giftlist.giftlist.services.HolidayService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +30,6 @@ public class HolidayApi {
     public HolidayResponse update(@PathVariable Long id, @RequestBody HolidayRequest request) {
         return service.update(id, request);
     }
-
     @GetMapping("/{id}")
     public HolidayResponse findById(@PathVariable Long id) {
         return service.findById(id);
@@ -43,6 +43,11 @@ public class HolidayApi {
     @GetMapping
     public List<HolidayResponse> getHolidays() {
         return service.getHolidays();
+    }
+
+    @GetMapping("/search/{keyword}")
+    List<Holiday> search(@PathVariable String keyword){
+        return service.searchByName(keyword);
     }
 
 }

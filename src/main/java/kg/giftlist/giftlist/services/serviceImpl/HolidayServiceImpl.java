@@ -61,4 +61,9 @@ public class HolidayServiceImpl implements HolidayService {
     public List<HolidayResponse> getHolidays() {
         return viewMapper.view(holidayRepository.findAll());
     }
+
+    @Override
+    public List<Holiday> searchByName(String keyword) {
+        return holidayRepository.searchByName(keyword.toUpperCase());
+    }
 }
