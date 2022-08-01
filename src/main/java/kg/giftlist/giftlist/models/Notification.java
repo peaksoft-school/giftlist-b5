@@ -16,7 +16,7 @@ import java.util.List;
 public class Notification {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "notification_gen")
     @SequenceGenerator(name = "notification_gen", sequenceName = "notification_seq", allocationSize = 1)
     private Long id;
 
@@ -26,7 +26,7 @@ public class Notification {
 
     private Boolean isRead;
 
-    @OneToOne
+    @ManyToOne
     private User user;
 
     @OneToMany

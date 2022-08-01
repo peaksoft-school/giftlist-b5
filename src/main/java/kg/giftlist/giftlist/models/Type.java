@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Type {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "type_gen")
     @SequenceGenerator(name = "type_gen", sequenceName = "type_seq", allocationSize = 1)
     private Long id;
 
