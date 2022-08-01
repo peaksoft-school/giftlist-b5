@@ -1,10 +1,12 @@
 package kg.giftlist.giftlist.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -39,13 +41,25 @@ public class Wish {
     @ManyToOne
     private Booking booking;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "users")
+    @NotNull(message = "User not set")
+    @JsonIgnore
     private User user;
+
+    @Column(name = "users", insertable = false, updatable = false)
+    private Long userId;
 
     @ManyToOne
     private User fromUser;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "holidays")
+    @JsonIgnore
     private Holiday holidays;
+
+    @Column(name = "holidays", insertable = false, updatable = false)
+    private String holidayName;
+
 
 }

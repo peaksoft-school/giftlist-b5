@@ -28,4 +28,6 @@ public class WishResponse {
 
     private String holidayName;
 
+    private Long userId;
+
 }

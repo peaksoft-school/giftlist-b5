@@ -6,12 +6,17 @@ import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
+import kg.giftlist.giftlist.models.Holiday;
+import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.models.Wish;
+import kg.giftlist.giftlist.repositories.HolidayRepository;
+import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.repositories.WishRepository;
 import kg.giftlist.giftlist.services.WishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,6 +28,10 @@ public class WishServiceImpl implements WishService {
     private final WishEditMapper editMapper;
 
     private final WishViewMapper viewMapper;
+
+    private final UserRepository userRepository;
+
+    private final HolidayRepository holidayRepository;
 
     @Override
     public WishResponse create (WishRequest wishRequest) {
@@ -37,6 +46,21 @@ public class WishServiceImpl implements WishService {
 
         Wish wish = editMapper.create(wishRequest);
 
+        ArrayList<Wish> wishes = new ArrayList<>();
+        for (Wish w:wishes) {
+            wishes.add(w);
+
+        }
+
+        Holiday holiday = holidayRepository.findByName(wishRequest.getHolidayName())
+                .orElseThrow(() -> new NullPointerException("Holiday not found"));
+
+        wishRequest.setHolidayName(holiday.getName());
+
+        holiday.setWishes(wishes);
+
+        holidayRepository.save(holiday);
+
         wishRepository.save(wish);
 
         return viewMapper.viewWish(wish);
@@ -45,7 +69,7 @@ public class WishServiceImpl implements WishService {
 
     @Override
     public WishResponse update(Long id,
-                                 WishRequest wishRequest){
+                                 WishRequest wishRequest, User user){
 
         Wish wish = wishRepository.findById(id)
 
@@ -56,7 +80,7 @@ public class WishServiceImpl implements WishService {
                         )
                 );
 
-        editMapper.update(wish, wishRequest);
+        editMapper.update(wish, wishRequest, user);
 
         return viewMapper.viewWish(wishRepository.save(wish));
 

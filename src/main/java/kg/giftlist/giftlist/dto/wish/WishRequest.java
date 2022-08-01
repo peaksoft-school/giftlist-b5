@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.dto.wish;
 
+import kg.giftlist.giftlist.models.Holiday;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,8 @@ public class WishRequest {
     private String giftLink;
 
     private String description;
+
+    private String holidayName;
 
     private LocalDate wishDate;
 

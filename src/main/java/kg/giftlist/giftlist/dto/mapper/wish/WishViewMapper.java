@@ -20,6 +20,8 @@ public class WishViewMapper {
 
         return WishResponse.builder()
 
+                .id(wish.getId())
+
                 .giftName(wish.getGiftName())
 
                 .giftLink(wish.getGiftLink())
@@ -29,6 +31,10 @@ public class WishViewMapper {
                 .photo(wish.getGiftPhoto())
 
                 .wishDate(wish.getWishDate())
+
+                .holidayName(wish.getHolidayName())
+
+                .userId(wish.getUserId())
 
                 .build();
     }
