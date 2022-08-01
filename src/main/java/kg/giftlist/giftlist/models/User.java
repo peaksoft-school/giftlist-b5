@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -22,8 +23,9 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_gen")
     @SequenceGenerator(name = "user_gen", sequenceName = "user_seq", allocationSize = 1)
+
     private Long id;
 
     private String firstName;
@@ -45,21 +47,27 @@ public class User implements UserDetails {
     private FriendStatus friendStatus;
 
     @OneToMany
+    private List<RequestToFriends> requestToFriends = new ArrayList<>();
+
+    @OneToMany
     private List<User> friends = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Wish> wishes = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Notification> notifications = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Holiday> holidays = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Gift> gifts = new ArrayList<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Booking booking;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private UserInfo userInfo;
 
     @Override

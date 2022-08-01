@@ -26,6 +26,7 @@ public class UserServiceImpl implements UserService {
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
 
+
     @Override
     public AuthResponse authenticate(AuthRequest authRequest) {
         User user = userRepo.findByEmail(authRequest.getEmail())
@@ -39,6 +40,7 @@ public class UserServiceImpl implements UserService {
             );
         }
 //        encoder.matches(authRequest.getPassword(), user.getPassword());
+
         String jwt = jwtUtils.generateJwt(user);
 
         return new AuthResponse(user.getId(),
@@ -46,7 +48,6 @@ public class UserServiceImpl implements UserService {
                 jwt,
                 user.getRole()
         );
-
     }
 
     @Override
