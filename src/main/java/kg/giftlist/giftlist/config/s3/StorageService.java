@@ -21,7 +21,6 @@ import java.util.Random;
 @Slf4j
 @RequiredArgsConstructor
 public class StorageService {
-
     @Value("${s3.bucketName}")
     private String bucketName;
     private final AmazonS3 s3Client;

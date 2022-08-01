@@ -1,6 +1,8 @@
 package kg.giftlist.giftlist.models;
 
+import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.enums.Status;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,8 +13,10 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "gifts")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+
 public class Gift {
 
     @Id
@@ -48,4 +52,14 @@ public class Gift {
     @ManyToOne
     private User fromUser;
 
+
+    public Gift(GiftRequest request) {
+        this.name= getName();
+        this.photo = getPhoto();
+        this.status = getStatus();
+        this.category = getCategory();
+        this.country = getCountry();
+        this.date = getDate();
+        this.description = getDescription();
+    }
 }
