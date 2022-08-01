@@ -1,10 +1,10 @@
 package kg.giftlist.giftlist.dto.wish;
 
-import kg.giftlist.giftlist.models.Holiday;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -20,5 +20,4 @@ public class WishRequest {
 
     private LocalDate wishDate;
 
-    private Long holidayId;
 }

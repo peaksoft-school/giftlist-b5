@@ -1,8 +1,8 @@
 package kg.giftlist.giftlist.services.impl;
 
 import kg.giftlist.giftlist.dto.SimpleResponse;
-import kg.giftlist.giftlist.dto.mapper.WishEditMapper;
-import kg.giftlist.giftlist.dto.mapper.WishViewMapper;
+import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
+import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.WishNotFoundException;

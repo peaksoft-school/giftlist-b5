@@ -1,8 +1,10 @@
 package kg.giftlist.giftlist.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -26,6 +28,7 @@ public class Wish {
 
     private String giftPhoto;
 
+    @CreatedDate
     private LocalDateTime createdAt;
 
     private LocalDate wishDate;
@@ -46,6 +49,7 @@ public class Wish {
     private User fromUser;
 
     @ManyToOne
-    private Holiday holidays;
+    @JsonIgnore
+    private Holiday holiday;
 
 }

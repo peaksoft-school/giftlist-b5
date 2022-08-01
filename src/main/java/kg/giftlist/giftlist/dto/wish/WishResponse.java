@@ -1,12 +1,13 @@
 package kg.giftlist.giftlist.dto.wish;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.models.Holiday;
-import kg.giftlist.giftlist.models.Wish;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -24,4 +25,7 @@ public class WishResponse {
     private String description;
 
     private LocalDate wishDate;
+
+    private String holidayName;
+
 }

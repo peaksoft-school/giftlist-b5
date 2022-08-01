@@ -5,9 +5,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.config.s3.StorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.ws.rs.Consumes;
 
 @RestController
 @RequestMapping("api/files")
@@ -20,9 +23,16 @@ public class FileStorageApi {
 
     @Operation(summary = "Upload file", description = "Uploading file to the application")
     @PostMapping("upload")
-    public ResponseEntity<String> uploadFile(@RequestParam(value = "files") MultipartFile file) {
+    @Consumes(MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<String> uploadFile(@RequestParam(value = "files")
+                                             @RequestPart MultipartFile file) {
+
+
         return new ResponseEntity<>(storageService.uploadFile(file), HttpStatus.OK);
+
     }
+
+
 
     @Operation(summary = "Download file", description = "Downloading file from application")
     @GetMapping("download/{fileName}")

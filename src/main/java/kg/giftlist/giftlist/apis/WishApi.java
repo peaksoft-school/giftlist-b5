@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.apis;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
@@ -14,11 +15,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/wish")
 @PreAuthorize("hasAnyAuthority('USER')")
+//@CrossOrigin
+//@Tag(name = "WISH API", description = "Any user can create, update or delete wishes!")
 public class WishApi {
 
     private final WishServiceImpl wishService;
 
-    @PostMapping("/save")
+    @PostMapping
     public WishResponse create(@RequestBody WishRequest request){
 
         return wishService.create(request);
@@ -32,7 +35,7 @@ public class WishApi {
 
     }
 
-    @GetMapping("/find/{id}")
+    @GetMapping("/{id}")
     public WishResponse findById(@PathVariable Long id){
 
         return wishService.findById(id);

@@ -1,8 +1,11 @@
-package kg.giftlist.giftlist.dto.mapper;
+package kg.giftlist.giftlist.dto.mapper.wish;
 
 import kg.giftlist.giftlist.dto.wish.WishRequest;
+import kg.giftlist.giftlist.models.Holiday;
 import kg.giftlist.giftlist.models.Wish;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
 
 
 @Component
@@ -24,9 +27,9 @@ public class WishEditMapper {
 
         wish.setDescription(request.getDescription());
 
-        wish.setWishDate(request.getWishDate());
-
         wish.setGiftPhoto(request.getPhoto());
+
+        wish.setWishDate(request.getWishDate());
 
         return wish;
 

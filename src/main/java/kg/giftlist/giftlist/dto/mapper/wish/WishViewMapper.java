@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.dto.mapper;
+package kg.giftlist.giftlist.dto.mapper.wish;
 
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.models.Wish;
