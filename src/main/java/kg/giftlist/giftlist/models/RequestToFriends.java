@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class RequestToFriends {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "requestToFriends_gen")
     @SequenceGenerator(name = "requestToFriends_gen", sequenceName = "requestToFriends_seq", allocationSize = 1)
     private Long id;
 

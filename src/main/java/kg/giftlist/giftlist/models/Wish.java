@@ -8,6 +8,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import static javax.persistence.CascadeType.*;
+
 @Entity
 @Table(name = "wishes")
 @NoArgsConstructor
@@ -16,7 +18,7 @@ import java.time.LocalDateTime;
 public class Wish {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wish_gen")
     @SequenceGenerator(name = "wish_gen",sequenceName = "wish_seq", allocationSize = 1)
     private Long id;
 
@@ -36,16 +38,16 @@ public class Wish {
 
     private Boolean isHidden;
 
-    @ManyToOne
+    @ManyToOne(cascade = ALL)
     private Booking booking;
 
-    @ManyToOne
+    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
     private User user;
 
     @ManyToOne
     private User fromUser;
 
-    @ManyToOne
+    @ManyToOne(cascade = {DETACH,REFRESH,MERGE})
     private Holiday holidays;
 
 }
