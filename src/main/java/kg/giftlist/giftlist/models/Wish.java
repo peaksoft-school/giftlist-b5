@@ -54,11 +54,11 @@ public class Wish {
     private User fromUser;
 
     @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "holidays")
+    @JoinColumn(name = "holiday")
     @JsonIgnore
     private Holiday holidays;
 
-    @Column(name = "holidays", insertable = false, updatable = false)
+    @Column(name = "holiday", insertable = false, updatable = false)
     private String holidayName;
 
 
