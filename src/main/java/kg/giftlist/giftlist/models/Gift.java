@@ -10,6 +10,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.CascadeType.DETACH;
+
 @Entity
 @Table(name = "gifts")
 @NoArgsConstructor
@@ -20,7 +23,7 @@ import java.time.LocalDate;
 public class Gift {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gift_gen")
     @SequenceGenerator(name = "gift_gen",sequenceName = "gift_seq", allocationSize = 1)
     private Long id;
 
@@ -37,7 +40,7 @@ public class Gift {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToOne
+    @ManyToOne(cascade = ALL)
     private Booking booking;
 
     @OneToOne
@@ -46,7 +49,7 @@ public class Gift {
     @OneToOne
     private Category category;
 
-    @ManyToOne
+    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
     private User user;
 
     @ManyToOne
