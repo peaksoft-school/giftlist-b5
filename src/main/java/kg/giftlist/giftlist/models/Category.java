@@ -15,12 +15,12 @@ import java.util.List;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_gen")
     @SequenceGenerator(name = "category_gen",sequenceName = "category_seq", allocationSize = 1)
     private Long id;
 
     private String name;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<SubCategory> subCategories;
 }

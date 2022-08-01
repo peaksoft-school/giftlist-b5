@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class UserInfo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userInfo_gen")
     @SequenceGenerator(name = "userInfo_gen",sequenceName = "userInfo_seq", allocationSize = 1)
     private Long id;
 
@@ -44,5 +44,8 @@ public class UserInfo {
     private String facebookLink;
 
     private String vkLink;
+
+    @OneToOne
+    private User user;
 
 }

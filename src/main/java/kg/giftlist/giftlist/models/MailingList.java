@@ -18,7 +18,7 @@ import javax.persistence.*;
 public class MailingList {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mailingList_gen")
     @SequenceGenerator(name = "mailingList_gen", sequenceName = "mailingList_seq", allocationSize = 1)
     private Long id;
 
