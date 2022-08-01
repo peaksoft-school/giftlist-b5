@@ -1,24 +1,16 @@
-package kg.giftlist.giftlist.models;
+package kg.giftlist.giftlist.dto.user_info;
 
 import kg.giftlist.giftlist.enums.ClothingSize;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "usersInfo")
-@NoArgsConstructor
 @Getter
 @Setter
-public class UserInfo {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userInfo_gen")
-    @SequenceGenerator(name = "userInfo_gen",sequenceName = "userInfo_seq", allocationSize = 1)
-    private Long id;
+public class UserInfoRequest {
 
     private String photo;
 
@@ -45,7 +37,7 @@ public class UserInfo {
 
     private String vkLink;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    private User user;
-
+    private String first_name;
+    private String last_name;
+    private String email;
 }
