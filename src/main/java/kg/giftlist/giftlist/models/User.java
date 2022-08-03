@@ -70,6 +70,7 @@ public class User implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private UserInfo userInfo;
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(role);
@@ -98,5 +99,12 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public User(String firstName, String email, String password, Role role) {
+        this.firstName = firstName;
+        this.email = email;
+        this.password = password;
+        this.role = role;
     }
 }
