@@ -19,7 +19,7 @@ public class JwtUtils {
 
     private long expiredAt;
 
-    public void setExpiredAt(long expiredAt) {
+    public void setExpiredAt(long expiredAt)  {
         this.expiredAt = expiredAt * 24 * 60 * 60;
     }
 
@@ -33,7 +33,7 @@ public class JwtUtils {
                 .compact();
     }
 
-    public boolean isValidToken(String jwt) {
+    public void isValidToken(String jwt) {
         try {
 
             Jwts.parser().setSigningKey(secretWord).parseClaimsJws(jwt);
@@ -50,7 +50,6 @@ public class JwtUtils {
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Illegal Argument (JWT)!");
         }
-        return true;
     }
 
     public String getEmailFromJwt(String jwt) {

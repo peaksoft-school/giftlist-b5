@@ -10,6 +10,6 @@ public interface UserService {
 
      AuthResponse authenticate(AuthRequest authRequest);
 
-     UserResponse create(UserRequest request);
+//     UserResponse create(UserRequest request);
 
 }

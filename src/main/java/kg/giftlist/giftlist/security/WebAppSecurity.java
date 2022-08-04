@@ -47,7 +47,7 @@ public class WebAppSecurity {
     SecurityFilterChain authorization(HttpSecurity http) throws Exception {
 
         http.cors().and().csrf().disable()
-                .authorizeRequests( auth -> auth
+                .authorizeRequests(auth -> auth
                         .antMatchers("/api/files/**").permitAll()
                         .antMatchers("/api/public/**").permitAll()
                         .antMatchers("/swagger", "/swagger-ui/index.html").permitAll()
