@@ -1,6 +1,5 @@
 package kg.giftlist.giftlist.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -24,8 +23,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_gen")
-    @SequenceGenerator(name = "user_gen", sequenceName = "user_seq", allocationSize = 1)
-
+    @SequenceGenerator(name = "user_gen", sequenceName = "user_seq", initialValue = 3, allocationSize = 1)
     private Long id;
 
     private String firstName;
@@ -70,6 +68,7 @@ public class User implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private UserInfo userInfo;
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(role);
@@ -98,5 +97,12 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public User(String firstName, String email, String password, Role role) {
+        this.firstName = firstName;
+        this.email = email;
+        this.password = password;
+        this.role = role;
     }
 }

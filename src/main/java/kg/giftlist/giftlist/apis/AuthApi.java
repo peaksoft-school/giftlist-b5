@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.apis;
 
+import com.google.firebase.auth.FirebaseAuthException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.AuthRequest;
@@ -8,7 +9,6 @@ import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.dto.user.UserResponse;
 import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,4 +30,10 @@ public class AuthApi {
     public AuthResponse authenticate(@RequestBody AuthRequest authRequest) {
         return service.authenticate(authRequest);
     }
+
+    @PostMapping("/auth/google")
+    public AuthResponse loginWithGoogle(@RequestParam String token) throws FirebaseAuthException {
+        return service.authenticateWithGoogle(token);
+    }
+
 }
