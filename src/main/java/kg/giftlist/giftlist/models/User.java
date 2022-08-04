@@ -1,6 +1,5 @@
 package kg.giftlist.giftlist.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -24,8 +23,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_gen")
-    @SequenceGenerator(name = "user_gen", sequenceName = "user_seq", allocationSize = 1)
-
+    @SequenceGenerator(name = "user_gen", sequenceName = "user_seq", initialValue = 3, allocationSize = 1)
     private Long id;
 
     private String firstName;
