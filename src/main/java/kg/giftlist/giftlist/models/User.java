@@ -1,6 +1,7 @@
 package kg.giftlist.giftlist.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import kg.giftlist.giftlist.enums.ClothingSize;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -10,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -67,7 +69,7 @@ public class User implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Booking booking;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToOne(cascade = CascadeType.ALL)
     private UserInfo userInfo;
 
     @Override
