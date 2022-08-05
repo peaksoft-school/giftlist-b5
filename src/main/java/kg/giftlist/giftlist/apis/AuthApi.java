@@ -19,19 +19,20 @@ import org.springframework.web.bind.annotation.*;
 public class AuthApi {
     private final UserServiceImpl service;
 
-    @Operation(summary = "Registration ", description = "Any user can register")
-    @PostMapping("/register")
+    @Operation(summary = "Registration ", description = "Any user can do registration")
+    @PostMapping("register")
     public UserResponse register(@RequestBody UserRequest request) {
-        return service.create(request);
+        return service.userRegister(request);
     }
 
-    @Operation(summary = "Sign in ", description = "Any user can login")
-    @PostMapping("/login")
+    @Operation(summary = "Login", description = "Only registered users can login")
+    @PostMapping("login")
     public AuthResponse authenticate(@RequestBody AuthRequest authRequest) {
         return service.authenticate(authRequest);
     }
 
-    @PostMapping("/auth/google")
+    @Operation(summary = "Google authentication", description = "Any users with Google account can authenticate")
+    @PostMapping("auth/google")
     public AuthResponse loginWithGoogle(@RequestParam String token) throws FirebaseAuthException {
         return service.authenticateWithGoogle(token);
     }

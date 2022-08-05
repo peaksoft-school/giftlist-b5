@@ -82,7 +82,6 @@ public class UserServiceImpl  {
 
     public AuthResponse authenticateWithGoogle(String token) throws FirebaseAuthException {
         FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(token);
-        String uid = decodedToken.getUid();
 
         User user;
         if (!userRepo.existsByEmail(decodedToken.getEmail())) {
@@ -105,7 +104,7 @@ public class UserServiceImpl  {
         );
     }
 
-    public UserResponse create(UserRequest request) {
+    public UserResponse userRegister(UserRequest request) {
         if (userRepo.existsByEmail(request.getEmail())) {
             throw new IsEmptyException(
                     "this email is already have in!"
