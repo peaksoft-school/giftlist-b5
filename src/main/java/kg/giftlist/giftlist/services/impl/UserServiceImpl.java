@@ -18,39 +18,46 @@ import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.security.JwtUtils;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl  {
+
     private final UserRepository userRepo;
     private final JwtUtils jwtUtils;
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
 
+    @Value("${app.firebase-configuration-file}")
+    private String firebaseConfigPath;
+
+    Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @PostConstruct
-    void init() throws IOException {
-        FileInputStream serviceAccount =
-                new FileInputStream("src/main/resources/firebase/giftlist-firebase.json");
-
-        FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .build();
-
-        FirebaseApp.initializeApp(options);
+    public void initialize() {
+        try {
+            FirebaseOptions options = new FirebaseOptions.Builder()
+                    .setCredentials(GoogleCredentials.fromStream(new ClassPathResource(firebaseConfigPath).getInputStream())).build();
+            if (FirebaseApp.getApps().isEmpty()) {
+                FirebaseApp.initializeApp(options);
+                logger.info("Firebase application has been initialized");
+            }
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
     }
-
-
-
 
     public AuthResponse authenticate(AuthRequest authRequest) {
         User user = userRepo.findByEmail(authRequest.getEmail())
@@ -64,7 +71,7 @@ public class UserServiceImpl  {
             );
         }
         String jwt = jwtUtils.generateJwt(user);
-
+        logger.info("User successfully logged in");
         return new AuthResponse(
                 user.getId(),
                 user.getEmail(),
@@ -74,20 +81,21 @@ public class UserServiceImpl  {
     }
 
     public AuthResponse authenticateWithGoogle(String token) throws FirebaseAuthException {
-        FirebaseToken firebaseToken = FirebaseAuth.getInstance().verifyIdToken(token);
+        FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(token);
+        String uid = decodedToken.getUid();
 
-        User user = null;
-        if (!userRepo.existsByEmail(firebaseToken.getEmail())) {
+        User user;
+        if (!userRepo.existsByEmail(decodedToken.getEmail())) {
             User newUser = new User(
-                    firebaseToken.getName(),
-                    firebaseToken.getEmail(),
-                    encoder.encode(firebaseToken.getEmail()),
+                    decodedToken.getName(),
+                    decodedToken.getEmail(),
+                    encoder.encode(decodedToken.getEmail()),
                     Role.USER
             );
             user = userRepo.save(newUser);
         }
         else {
-            user = userRepo.findByEmail(firebaseToken.getEmail()).get();
+            user = userRepo.findByEmail(decodedToken.getEmail()).get();
         }
         return new AuthResponse(
                 user.getId(),
