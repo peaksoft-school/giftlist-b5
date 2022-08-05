@@ -23,5 +23,7 @@ public class GiftResponse {
    private String name;
    private String photo;
    private Status status;
+   private LocalDate date;
+   private Booking booking;
 
 }

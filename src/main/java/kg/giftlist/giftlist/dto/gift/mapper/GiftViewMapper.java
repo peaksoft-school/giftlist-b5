@@ -20,6 +20,8 @@ public class GiftViewMapper {
         response.setName(gift.getName());
         response.setPhoto(gift.getPhoto());
         response.setStatus(gift.getStatus());
+        response.setDate(gift.getDate());
+        response.setBooking(gift.getBooking());
 
         return response;
     }
