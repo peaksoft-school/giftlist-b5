@@ -19,6 +19,8 @@ import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.security.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -48,9 +50,6 @@ public class UserServiceImpl  {
 
         FirebaseApp.initializeApp(options);
     }
-
-
-
 
     public AuthResponse authenticate(AuthRequest authRequest) {
         User user = userRepo.findByEmail(authRequest.getEmail())
@@ -109,4 +108,9 @@ public class UserServiceImpl  {
         return viewMapper.viewUser(user);
     }
 
+    public User getAuthenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String login = authentication.getName();
+        return userRepo.findByEmail(login).orElseThrow(() -> new UsernameNotFoundException("Username not found "));
+    }
 }

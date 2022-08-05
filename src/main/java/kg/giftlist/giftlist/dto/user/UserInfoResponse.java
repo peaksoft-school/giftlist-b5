@@ -18,7 +18,7 @@ public class UserInfoResponse {
 
     private String photo;
 
-    private String country;
+    private String city;
 
     private LocalDate dateOfBirth;
 

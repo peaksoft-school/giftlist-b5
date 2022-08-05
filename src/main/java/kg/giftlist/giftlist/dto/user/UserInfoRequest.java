@@ -10,9 +10,15 @@ import java.time.LocalDate;
 @Setter
 public class UserInfoRequest {
 
+    private String firstName;
+
+    private String lastName;
+
+    private String email;
+
     private String photo;
 
-    private String country;
+    private String city;
 
     private LocalDate dateOfBirth;
 
@@ -33,4 +39,6 @@ public class UserInfoRequest {
     private String facebookLink;
 
     private String vkLink;
+
+
 }

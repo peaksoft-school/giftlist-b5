@@ -14,6 +14,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -27,13 +30,38 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public UserInfoResponse create(UserInfoRequest userInfoRequest) {
+
         User user = getAuthenticatedUser();
-        UserInfo userInfo = userInfoEditMapper.create(userInfoRequest);
-        user.setUserInfo(userInfo);
+        user.setFirstName(userInfoRequest.getFirstName());
+        user.setLastName(userInfoRequest.getLastName());
+        user.setEmail(userInfoRequest.getEmail());
+        userRepository.save(user);
+        UserInfo userInfo = new UserInfo(userInfoRequest);
         userInfo.setUser(user);
+        user.setUserInfo(userInfo);
         userInfoRepository.save(userInfo);
-        return userInfoViewMapper.viewUserInfo(userInfo);
+        return userInfoViewMapper.viewUserInfo(userInfo, user);
     }
+
+    @Override
+    @Transactional
+    public UserInfoResponse update(Long userInfoId, UserInfoRequest userInfoRequest) {
+        User user = getAuthenticatedUser();
+        String currentUserFirstName = user.getFirstName();
+        String newUserFirstName = userInfoRequest.getFirstName();
+        if (!currentUserFirstName.equals(newUserFirstName)) {
+            user.setFirstName(newUserFirstName);
+        }
+        String currentUserLastName = user.getFirstName();
+        String newUserLastName = userInfoRequest.getFirstName();
+        if (!currentUserLastName.equals(newUserLastName)) {
+            user.setFirstName(newUserLastName);
+        }
+        UserInfo userInfo = userInfoRepository.findById(userInfoId).get();
+        userInfoEditMapper.update(userInfo, userInfoRequest);
+        return userInfoViewMapper.viewUserInfo(userInfoRepository.save(userInfo),user);
+    }
+
 
     public User getAuthenticatedUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

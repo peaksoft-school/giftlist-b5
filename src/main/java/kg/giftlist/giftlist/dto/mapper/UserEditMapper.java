@@ -14,6 +14,7 @@ public class UserEditMapper {
 
     private final MailingList mailingList;
     private final MailingListServiceImpl mailingListService;
+
     public User create(UserRequest request) {
         if (request == null) {
             return null;

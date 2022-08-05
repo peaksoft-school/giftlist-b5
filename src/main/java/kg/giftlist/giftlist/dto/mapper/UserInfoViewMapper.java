@@ -3,6 +3,8 @@ import kg.giftlist.giftlist.dto.user.UserInfoResponse;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.models.UserInfo;
 import kg.giftlist.giftlist.repositories.UserRepository;
+import kg.giftlist.giftlist.services.impl.UserInfoServiceImpl;
+import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,21 +18,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserInfoViewMapper {
 
-    private final UserRepository userRepository;
+    private final UserServiceImpl userService;
 
-
-    public UserInfoResponse viewUserInfo(UserInfo userInfo) {
+    public UserInfoResponse viewUserInfo(UserInfo userInfo, User user) {
         if (userInfo==null) {
             return null;
         }
-
-        User user = getAuthenticatedUser();
         UserInfoResponse userInfoResponse = new UserInfoResponse();
         userInfoResponse.setFirstName(user.getFirstName());
         userInfoResponse.setLastName(user.getLastName());
         userInfoResponse.setEmail(user.getEmail());
         userInfoResponse.setPhoto(userInfo.getPhoto());
-        userInfoResponse.setCountry(userInfo.getCountry());
+        userInfoResponse.setCity(userInfo.getCity());
         userInfoResponse.setDateOfBirth(userInfo.getDateOfBirth());
         userInfoResponse.setPhoneNumber(userInfo.getPhoneNumber());
         userInfoResponse.setClothingSize(userInfo.getClothingSize());
@@ -44,17 +43,12 @@ public class UserInfoViewMapper {
         return userInfoResponse;
     }
 
-    public List<UserInfoResponse> viewAllUsers(List<UserInfo> userInfo) {
-        List<UserInfoResponse> userInfoResponses = new ArrayList<>();
-        for (UserInfo userInfoRes : userInfo) {
-            userInfoResponses.add(viewUserInfo(userInfoRes));
-        }
-        return userInfoResponses;
-    }
+//    public List<UserInfoResponse> viewAllUsers(List<UserInfo> userInfo) {
+//        List<UserInfoResponse> userInfoResponses = new ArrayList<>();
+//        for (UserInfo userInfoRes : userInfo) {
+//            userInfoResponses.add(viewUserInfo(userInfoRes));
+//        }
+//        return userInfoResponses;
+//    }
 
-    public User getAuthenticatedUser() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String login = authentication.getName();
-        return userRepository.findByEmail(login).orElseThrow(() -> new UsernameNotFoundException("Username not found "));
-    }
 }

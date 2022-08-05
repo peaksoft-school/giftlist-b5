@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import kg.giftlist.giftlist.dto.user.UserInfoRequest;
 import kg.giftlist.giftlist.enums.ClothingSize;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class UserInfo {
 
     private String photo;
 
-    private String country;
+    private String city;
 
     private LocalDate dateOfBirth;
 
@@ -48,4 +49,18 @@ public class UserInfo {
     @OneToOne(mappedBy = "userInfo")
     private User user;
 
+    public UserInfo(UserInfoRequest userInfoRequest) {
+        this.photo = userInfoRequest.getPhoto();
+        this.city = userInfoRequest.getCity();
+        this.dateOfBirth = userInfoRequest.getDateOfBirth();
+        this.phoneNumber = userInfoRequest.getPhoneNumber();
+        this.clothingSize = userInfoRequest.getClothingSize();
+        this.shoeSize = userInfoRequest.getShoeSize();
+        this.hobby = userInfoRequest.getHobby();
+        this.importantNote = userInfoRequest.getImportantNote();
+        this.instagramLink = userInfoRequest.getInstagramLink();
+        this.telegramLink = userInfoRequest.getTelegramLink();
+        this.facebookLink = userInfoRequest.getFacebookLink();
+        this.vkLink = userInfoRequest.getVkLink();
+    }
 }
