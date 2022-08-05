@@ -19,11 +19,14 @@ import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.security.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.ws.rs.ForbiddenException;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -35,6 +38,7 @@ public class UserServiceImpl  {
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
+    private final UserRepository userRepository;
 
 
     @PostConstruct
@@ -107,6 +111,13 @@ public class UserServiceImpl  {
         user.setPassword(encoder.encode(request.getPassword()));
         userRepo.save(user);
         return viewMapper.viewUser(user);
+    }
+
+    public User getAuthenticatedUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String login = authentication.getName();
+        return userRepository.findByEmail(login).orElseThrow(() ->
+                new ForbiddenException("An unregistered user cannot post an ad !"));
     }
 
 }

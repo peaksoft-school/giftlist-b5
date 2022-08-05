@@ -15,6 +15,7 @@ import kg.giftlist.giftlist.repositories.WishRepository;
 import kg.giftlist.giftlist.services.WishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,37 +30,23 @@ public class WishServiceImpl implements WishService {
 
     private final WishViewMapper viewMapper;
 
-    private final UserRepository userRepository;
+    private final UserServiceImpl userService;
 
     private final HolidayRepository holidayRepository;
 
     @Override
-    public WishResponse create (WishRequest wishRequest) {
+    public WishResponse create(WishRequest wishRequest) {
 
-//        Wish wish = wishRepository.findById(wishRequest.getHolidayId()).orElseThrow(() ->
-//
-//                new CompanyNotFoundException(
-//
-//                        "Company with id " + courseRequest.getCompanyId() + " not found!"
-//
-//                ));
-
+        User user = userService.getAuthenticatedUser();
         Wish wish = editMapper.create(wishRequest);
+        wish.setUser(user);
+        user.setWishes(List.of(wish));
 
-        ArrayList<Wish> wishes = new ArrayList<>();
-        for (Wish w:wishes) {
-            wishes.add(w);
+        Holiday holiday = holidayRepository.findByName(wishRequest.getHolidayName()).orElseThrow(() -> new NullPointerException("Holiday not found"));
 
-        }
+        wish.setHolidays(holiday);
 
-        Holiday holiday = holidayRepository.findByName(wishRequest.getHolidayName())
-                .orElseThrow(() -> new NullPointerException("Holiday not found"));
-
-        wishRequest.setHolidayName(holiday.getName());
-
-        holiday.setWishes(wishes);
-
-        holidayRepository.save(holiday);
+        //    holidayRepository.save(holiday);
 
         wishRepository.save(wish);
 
@@ -67,27 +54,19 @@ public class WishServiceImpl implements WishService {
 
     }
 
+    @Transactional
     @Override
-    public WishResponse update(Long id,
-                                 WishRequest wishRequest, User user){
-
-        Wish wish = wishRepository.findById(id)
-
-                .orElseThrow(()-> new WishNotFoundException(
-
-                                "Wish with id "+ id  +" not found!"
-
-                        )
-                );
-
-        editMapper.update(wish, wishRequest, user);
-
-        return viewMapper.viewWish(wishRepository.save(wish));
-
+    public WishResponse update(Long id, WishRequest wishRequest) {
+        User user = userService.getAuthenticatedUser();
+        Wish wish = wishRepository.findById(id).orElseThrow(() -> new WishNotFoundException("Wish with id " + id + " not found!"));
+        if (wish.getUser() == user) {
+            editMapper.update(wish, wishRequest);
+        }
+        return viewMapper.viewWish(wish);
     }
 
     @Override
-    public WishResponse findById(Long id){
+    public WishResponse findById(Long id) {
 
         Wish wish = getWishById(id);
 
@@ -106,7 +85,7 @@ public class WishServiceImpl implements WishService {
                 ));
     }
 
-    public SimpleResponse deleteById(Long id){
+    public SimpleResponse deleteById(Long id) {
 
         boolean exists = wishRepository.existsById(id);
 
@@ -121,12 +100,11 @@ public class WishServiceImpl implements WishService {
 
         wishRepository.deleteById(id);
 
-        return new SimpleResponse("Deleted!",
-                "Wish successfully deleted!");
+        return new SimpleResponse("Deleted!", "Wish successfully deleted!");
 
     }
 
-    public List<WishResponse> getAllWishes(){
+    public List<WishResponse> getAllWishes() {
 
         return viewMapper.view(wishRepository.findAll());
 

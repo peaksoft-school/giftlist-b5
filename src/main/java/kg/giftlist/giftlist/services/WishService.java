@@ -11,7 +11,7 @@ public interface WishService {
 
     WishResponse create(WishRequest request);
 
-    WishResponse update(Long id, WishRequest wishRequest, User user);
+    WishResponse update(Long id, WishRequest wishRequest);
 
     WishResponse findById(Long id);
 

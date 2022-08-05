@@ -4,6 +4,7 @@ import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.models.Wish;
 import kg.giftlist.giftlist.repositories.UserRepository;
+import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import org.springframework.stereotype.Component;
 
 
@@ -11,9 +12,11 @@ import org.springframework.stereotype.Component;
 public class WishEditMapper {
 
     private final UserRepository userRepository;
+    private final UserServiceImpl userService;
 
-    public WishEditMapper(UserRepository userRepository) {
+    public WishEditMapper(UserRepository userRepository, UserServiceImpl userService) {
         this.userRepository = userRepository;
+        this.userService = userService;
     }
 
     public Wish create(WishRequest request) {
@@ -27,8 +30,6 @@ public class WishEditMapper {
         Wish wish = new Wish();
 
 
-        User user = new User();
-
         wish.setGiftName(request.getGiftName());
 
         wish.setGiftLink(request.getGiftLink());
@@ -39,16 +40,16 @@ public class WishEditMapper {
 
         wish.setWishDate(request.getWishDate());
 
-        wish.setHolidayName(request.getHolidayName());
+        //wish.setHolidayName(request.getHolidayName());
 
-        wish.setUserId(user.getId());
+       // wish.setUserId(userService.getAuthenticatedUser().getId());
 
         return wish;
 
     }
 
     public void update(Wish wish,
-                       WishRequest wishRequest, User user) {
+                       WishRequest wishRequest) {
 
         wish.setGiftName(wishRequest.getGiftName());
 
@@ -60,9 +61,9 @@ public class WishEditMapper {
 
         wish.setWishDate(wishRequest.getWishDate());
 
-        wish.setHolidayName(wishRequest.getHolidayName());
+        //wish.setHolidayName(wishRequest.getHolidayName());
 
-        wish.setUserId(user.getId());
+
 
     }
 }

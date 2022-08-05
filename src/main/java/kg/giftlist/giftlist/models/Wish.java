@@ -41,25 +41,32 @@ public class Wish {
     @ManyToOne
     private Booking booking;
 
-    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
     @JoinColumn(name = "users")
     @NotNull(message = "User not set")
     @JsonIgnore
     private User user;
 
-    @Column(name = "users", insertable = false, updatable = false)
-    private Long userId;
+   public Long getUserId(){
+       return user.getId();
+   }
+   public void setUserId(Long id){
+        user.setId(id);
+   }
 
     @ManyToOne
     private User fromUser;
 
-    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "holiday")
+    @ManyToOne(targetEntity = Holiday.class, fetch = FetchType.LAZY,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST})
+    @JoinColumn(name = "holidays")
     @JsonIgnore
     private Holiday holidays;
 
-    @Column(name = "holiday", insertable = false, updatable = false)
-    private String holidayName;
+    public String getHolidayName(){
+        return holidays.getName();
+    }
+
+
 
 
 }

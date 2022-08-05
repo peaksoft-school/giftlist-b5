@@ -14,7 +14,6 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/wish")
-//@PreAuthorize("hasAnyAuthority('USER')")
 @CrossOrigin
 @Tag(name = "WISH API", description = "Any user can create, update or delete wishes!")
 public class WishApi {
@@ -28,21 +27,21 @@ public class WishApi {
 
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{wishId}")
     public WishResponse update(@PathVariable Long id,
-                                  @RequestBody WishRequest request, @RequestBody User user) {
-        return wishService.update(id, request, user);
+                                  @RequestBody WishRequest request) {
+        return wishService.update(id, request);
 
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{wishId}")
     public WishResponse findById(@PathVariable Long id){
 
         return wishService.findById(id);
 
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{wishId}")
     public SimpleResponse delete(@PathVariable Long id){
 
         return wishService.deleteById(id);

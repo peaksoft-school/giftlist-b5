@@ -2,6 +2,7 @@ package kg.giftlist.giftlist.apis;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.models.Holiday;
@@ -36,7 +37,7 @@ public class HolidayApi {
     }
 
     @DeleteMapping("/{id}")
-    public HolidayResponse delete(@PathVariable Long id) {
+    public SimpleResponse delete(@PathVariable Long id) {
         return service.deleteById(id);
     }
 
