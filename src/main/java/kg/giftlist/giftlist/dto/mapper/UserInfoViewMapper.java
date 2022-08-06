@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.mapper;
+import kg.giftlist.giftlist.dto.user.UserFirstProfileResponse;
 import kg.giftlist.giftlist.dto.user.UserInfoResponse;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.models.UserInfo;

@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.models;
-
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -7,9 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
-import java.time.LocalDate;
+import javax.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -31,6 +29,7 @@ public class User implements UserDetails {
 
     private String lastName;
 
+    @Email
     @Column(unique = true)
     private String email;
 
@@ -68,6 +67,9 @@ public class User implements UserDetails {
 
     @OneToOne(cascade = CascadeType.ALL)
     private UserInfo userInfo;
+
+    @Transient
+    private String photo;
 
 
     @Override

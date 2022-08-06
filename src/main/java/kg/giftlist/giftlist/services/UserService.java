@@ -2,16 +2,14 @@ package kg.giftlist.giftlist.services;
 
 import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
-import kg.giftlist.giftlist.dto.user.UserRequest;
-import kg.giftlist.giftlist.dto.user.UserResponse;
+import kg.giftlist.giftlist.dto.user.*;
 
 
 public interface UserService {
 
-     AuthResponse authenticate(AuthRequest authRequest);
+    UserFirstProfileResponse getUserFirstProfile(Long userId);
 
-//     UserResponse create(UserRequest request);
+    UserProfileResponse findById(Long userId);
 
-
-
+    UserPasswordChangedResponse changeUserPassword(Long userId, UserChangePasswordRequest userChangePasswordRequest);
 }

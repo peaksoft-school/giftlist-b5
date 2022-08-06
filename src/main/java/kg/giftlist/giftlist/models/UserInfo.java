@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.dto.user.UserInfoRequest;
 import kg.giftlist.giftlist.enums.ClothingSize;
 import lombok.Getter;
@@ -7,6 +8,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Past;
 import java.time.LocalDate;
 
 @Entity
@@ -25,6 +29,7 @@ public class UserInfo {
 
     private String city;
 
+    @Past
     private LocalDate dateOfBirth;
 
     private String phoneNumber;
@@ -32,6 +37,8 @@ public class UserInfo {
     @Enumerated(EnumType.STRING)
     private ClothingSize clothingSize;
 
+    @Min(35)
+    @Max(44)
     private int shoeSize;
 
     private String hobby;
@@ -46,6 +53,7 @@ public class UserInfo {
 
     private String vkLink;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "userInfo")
     private User user;
 

@@ -9,14 +9,17 @@ import com.google.firebase.auth.FirebaseToken;
 import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
+import kg.giftlist.giftlist.dto.mapper.UserInfoViewMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
-import kg.giftlist.giftlist.dto.user.UserRequest;
-import kg.giftlist.giftlist.dto.user.UserResponse;
+import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.exception.IsEmptyException;
+import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.models.User;
+import kg.giftlist.giftlist.models.UserInfo;
 import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.security.JwtUtils;
+import kg.giftlist.giftlist.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
@@ -24,19 +27,22 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl  {
+public class UserServiceImpl implements UserService{
     private final UserRepository userRepo;
     private final JwtUtils jwtUtils;
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
+
 
 
     @PostConstruct
@@ -113,4 +119,45 @@ public class UserServiceImpl  {
         String login = authentication.getName();
         return userRepo.findByEmail(login).orElseThrow(() -> new UsernameNotFoundException("Username not found "));
     }
+
+    @Override
+    public UserFirstProfileResponse getUserFirstProfile(Long userId) {
+        User user = userRepo.findById(userId).get();
+        return viewMapper.viewUserFirstProfile(user);
+    }
+
+    @Override
+    public UserProfileResponse findById(Long userId) {
+        if (userId != null) {
+            User user = findByUserId(userId);
+            return viewMapper.viewUserProfile(user);
+        } else {
+            throw new NotFoundException(
+                    String.format("not found=%s id", userId)
+            );
+        }
+    }
+
+    @Override
+    @Transactional
+    public UserPasswordChangedResponse changeUserPassword(Long userId, UserChangePasswordRequest userChangePasswordRequest) {
+        User user = findByUserId(userId);
+        if (!encoder.matches(userChangePasswordRequest.getCurrentPassword(), user.getPassword())) {
+            throw new NotFoundException(
+                    "invalid password");
+        }else {
+            editMapper.changePassword(user, userChangePasswordRequest);
+            user.setPassword(encoder.encode(userChangePasswordRequest.getNewPassword()));
+            userRepo.save(user);
+            return viewMapper.vieNewPassword(user);
+        }
+    }
+
+    public User findByUserId(Long userId) {
+        return userRepo.findById(userId)
+                .orElseThrow(() -> new NotFoundException(
+                String.format("user with id = %s does not exists", userId)
+                ));
+    }
+
 }
