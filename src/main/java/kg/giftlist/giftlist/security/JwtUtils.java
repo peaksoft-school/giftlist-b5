@@ -20,7 +20,7 @@ public class JwtUtils {
     private long expiredAt;
 
     public void setExpiredAt(long expiredAt)  {
-        this.expiredAt = expiredAt * 24 * 60 * 60;
+        this.expiredAt = expiredAt * 24 * 60 * 3600;
     }
 
     public String generateJwt(UserDetails userDetails) {

@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.dto.mapper;
 
+import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.models.MailingList;
@@ -37,4 +38,18 @@ public class UserEditMapper {
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
     }
+
+    public AdminPageUserGetAllResponse createUser(User user) {
+              if (user == null) {
+                  return null;
+              }
+              AdminPageUserGetAllResponse adminUserGetAllResponse = new AdminPageUserGetAllResponse();
+              adminUserGetAllResponse.setId(user.getUserInfo().getId());
+              adminUserGetAllResponse.setCountGift(user.getGifts().size());
+              adminUserGetAllResponse.setFirst_name(user.getFirstName());
+              adminUserGetAllResponse.setLast_name(user.getLastName());
+              adminUserGetAllResponse.setPhoto(user.getUserInfo().getPhoto());
+
+              return adminUserGetAllResponse;
+          }
 }
