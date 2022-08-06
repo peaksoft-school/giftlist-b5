@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.services;
 
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 
@@ -13,7 +14,7 @@ public interface HolidayService {
 
     HolidayResponse findById(Long id);
 
-    HolidayResponse deleteById(Long id);
+    SimpleResponse deleteById(Long id);
 
     List<HolidayResponse> getHolidays();
 }

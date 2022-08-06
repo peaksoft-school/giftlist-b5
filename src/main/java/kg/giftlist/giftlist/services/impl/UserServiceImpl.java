@@ -23,11 +23,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.PostConstruct;
+import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
 
 @Service
@@ -39,6 +41,7 @@ public class UserServiceImpl  {
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
+
 
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;
@@ -114,6 +117,13 @@ public class UserServiceImpl  {
         user.setPassword(encoder.encode(request.getPassword()));
         userRepo.save(user);
         return viewMapper.viewUser(user);
+    }
+
+    public User getAuthenticatedUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String login = authentication.getName();
+        return userRepo.findByEmail(login).orElseThrow(() ->
+                new ForbiddenException("User not found!"));
     }
 
 }
