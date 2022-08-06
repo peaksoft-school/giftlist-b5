@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/holiday")
 @CrossOrigin
-@Tag(name = "HOLIDAY API", description = "Any user can create, update or delete holidays")
+@Tag(name = "HOLIDAY API", description = "Any user can userRegister, update or delete holidays")
 public class HolidayApi {
     private final HolidayService service;
 
