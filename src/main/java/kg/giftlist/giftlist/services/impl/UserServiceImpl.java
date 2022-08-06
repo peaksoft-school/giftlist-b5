@@ -29,11 +29,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
-<<<<<<<<< Temporary merge branch 1
-=========
 import javax.ws.rs.ForbiddenException;
-import java.io.FileInputStream;
->>>>>>>>> Temporary merge branch 2
 import java.io.IOException;
 
 @Service
@@ -45,7 +41,7 @@ public class UserServiceImpl  {
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
-    private final UserRepository userRepository;
+
 
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;
@@ -126,8 +122,8 @@ public class UserServiceImpl  {
     public User getAuthenticatedUser(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String login = authentication.getName();
-        return userRepository.findByEmail(login).orElseThrow(() ->
-                new ForbiddenException("An unregistered user cannot post an ad !"));
+        return userRepo.findByEmail(login).orElseThrow(() ->
+                new ForbiddenException("User not found!"));
     }
 
 }
