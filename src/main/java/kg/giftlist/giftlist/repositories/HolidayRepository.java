@@ -10,15 +10,8 @@ import java.util.Optional;
 
 @Repository
 public interface HolidayRepository extends JpaRepository<Holiday, Long> {
+
     @Query("select h from Holiday h where h.name = ?1")
     Optional<Holiday> findByName(String holidayName);
 
-
-//    default Holiday findByName(String holidayName){
-//        Optional<Holiday> optionalHoliday = getByName(holidayName);
-//        if (optionalHoliday.isEmpty()){
-//            throw new ValidationException("not found by Holiday : "+holidayName);
-//        }
-//        return optionalHoliday.get();
-//    }
 }

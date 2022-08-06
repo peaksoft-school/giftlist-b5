@@ -13,21 +13,12 @@ import java.time.LocalDateTime;
 @Setter
 @Builder
 public class WishResponse {
-
     private Long id;
-
     private String photo;
-
     private String giftName;
-
     private String giftLink;
-
     private String description;
-
     private LocalDate wishDate;
-
     private String holidayName;
-
     private Long userId;
-
 }

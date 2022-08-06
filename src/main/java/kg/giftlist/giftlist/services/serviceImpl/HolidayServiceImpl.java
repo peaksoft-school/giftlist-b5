@@ -32,7 +32,7 @@ public class HolidayServiceImpl implements HolidayService {
     }
 
     public HolidayResponse create(HolidayRequest holidayRequest) {
-        Holiday holiday = new Holiday(holidayRequest);
+        Holiday holiday =editMapper.create(holidayRequest);
         User user = userService.getAuthenticatedUser();
         holiday.setUser(user);
         holidayRepository.save(holiday);
@@ -51,29 +51,13 @@ public class HolidayServiceImpl implements HolidayService {
         return viewMapper.viewHoliday(holiday);
     }
 
-//    public HolidayResponse deleteById(Long id) {
-//        Holiday holiday = holidayRepository.getById(id);
-//        holidayRepository.delete(holiday);
-//        return viewMapper.viewHoliday(holiday);
-//    }
-
     public SimpleResponse deleteById(Long id) {
-
         boolean exists = holidayRepository.existsById(id);
-
         if (!exists) {
-
-            throw new WishNotFoundException(
-
-                    "Holiday with id = " + id + " not found!"
-
-            );
+            throw new WishNotFoundException("Holiday with id = " + id + " not found!");
         }
-
         holidayRepository.deleteById(id);
-
         return new SimpleResponse("Deleted!", "Holiday successfully deleted!");
-
     }
 
     public List<HolidayResponse> view(List<Holiday> holidays) {
@@ -83,7 +67,6 @@ public class HolidayServiceImpl implements HolidayService {
         }
         return responses;
     }
-
 
     public List<HolidayResponse> getHolidays() {
         return viewMapper.view(holidayRepository.findAll());

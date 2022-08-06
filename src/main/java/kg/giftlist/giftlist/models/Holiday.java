@@ -37,11 +37,4 @@ public class Holiday {
     @OneToMany(cascade = ALL, mappedBy = "holidays")
     private List<Wish> wishes;
 
-    public Holiday(HolidayRequest request) {
-        this.name = request.getName();
-        this.photo = request.getPhoto();
-        this.holidayDate = request.getDate();
-    }
-
-
 }

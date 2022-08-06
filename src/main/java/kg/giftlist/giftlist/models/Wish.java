@@ -47,13 +47,6 @@ public class Wish {
     @JsonIgnore
     private User user;
 
-   public Long getUserId(){
-       return user.getId();
-   }
-   public void setUserId(Long id){
-        user.setId(id);
-   }
-
     @ManyToOne
     private User fromUser;
 
@@ -61,12 +54,4 @@ public class Wish {
     @JoinColumn(name = "holidays")
     @JsonIgnore
     private Holiday holidays;
-
-    public String getHolidayName(){
-        return holidays.getName();
-    }
-
-
-
-
 }
