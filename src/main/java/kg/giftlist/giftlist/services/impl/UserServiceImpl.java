@@ -118,5 +118,4 @@ public class UserServiceImpl  {
         return userRepo.findByEmail(login).orElseThrow(() ->
                 new ForbiddenException("Пользователь не найден!"));
     }
-
 }

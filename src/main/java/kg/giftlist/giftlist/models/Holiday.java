@@ -36,5 +36,4 @@ public class Holiday {
 
     @OneToMany(cascade = ALL, mappedBy = "holidays")
     private List<Wish> wishes;
-
 }
