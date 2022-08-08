@@ -1,12 +1,16 @@
 package kg.giftlist.giftlist.services.serviceImpl;
 
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayEditMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
+import kg.giftlist.giftlist.exception.WishNotFoundException;
 import kg.giftlist.giftlist.models.Holiday;
+import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.repositories.HolidayRepository;
 import kg.giftlist.giftlist.services.HolidayService;
+import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,15 +22,19 @@ public class HolidayServiceImpl implements HolidayService {
     private final HolidayRepository holidayRepository;
     private final HolidayViewMapper viewMapper;
     private final HolidayEditMapper editMapper;
+    private final UserServiceImpl userService;
 
-    public HolidayServiceImpl(HolidayRepository holidayRepository, HolidayViewMapper viewMapper, HolidayEditMapper editMapper) {
+    public HolidayServiceImpl(HolidayRepository holidayRepository, HolidayViewMapper viewMapper, HolidayEditMapper editMapper, UserServiceImpl userService) {
         this.holidayRepository = holidayRepository;
         this.viewMapper = viewMapper;
         this.editMapper = editMapper;
+        this.userService = userService;
     }
 
     public HolidayResponse create(HolidayRequest holidayRequest) {
-        Holiday holiday = new Holiday(holidayRequest);
+        Holiday holiday =editMapper.create(holidayRequest);
+        User user = userService.getAuthenticatedUser();
+        holiday.setUser(user);
         holidayRepository.save(holiday);
         return viewMapper.viewHoliday(holiday);
 
@@ -43,10 +51,13 @@ public class HolidayServiceImpl implements HolidayService {
         return viewMapper.viewHoliday(holiday);
     }
 
-    public HolidayResponse deleteById(Long id) {
-        Holiday holiday = holidayRepository.getById(id);
-        holidayRepository.delete(holiday);
-        return viewMapper.viewHoliday(holiday);
+    public SimpleResponse deleteById(Long id) {
+        boolean exists = holidayRepository.existsById(id);
+        if (!exists) {
+            throw new WishNotFoundException("Holiday with id = " + id + " not found!");
+        }
+        holidayRepository.deleteById(id);
+        return new SimpleResponse("Deleted!", "Holiday successfully deleted!");
     }
 
     public List<HolidayResponse> view(List<Holiday> holidays) {
@@ -56,7 +67,6 @@ public class HolidayServiceImpl implements HolidayService {
         }
         return responses;
     }
-
 
     public List<HolidayResponse> getHolidays() {
         return viewMapper.view(holidayRepository.findAll());
