@@ -10,5 +10,4 @@ public class UserResponse {
     private Long id;
     private String jwt;
     private Role role;
-
 }
