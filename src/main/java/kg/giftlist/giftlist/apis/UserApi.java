@@ -7,6 +7,8 @@ import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/users/profile")
 @RequiredArgsConstructor
@@ -39,6 +41,12 @@ public class UserApi {
     @PostMapping("/{userId}")
     public SimpleResponse changePassword(@PathVariable Long userId, @RequestBody UserChangePasswordRequest request) {
         return userService.changeUserPassword(userId, request);
+    }
+
+    @Operation(summary = "search users",description = "find user by name and surname")
+    @GetMapping("/search/{name}")
+    public List<UserResponse> findUser(@PathVariable String name){
+        return userService.findUser(name);
     }
 
 }
