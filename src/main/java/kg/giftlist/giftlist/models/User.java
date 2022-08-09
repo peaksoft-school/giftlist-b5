@@ -1,5 +1,5 @@
 package kg.giftlist.giftlist.models;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -30,6 +30,7 @@ public class User implements UserDetails {
 
     private String lastName;
 
+    @Email
     @Column(unique = true)
     private String email;
 
@@ -65,9 +66,12 @@ public class User implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Booking booking;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToOne(cascade = CascadeType.ALL)
     private UserInfo userInfo;
 
+    @JsonIgnore
+    @Transient
+    private String photo;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -105,4 +109,5 @@ public class User implements UserDetails {
         this.password = password;
         this.role = role;
     }
+
 }
