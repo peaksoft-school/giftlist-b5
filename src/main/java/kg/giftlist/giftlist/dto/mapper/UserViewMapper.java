@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.dto.mapper;
 import kg.giftlist.giftlist.dto.user.*;
+import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.security.JwtUtils;
 import org.springframework.stereotype.Component;
@@ -44,5 +45,24 @@ public class UserViewMapper {
         userProfileResponse.setEmail(user.getEmail());
         userProfileResponse.setUserInfo(user.getUserInfo());
         return userProfileResponse;
+    }
+
+    public UserFriendProfileResponse viewFriendProfile(User user) {
+        UserFriendProfileResponse userFriendProfileResponse = new UserFriendProfileResponse();
+        userFriendProfileResponse.setUserId(user.getId());
+        userFriendProfileResponse.setPhoto(user.getPhoto());
+        userFriendProfileResponse.setFirstName(user.getFirstName());
+        userFriendProfileResponse.setLastName(user.getLastName());
+        userFriendProfileResponse.setWishCount(user.getWishes().size());
+        userFriendProfileResponse.setHolidayCount(user.getHolidays().size());
+        return userFriendProfileResponse;
+    }
+
+    public List<UserFriendProfileResponse> getAllFriends(List<User> users) {
+        List<UserFriendProfileResponse> responses = new ArrayList<>();
+        for (User user : users) {
+            responses.add(viewFriendProfile(user));
+        }
+        return responses;
     }
 }

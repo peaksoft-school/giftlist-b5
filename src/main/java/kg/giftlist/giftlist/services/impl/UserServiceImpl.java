@@ -10,6 +10,8 @@ import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
 import kg.giftlist.giftlist.dto.user.*;
+import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
+import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.exception.IsEmptyException;
 import kg.giftlist.giftlist.exception.NotFoundException;
@@ -32,6 +34,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -159,5 +163,65 @@ public class UserServiceImpl implements UserService{
         return userRepo.findByEmail(login).orElseThrow(() ->
                 new ForbiddenException("User not found!"));
     }
+
+    @Override
+    public SimpleResponse requestToFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        friend.addRequestToFriend(user);
+        userRepo.save(friend);
+        return new SimpleResponse("Success","Request to friend successfully send");
+    }
+
+    @Override
+    public SimpleResponse acceptToFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        friend.acceptToFriend(user);
+        friend.getRequestToFriends().remove(user);
+        user.acceptToFriend(friend);
+        userRepo.save(user);
+        userRepo.save(friend);
+        return new SimpleResponse("Accepted","Successfully accept to friend");
+    }
+
+    @Override
+    public SimpleResponse rejectFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        friend.getRequestToFriends().remove(user);
+        userRepo.save(friend);
+        return new SimpleResponse("Rejected","Successfully rejected");
+    }
+
+    @Override
+    public SimpleResponse deleteFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        friend.getFriends().remove(user);
+        user.getFriends().remove(friend);
+        userRepo.save(user);
+        userRepo.save(friend);
+        return new SimpleResponse("Deleted","Successfully deleted");
+    }
+
+    @Override
+    public UserFriendProfileResponse getFriendProfile(Long friendId) {
+        if (friendId != null) {
+            User friend = findByUserId(friendId);
+            return viewMapper.viewFriendProfile(friend);
+        } else {
+            throw new NotFoundException(
+                    String.format("not found=%s id", friendId)
+            );
+        }
+    }
+
+    @Override
+    public List<UserFriendProfileResponse> getAllFriend() {
+        User user = getAuthenticatedUser();
+        return viewMapper.getAllFriends(userRepo.findAllFriend(user.getId()));
+    }
+
 
 }

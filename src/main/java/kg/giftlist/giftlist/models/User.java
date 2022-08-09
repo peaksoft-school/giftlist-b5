@@ -45,10 +45,12 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private FriendStatus friendStatus;
 
-    @OneToMany
-    private List<RequestToFriends> requestToFriends = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "request_to_friends")
+    private List<User> requestToFriends = new ArrayList<>();
 
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name = "friends")
     private List<User> friends = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
@@ -69,8 +71,6 @@ public class User implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL)
     private UserInfo userInfo;
 
-    @JsonIgnore
-    @Transient
     private String photo;
 
     @Override
@@ -109,5 +109,21 @@ public class User implements UserDetails {
         this.password = password;
         this.role = role;
     }
+
+    public void addRequestToFriend(User user) {
+        if (requestToFriends==null) {
+            requestToFriends = new ArrayList<>();
+        }
+        requestToFriends.add(user);
+    }
+
+    public void acceptToFriend(User user) {
+        if (friends==null) {
+            friends = new ArrayList<>();
+        }
+        friends.add(user);
+    }
+
+
 
 }

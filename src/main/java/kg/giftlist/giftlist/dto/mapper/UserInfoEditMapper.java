@@ -32,7 +32,6 @@ public class UserInfoEditMapper {
         }
 
         public void update(UserInfo userInfo, UserInfoRequest userInfoRequest) {
-            userInfo.setPhoto(userInfoRequest.getPhoto());
             userInfo.setCity(userInfoRequest.getCity());
             userInfo.setDateOfBirth(userInfoRequest.getDateOfBirth());
             userInfo.setPhoneNumber(userInfoRequest.getPhoneNumber());
