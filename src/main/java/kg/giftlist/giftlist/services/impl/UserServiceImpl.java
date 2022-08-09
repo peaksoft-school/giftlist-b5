@@ -119,12 +119,6 @@ public class UserServiceImpl implements UserService{
         return viewMapper.viewUser(user);
     }
 
-    public User getAuthenticatedUserV() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String login = authentication.getName();
-        return userRepo.findByEmail(login).orElseThrow(() -> new UsernameNotFoundException("Username not found "));
-    }
-
     @Override
     public UserProfileResponse findById(Long userId) {
         if (userId != null) {
@@ -158,6 +152,7 @@ public class UserServiceImpl implements UserService{
                 String.format("user with id = %s does not exists", userId)
                 ));
     }
+
     public User getAuthenticatedUser(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String login = authentication.getName();
