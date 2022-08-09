@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.services.impl;
-
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -9,14 +8,12 @@ import com.google.firebase.auth.FirebaseToken;
 import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
-import kg.giftlist.giftlist.dto.mapper.UserInfoViewMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
 import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.exception.IsEmptyException;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.models.User;
-import kg.giftlist.giftlist.models.UserInfo;
 import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.security.JwtUtils;
 import kg.giftlist.giftlist.services.UserService;
@@ -28,11 +25,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -42,8 +37,6 @@ public class UserServiceImpl implements UserService{
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
-
-
 
     @PostConstruct
     void init() throws IOException {
@@ -121,12 +114,6 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserFirstProfileResponse getUserFirstProfile(Long userId) {
-        User user = userRepo.findById(userId).get();
-        return viewMapper.viewUserFirstProfile(user);
-    }
-
-    @Override
     public UserProfileResponse findById(Long userId) {
         if (userId != null) {
             User user = findByUserId(userId);
@@ -140,7 +127,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    public UserPasswordChangedResponse changeUserPassword(Long userId, UserChangePasswordRequest userChangePasswordRequest) {
+    public SimpleResponse changeUserPassword(Long userId, UserChangePasswordRequest userChangePasswordRequest) {
         User user = findByUserId(userId);
         if (!encoder.matches(userChangePasswordRequest.getCurrentPassword(), user.getPassword())) {
             throw new NotFoundException(
@@ -149,7 +136,7 @@ public class UserServiceImpl implements UserService{
             editMapper.changePassword(user, userChangePasswordRequest);
             user.setPassword(encoder.encode(userChangePasswordRequest.getNewPassword()));
             userRepo.save(user);
-            return viewMapper.vieNewPassword(user);
+            return new SimpleResponse("Changed","Password successfully changed");
         }
     }
 
@@ -159,5 +146,4 @@ public class UserServiceImpl implements UserService{
                 String.format("user with id = %s does not exists", userId)
                 ));
     }
-
 }

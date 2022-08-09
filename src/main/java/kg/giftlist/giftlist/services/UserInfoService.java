@@ -9,5 +9,4 @@ public interface UserInfoService {
 
     UserInfoResponse update(Long userInfoId, UserInfoRequest userInfoRequest);
 
-
 }

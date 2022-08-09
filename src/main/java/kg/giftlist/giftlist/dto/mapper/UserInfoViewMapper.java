@@ -1,25 +1,15 @@
 package kg.giftlist.giftlist.dto.mapper;
-import kg.giftlist.giftlist.dto.user.UserFirstProfileResponse;
 import kg.giftlist.giftlist.dto.user.UserInfoResponse;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.models.UserInfo;
-import kg.giftlist.giftlist.repositories.UserRepository;
-import kg.giftlist.giftlist.services.impl.UserInfoServiceImpl;
 import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 @RequiredArgsConstructor
 public class UserInfoViewMapper {
 
-    private final UserServiceImpl userService;
 
     public UserInfoResponse viewUserInfo(UserInfo userInfo, User user) {
         if (userInfo==null) {
@@ -43,13 +33,5 @@ public class UserInfoViewMapper {
         userInfoResponse.setVkLink(userInfo.getVkLink());
         return userInfoResponse;
     }
-
-//    public List<UserInfoResponse> viewAllUsers(List<UserInfo> userInfo) {
-//        List<UserInfoResponse> userInfoResponses = new ArrayList<>();
-//        for (UserInfo userInfoRes : userInfo) {
-//            userInfoResponses.add(viewUserInfo(userInfoRes));
-//        }
-//        return userInfoResponses;
-//    }
 
 }

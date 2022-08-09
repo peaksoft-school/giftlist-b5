@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -68,9 +69,9 @@ public class User implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL)
     private UserInfo userInfo;
 
+    @JsonIgnore
     @Transient
     private String photo;
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -108,4 +109,5 @@ public class User implements UserDetails {
         this.password = password;
         this.role = role;
     }
+
 }

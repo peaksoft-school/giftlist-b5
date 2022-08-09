@@ -8,6 +8,10 @@ import lombok.Setter;
 @Setter
 public class UserProfileResponse {
 
+    private Long userId;
+
+    private String photo;
+
     private String firstName;
 
     private String lastName;

@@ -2,12 +2,8 @@ package kg.giftlist.giftlist.dto.mapper;
 import kg.giftlist.giftlist.dto.user.UserInfoRequest;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.models.UserInfo;
-import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -36,7 +32,6 @@ public class UserInfoEditMapper {
         }
 
         public void update(UserInfo userInfo, UserInfoRequest userInfoRequest) {
-
             userInfo.setPhoto(userInfoRequest.getPhoto());
             userInfo.setCity(userInfoRequest.getCity());
             userInfo.setDateOfBirth(userInfoRequest.getDateOfBirth());
