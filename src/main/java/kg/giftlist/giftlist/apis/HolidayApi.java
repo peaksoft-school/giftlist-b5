@@ -2,6 +2,7 @@ package kg.giftlist.giftlist.apis;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.models.Holiday;
@@ -16,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/holiday")
 @CrossOrigin
-@Tag(name = "HOLIDAY API", description = "Any user can create, update or delete holidays")
+@Tag(name = "HOLIDAY API", description = "Any user can userRegister, update or delete holidays")
 public class HolidayApi {
     private final HolidayService service;
 
@@ -36,7 +37,7 @@ public class HolidayApi {
     }
 
     @DeleteMapping("/{id}")
-    public HolidayResponse delete(@PathVariable Long id) {
+    public SimpleResponse delete(@PathVariable Long id) {
         return service.deleteById(id);
     }
 

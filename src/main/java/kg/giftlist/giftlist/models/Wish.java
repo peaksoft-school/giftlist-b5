@@ -1,14 +1,14 @@
 package kg.giftlist.giftlist.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
-import static javax.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "wishes")
@@ -18,7 +18,7 @@ import static javax.persistence.CascadeType.*;
 public class Wish {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wish_gen")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "wish_gen",sequenceName = "wish_seq", allocationSize = 1)
     private Long id;
 
@@ -38,16 +38,31 @@ public class Wish {
 
     private Boolean isHidden;
 
-    @ManyToOne(cascade = ALL)
+    @ManyToOne
     private Booking booking;
 
-    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
+    @JoinColumn(name = "users")
+    @NotNull(message = "User not set")
+    @JsonIgnore
     private User user;
+   public Long getUserId(){
+       return user.getId();
+   }
 
     @ManyToOne
     private User fromUser;
 
-    @ManyToOne(cascade = {DETACH,REFRESH,MERGE})
+    @ManyToOne(targetEntity = Holiday.class, fetch = FetchType.LAZY,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST})
+    @JoinColumn(name = "holidays")
+    @JsonIgnore
     private Holiday holidays;
+
+    public String getHolidayName(){
+        return holidays.getName();
+    }
+
+
+
 
 }
