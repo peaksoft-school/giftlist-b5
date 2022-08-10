@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,8 +33,10 @@ public class Holiday {
     private Boolean isBlock;
 
     @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    @JsonIgnore
     private User user;
 
     @OneToMany(cascade = ALL, mappedBy = "holidays")
+    @JsonIgnore
     private List<Wish> wishes;
 }

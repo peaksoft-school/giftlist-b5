@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.enums.Status;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,18 +38,18 @@ public class Gift {
     private Status status;
 
     @ManyToOne(cascade = ALL)
+    @JsonIgnore
     private Booking booking;
-
-    @OneToOne
-    private Country country;
 
     @OneToOne
     private Category category;
 
     @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    @JsonIgnore
     private User user;
 
     @ManyToOne
+    @JsonIgnore
     private User fromUser;
 
 }
