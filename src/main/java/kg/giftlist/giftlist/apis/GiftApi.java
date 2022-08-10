@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/gifts")
 @CrossOrigin
-@Tag(name = "Gift API", description = "Add a gift role \" User \"  ")
+@Tag(name = "Gift API", description = "Add a gift role \" User \"  can create, update or deleted gifts ")
 public class GiftApi {
     private final GiftServiceImpl giftService;
     @Operation(summary = "Create Gifts", description = "The user can create a gift.")

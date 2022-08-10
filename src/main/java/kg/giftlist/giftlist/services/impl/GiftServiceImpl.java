@@ -5,12 +5,16 @@ import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.models.Gift;
+import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.repositories.GiftRepository;
+import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.services.GiftService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
@@ -18,6 +22,8 @@ public class GiftServiceImpl implements GiftService {
     private final GiftRepository  giftRepository;
     private final GiftViewMapper giftViewMapper;
     private final GiftEditMapper giftEditMapper;
+
+    private final UserRepository  userRepository;
 
 
     @Override
@@ -51,6 +57,10 @@ public class GiftServiceImpl implements GiftService {
     public List<GiftResponse> getAll() {
         return giftViewMapper.view(giftRepository.findAll());
     }
-
+    public User getAuthenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String login = authentication.getName();
+        return userRepository.findByEmail(login).orElseThrow(() -> new UsernameNotFoundException("Username not found "));
+    }
 
 }
