@@ -19,6 +19,7 @@ import java.util.List;
 @CrossOrigin
 @Tag(name = "HOLIDAY API", description = "Any user can userRegister, update or delete holidays")
 public class HolidayApi {
+
     private final HolidayService service;
 
     @PostMapping

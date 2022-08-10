@@ -42,8 +42,7 @@ public class User implements UserDetails {
 
     private Boolean isBlock;
 
-    @Enumerated(EnumType.STRING)
-    private FriendStatus friendStatus;
+    private Boolean isFriend;
 
     @ManyToMany
     @JoinTable(name = "request_to_friends")

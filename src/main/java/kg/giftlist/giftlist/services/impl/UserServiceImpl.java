@@ -179,6 +179,8 @@ public class UserServiceImpl implements UserService{
         friend.acceptToFriend(user);
         user.getRequestToFriends().remove(friend);
         user.acceptToFriend(friend);
+        friend.setIsFriend(true);
+        user.setIsFriend(true);
         userRepo.save(user);
         userRepo.save(friend);
         return new SimpleResponse("Accepted","Successfully accept to friend");
@@ -199,6 +201,8 @@ public class UserServiceImpl implements UserService{
         User friend = findByUserId(friendId);
         friend.getFriends().remove(user);
         user.getFriends().remove(friend);
+        friend.setIsFriend(false);
+        user.setIsFriend(false);
         userRepo.save(user);
         userRepo.save(friend);
         return new SimpleResponse("Deleted","Successfully deleted");
