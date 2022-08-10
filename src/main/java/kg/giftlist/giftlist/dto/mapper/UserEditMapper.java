@@ -1,6 +1,7 @@
 package kg.giftlist.giftlist.dto.mapper;
 
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
+import kg.giftlist.giftlist.dto.user.UserChangePasswordRequest;
 import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.models.MailingList;
@@ -15,6 +16,7 @@ public class UserEditMapper {
 
     private final MailingList mailingList;
     private final MailingListServiceImpl mailingListService;
+
     public User create(UserRequest request) {
         if (request == null) {
             return null;
@@ -24,6 +26,7 @@ public class UserEditMapper {
         user.setLastName(request.getLastName());
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
+        user.setIsBlock(false);
         user.setRole(Role.USER);
         if (request.isMailingList()) {
             mailingList.setEmail(request.getEmail());
@@ -38,7 +41,6 @@ public class UserEditMapper {
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
     }
-
     public AdminPageUserGetAllResponse createUser(User user) {
               if (user == null) {
                   return null;
@@ -52,4 +54,8 @@ public class UserEditMapper {
 
               return adminUserGetAllResponse;
           }
+
+    public void changePassword(User user, UserChangePasswordRequest userChangePasswordRequest) {
+        user.setPassword(userChangePasswordRequest.getNewPassword());
+    }
 }
