@@ -20,7 +20,9 @@ public interface UserService {
 
     UserFriendProfileResponse getFriendProfile(Long friendId);
 
-    List<UserFriendProfileResponse> getAllFriend();
+    List<UserFriendProfileResponse> getAllFriends();
+
+    List<UserFriendProfileResponse> getAllRequestToFriends();
 
 
 

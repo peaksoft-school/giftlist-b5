@@ -178,7 +178,7 @@ public class UserServiceImpl implements UserService{
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
         friend.acceptToFriend(user);
-        friend.getRequestToFriends().remove(user);
+        user.getRequestToFriends().remove(friend);
         user.acceptToFriend(friend);
         userRepo.save(user);
         userRepo.save(friend);
@@ -189,8 +189,8 @@ public class UserServiceImpl implements UserService{
     public SimpleResponse rejectFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
-        friend.getRequestToFriends().remove(user);
-        userRepo.save(friend);
+        user.getRequestToFriends().remove(friend);
+        userRepo.save(user);
         return new SimpleResponse("Rejected","Successfully rejected");
     }
 
@@ -218,9 +218,15 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<UserFriendProfileResponse> getAllFriend() {
+    public List<UserFriendProfileResponse> getAllFriends() {
         User user = getAuthenticatedUser();
-        return viewMapper.getAllFriends(userRepo.findAllFriend(user.getId()));
+        return viewMapper.getAllFriends(userRepo.findAllFriends(user.getId()));
+    }
+
+    @Override
+    public List<UserFriendProfileResponse> getAllRequestToFriends() {
+        User user = getAuthenticatedUser();
+        return viewMapper.getAllFriends(userRepo.findAllRequestToFriends(user.getId()));
     }
 
 

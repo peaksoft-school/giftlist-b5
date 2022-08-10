@@ -51,9 +51,16 @@ public class FriendsApi {
         return userService.getFriendProfile(userId);
     }
 
+    @Operation(summary = "Get All Friends", description = "User can get all friends list")
     @GetMapping
-    public List<UserFriendProfileResponse> getAllWishes() {
-        return userService.getAllFriend();
+    public List<UserFriendProfileResponse> getAllFriends() {
+        return userService.getAllFriends();
+    }
+
+    @Operation(summary = "Get All Request to Friends", description = "User can get all request to friends list")
+    @GetMapping("/requests")
+    public List<UserFriendProfileResponse> getAllRequestToFriends() {
+        return userService.getAllRequestToFriends();
     }
 
 
