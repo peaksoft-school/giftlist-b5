@@ -1,6 +1,5 @@
 package kg.giftlist.giftlist.dto.mapper;
-
-import kg.giftlist.giftlist.dto.user.UserResponse;
+import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.security.JwtUtils;
 import org.springframework.stereotype.Component;
@@ -34,5 +33,16 @@ public class UserViewMapper {
             responses.add(viewUser(user));
         }
         return responses;
+    }
+
+    public UserProfileResponse viewUserProfile(User user) {
+        UserProfileResponse userProfileResponse = new UserProfileResponse();
+        userProfileResponse.setUserId(user.getId());
+        userProfileResponse.setPhoto(user.getPhoto());
+        userProfileResponse.setFirstName(user.getFirstName());
+        userProfileResponse.setLastName(user.getLastName());
+        userProfileResponse.setEmail(user.getEmail());
+        userProfileResponse.setUserInfo(user.getUserInfo());
+        return userProfileResponse;
     }
 }
