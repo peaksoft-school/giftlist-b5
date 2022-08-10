@@ -24,7 +24,7 @@ public class AdminApi {
     private final UserService userService;
 
     @Operation(summary = "Get all users", description = "Get all users ")
-    @GetMapping("/users")
+    @GetMapping
     public List<AdminPageUserGetAllResponse> getAllUsers() {
         return adminService.getAllUsers();
     }
@@ -42,7 +42,7 @@ public class AdminApi {
     }
 
     @Operation(summary = "UnBlock user", description = "UnBlock user by id")
-    @PutMapping("/un_block/{id}")
+    @PutMapping("/unBlock/{id}")
     public ResponseEntity<?> unBlock(@PathVariable Long id) {
         return adminService.unBlockUser(id);
     }
