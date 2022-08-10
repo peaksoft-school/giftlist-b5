@@ -168,6 +168,7 @@ public class UserServiceImpl implements UserService{
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
         friend.addRequestToFriend(user);
+        user.setIsRequestToFriend(true);
         userRepo.save(friend);
         return new SimpleResponse("Success","Request to friend successfully send");
     }
@@ -179,6 +180,7 @@ public class UserServiceImpl implements UserService{
         friend.acceptToFriend(user);
         user.getRequestToFriends().remove(friend);
         user.acceptToFriend(friend);
+        friend.setIsRequestToFriend(false);
         friend.setIsFriend(true);
         user.setIsFriend(true);
         userRepo.save(user);
@@ -190,6 +192,7 @@ public class UserServiceImpl implements UserService{
     public SimpleResponse rejectFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
+        user.setIsRequestToFriend(false);
         user.getRequestToFriends().remove(friend);
         userRepo.save(user);
         return new SimpleResponse("Rejected","Successfully rejected");

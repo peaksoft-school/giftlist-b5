@@ -12,6 +12,7 @@ public class UserFriendProfileResponse {
     private String firstName;
     private String lastName;
     private Boolean isFriend;
+    private Boolean isRequestToFriend;
     private int wishCount;
     private int holidayCount;
 }

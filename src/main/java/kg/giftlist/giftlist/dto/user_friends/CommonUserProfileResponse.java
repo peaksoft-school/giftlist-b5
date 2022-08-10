@@ -20,6 +20,7 @@ public class CommonUserProfileResponse {
     private String email;
     private String photo;
     private Boolean isFriend;
+    private Boolean isRequestToFriend;
     private UserInfo userInfo;
     private List<Wish> wishes;
     private List<Holiday> holidays;

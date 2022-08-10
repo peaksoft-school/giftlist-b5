@@ -42,7 +42,9 @@ public class User implements UserDetails {
 
     private Boolean isBlock;
 
-    private Boolean isFriend;
+    private Boolean isFriend = false;
+
+    private Boolean isRequestToFriend = false;
 
     @ManyToMany
     @JoinTable(name = "request_to_friends")

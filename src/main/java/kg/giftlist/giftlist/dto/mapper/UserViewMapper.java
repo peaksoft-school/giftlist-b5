@@ -55,6 +55,7 @@ public class UserViewMapper {
         userFriendProfileResponse.setFirstName(user.getFirstName());
         userFriendProfileResponse.setLastName(user.getLastName());
         userFriendProfileResponse.setIsFriend(user.getIsFriend());
+        userFriendProfileResponse.setIsRequestToFriend(user.getIsRequestToFriend());
         userFriendProfileResponse.setWishCount(user.getWishes().size());
         userFriendProfileResponse.setHolidayCount(user.getHolidays().size());
         return userFriendProfileResponse;
@@ -76,6 +77,7 @@ public class UserViewMapper {
                 .email(user.getEmail())
                 .photo(user.getPhoto())
                 .isFriend(user.getIsFriend())
+                .isRequestToFriend(user.getIsRequestToFriend())
                 .userInfo(user.getUserInfo())
                 .wishes(user.getWishes())
                 .holidays(user.getHolidays())
