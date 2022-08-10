@@ -14,5 +14,4 @@ public interface AdminService {
     ResponseEntity<?> blockGift(Long id);
     ResponseEntity<?> blockHoliday(Long id);
     ResponseEntity<?> blockWish(Long id);
-
 }

@@ -64,5 +64,4 @@ public class AdminApi {
     public ResponseEntity<?> blockWish(@PathVariable Long id) {
         return adminService.blockWish(id);
     }
-
 }
