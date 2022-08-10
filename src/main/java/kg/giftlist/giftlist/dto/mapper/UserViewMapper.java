@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.dto.mapper;
 import kg.giftlist.giftlist.dto.user.*;
+import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.security.JwtUtils;
@@ -64,5 +65,19 @@ public class UserViewMapper {
             responses.add(viewFriendProfile(user));
         }
         return responses;
+    }
+
+    public CommonUserProfileResponse viewCommonFriendProfile(User user) {
+        return CommonUserProfileResponse.builder()
+                .id(user.getId())
+                .firstName(user.getFirstName())
+                .lastName(user.getLastName())
+                .email(user.getEmail())
+                .photo(user.getPhoto())
+                .userInfo(user.getUserInfo())
+                .wishes(user.getWishes())
+                .holidays(user.getHolidays())
+                .gifts(user.getGifts())
+                .build();
     }
 }

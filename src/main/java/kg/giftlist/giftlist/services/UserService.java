@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.services;
 import kg.giftlist.giftlist.dto.user.*;
+import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 
 import java.util.List;
@@ -23,6 +24,8 @@ public interface UserService {
     List<UserFriendProfileResponse> getAllFriends();
 
     List<UserFriendProfileResponse> getAllRequestToFriends();
+
+    CommonUserProfileResponse getCommonFriendProfile(Long userId);
 
 
 

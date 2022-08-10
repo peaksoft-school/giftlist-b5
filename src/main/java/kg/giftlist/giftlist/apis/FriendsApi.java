@@ -3,9 +3,8 @@ package kg.giftlist.giftlist.apis;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.user.SimpleResponse;
-import kg.giftlist.giftlist.dto.user.UserChangePasswordRequest;
+import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
-import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.services.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -63,5 +62,10 @@ public class FriendsApi {
         return userService.getAllRequestToFriends();
     }
 
+    @Operation(summary = "Get common user profile", description = "User can get common user profile")
+    @GetMapping("/common_profile/{userId}")
+    public CommonUserProfileResponse getCommonUserProfile(@PathVariable Long userId) {
+        return userService.getCommonFriendProfile(userId);
+    }
 
 }

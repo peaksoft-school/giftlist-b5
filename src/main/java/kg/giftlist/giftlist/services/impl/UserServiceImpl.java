@@ -10,8 +10,8 @@ import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
 import kg.giftlist.giftlist.dto.user.*;
+import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
-import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.exception.IsEmptyException;
 import kg.giftlist.giftlist.exception.NotFoundException;
@@ -34,7 +34,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -227,6 +226,12 @@ public class UserServiceImpl implements UserService{
     public List<UserFriendProfileResponse> getAllRequestToFriends() {
         User user = getAuthenticatedUser();
         return viewMapper.getAllFriends(userRepo.findAllRequestToFriends(user.getId()));
+    }
+
+    @Override
+    public CommonUserProfileResponse getCommonFriendProfile(Long userId) {
+        User user = userRepo.findById(userId).get();
+        return viewMapper.viewCommonFriendProfile(user);
     }
 
 
