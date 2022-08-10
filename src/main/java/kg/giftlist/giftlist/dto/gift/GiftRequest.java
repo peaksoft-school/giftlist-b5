@@ -17,6 +17,5 @@ public class GiftRequest {
     private String photo;
     private Category category;
     private Status status;
-    private SubCategory subCategory;
     private String description;
 }
