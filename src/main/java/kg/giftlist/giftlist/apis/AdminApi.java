@@ -9,14 +9,16 @@ import kg.giftlist.giftlist.services.AdminService;
 import kg.giftlist.giftlist.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/admin")
+@RequestMapping("api/admin/users")
 @CrossOrigin
+@PreAuthorize("hasAnyAuthority('ADMIN')")
 @Tag(name = "Admin", description = "Admin accessible apis")
 public class AdminApi {
 
@@ -24,7 +26,7 @@ public class AdminApi {
     private final UserService userService;
 
     @Operation(summary = "Get all users", description = "Get all users ")
-    @GetMapping("/users")
+    @GetMapping
     public List<AdminPageUserGetAllResponse> getAllUsers() {
         return adminService.getAllUsers();
     }
@@ -36,14 +38,14 @@ public class AdminApi {
     }
 
     @Operation(summary = "block user", description = "block user by id")
-    @PutMapping("/block/{id}")
-    public ResponseEntity<?> block(@PathVariable Long id) {
+    @PutMapping("/block/{userId}")
+    public ResponseEntity<?> block(@PathVariable("userId") Long id) {
         return adminService.blockUser(id);
     }
 
     @Operation(summary = "UnBlock user", description = "UnBlock user by id")
-    @PutMapping("/un_block/{id}")
-    public ResponseEntity<?> unBlock(@PathVariable Long id) {
+    @PutMapping("/unBlock/{userId}")
+    public ResponseEntity<?> unBlock(@PathVariable("userId") Long id) {
         return adminService.unBlockUser(id);
     }
 }

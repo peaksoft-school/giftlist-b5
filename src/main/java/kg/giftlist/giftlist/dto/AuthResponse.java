@@ -3,7 +3,6 @@ package kg.giftlist.giftlist.dto;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
@@ -14,5 +13,4 @@ public class AuthResponse {
     private String email;
     private String jwt;
     private Role role;
-
 }
