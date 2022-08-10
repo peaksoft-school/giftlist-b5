@@ -46,22 +46,4 @@ public class AdminApi {
     public ResponseEntity<?> unBlock(@PathVariable Long id) {
         return adminService.unBlockUser(id);
     }
-
-    @Operation(summary = "block gift", description = "block gift by id")
-    @PutMapping("/block/gift/{id}")
-    public ResponseEntity<?> blockGift(@PathVariable Long id) {
-        return adminService.blockGift(id);
-    }
-
-    @Operation(summary = "block holiday", description = "block holiday by id")
-    @PutMapping("/block/holiday/{id}")
-    public ResponseEntity<?> blockHoliday(@PathVariable Long id) {
-        return adminService.blockHoliday(id);
-    }
-
-    @Operation(summary = "block wish", description = "block wish by id")
-    @PutMapping("/block/wish/{id}")
-    public ResponseEntity<?> blockWish(@PathVariable Long id) {
-        return adminService.blockWish(id);
-    }
 }
