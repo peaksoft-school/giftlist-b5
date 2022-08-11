@@ -73,6 +73,9 @@ public class UserServiceImpl implements UserService{
                     "invalid password"
             );
         }
+        if (user.getIsBlock()==true){
+            return null;
+        }
         String jwt = jwtUtils.generateJwt(user);
         logger.info("User successfully logged in");
         return new AuthResponse(

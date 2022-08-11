@@ -15,9 +15,12 @@ public class SubCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "subCategory_gen")
-    @SequenceGenerator(name = "subCategory_gen",sequenceName = "subCategory_seq", allocationSize = 1)
+    @SequenceGenerator(name = "subCategory_gen", sequenceName = "subCategory_seq", allocationSize = 1)
     private Long id;
 
     private String name;
+
+    @ManyToOne
+    private Category category;
 
 }
