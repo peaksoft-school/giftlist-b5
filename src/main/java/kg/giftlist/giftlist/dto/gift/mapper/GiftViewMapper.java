@@ -56,4 +56,13 @@ public class GiftViewMapper {
         return giftCartResponse;
     }
 
+    public BookingResponse viewBooking(Booking booking, User user) {
+        if (booking==null){
+            return null;
+        }
+        BookingResponse bookingResponse = new BookingResponse();
+        bookingResponse.setUserBooked(viewUserGift(user));
+        return bookingResponse;
+    }
+
 }

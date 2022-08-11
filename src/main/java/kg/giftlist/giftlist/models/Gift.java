@@ -42,11 +42,9 @@ public class Gift {
     private Status status;
 
     @ManyToOne(cascade = ALL)
-    @JsonIgnore
     private Booking booking;
 
     @OneToOne
-    @JsonIgnore
     private Category category;
 
     @ManyToOne(cascade = {MERGE, REFRESH,DETACH})

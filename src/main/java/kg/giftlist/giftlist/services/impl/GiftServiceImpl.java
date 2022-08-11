@@ -42,7 +42,7 @@ public class GiftServiceImpl implements GiftService {
                 new NotFoundException("Category with id: " + request.getCategoryId() + "not found"));
         Gift gift = giftEditMapper.create(request);
         gift.setCategory(category);
-        SubCategory subCategory = subCategoryRepository.findById(request.getCategoryId()).orElseThrow(() ->
+        SubCategory subCategory = subCategoryRepository.findById(request.getSubCategoryId()).orElseThrow(() ->
                 new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found"));
         category.setSubCategories(List.of(subCategory));
         user.setGifts(List.of(gift));
@@ -59,9 +59,8 @@ public class GiftServiceImpl implements GiftService {
 
     @Override
     public Gift findById(Long id) {
-        Gift gift = giftRepository.findById(id).orElseThrow(() ->
+        return giftRepository.findById(id).orElseThrow(() ->
                 new NotFoundException("SubCategory with id: " + id + "not found"));
-        return gift;
     }
 
     @Override

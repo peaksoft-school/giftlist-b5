@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 public class BookingResponse {
 
-    private GiftCartResponse giftCartResponse;
     private UserGiftResponse userBooked;
 
 

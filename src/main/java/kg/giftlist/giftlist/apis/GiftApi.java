@@ -32,12 +32,6 @@ public class GiftApi {
         return giftService.update(id,request);
     }
 
-    @Operation(summary = "Find By Id" , description = "The user can a gift find by id. ")
-    @GetMapping("/findById/{id}")
-    public GiftResponse findById(@PathVariable Long id){
-        return giftService.findById(id);
-    }
-
     @Operation(summary = "Delete By Id" , description = "The user can a gift delete by id.")
     @DeleteMapping("/deleteById/{id}")
     public GiftResponse deleteById(@PathVariable Long id){

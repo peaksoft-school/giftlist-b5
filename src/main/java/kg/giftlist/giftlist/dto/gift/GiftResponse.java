@@ -21,5 +21,4 @@ public class GiftResponse {
     private UserGiftResponse user;
     private GiftCartResponse gift;
 
-
 }
