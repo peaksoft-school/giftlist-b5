@@ -12,5 +12,4 @@ public class AdminPageUserGetAllResponse {
     private String last_name;
     private String photo;
     private int countGift;
-
 }
