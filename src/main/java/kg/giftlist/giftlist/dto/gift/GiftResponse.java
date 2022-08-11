@@ -17,13 +17,9 @@ import java.util.List;
 @Getter
 @Setter
 public class GiftResponse {
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
-   private String name;
-   private String photo;
-   private Status status;
-   private LocalDate date;
-   private Booking booking;
+
+    private UserGiftResponse user;
+    private GiftCartResponse gift;
+
 
 }

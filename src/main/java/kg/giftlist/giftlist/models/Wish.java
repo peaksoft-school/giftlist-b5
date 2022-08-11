@@ -46,9 +46,10 @@ public class Wish {
     @NotNull(message = "User not set")
     @JsonIgnore
     private User user;
-   public Long getUserId(){
+
+    public Long getUserId(){
        return user.getId();
-   }
+    }
 
     @ManyToOne
     private User fromUser;

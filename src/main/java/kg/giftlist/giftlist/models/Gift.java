@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.enums.Status;
 import lombok.AllArgsConstructor;
@@ -35,34 +36,33 @@ public class Gift {
 
     private Boolean isBlock;
 
-    private LocalDate date;
+    private LocalDate createdAt;
 
     @Enumerated(EnumType.STRING)
     private Status status;
 
     @ManyToOne(cascade = ALL)
+    @JsonIgnore
     private Booking booking;
 
     @OneToOne
-    private Country country;
-
-    @OneToOne
+    @JsonIgnore
     private Category category;
 
     @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    @JsonIgnore
     private User user;
 
     @ManyToOne
+    @JsonIgnore
     private User fromUser;
-
 
     public Gift(GiftRequest request) {
         this.name= getName();
         this.photo = getPhoto();
         this.status = getStatus();
         this.category = getCategory();
-        this.country = getCountry();
-        this.date = getDate();
+        this.createdAt = getCreatedAt();
         this.description = getDescription();
     }
 }

@@ -22,6 +22,8 @@ public class Booking {
     @SequenceGenerator(name = "booking_gen",sequenceName = "booking_seq", allocationSize = 1)
     private Long id;
 
+    private Boolean isBooked = false;
+
     @OneToOne(cascade = {MERGE, REFRESH,DETACH})
     private User user;
 

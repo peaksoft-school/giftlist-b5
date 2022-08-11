@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GiftEditMapper {
+
+
     public Gift  create(GiftRequest request){
         if (request == null){
             return null;
@@ -13,7 +15,6 @@ public class GiftEditMapper {
         Gift gift = new Gift();
         gift.setName(request.getName());
         gift.setPhoto(request.getPhoto());
-        gift.setCategory(request.getCategory());
         gift.setStatus(request.getStatus());
         gift.setDescription(request.getDescription());
         return gift;
@@ -22,7 +23,6 @@ public class GiftEditMapper {
     public void update(Gift gift1,GiftRequest request2){
       gift1.setName(request2.getName());
       gift1.setPhoto(request2.getPhoto());
-      gift1.setCategory(request2.getCategory());
       gift1.setStatus(request2.getStatus());
       gift1.setDescription(request2.getDescription());
     }
