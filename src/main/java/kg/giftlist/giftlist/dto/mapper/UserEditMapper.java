@@ -4,9 +4,9 @@ import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.dto.user.UserChangePasswordRequest;
 import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.enums.Role;
-import kg.giftlist.giftlist.models.MailingList;
-import kg.giftlist.giftlist.models.User;
-import kg.giftlist.giftlist.services.impl.MailingListServiceImpl;
+import kg.giftlist.giftlist.db.models.MailingList;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.service.impl.MailingListServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

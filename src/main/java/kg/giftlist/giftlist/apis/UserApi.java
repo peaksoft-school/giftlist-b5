@@ -3,8 +3,8 @@ package kg.giftlist.giftlist.apis;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.user.*;
-import kg.giftlist.giftlist.services.impl.UserInfoServiceImpl;
-import kg.giftlist.giftlist.services.impl.UserServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.UserInfoServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

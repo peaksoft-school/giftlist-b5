@@ -1,9 +1,9 @@
 package kg.giftlist.giftlist.dto.mapper;
 
 import kg.giftlist.giftlist.dto.user.UserInfoRequest;
-import kg.giftlist.giftlist.models.User;
-import kg.giftlist.giftlist.models.UserInfo;
-import kg.giftlist.giftlist.services.impl.UserServiceImpl;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.models.UserInfo;
+import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

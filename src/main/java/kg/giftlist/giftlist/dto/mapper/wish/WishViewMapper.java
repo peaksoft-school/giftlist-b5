@@ -1,7 +1,7 @@
 package kg.giftlist.giftlist.dto.mapper.wish;
 
 import kg.giftlist.giftlist.dto.wish.WishResponse;
-import kg.giftlist.giftlist.models.Wish;
+import kg.giftlist.giftlist.db.models.Wish;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
