@@ -5,8 +5,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
-import kg.giftlist.giftlist.models.User;
-import kg.giftlist.giftlist.services.impl.WishServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.WishServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
