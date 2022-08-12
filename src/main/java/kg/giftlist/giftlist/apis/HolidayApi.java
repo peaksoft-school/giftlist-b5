@@ -9,6 +9,7 @@ import kg.giftlist.giftlist.models.Holiday;
 import kg.giftlist.giftlist.repositories.HolidayRepository;
 import kg.giftlist.giftlist.services.HolidayService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/holiday")
 @CrossOrigin
+@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @Tag(name = "HOLIDAY API", description = "Any user can userRegister, update or delete holidays")
 public class HolidayApi {
     private final HolidayService service;
