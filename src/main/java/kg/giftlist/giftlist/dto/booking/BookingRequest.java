@@ -9,7 +9,5 @@ import lombok.Setter;
 @Setter
 public class BookingRequest {
 
-    private Boolean isBooked;
     private Long giftId;
-    private Long userId;
 }

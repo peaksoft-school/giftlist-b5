@@ -2,6 +2,7 @@ package kg.giftlist.giftlist.apis;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.services.GiftService;
@@ -27,20 +28,28 @@ public class GiftApi {
     }
 
     @Operation(summary = "Updates Gifts", description = "The user can update a gift. ")
-    @PutMapping("/update/{id}")
-    public GiftResponse update(@PathVariable Long id ,@RequestBody GiftRequest request ){
-        return giftService.update(id,request);
+    @PutMapping("/update/{giftId}")
+    public GiftResponse update(@PathVariable Long giftId, @RequestBody GiftRequest request ){
+        return giftService.update(giftId,request);
     }
 
     @Operation(summary = "Delete By Id" , description = "The user can a gift delete by id.")
-    @DeleteMapping("/deleteById/{id}")
-    public GiftResponse deleteById(@PathVariable Long id){
-        return giftService.deleteById(id);
+    @DeleteMapping("/delete/{giftId}")
+    public SimpleResponse deleteById(@PathVariable Long giftId){
+        return giftService.deleteById(giftId);
+    }
+
+    @Operation(summary = "Find by gift id", description = "The user can find gift.")
+    @GetMapping("/{giftId}")
+    public GiftResponse findById(@PathVariable Long giftId){
+        return giftService.getGiftById(giftId);
     }
 
     @Operation(summary = "GetAll Gifts", description = "The user can a gifts getAll.")
     @GetMapping("/getAllGifts/")
-    public List<GiftResponse> getAll(){
+    public List<GiftResponse> getAllGifts(){
         return giftService.getAll();
     }
+
+
 }

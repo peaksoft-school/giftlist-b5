@@ -21,7 +21,6 @@ public class GiftCartResponse {
     private LocalDate createdAt;
     private String description;
     private Category category;
-    @JsonIgnore
     private Booking booking;
 
 

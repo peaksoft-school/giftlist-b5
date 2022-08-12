@@ -18,16 +18,12 @@ public class BookingEditMapper {
     private final UserServiceImpl userService;
     private final GiftServiceImpl giftService;
 
-    public Booking create(BookingRequest bookingRequest) {
+    public Booking createGiftBooking(BookingRequest bookingRequest) {
         if (bookingRequest==null) {
             return null;
         }
         Booking booking = new Booking();
-        User user = userService.findByUserId(bookingRequest.getUserId());
         Gift gift = giftService.findById(bookingRequest.getGiftId());
-        booking.setUser(user);
-        booking.setGifts(List.of(gift));
-
         return booking;
     }
 }

@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.dto.gift;
 
+import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.models.Booking;
 import kg.giftlist.giftlist.models.Category;
@@ -20,5 +21,6 @@ public class GiftResponse {
 
     private UserGiftResponse user;
     private GiftCartResponse gift;
+    private UserGiftResponse bookedUser;
 
 }

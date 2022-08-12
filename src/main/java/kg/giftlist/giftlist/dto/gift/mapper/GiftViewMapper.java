@@ -15,6 +15,7 @@ import java.util.List;
 @Component
 public class GiftViewMapper {
 
+
     public GiftResponse viewCommonGiftCard(User user, Gift gift) {
         if (gift == null) {
             return null;
@@ -22,10 +23,21 @@ public class GiftViewMapper {
         GiftResponse response = new GiftResponse();
         response.setUser(viewUserGift(user));
         response.setGift(viewGiftCard(gift));
-        response.setUser(viewUserGift(user));
+        if (gift.getBooking()==null || gift.getBooking().getUser()==null) {
+            return response;
+        }
+        response.setBookedUser(viewUserGift(gift.getBooking().getUser()));
         return response;
     }
 
+    public List<GiftResponse> getAllGifts(List<Gift> gifts) {
+        List<GiftResponse> giftResponses = new ArrayList<>();
+        for (Gift gift : gifts) {
+            User user = gift.getUser();
+            giftResponses.add(viewCommonGiftCard(user,gift));
+        }
+        return giftResponses;
+    }
 
     public UserGiftResponse viewUserGift(User user){
         if (user == null) {

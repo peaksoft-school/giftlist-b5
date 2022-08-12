@@ -30,10 +30,10 @@ public class GiftEditMapper {
         return gift;
     }
 
-    public void update(Gift gift1,GiftRequest request2){
-      gift1.setName(request2.getName());
-      gift1.setPhoto(request2.getPhoto());
-      gift1.setStatus(request2.getStatus());
-      gift1.setDescription(request2.getDescription());
+    public void update(Gift gift, GiftRequest request){
+        gift.setName(request.getName());
+        gift.setPhoto(request.getPhoto());
+        gift.setStatus(request.getStatus());
+        gift.setDescription(request.getDescription());
     }
 }
