@@ -18,6 +18,4 @@ public class GiftCartResponse {
     private String description;
     private Category category;
     private Booking booking;
-
-
 }

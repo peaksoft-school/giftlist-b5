@@ -78,5 +78,4 @@ public class BookingServiceImpl {
         return new SimpleResponse("Canceled", "Successfully canceled ");
     }
 
-
 }

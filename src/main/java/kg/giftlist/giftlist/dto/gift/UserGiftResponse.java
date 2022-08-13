@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.dto.gift;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,4 +11,5 @@ public class UserGiftResponse {
     private String lastName;
     private String photo;
     private String phoneNumber;
+
 }

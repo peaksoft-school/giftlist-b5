@@ -22,11 +22,10 @@ public class BookingApi {
         return bookingService.createBookingGift(giftId);
     }
 
-    @Operation(summary = "Cancel booking", description = "The user can cancel only gift booking.")
+    @Operation(summary = "Cancel Gift booking", description = "The user can cancel only gift booking.")
     @PostMapping("/cancel/{giftId}")
     public SimpleResponse cancelBookingGift(@PathVariable Long giftId){
         return bookingService.cancelBookingGift(giftId);
     }
-
 
 }

@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class GiftRequest {
+
     private String name;
     private String photo;
     private Long categoryId;
