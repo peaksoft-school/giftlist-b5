@@ -1,6 +1,6 @@
 package kg.giftlist.giftlist.dto.user;
 
-import kg.giftlist.giftlist.models.UserInfo;
+import kg.giftlist.giftlist.db.models.UserInfo;
 import lombok.Getter;
 import lombok.Setter;
 

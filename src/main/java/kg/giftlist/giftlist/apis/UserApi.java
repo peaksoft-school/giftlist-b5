@@ -1,9 +1,10 @@
 package kg.giftlist.giftlist.apis;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.user.*;
-import kg.giftlist.giftlist.services.impl.UserInfoServiceImpl;
-import kg.giftlist.giftlist.services.impl.UserServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.UserInfoServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class UserApi {
     @Operation(summary = "update ", description = "User can update profile")
     @PostMapping("/edit/{userInfoId}")
     public UserInfoResponse updateUserProfile(@PathVariable Long userInfoId, @RequestBody UserInfoRequest userInfoRequest) {
-        return userInfoService.update(userInfoId,userInfoRequest);
+        return userInfoService.update(userInfoId, userInfoRequest);
     }
 
     @Operation(summary = "Get user profile ", description = "Find by id user profile")

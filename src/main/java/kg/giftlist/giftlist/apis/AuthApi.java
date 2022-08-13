@@ -7,7 +7,7 @@ import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.dto.user.UserResponse;
-import kg.giftlist.giftlist.services.impl.UserServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
