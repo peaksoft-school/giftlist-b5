@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.db.service.impl;
-
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
@@ -68,10 +67,14 @@ public class BookingServiceImpl {
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
                 new NotFoundException("Gift with id: " + giftId + "not found"));
         Long id = gift.getBooking().getId();
-        user.getBooking().getGifts().remove(gift);
-        gift.setBooking(null);
-        user.setBooking(null);
-        bookingRepository.deleteById(id);
+        if (gift.getBooking().equals(user.getBooking())) {
+            user.getBooking().getGifts().remove(gift);
+            gift.setBooking(null);
+            user.setBooking(null);
+            bookingRepository.deleteById(id);
+        }else {
+            throw new AlreadyExistException("You can cancel only own booking");
+        }
         return new SimpleResponse("Canceled", "Successfully canceled ");
     }
 

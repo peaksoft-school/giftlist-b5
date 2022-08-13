@@ -30,7 +30,7 @@ public class GiftApi {
         return giftService.update(giftId,request);
     }
 
-    @Operation(summary = "Delete By Id" , description = " delete by gift id.")
+    @Operation(summary = "Delete By Id" , description = " User can delete by gift id.")
     @DeleteMapping("/delete/{giftId}")
     public SimpleResponse deleteById(@PathVariable Long giftId){
         return giftService.deleteById(giftId);

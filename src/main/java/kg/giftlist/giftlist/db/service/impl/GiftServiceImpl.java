@@ -14,6 +14,7 @@ import kg.giftlist.giftlist.db.repositories.GiftRepository;
 import kg.giftlist.giftlist.db.repositories.SubCategoryRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.GiftService;
+import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -71,16 +72,22 @@ public class GiftServiceImpl implements GiftService {
     @Override
     public Gift findById(Long id) {
         return giftRepository.findById(id).orElseThrow(() ->
-                new NotFoundException("Gift with id: " + id + "not found"));
+                new NotFoundException("Gift with id: " + id + " not found"));
     }
 
     @Override
     public SimpleResponse deleteById(Long giftId) {
+        User user = getAuthenticatedUser();
         boolean exists = giftRepository.existsById(giftId);
         if (!exists) {
             throw new NotFoundException("Gift with id = " + giftId + " not found!");
         }
-        giftRepository.deleteById(giftId);
+        Gift gift = findById(giftId);
+        if (gift.getUser().equals(user)) {
+            giftRepository.deleteById(giftId);
+        }else {
+            throw new GiftForbiddenException("You can delete only your own gift");
+        }
         return new SimpleResponse("Deleted!", "Gift successfully deleted!");
     }
 
