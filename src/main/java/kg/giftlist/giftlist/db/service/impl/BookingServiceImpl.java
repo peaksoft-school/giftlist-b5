@@ -27,7 +27,7 @@ public class BookingServiceImpl {
     private final BookingRepository bookingRepository;
 
     @Transactional
-    public BookingResponse createGiftBooking(Long giftId) {
+    public BookingResponse createBookingGift(Long giftId) {
         User user = getAuthenticatedUser();
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
                 new NotFoundException("Gift with id: " + giftId + "not found"));
@@ -62,7 +62,7 @@ public class BookingServiceImpl {
     }
 
     @Transactional
-    public SimpleResponse cancelBooking(Long giftId) {
+    public SimpleResponse cancelBookingGift(Long giftId) {
         User user = getAuthenticatedUser();
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
                 new NotFoundException("Gift with id: " + giftId + "not found"));
