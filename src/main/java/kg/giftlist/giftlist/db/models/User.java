@@ -1,6 +1,4 @@
 package kg.giftlist.giftlist.db.models;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

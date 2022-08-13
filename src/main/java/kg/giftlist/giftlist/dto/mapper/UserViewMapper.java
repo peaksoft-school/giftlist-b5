@@ -4,8 +4,6 @@ import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.config.security.JwtUtils;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
-import kg.giftlist.giftlist.models.User;
-import kg.giftlist.giftlist.security.JwtUtils;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
