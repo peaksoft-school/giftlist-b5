@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.models;
+package kg.giftlist.giftlist.db.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

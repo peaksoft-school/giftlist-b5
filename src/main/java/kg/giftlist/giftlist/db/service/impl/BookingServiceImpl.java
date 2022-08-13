@@ -1,16 +1,16 @@
-package kg.giftlist.giftlist.services.impl;
+package kg.giftlist.giftlist.db.service.impl;
+
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.NotFoundException;
-import kg.giftlist.giftlist.exception.WishNotFoundException;
-import kg.giftlist.giftlist.models.Booking;
-import kg.giftlist.giftlist.models.Gift;
-import kg.giftlist.giftlist.models.User;
-import kg.giftlist.giftlist.repositories.BookingRepository;
-import kg.giftlist.giftlist.repositories.GiftRepository;
-import kg.giftlist.giftlist.repositories.UserRepository;
+import kg.giftlist.giftlist.db.models.Booking;
+import kg.giftlist.giftlist.db.models.Gift;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.repositories.BookingRepository;
+import kg.giftlist.giftlist.db.repositories.GiftRepository;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

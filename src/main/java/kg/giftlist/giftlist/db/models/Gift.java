@@ -1,7 +1,9 @@
 package kg.giftlist.giftlist.db.models;
 
-package kg.giftlist.giftlist.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import kg.giftlist.giftlist.db.models.Category;
+import kg.giftlist.giftlist.db.models.User;
+
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.enums.Status;
 import lombok.AllArgsConstructor;
@@ -19,7 +21,6 @@ import static javax.persistence.CascadeType.DETACH;
 @AllArgsConstructor
 @Getter
 @Setter
-
 public class Gift {
 
     @Id

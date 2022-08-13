@@ -3,7 +3,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
-import kg.giftlist.giftlist.services.impl.BookingServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.BookingServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

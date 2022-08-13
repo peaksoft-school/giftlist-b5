@@ -1,27 +1,24 @@
-package kg.giftlist.giftlist.services.impl;
-
+package kg.giftlist.giftlist.db.service.impl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.exception.NotFoundException;
-import kg.giftlist.giftlist.exception.WishNotFoundException;
-import kg.giftlist.giftlist.models.Category;
-import kg.giftlist.giftlist.models.Gift;
-import kg.giftlist.giftlist.models.SubCategory;
-import kg.giftlist.giftlist.models.User;
-import kg.giftlist.giftlist.repositories.CategoryRepository;
-import kg.giftlist.giftlist.repositories.GiftRepository;
-import kg.giftlist.giftlist.repositories.SubCategoryRepository;
-import kg.giftlist.giftlist.repositories.UserRepository;
-import kg.giftlist.giftlist.services.GiftService;
+import kg.giftlist.giftlist.db.models.Category;
+import kg.giftlist.giftlist.db.models.Gift;
+import kg.giftlist.giftlist.db.models.SubCategory;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.repositories.CategoryRepository;
+import kg.giftlist.giftlist.db.repositories.GiftRepository;
+import kg.giftlist.giftlist.db.repositories.SubCategoryRepository;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
+import kg.giftlist.giftlist.db.service.GiftService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
 import java.util.List;
@@ -95,7 +92,7 @@ public class GiftServiceImpl implements GiftService {
     public GiftResponse getGiftById(Long giftId) {
         Gift gift = findById(giftId);
         User user = gift.getUser();
-        return giftViewMapper.viewCommonGiftCard(user, gift);
+        return giftViewMapper.viewCommonGiftCard(user,gift);
     }
 
     public User getAuthenticatedUser() {

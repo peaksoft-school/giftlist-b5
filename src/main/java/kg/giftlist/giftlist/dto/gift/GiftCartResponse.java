@@ -1,7 +1,7 @@
 package kg.giftlist.giftlist.dto.gift;
 import kg.giftlist.giftlist.enums.Status;
-import kg.giftlist.giftlist.models.Booking;
-import kg.giftlist.giftlist.models.Category;
+import kg.giftlist.giftlist.db.models.Booking;
+import kg.giftlist.giftlist.db.models.Category;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;
