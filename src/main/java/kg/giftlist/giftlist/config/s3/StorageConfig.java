@@ -10,7 +10,8 @@ import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 
 
-    @Getter @Setter
+    @Getter
+    @Setter
     @Configuration
     public class StorageConfig {
 
@@ -26,9 +27,7 @@ import software.amazon.awssdk.services.s3.S3Client;
         @Bean
         S3Client s3Client() {
             Region region = Region.of(REGION);
-
             final AwsBasicCredentials credentials = AwsBasicCredentials.create(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY);
-
             return S3Client.builder()
                     .region(region)
                     .credentialsProvider(StaticCredentialsProvider.create(credentials))
