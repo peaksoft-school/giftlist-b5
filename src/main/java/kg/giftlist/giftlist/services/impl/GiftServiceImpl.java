@@ -19,14 +19,12 @@ import kg.giftlist.giftlist.services.GiftService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -83,7 +81,7 @@ public class GiftServiceImpl implements GiftService {
     public SimpleResponse deleteById(Long giftId) {
         boolean exists = giftRepository.existsById(giftId);
         if (!exists) {
-            throw new WishNotFoundException("Gift with id = " + giftId + " not found!");
+            throw new NotFoundException("Gift with id = " + giftId + " not found!");
         }
         giftRepository.deleteById(giftId);
         return new SimpleResponse("Deleted!", "Gift successfully deleted!");
@@ -100,13 +98,11 @@ public class GiftServiceImpl implements GiftService {
         return giftViewMapper.viewCommonGiftCard(user, gift);
     }
 
-    public User getAuthenticatedUser(){
+    public User getAuthenticatedUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String login = authentication.getName();
         return userRepository.findByEmail(login).orElseThrow(() ->
                 new ForbiddenException("User not found!"));
     }
-
-
 
 }

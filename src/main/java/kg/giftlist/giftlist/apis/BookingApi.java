@@ -1,11 +1,8 @@
 package kg.giftlist.giftlist.apis;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kg.giftlist.giftlist.dto.booking.BookingRequest;
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
-import kg.giftlist.giftlist.dto.gift.GiftRequest;
-import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.services.impl.BookingServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -24,4 +21,12 @@ public class BookingApi {
     public BookingResponse create(@PathVariable Long giftId){
         return bookingService.createGiftBooking(giftId);
     }
+
+    @Operation(summary = "Cancel booking", description = "The user can cancel booking.")
+    @PostMapping("/cancel/{giftId}")
+    public SimpleResponse cancelBooking(@PathVariable Long giftId){
+        return bookingService.cancelBooking(giftId);
+    }
+
+
 }

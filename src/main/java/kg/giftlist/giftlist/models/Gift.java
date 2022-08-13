@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.models;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.enums.Status;
@@ -7,10 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.CascadeType.DETACH;
 

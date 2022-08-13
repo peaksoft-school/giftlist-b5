@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.services.impl;
-
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
@@ -10,14 +9,11 @@ import kg.giftlist.giftlist.models.Holiday;
 import kg.giftlist.giftlist.models.User;
 import kg.giftlist.giftlist.models.Wish;
 import kg.giftlist.giftlist.repositories.HolidayRepository;
-import kg.giftlist.giftlist.repositories.UserRepository;
 import kg.giftlist.giftlist.repositories.WishRepository;
 import kg.giftlist.giftlist.services.WishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

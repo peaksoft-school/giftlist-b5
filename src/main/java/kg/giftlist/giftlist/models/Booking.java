@@ -1,14 +1,11 @@
 package kg.giftlist.giftlist.models;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import static javax.persistence.CascadeType.*;
 
 @Entity
@@ -23,15 +20,15 @@ public class Booking {
     @SequenceGenerator(name = "booking_gen",sequenceName = "booking_seq", allocationSize = 1)
     private Long id;
 
-    @OneToOne(cascade = {MERGE, REFRESH,DETACH})
+    @OneToOne
     @JsonIgnore
     private User user;
 
-    @OneToMany(mappedBy = "booking")
+    @OneToMany(cascade = ALL)
     @JsonIgnore
     private List<Wish> wishes = new ArrayList<>();
 
-    @OneToMany(mappedBy = "booking")
+    @OneToMany(cascade = ALL)
     @JsonIgnore
     private List<Gift> gifts = new ArrayList<>();
 }

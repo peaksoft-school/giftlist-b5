@@ -1,22 +1,12 @@
 package kg.giftlist.giftlist.dto.gift.mapper;
-
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
-import kg.giftlist.giftlist.exception.NotFoundException;
-import kg.giftlist.giftlist.models.Category;
 import kg.giftlist.giftlist.models.Gift;
-import kg.giftlist.giftlist.models.SubCategory;
-import kg.giftlist.giftlist.repositories.CategoryRepository;
-import kg.giftlist.giftlist.repositories.SubCategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
 public class GiftEditMapper {
-
-    private final CategoryRepository categoryRepository;
-    private final SubCategoryRepository subCategoryRepository;
-
 
     public Gift  create(GiftRequest request){
         if (request == null){

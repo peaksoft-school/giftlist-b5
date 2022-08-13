@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.dto.gift.mapper;
-
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.dto.gift.GiftCartResponse;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
@@ -8,13 +7,11 @@ import kg.giftlist.giftlist.models.Booking;
 import kg.giftlist.giftlist.models.Gift;
 import kg.giftlist.giftlist.models.User;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class GiftViewMapper {
-
 
     public GiftResponse viewCommonGiftCard(User user, Gift gift) {
         if (gift == null) {
@@ -48,6 +45,9 @@ public class GiftViewMapper {
         userGiftResponse.setFirstName(user.getFirstName());
         userGiftResponse.setLastName(user.getLastName());
         userGiftResponse.setPhoto(user.getPhoto());
+        if (user.getUserInfo()==null || user.getUserInfo().getPhoneNumber()==null){
+            return userGiftResponse;
+        }
         userGiftResponse.setPhoneNumber(user.getUserInfo().getPhoneNumber());
         return userGiftResponse;
     }

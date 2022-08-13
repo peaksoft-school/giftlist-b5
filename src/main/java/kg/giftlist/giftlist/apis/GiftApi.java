@@ -1,15 +1,12 @@
 package kg.giftlist.giftlist.apis;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
-import kg.giftlist.giftlist.services.GiftService;
 import kg.giftlist.giftlist.services.impl.GiftServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -33,7 +30,7 @@ public class GiftApi {
         return giftService.update(giftId,request);
     }
 
-    @Operation(summary = "Delete By Id" , description = "The user can a gift delete by id.")
+    @Operation(summary = "Delete By Id" , description = " delete by gift id.")
     @DeleteMapping("/delete/{giftId}")
     public SimpleResponse deleteById(@PathVariable Long giftId){
         return giftService.deleteById(giftId);
@@ -45,7 +42,7 @@ public class GiftApi {
         return giftService.getGiftById(giftId);
     }
 
-    @Operation(summary = "GetAll Gifts", description = "The user can a gifts getAll.")
+    @Operation(summary = "Get all Gifts", description = "get all gifts.")
     @GetMapping("/getAllGifts/")
     public List<GiftResponse> getAllGifts(){
         return giftService.getAll();
