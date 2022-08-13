@@ -167,50 +167,77 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    @Transactional
     public SimpleResponse requestToFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
+        if (friend.getRequestToFriends().contains(user)) {
+            throw new NotFoundException("Request already sent");
+        }
         friend.addRequestToFriend(user);
         user.setIsRequestToFriend(true);
-        userRepo.save(friend);
         return new SimpleResponse("Success","Request to friend successfully send");
     }
 
     @Override
+    @Transactional
+    public SimpleResponse cancelRequestToFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        if (friend.getRequestToFriends().contains(user)) {
+            friend.getRequestToFriends().remove(user);
+            user.setIsRequestToFriend(false);
+        }else {
+            throw new NotFoundException("No request to friend");
+        }
+        return new SimpleResponse("Success","Request to friend successfully cancel");
+    }
+
+    @Override
+    @Transactional
     public SimpleResponse acceptToFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
-        friend.acceptToFriend(user);
-        user.getRequestToFriends().remove(friend);
-        user.acceptToFriend(friend);
-        friend.setIsRequestToFriend(false);
-        friend.setIsFriend(true);
-        user.setIsFriend(true);
-        userRepo.save(user);
-        userRepo.save(friend);
+        if (user.getRequestToFriends().contains(friend)) {
+            friend.acceptToFriend(user);
+            user.getRequestToFriends().remove(friend);
+            user.acceptToFriend(friend);
+            friend.setIsRequestToFriend(false);
+            friend.setIsFriend(true);
+            user.setIsFriend(true);
+        }else {
+            throw new NotFoundException("You are already friend");
+        }
         return new SimpleResponse("Accepted","Successfully accept to friend");
     }
 
     @Override
+    @Transactional
     public SimpleResponse rejectFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
-        user.setIsRequestToFriend(false);
-        user.getRequestToFriends().remove(friend);
-        userRepo.save(user);
+        if (user.getRequestToFriends().contains(friend)) {
+            user.setIsRequestToFriend(false);
+            user.getRequestToFriends().remove(friend);
+        }else {
+            throw new NotFoundException("You have not request to reject");
+        }
         return new SimpleResponse("Rejected","Successfully rejected");
     }
 
     @Override
+    @Transactional
     public SimpleResponse deleteFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
-        friend.getFriends().remove(user);
-        user.getFriends().remove(friend);
-        friend.setIsFriend(false);
-        user.setIsFriend(false);
-        userRepo.save(user);
-        userRepo.save(friend);
+        if (user.getFriends().contains(friend)) {
+            friend.getFriends().remove(user);
+            user.getFriends().remove(friend);
+            friend.setIsFriend(false);
+            user.setIsFriend(false);
+        }else {
+            throw new NotFoundException("You have not friend with name "+friend.getFirstName());
+        }
         return new SimpleResponse("Deleted","Successfully deleted");
     }
 
@@ -240,9 +267,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public CommonUserProfileResponse getCommonFriendProfile(Long userId) {
-        User user = userRepo.findById(userId).get();
+        User user = userRepo.findById(userId).orElseThrow(() ->
+                new NotFoundException("User with id "+userId+" not found"));
         return viewMapper.viewCommonFriendProfile(user);
     }
-
-
 }

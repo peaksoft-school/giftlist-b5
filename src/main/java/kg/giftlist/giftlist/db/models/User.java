@@ -122,7 +122,4 @@ public class User implements UserDetails {
         }
         friends.add(user);
     }
-
-
-
 }

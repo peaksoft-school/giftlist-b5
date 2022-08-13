@@ -13,6 +13,8 @@ public interface UserService {
 
     SimpleResponse requestToFriend(Long friendId);
 
+    SimpleResponse cancelRequestToFriend(Long friendId);
+
     SimpleResponse acceptToFriend(Long friendId);
 
     SimpleResponse rejectFriend(Long friendId);
@@ -26,7 +28,5 @@ public interface UserService {
     List<UserFriendProfileResponse> getAllRequestToFriends();
 
     CommonUserProfileResponse getCommonFriendProfile(Long userId);
-
-
 
 }
