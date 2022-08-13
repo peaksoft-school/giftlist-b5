@@ -1,6 +1,5 @@
 package kg.giftlist.giftlist.dto.wish;
 
-import kg.giftlist.giftlist.models.Holiday;
 import lombok.Getter;
 import lombok.Setter;
 

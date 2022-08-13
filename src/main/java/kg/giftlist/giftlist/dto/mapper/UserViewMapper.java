@@ -1,5 +1,7 @@
 package kg.giftlist.giftlist.dto.mapper;
 import kg.giftlist.giftlist.dto.user.*;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.config.security.JwtUtils;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.models.User;

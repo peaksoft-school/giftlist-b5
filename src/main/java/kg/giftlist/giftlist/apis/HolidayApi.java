@@ -1,13 +1,10 @@
 package kg.giftlist.giftlist.apis;
 
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
-import kg.giftlist.giftlist.models.Holiday;
-import kg.giftlist.giftlist.repositories.HolidayRepository;
-import kg.giftlist.giftlist.services.HolidayService;
+import kg.giftlist.giftlist.db.service.HolidayService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
