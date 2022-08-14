@@ -5,12 +5,14 @@ import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.db.service.impl.BookingServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/bookings")
 @CrossOrigin
+@PreAuthorize("hasAnyAuthority('USER')")
 @Tag(name = "Booking API", description = "user with role \" User \"  can create, update or deleted booking ")
 public class BookingApi {
 

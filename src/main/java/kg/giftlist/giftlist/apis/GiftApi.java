@@ -6,6 +6,7 @@ import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -13,25 +14,26 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/gifts")
 @CrossOrigin
+@PreAuthorize("hasAnyAuthority('USER')")
 @Tag(name = "Gift API", description = "Add a gift role \" User \"  can create, update or deleted gifts ")
 public class GiftApi {
 
     private final GiftServiceImpl giftService;
 
     @Operation(summary = "Create Gifts", description = "The user can create a gift.")
-    @PostMapping("/create")
+    @PostMapping
     public GiftResponse create(@RequestBody GiftRequest giftRequest){
         return giftService.create(giftRequest);
     }
 
     @Operation(summary = "Updates Gifts", description = "The user can update a gift. ")
-    @PutMapping("/update/{giftId}")
+    @PutMapping("/{giftId}")
     public GiftResponse update(@PathVariable Long giftId, @RequestBody GiftRequest request ){
         return giftService.update(giftId,request);
     }
 
     @Operation(summary = "Delete By Id" , description = " User can delete by gift id.")
-    @DeleteMapping("/delete/{giftId}")
+    @DeleteMapping("/{giftId}")
     public SimpleResponse deleteById(@PathVariable Long giftId){
         return giftService.deleteById(giftId);
     }
@@ -43,7 +45,7 @@ public class GiftApi {
     }
 
     @Operation(summary = "Get all Gifts", description = "get all gifts.")
-    @GetMapping("/getAllGifts/")
+    @GetMapping
     public List<GiftResponse> getAllGifts(){
         return giftService.getAll();
     }
