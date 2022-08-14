@@ -7,6 +7,7 @@ import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.db.service.impl.WishServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/wish")
 @CrossOrigin
+@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @Tag(name = "WISH LIST API", description = "User can create, update or delete wishes!")
 public class WishApi {
 

@@ -6,12 +6,14 @@ import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.db.service.impl.UserInfoServiceImpl;
 import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/users/profile")
 @RequiredArgsConstructor
 @CrossOrigin
+@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @Tag(name = "User API", description = "Users with role  \"User\" can create, update profile")
 public class UserApi {
 

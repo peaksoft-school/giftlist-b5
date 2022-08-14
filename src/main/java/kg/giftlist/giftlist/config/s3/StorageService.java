@@ -1,67 +1,66 @@
 package kg.giftlist.giftlist.config.s3;
 
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.model.S3ObjectInputStream;
-import com.amazonaws.util.IOUtils;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.*;
+import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.PutObjectRequest;
+import software.amazon.awssdk.services.s3.model.S3Exception;
+
+import java.util.Map;
 
 @Service
+@Getter
+@Setter
 @Slf4j
 @RequiredArgsConstructor
 public class StorageService {
+    private final S3Client s3;
+
     @Value("${s3.bucketName}")
     private String bucketName;
+
     @Value("${s3.bucketUrl}")
-    private String bucketUrl;
-    private final AmazonS3 s3Client;
+    private String bucketPath;
 
-    public String uploadFile(MultipartFile file) {
+    public Map<String, String> upload(MultipartFile file) throws IOException {
 
-        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
-
-        ObjectMetadata metadata = new ObjectMetadata();
-        metadata.addUserMetadata("Content-Type", file.getContentType());
-        metadata.addUserMetadata("Content-Length", String.valueOf(file.getSize()));
-        try {
-            s3Client.putObject(new PutObjectRequest(bucketName, fileName, file.getInputStream(), metadata));
-        } catch (IOException e) {
-            return "cannot not file exception";
-        }
-        return bucketUrl + fileName;
+        log.info("Uploading file ...");
+        String key = System.currentTimeMillis() + file.getOriginalFilename();
+        PutObjectRequest por = PutObjectRequest.builder()
+                .bucket(bucketName)
+                .key(key)
+                .build();
+        s3.putObject(por, RequestBody.fromInputStream(file.getInputStream(), file.getSize()));
+        log.info("Upload complete.");
+        return Map.of(
+                "link", bucketPath + key
+        );
     }
 
-    public byte[] downloadFile(String fileName) {
-        S3Object s3Object = s3Client.getObject(bucketName, fileName);
-        S3ObjectInputStream inputStream = s3Object.getObjectContent();
-        try {
-            byte[] content = IOUtils.toByteArray(inputStream);
-            return content;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+    public Map<String, String> delete(String fileLink) {
 
-    public void deleteFile(String fileName) {
+        log.info("Deleting file...");
         try {
-            s3Client.deleteObject(bucketName, fileName);{
-                log.info("successfully delete");
-            }
-        } catch (AmazonServiceException ex) {
-            log.info("failed to delete file = {} from amazon s3 bucket", fileName);
-            throw new AmazonServiceException(
-                    String.format("failed to delete file [%s] from amazon", fileName)
-            );
+            String key = fileLink.substring(bucketPath.length());
+            log.warn("Deleting object: {}", key);
+            s3.deleteObject(dor -> dor.bucket(bucketName).key(key).build());
+        } catch (S3Exception e) {
+            throw new IllegalStateException(e.awsErrorDetails().errorMessage());
+        } catch (Exception e) {
+            throw new IllegalStateException(e.getMessage());
         }
+        return Map.of(
+                "message", fileLink + " has been deleted."
+        );
+
     }
 }
