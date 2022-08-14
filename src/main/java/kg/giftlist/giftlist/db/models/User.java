@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.db.models;
+import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,9 +43,9 @@ public class User implements UserDetails {
 
     private Boolean isBlock;
 
-    private Boolean isFriend = false;
-
-    private Boolean isRequestToFriend = false;
+    @Enumerated(EnumType.STRING)
+    @Transient
+    private FriendStatus friendStatus;
 
     @ManyToMany
     @JoinTable(name = "request_to_friends")

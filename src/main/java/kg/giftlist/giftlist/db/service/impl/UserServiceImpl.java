@@ -13,6 +13,7 @@ import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.enums.Role;
+import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.IsEmptyException;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.models.User;
@@ -172,10 +173,9 @@ public class UserServiceImpl implements UserService{
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
         if (friend.getRequestToFriends().contains(user)) {
-            throw new NotFoundException("Request already sent");
+            throw new AlreadyExistException("Request already sent");
         }
         friend.addRequestToFriend(user);
-        user.setIsRequestToFriend(true);
         return new SimpleResponse("Success","Request to friend successfully send");
     }
 
@@ -186,7 +186,6 @@ public class UserServiceImpl implements UserService{
         User friend = findByUserId(friendId);
         if (friend.getRequestToFriends().contains(user)) {
             friend.getRequestToFriends().remove(user);
-            user.setIsRequestToFriend(false);
         }else {
             throw new NotFoundException("No request to friend");
         }
@@ -202,11 +201,8 @@ public class UserServiceImpl implements UserService{
             friend.acceptToFriend(user);
             user.getRequestToFriends().remove(friend);
             user.acceptToFriend(friend);
-            friend.setIsRequestToFriend(false);
-            friend.setIsFriend(true);
-            user.setIsFriend(true);
         }else {
-            throw new NotFoundException("You are already friend");
+            throw new AlreadyExistException("You are already friend");
         }
         return new SimpleResponse("Accepted","Successfully accept to friend");
     }
@@ -217,7 +213,6 @@ public class UserServiceImpl implements UserService{
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
         if (user.getRequestToFriends().contains(friend)) {
-            user.setIsRequestToFriend(false);
             user.getRequestToFriends().remove(friend);
         }else {
             throw new NotFoundException("You have not request to reject");
@@ -233,8 +228,6 @@ public class UserServiceImpl implements UserService{
         if (user.getFriends().contains(friend)) {
             friend.getFriends().remove(user);
             user.getFriends().remove(friend);
-            friend.setIsFriend(false);
-            user.setIsFriend(false);
         }else {
             throw new NotFoundException("You have not friend with name "+friend.getFirstName());
         }
@@ -267,6 +260,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public CommonUserProfileResponse getCommonFriendProfile(Long userId) {
+
         User user = userRepo.findById(userId).orElseThrow(() ->
                 new NotFoundException("User with id "+userId+" not found"));
         return viewMapper.viewCommonFriendProfile(user);

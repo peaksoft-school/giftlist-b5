@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.apis;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.user.SimpleResponse;
@@ -7,21 +6,22 @@ import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("api/users/friends")
 @RequiredArgsConstructor
 @CrossOrigin
+@PreAuthorize("hasAnyAuthority('USER')")
 @Tag(name = "Friends API", description = "Users with role  \"User\" can add, delete friends")
 public class FriendsApi {
 
     private final UserServiceImpl userService;
 
     @Operation(summary = "Request to friend", description = "User can send request to friend")
-    @PostMapping("/request/{userId}")
+    @PostMapping("/{userId}")
     public SimpleResponse requestToFriend(@PathVariable Long userId) {
         return userService.requestToFriend(userId);
     }
@@ -51,7 +51,7 @@ public class FriendsApi {
     }
 
     @Operation(summary = "Get Friend Profile", description = "User can get friend profile")
-    @GetMapping("profile/{userId}")
+    @GetMapping("/{userId}")
     public UserFriendProfileResponse getFriendProfile(@PathVariable Long userId) {
         return userService.getFriendProfile(userId);
     }
@@ -69,7 +69,7 @@ public class FriendsApi {
     }
 
     @Operation(summary = "Get common user profile", description = "User can get common user profile")
-    @GetMapping("/common_profile/{userId}")
+    @GetMapping("/profile/{userId}")
     public CommonUserProfileResponse getCommonUserProfile(@PathVariable Long userId) {
         return userService.getCommonFriendProfile(userId);
     }
