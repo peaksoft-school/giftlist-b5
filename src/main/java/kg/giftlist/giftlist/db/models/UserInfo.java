@@ -22,7 +22,7 @@ public class UserInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userInfo_gen")
-    @SequenceGenerator(name = "userInfo_gen",sequenceName = "userInfo_seq", allocationSize = 1)
+    @SequenceGenerator(name = "userInfo_gen",sequenceName = "userInfo_seq", initialValue = 3, allocationSize = 1)
     private Long id;
 
     private String city;

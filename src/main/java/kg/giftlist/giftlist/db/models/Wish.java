@@ -49,7 +49,7 @@ public class Wish {
     private User user;
     public Long getUserId(){
        return user.getId();
-   }
+    }
 
     @ManyToOne
     @JsonIgnore

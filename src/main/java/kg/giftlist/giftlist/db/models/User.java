@@ -12,6 +12,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import static javax.persistence.CascadeType.*;
+
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
@@ -64,7 +66,7 @@ public class User implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Gift> gifts = new ArrayList<>();
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToOne(cascade = {ALL}, mappedBy = "user")
     private Booking booking;
 
     @OneToOne(cascade = CascadeType.ALL)
