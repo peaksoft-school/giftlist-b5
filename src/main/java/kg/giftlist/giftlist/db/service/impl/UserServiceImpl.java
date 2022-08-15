@@ -84,6 +84,9 @@ public class UserServiceImpl implements UserService{
         logger.info("User successfully logged in");
         return new AuthResponse(
                 user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getPhoto(),
                 user.getEmail(),
                 jwt,
                 user.getRole()
@@ -108,6 +111,9 @@ public class UserServiceImpl implements UserService{
         }
         return new AuthResponse(
                 user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getPhoto(),
                 user.getEmail(),
                 jwtUtils.generateJwt(user),
                 user.getRole()

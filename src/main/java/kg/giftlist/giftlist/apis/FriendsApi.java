@@ -45,9 +45,9 @@ public class FriendsApi {
     }
 
     @Operation(summary = "Delete friend", description = "User can delete friend")
-    @PostMapping("/delete/{userId}")
-    public SimpleResponse deleteFriend(@PathVariable Long userId) {
-        return userService.deleteFriend(userId);
+    @PostMapping("/{id}")
+    public SimpleResponse deleteFriend(@PathVariable Long id) {
+        return userService.deleteFriend(id);
     }
 
     @Operation(summary = "Get Friend Profile", description = "User can get friend profile")
