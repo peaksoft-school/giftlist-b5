@@ -8,33 +8,30 @@ import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 import java.util.Map;
 
-@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @CrossOrigin
-@Tag(name = "AWS S3 API", description = "Any user can upload, download or delete files")
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "AWS S3 API", description = "Any user can upload, delete files")
+@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @RequestMapping("/api/file")
-@Tag(name = "Upload file to AWS", description = "Any user can upload, delete files from AWS")
 public class FileStorageApi {
 
     private final StorageService s3service;
 
-    @PostMapping(
-            path = "/upload",
-            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    @Operation(summary = "Upload file", description = "User can upload file")
+    @Operation(summary = "Upload file", description = "Any user can upload file")
+    @PostMapping(path = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     Map<String, String> upload(@RequestPart(name = "file", required = false) MultipartFile file) throws IOException {
         return s3service.upload(file);
     }
 
+    @Operation(summary = "Delete file", description = "Any user can delete file")
     @DeleteMapping("/delete")
-    @Operation(summary = "Delete file", description = "User can delete file")
     Map<String, String> delete(@RequestParam String fileLink) {
         return s3service.delete(fileLink);
     }
+
 }
