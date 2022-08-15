@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.dto.mapper;
-
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.dto.user.UserChangePasswordRequest;
 import kg.giftlist.giftlist.dto.user.UserRequest;
@@ -50,7 +49,7 @@ public class UserEditMapper {
               adminUserGetAllResponse.setCountGift(user.getGifts().size());
               adminUserGetAllResponse.setFirst_name(user.getFirstName());
               adminUserGetAllResponse.setLast_name(user.getLastName());
-              adminUserGetAllResponse.setPhoto(user.getUserInfo().getPhoto());
+              adminUserGetAllResponse.setPhoto(user.getPhoto());
 
               return adminUserGetAllResponse;
           }

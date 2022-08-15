@@ -39,6 +39,7 @@ public class Wish {
     private Boolean isHidden;
 
     @ManyToOne
+    @JsonIgnore
     private Booking booking;
 
     @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
@@ -46,11 +47,12 @@ public class Wish {
     @NotNull(message = "User not set")
     @JsonIgnore
     private User user;
-   public Long getUserId(){
+    public Long getUserId(){
        return user.getId();
-   }
+    }
 
     @ManyToOne
+    @JsonIgnore
     private User fromUser;
 
     @ManyToOne(targetEntity = Holiday.class, fetch = FetchType.LAZY,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST})

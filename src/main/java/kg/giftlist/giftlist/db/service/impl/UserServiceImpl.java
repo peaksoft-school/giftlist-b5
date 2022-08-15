@@ -10,7 +10,10 @@ import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
 import kg.giftlist.giftlist.dto.user.*;
+import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
+import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.enums.Role;
+import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.IsEmptyException;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.models.User;
@@ -32,6 +35,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,6 +86,9 @@ public class UserServiceImpl implements UserService{
         logger.info("User successfully logged in");
         return new AuthResponse(
                 user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getPhoto(),
                 user.getEmail(),
                 jwt,
                 user.getRole()
@@ -106,6 +113,9 @@ public class UserServiceImpl implements UserService{
         }
         return new AuthResponse(
                 user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getPhoto(),
                 user.getEmail(),
                 jwtUtils.generateJwt(user),
                 user.getRole()
@@ -125,15 +135,9 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserProfileResponse findById(Long userId) {
-        if (userId != null) {
-            User user = findByUserId(userId);
-            return viewMapper.viewUserProfile(user);
-        } else {
-            throw new NotFoundException(
-                    String.format("not found=%s id", userId)
-            );
-        }
+    public UserProfileResponse findById() {
+        User user1 = getAuthenticatedUser();
+            return viewMapper.viewUserProfile(user1);
     }
 
     @Override
@@ -178,4 +182,102 @@ public class UserServiceImpl implements UserService{
                 new ForbiddenException("User not found!"));
     }
 
+    @Override
+    @Transactional
+    public SimpleResponse requestToFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        if (friend.getRequestToFriends().contains(user)) {
+            throw new AlreadyExistException("Request already sent");
+        }
+        friend.addRequestToFriend(user);
+        return new SimpleResponse("Success","Request to friend successfully send");
+    }
+
+    @Override
+    @Transactional
+    public SimpleResponse cancelRequestToFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        if (friend.getRequestToFriends().contains(user)) {
+            friend.getRequestToFriends().remove(user);
+        }else {
+            throw new NotFoundException("No request to friend");
+        }
+        return new SimpleResponse("Success","Request to friend successfully cancel");
+    }
+
+    @Override
+    @Transactional
+    public SimpleResponse acceptToFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        if (user.getRequestToFriends().contains(friend)) {
+            friend.acceptToFriend(user);
+            user.getRequestToFriends().remove(friend);
+            user.acceptToFriend(friend);
+        }else {
+            throw new AlreadyExistException("You are already friend");
+        }
+        return new SimpleResponse("Accepted","Successfully accept to friend");
+    }
+
+    @Override
+    @Transactional
+    public SimpleResponse rejectFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        if (user.getRequestToFriends().contains(friend)) {
+            user.getRequestToFriends().remove(friend);
+        }else {
+            throw new NotFoundException("You have not request to reject");
+        }
+        return new SimpleResponse("Rejected","Successfully rejected");
+    }
+
+    @Override
+    @Transactional
+    public SimpleResponse deleteFriend(Long friendId) {
+        User user = getAuthenticatedUser();
+        User friend = findByUserId(friendId);
+        if (user.getFriends().contains(friend)) {
+            friend.getFriends().remove(user);
+            user.getFriends().remove(friend);
+        }else {
+            throw new NotFoundException("You have not friend with name "+friend.getFirstName());
+        }
+        return new SimpleResponse("Deleted","Successfully deleted");
+    }
+
+    @Override
+    public UserFriendProfileResponse getFriendProfile(Long friendId) {
+        if (friendId != null) {
+            User friend = findByUserId(friendId);
+            return viewMapper.viewFriendProfile(friend);
+        } else {
+            throw new NotFoundException(
+                    String.format("not found=%s id", friendId)
+            );
+        }
+    }
+
+    @Override
+    public List<UserFriendProfileResponse> getAllFriends() {
+        User user = getAuthenticatedUser();
+        return viewMapper.getAllFriends(userRepo.findAllFriends(user.getId()));
+    }
+
+    @Override
+    public List<UserFriendProfileResponse> getAllRequestToFriends() {
+        User user = getAuthenticatedUser();
+        return viewMapper.getAllFriends(userRepo.findAllRequestToFriends(user.getId()));
+    }
+
+    @Override
+    public CommonUserProfileResponse getCommonFriendProfile(Long userId) {
+
+        User user = userRepo.findById(userId).orElseThrow(() ->
+                new NotFoundException("User with id "+userId+" not found"));
+        return viewMapper.viewCommonFriendProfile(user);
+    }
 }

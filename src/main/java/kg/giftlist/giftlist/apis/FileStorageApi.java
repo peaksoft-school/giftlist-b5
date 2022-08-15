@@ -4,52 +4,34 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.config.s3.StorageService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Map;
 
-@RestController
-@RequestMapping("api/files")
-@RequiredArgsConstructor
 @CrossOrigin
-@Tag(name = "AWS S3 API", description = "Any user can upload, download or delete files")
+@RestController
+@RequiredArgsConstructor
+@Tag(name = "AWS S3 API", description = "Any user can upload, delete files")
+@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+@RequestMapping("/api/file")
 public class FileStorageApi {
 
-    private final StorageService storageService;
+    private final StorageService s3service;
 
-    @Operation(
-            summary = "Upload file",
-            description = "for upload file to s3")
-    @PostMapping(
-            path = "{userProfileId}/image/upload",
-            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity<String> uploadFile(@RequestParam(value = "files") MultipartFile file) {
-        return new ResponseEntity<>(storageService.uploadFile(file), HttpStatus.OK);
+    @Operation(summary = "Upload file", description = "Any user can upload file")
+    @PostMapping(path = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    Map<String, String> upload(@RequestPart(name = "file", required = false) MultipartFile file) throws IOException {
+        return s3service.upload(file);
     }
 
-    @Operation(
-            summary = "Download file",
-            description = "Downloading file from application")
-    @GetMapping("download/{fileName}")
-    public ResponseEntity<byte[]> downloadFile(@PathVariable String fileName) {
-        byte[] data = storageService.downloadFile(fileName);
-
-        return (ResponseEntity
-                .ok().header("Content-Disposition", "attachment; filename=" + fileName))
-                .body(data);
+    @Operation(summary = "Delete file", description = "Any user can delete file")
+    @DeleteMapping("/delete")
+    Map<String, String> delete(@RequestParam String fileLink) {
+        return s3service.delete(fileLink);
     }
 
-    @Operation(
-            summary = "Delete file",
-            description = "Deleting file from application")
-    @DeleteMapping("remove/{fileName}")
-    public ResponseEntity<?> deleteFile(@PathVariable String fileName) {
-        storageService.deleteFile(fileName);
-        return new ResponseEntity<>("successfully exception", HttpStatus.OK);
-    }
 }

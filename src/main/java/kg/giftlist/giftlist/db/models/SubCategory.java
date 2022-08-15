@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.db.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +22,7 @@ public class SubCategory {
     private String name;
 
     @ManyToOne
+    @JsonIgnore
     private Category category;
 
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/public")
 @RequiredArgsConstructor
 @CrossOrigin
-@Tag(name = "Authentication API", description = "Users with role \"Admin\", \"User\" can authenticate")
+@Tag(name = "Authentication API", description = "Any users can authenticate")
 public class AuthApi {
     private final UserServiceImpl service;
 

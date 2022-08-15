@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.db.models;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -13,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+
+import static javax.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "users")
@@ -43,12 +44,15 @@ public class User implements UserDetails {
     private Boolean isBlock;
 
     @Enumerated(EnumType.STRING)
+    @Transient
     private FriendStatus friendStatus;
 
-    @OneToMany
-    private List<RequestToFriends> requestToFriends = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "request_to_friends")
+    private List<User> requestToFriends = new ArrayList<>();
 
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name = "friends")
     private List<User> friends = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
@@ -63,14 +67,12 @@ public class User implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Gift> gifts = new ArrayList<>();
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToOne(cascade = {ALL}, mappedBy = "user")
     private Booking booking;
 
     @OneToOne(cascade = CascadeType.ALL)
     private UserInfo userInfo;
 
-    @JsonIgnore
-    @Transient
     private String photo;
 
     @Override
@@ -110,4 +112,17 @@ public class User implements UserDetails {
         this.role = role;
     }
 
+    public void addRequestToFriend(User user) {
+        if (requestToFriends==null) {
+            requestToFriends = new ArrayList<>();
+        }
+        requestToFriends.add(user);
+    }
+
+    public void acceptToFriend(User user) {
+        if (friends==null) {
+            friends = new ArrayList<>();
+        }
+        friends.add(user);
+    }
 }

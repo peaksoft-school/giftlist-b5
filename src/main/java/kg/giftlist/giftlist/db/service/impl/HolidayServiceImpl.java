@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.db.service.serviceImpl;
+package kg.giftlist.giftlist.db.service.impl;
 
 import kg.giftlist.giftlist.db.service.HolidayService;
 import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;

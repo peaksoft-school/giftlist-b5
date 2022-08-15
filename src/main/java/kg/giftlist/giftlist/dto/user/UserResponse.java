@@ -10,7 +10,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserResponse {
+
     private Long id;
+    private String firstName;
+    private String lastName;
+    private String photo;
     private String jwt;
     private Role role;
     private String first_name;
