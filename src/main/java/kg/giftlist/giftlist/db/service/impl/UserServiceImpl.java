@@ -133,15 +133,9 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserProfileResponse findById(Long userId) {
-        if (userId != null) {
-            User user = findByUserId(userId);
-            return viewMapper.viewUserProfile(user);
-        } else {
-            throw new NotFoundException(
-                    String.format("not found=%s id", userId)
-            );
-        }
+    public UserProfileResponse findById() {
+        User user1 = getAuthenticatedUser();
+            return viewMapper.viewUserProfile(user1);
     }
 
     @Override

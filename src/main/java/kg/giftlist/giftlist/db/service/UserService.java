@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserService {
 
-    UserProfileResponse findById(Long userId);
+    UserProfileResponse findById();
 
     SimpleResponse changeUserPassword(Long userId, UserChangePasswordRequest userChangePasswordRequest);
 

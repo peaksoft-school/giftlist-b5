@@ -6,6 +6,7 @@ import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.dto.user.UserProfileResponse;
 import kg.giftlist.giftlist.db.service.AdminService;
 import kg.giftlist.giftlist.db.service.UserService;
+import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -32,8 +33,8 @@ public class AdminApi {
 
     @Operation(summary = "Get user profile ", description = "Find by id user profile")
     @GetMapping("/{userId}")
-    public UserProfileResponse getUserProfile(@PathVariable Long userId) {
-        return userService.findById(userId);
+    public CommonUserProfileResponse getUserProfile(@PathVariable Long userId) {
+        return userService.getCommonFriendProfile(userId);
     }
 
     @Operation(summary = "block user", description = "block user by id")

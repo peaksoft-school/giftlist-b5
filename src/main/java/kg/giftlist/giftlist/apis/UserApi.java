@@ -13,29 +13,29 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/users/profile")
 @RequiredArgsConstructor
 @CrossOrigin
-@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+@PreAuthorize("hasAnyAuthority('USER')")
 @Tag(name = "User API", description = "Users with role  \"User\" can create, update profile")
 public class UserApi {
 
     private final UserInfoServiceImpl userInfoService;
     private final UserServiceImpl userService;
 
-    @Operation(summary = "Create ", description = "Create user profile")
+    @Operation(summary = "Add user profile information", description = "User can add profile information")
     @PostMapping("/create")
     public UserInfoResponse saveUserProfile(@RequestBody UserInfoRequest userInfoRequest) {
         return userInfoService.create(userInfoRequest);
     }
 
-    @Operation(summary = "update ", description = "User can update profile")
+    @Operation(summary = "Update user profile information ", description = "User can update profile information")
     @PostMapping("/edit/{userInfoId}")
     public UserInfoResponse updateUserProfile(@PathVariable Long userInfoId, @RequestBody UserInfoRequest userInfoRequest) {
         return userInfoService.update(userInfoId, userInfoRequest);
     }
 
     @Operation(summary = "Get user profile ", description = "Find by id user profile")
-    @GetMapping("/{userId}")
-    public UserProfileResponse getUserProfile(@PathVariable Long userId) {
-        return userService.findById(userId);
+    @GetMapping("/me")
+    public UserProfileResponse getUserProfile() {
+        return userService.findById();
     }
 
     @Operation(summary = "Change password ", description = "User can change password")
