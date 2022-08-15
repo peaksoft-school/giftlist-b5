@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("api/admin/users")
 @CrossOrigin
 @PreAuthorize("hasAnyAuthority('ADMIN')")
-@Tag(name = "Admin", description = "Admin accessible apis")
+@Tag(name = "Admin API", description = "User with role 'Admin'  can block, unblock and get users")
 public class AdminApi {
 
     private final AdminService adminService;

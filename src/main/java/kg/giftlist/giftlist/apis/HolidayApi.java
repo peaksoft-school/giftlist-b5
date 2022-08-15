@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("api/holiday")
 @CrossOrigin
 @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-@Tag(name = "HOLIDAY API", description = "Any user can create, update or delete holidays")
+@Tag(name = "Holiday API", description = "Any user can create, update or delete holidays")
 public class HolidayApi {
 
     private final HolidayService service;
