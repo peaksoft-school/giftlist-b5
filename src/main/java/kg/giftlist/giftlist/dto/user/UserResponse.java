@@ -1,7 +1,7 @@
 package kg.giftlist.giftlist.dto.user;
 
+import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.enums.Role;
-import kg.giftlist.giftlist.models.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
