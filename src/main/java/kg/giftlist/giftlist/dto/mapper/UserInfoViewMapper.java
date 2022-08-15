@@ -18,7 +18,7 @@ public class UserInfoViewMapper {
         userInfoResponse.setFirstName(user.getFirstName());
         userInfoResponse.setLastName(user.getLastName());
         userInfoResponse.setEmail(user.getEmail());
-        userInfoResponse.setPhoto(userInfo.getPhoto());
+        userInfoResponse.setPhoto(user.getPhoto());
         userInfoResponse.setCity(userInfo.getCity());
         userInfoResponse.setDateOfBirth(userInfo.getDateOfBirth());
         userInfoResponse.setPhoneNumber(userInfo.getPhoneNumber());

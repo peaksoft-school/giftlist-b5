@@ -32,6 +32,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         User user = getAuthenticatedUser();
         user.setFirstName(userInfoRequest.getFirstName());
         user.setLastName(userInfoRequest.getLastName());
+        user.setPhoto(userInfoRequest.getPhoto());
         userRepository.save(user);
         UserInfo userInfo = new UserInfo(userInfoRequest);
         userInfo.setUser(user);
@@ -53,6 +54,11 @@ public class UserInfoServiceImpl implements UserInfoService {
         String newUserLastName = userInfoRequest.getLastName();
         if (!currentUserLastName.equals(newUserLastName)) {
             user.setLastName(newUserLastName);
+        }
+        String currentPhoto = user.getLastName();
+        String newPhoto = userInfoRequest.getLastName();
+        if (!currentPhoto.equals(newPhoto)) {
+            user.setPhoto(newPhoto);
         }
         UserInfo userInfo = findByUserInfoId(userInfoId);
         userInfoEditMapper.update(userInfo, userInfoRequest);

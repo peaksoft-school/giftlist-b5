@@ -1,8 +1,15 @@
 package kg.giftlist.giftlist.dto.mapper;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.config.security.JwtUtils;
+import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
+import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
+import kg.giftlist.giftlist.enums.FriendStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+import javax.ws.rs.ForbiddenException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +17,11 @@ import java.util.List;
 public class UserViewMapper {
 
     private final JwtUtils utils;
+    private final UserRepository userRepository;
 
-    public UserViewMapper(JwtUtils utils) {
+    public UserViewMapper(JwtUtils utils, UserRepository userRepository) {
         this.utils = utils;
+        this.userRepository = userRepository;
     }
 
     public UserResponse viewUser(User user) {
@@ -21,6 +30,9 @@ public class UserViewMapper {
         }
         UserResponse response = new UserResponse();
         response.setId(user.getId());
+        response.setFirstName(user.getFirstName());
+        response.setLastName(user.getLastName());
+        response.setPhoto(user.getPhoto());
         String jwt = utils.generateJwt(user);
         response.setJwt(jwt);
         response.setRole(user.getRole());
@@ -44,5 +56,61 @@ public class UserViewMapper {
         userProfileResponse.setEmail(user.getEmail());
         userProfileResponse.setUserInfo(user.getUserInfo());
         return userProfileResponse;
+    }
+
+    public UserFriendProfileResponse viewFriendProfile(User user) {
+        User user1 = getAuthenticatedUser();
+        UserFriendProfileResponse userFriendProfileResponse = new UserFriendProfileResponse();
+        userFriendProfileResponse.setUserId(user.getId());
+        userFriendProfileResponse.setPhoto(user.getPhoto());
+        userFriendProfileResponse.setFirstName(user.getFirstName());
+        userFriendProfileResponse.setLastName(user.getLastName());
+        userFriendProfileResponse.setWishCount(user.getWishes().size());
+        userFriendProfileResponse.setHolidayCount(user.getHolidays().size());
+        if (user1.getRequestToFriends().contains(user)) {
+            userFriendProfileResponse.setFriendStatus(FriendStatus.REQUEST_TO_FRIEND);
+        }else if (user1.getFriends().contains(user)) {
+            userFriendProfileResponse.setFriendStatus(FriendStatus.FRIEND);
+        }else {
+            userFriendProfileResponse.setFriendStatus(FriendStatus.NOT_FRIEND);
+        }
+        return userFriendProfileResponse;
+    }
+
+    public List<UserFriendProfileResponse> getAllFriends(List<User> users) {
+        List<UserFriendProfileResponse> responses = new ArrayList<>();
+        for (User user : users) {
+            responses.add(viewFriendProfile(user));
+        }
+        return responses;
+    }
+
+    public CommonUserProfileResponse viewCommonFriendProfile(User user) {
+         User user1 = getAuthenticatedUser();
+         CommonUserProfileResponse commonUserProfileResponse = new CommonUserProfileResponse();
+         commonUserProfileResponse.setId(user.getId());
+         commonUserProfileResponse.setFirstName(user.getFirstName());
+         commonUserProfileResponse.setLastName(user.getLastName());
+         commonUserProfileResponse.setEmail(user.getEmail());
+         commonUserProfileResponse.setPhoto(user.getPhoto());
+         commonUserProfileResponse.setUserInfo(user.getUserInfo());
+         commonUserProfileResponse.setWishes(user.getWishes());
+         commonUserProfileResponse.setHolidays(user.getHolidays());
+         commonUserProfileResponse.setGifts(user.getGifts());
+        if (user1.getRequestToFriends().contains(user)) {
+            commonUserProfileResponse.setFriendStatus(FriendStatus.REQUEST_TO_FRIEND);
+        }else if (user1.getFriends().contains(user)) {
+            commonUserProfileResponse.setFriendStatus(FriendStatus.FRIEND);
+        }else {
+            commonUserProfileResponse.setFriendStatus(FriendStatus.NOT_FRIEND);
+        }
+        return commonUserProfileResponse;
+    }
+
+    public User getAuthenticatedUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String login = authentication.getName();
+        return userRepository.findByEmail(login).orElseThrow(() ->
+                new ForbiddenException("User not found!"));
     }
 }

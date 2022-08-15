@@ -19,13 +19,13 @@ public class BookingApi {
     private final BookingServiceImpl bookingService;
 
     @Operation(summary = "Create Gift booking", description = "The user can booking only gift.")
-    @PostMapping("/create/{giftId}")
+    @PostMapping("create/{giftId}")
     public BookingResponse createBookingGift(@PathVariable Long giftId){
         return bookingService.createBookingGift(giftId);
     }
 
     @Operation(summary = "Cancel Gift booking", description = "The user can cancel only gift booking.")
-    @PostMapping("/cancel/{giftId}")
+    @PostMapping("cancel/{giftId}")
     public SimpleResponse cancelBookingGift(@PathVariable Long giftId){
         return bookingService.cancelBookingGift(giftId);
     }

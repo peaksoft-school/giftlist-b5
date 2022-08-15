@@ -42,6 +42,7 @@ public class Gift {
     private Status status;
 
     @ManyToOne(cascade = ALL)
+    @JsonIgnore
     private Booking booking;
 
     @OneToOne

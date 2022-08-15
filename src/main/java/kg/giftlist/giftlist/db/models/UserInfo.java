@@ -25,8 +25,6 @@ public class UserInfo {
     @SequenceGenerator(name = "userInfo_gen",sequenceName = "userInfo_seq", initialValue = 3, allocationSize = 1)
     private Long id;
 
-    private String photo;
-
     private String city;
 
     @Past
@@ -58,7 +56,6 @@ public class UserInfo {
     private User user;
 
     public UserInfo(UserInfoRequest userInfoRequest) {
-        this.photo = userInfoRequest.getPhoto();
         this.city = userInfoRequest.getCity();
         this.dateOfBirth = userInfoRequest.getDateOfBirth();
         this.phoneNumber = userInfoRequest.getPhoneNumber();

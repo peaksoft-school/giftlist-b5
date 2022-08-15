@@ -16,36 +16,37 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/wish")
 @CrossOrigin
-@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-@Tag(name = "WISH LIST API", description = "User can create, update or delete wishes!")
+@PreAuthorize("hasAnyAuthority('USER')")
+@Tag(name = "Wish API", description = "Users with role  \"User\"  can create, update or delete wish")
 public class WishApi {
 
     private final WishServiceImpl wishService;
 
-    @Operation(summary = "Create wishlist", description = "User can create wishlist")
+    @Operation(summary = "Create wish", description = "User can create wish")
     @PostMapping
     public WishResponse create(@RequestBody WishRequest request) {
         return wishService.create(request);
     }
 
-    @Operation(summary = "Update wishlist", description = "User can update information only own wishlist, which  was created before")
+    @Operation(summary = "Update wish", description = "User can update information only own wish, which was created before")
     @PutMapping("/{wishId}")
-    public WishResponse update(@PathVariable Long id, @RequestBody WishRequest request) {
-        return wishService.update(id, request);
+    public WishResponse update(@PathVariable Long wishId, @RequestBody WishRequest request) {
+        return wishService.update(wishId, request);
     }
 
-    @Operation(summary = "Find by ID", description = "User can search wish by ID")
+    @Operation(summary = "Get wish", description = "User can get wish by id")
     @GetMapping("/{wishId}")
-    public WishResponse findById(@PathVariable Long id) {
-        return wishService.findById(id);
+    public WishResponse findById(@PathVariable Long wishId) {
+        return wishService.findById(wishId);
     }
 
-    @Operation(summary = "Delete wishlist", description = "User can delete wishlist, when we delete wish, holiday and user will not be deleted")
+    @Operation(summary = "Delete wish", description = "User can delete wishlist, when we delete wish, holiday and user will not be deleted")
     @DeleteMapping("/{wishId}")
-    public SimpleResponse delete(@PathVariable Long id) {
-        return wishService.deleteById(id);
+    public SimpleResponse delete(@PathVariable Long wishId) {
+        return wishService.deleteById(wishId);
     }
 
+    @Operation(summary = "Get all wishes", description = "User can get all wishes")
     @GetMapping
     public List<WishResponse> getAllWishes() {
         return wishService.getAllWishes();
