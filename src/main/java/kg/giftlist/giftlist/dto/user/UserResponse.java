@@ -17,14 +17,11 @@ public class UserResponse {
     private String photo;
     private String jwt;
     private Role role;
-    private String first_name;
-    private String last_name;
-    private String photo;
 
     public UserResponse(User user) {
         this.id = user.getId();
-        this.first_name= user.getFirstName();
-        this.last_name= user.getLastName();
-        this.photo= user.getUserInfo().getPhoto();
+        this.firstName= user.getFirstName();
+        this.lastName= user.getLastName();
+        this.photo= user.getPhoto();
     }
 }

@@ -5,7 +5,9 @@ import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
+import kg.giftlist.giftlist.enums.Status;
 
+import java.sql.Statement;
 import java.util.List;
 
 public interface GiftService {

@@ -4,6 +4,7 @@ import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
+import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.models.Category;
 import kg.giftlist.giftlist.db.models.Gift;
