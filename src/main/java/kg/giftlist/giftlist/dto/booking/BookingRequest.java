@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class BookingRequest {
 
-    private Long giftId;
+    private Long giftOrWishId;
 }

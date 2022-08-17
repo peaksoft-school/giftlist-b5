@@ -30,4 +30,16 @@ public class BookingApi {
         return bookingService.cancelBookingGift(giftId);
     }
 
+    @Operation(summary = "Create Wish booking", description = "The user can booking only wish.")
+    @PostMapping("wish-create/{wishId}")
+    public BookingResponse createBookingWish(@PathVariable Long wishId){
+        return bookingService.createBookingWish(wishId);
+    }
+
+    @Operation(summary = "Cancel Wish booking", description = "The user can cancel only wish booking.")
+    @PostMapping("wish-cancel/{wishId}")
+    public SimpleResponse cancelBookingWish(@PathVariable Long wishId){
+        return bookingService.cancelBookingWish(wishId);
+    }
+
 }

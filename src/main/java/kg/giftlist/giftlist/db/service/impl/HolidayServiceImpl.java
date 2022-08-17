@@ -7,6 +7,7 @@ import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayEditMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
+import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
 import kg.giftlist.giftlist.db.models.Holiday;
 import kg.giftlist.giftlist.db.models.User;
@@ -41,13 +42,15 @@ public class HolidayServiceImpl implements HolidayService {
     }
 
     public HolidayResponse update(Long id, HolidayRequest holidayRequest) {
-        Holiday holiday = holidayRepository.findById(id).get();
+        Holiday holiday = holidayRepository.findById(id).orElseThrow(() ->
+                new NotFoundException("Holiday with id = " + id + " not found!"));
         editMapper.update(holiday, holidayRequest);
         return viewMapper.viewHoliday(holidayRepository.save(holiday));
     }
 
     public HolidayResponse findById(Long id) {
-        Holiday holiday = holidayRepository.findById(id).get();
+        Holiday holiday = holidayRepository.findById(id).orElseThrow(() ->
+                new NotFoundException("Holiday with id = " + id + " not found!"));
         return viewMapper.viewHoliday(holiday);
     }
 

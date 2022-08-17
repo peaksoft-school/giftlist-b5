@@ -4,7 +4,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserGiftResponse {
+public class UserGiftWishResponse {
 
     private Long userId;
     private String firstName;
