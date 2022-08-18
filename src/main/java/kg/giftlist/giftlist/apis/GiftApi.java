@@ -2,14 +2,10 @@ package kg.giftlist.giftlist.apis;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kg.giftlist.giftlist.db.service.CategoryService;
-import kg.giftlist.giftlist.db.service.SubCategoryService;
 import kg.giftlist.giftlist.db.service.impl.GiftServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
-import kg.giftlist.giftlist.dto.categories.CategoryResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
-import kg.giftlist.giftlist.dto.subCategories.SubCategoriesResponse;
 import kg.giftlist.giftlist.enums.Status;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -26,8 +22,6 @@ import java.util.List;
 public class GiftApi {
 
     private final GiftServiceImpl giftService;
-    private final CategoryService categoryService;
-    private final SubCategoryService subCategoryService;
 
     @Operation(summary = "Create gift", description = "The user can create a gift")
     @PostMapping
@@ -57,18 +51,6 @@ public class GiftApi {
     @GetMapping
     public List<GiftResponse> getAllGifts() {
         return giftService.getAll();
-    }
-
-    @Operation(summary = "Get all categories", description = "User can get all categories")
-    @GetMapping("/findAll/categories")
-    public List<CategoryResponse> getAllCategories() {
-        return categoryService.findAllCategories();
-    }
-
-    @Operation(summary = "SubCategory",description = "User can get all subCategories")
-    @GetMapping("/{categoryId}")
-    public List<SubCategoriesResponse> getAllSubCategoriesByCategoryId(@PathVariable Long categoryId){
-        return subCategoryService.getAllSubCategories(categoryId);
     }
 
 }

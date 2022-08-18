@@ -28,7 +28,10 @@ public class SubCategoryServiceImpl implements SubCategoryService {
         List<SubCategoriesResponse> subCategoryResponses = new ArrayList<>();
 
         for (SubCategory subCategory:subCategories) {
-            subCategoryResponses.add(new SubCategoriesResponse(subCategory));
+            SubCategoriesResponse subCategoryResponse = new SubCategoriesResponse();
+            subCategoryResponse.setId(subCategory.getId());
+            subCategoryResponse.setName(subCategory.getName());
+            subCategoryResponses.add(subCategoryResponse);
         }
         return subCategoryResponses;
     }
