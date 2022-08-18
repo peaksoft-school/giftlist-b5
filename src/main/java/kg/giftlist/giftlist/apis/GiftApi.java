@@ -53,7 +53,7 @@ public class GiftApi {
         return giftService.getAll();
     }
 
-    @GetMapping("/")
+    @GetMapping("/filter")
     public List<GiftResponse> filter(
             @RequestParam(required = false,defaultValue = "all") String search,
             @RequestParam(required = false) Status status,
