@@ -1,5 +1,10 @@
 package kg.giftlist.giftlist.dto.mapper.wish;
 
+import kg.giftlist.giftlist.db.models.Booking;
+import kg.giftlist.giftlist.db.models.Complaint;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.dto.booking.BookingResponse;
+import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.db.models.Wish;
 import org.springframework.stereotype.Component;
@@ -34,5 +39,17 @@ public class WishViewMapper {
             responses.add(viewWish(wish));
         }
         return responses;
+    }
+
+
+    public ComplaintResponse viewComplaint(Complaint complaint, User user) {
+        if (complaint==null){
+            return null;
+        }
+        ComplaintResponse complaintResponse = new ComplaintResponse();
+        complaintResponse.setFromUserName(user.getFirstName());
+        complaintResponse.setFromUserLastName(user.getLastName());
+        complaintResponse.setFromUserPhoto(user.getPhoto());
+        return complaintResponse;
     }
 }
