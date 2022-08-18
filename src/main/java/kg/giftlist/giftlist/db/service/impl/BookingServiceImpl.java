@@ -1,11 +1,14 @@
 package kg.giftlist.giftlist.db.service.impl;
 import kg.giftlist.giftlist.db.models.Wish;
+import kg.giftlist.giftlist.db.repositories.BookingRepository;
 import kg.giftlist.giftlist.db.repositories.WishRepository;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftCartResponse;
+import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishCardResponse;
+import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.models.Booking;
@@ -20,6 +23,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.ws.rs.ForbiddenException;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -30,6 +34,7 @@ public class BookingServiceImpl {
     private final GiftRepository giftRepository;
     private final WishRepository wishRepository;
     private final WishViewMapper wishViewMapper;
+    private final BookingRepository bookingRepository;
 
     @Transactional
     public GiftCartResponse createBookingGift(Long giftId) {
@@ -113,5 +118,17 @@ public class BookingServiceImpl {
         }
         return new SimpleResponse("Canceled", "Successfully canceled ");
     }
+
+    public List<WishResponse> getAllBookedWishes() {
+        User user = getAuthenticatedUser();
+        return wishViewMapper.getAllWishes(bookingRepository.getAllUserBookingWishes(user.getId()));
+    }
+
+    public List<GiftResponse> getAllBookedGift() {
+        User user = getAuthenticatedUser();
+        return giftViewMapper.getAllGifts(bookingRepository.getAllUserBookingGifts(user.getId()));
+    }
+
+
 
 }
