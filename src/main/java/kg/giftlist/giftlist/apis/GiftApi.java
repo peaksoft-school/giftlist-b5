@@ -2,6 +2,8 @@ package kg.giftlist.giftlist.apis;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kg.giftlist.giftlist.db.models.Category;
+import kg.giftlist.giftlist.db.service.CategoryService;
 import kg.giftlist.giftlist.db.service.impl.GiftServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
@@ -22,6 +24,7 @@ import java.util.List;
 public class GiftApi {
 
     private final GiftServiceImpl giftService;
+    private final CategoryService categoryService;
 
     @Operation(summary = "Create gift", description = "The user can create a gift")
     @PostMapping
@@ -51,6 +54,12 @@ public class GiftApi {
     @GetMapping
     public List<GiftResponse> getAllGifts() {
         return giftService.getAll();
+    }
+
+    @Operation(summary = "Get all categories", description = "User can get all categories")
+    @GetMapping("/findAll/categories")
+    public List<Category> getAllCategories() {
+        return categoryService.findAllCategories();
     }
 
 }
