@@ -81,10 +81,7 @@ public class WishServiceImpl implements WishService {
         if (wish.getBooking()!=null) {
             User user = wish.getBooking().getUser();
             user.getBooking().getWishes().remove(wish);
-            Booking booking = wish.getBooking();
-            booking.setUser(null);
-            user.setBooking(null);
-            bookingRepository.delete(booking);
+            wish.setBooking(null);
         }
         wishRepository.deleteById(id);
         return new SimpleResponse("Deleted!", "Wish successfully deleted!");

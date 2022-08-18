@@ -64,6 +64,7 @@ public class GiftViewMapper {
         giftCartResponse.setStatus(gift.getStatus());
         giftCartResponse.setDescription(gift.getDescription());
         giftCartResponse.setCategory(gift.getCategory());
+        giftCartResponse.setSubCategory(gift.getSubCategory());
         giftCartResponse.setBooking(gift.getBooking());
         return giftCartResponse;
     }

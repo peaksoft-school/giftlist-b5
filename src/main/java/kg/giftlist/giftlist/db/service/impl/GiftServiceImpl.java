@@ -39,7 +39,7 @@ public class GiftServiceImpl implements GiftService {
         gift.setCategory(category);
         SubCategory subCategory = subCategoryRepository.findById(request.getSubCategoryId()).orElseThrow(() ->
                 new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found"));
-        category.setSubCategories(List.of(subCategory));
+        gift.setSubCategory(subCategory);
         user.setGifts(List.of(gift));
         gift.setUser(user);
         gift.setCreatedAt(LocalDate.now());
@@ -77,10 +77,7 @@ public class GiftServiceImpl implements GiftService {
         if (gift.getBooking()!=null) {
             User user = gift.getBooking().getUser();
             user.getBooking().getGifts().remove(gift);
-            Booking booking = gift.getBooking();
-            booking.setUser(null);
-            user.setBooking(null);
-            bookingRepository.delete(booking);
+            gift.setBooking(null);
         }
         giftRepository.deleteById(giftId);
         return new SimpleResponse("Deleted!", "Gift successfully deleted!");

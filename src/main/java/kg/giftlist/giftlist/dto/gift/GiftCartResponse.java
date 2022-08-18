@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.gift;
+import kg.giftlist.giftlist.db.models.SubCategory;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Category;
@@ -17,5 +18,6 @@ public class GiftCartResponse {
     private LocalDate createdAt;
     private String description;
     private Category category;
+    private SubCategory subCategory;
     private Booking booking;
 }

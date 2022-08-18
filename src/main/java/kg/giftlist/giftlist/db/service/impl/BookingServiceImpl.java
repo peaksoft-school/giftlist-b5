@@ -2,15 +2,15 @@ package kg.giftlist.giftlist.db.service.impl;
 import kg.giftlist.giftlist.db.models.Wish;
 import kg.giftlist.giftlist.db.repositories.WishRepository;
 import kg.giftlist.giftlist.dto.SimpleResponse;
-import kg.giftlist.giftlist.dto.booking.BookingResponse;
+import kg.giftlist.giftlist.dto.gift.GiftCartResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
+import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.db.repositories.BookingRepository;
 import kg.giftlist.giftlist.db.repositories.GiftRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
@@ -30,10 +30,9 @@ public class BookingServiceImpl {
     private final GiftRepository giftRepository;
     private final WishRepository wishRepository;
     private final WishViewMapper wishViewMapper;
-    private final BookingRepository bookingRepository;
 
     @Transactional
-    public BookingResponse createBookingGift(Long giftId) {
+    public GiftCartResponse createBookingGift(Long giftId) {
         User user = getAuthenticatedUser();
         if (user.getBooking()==null) {
             Booking booking  = new Booking();
@@ -53,7 +52,7 @@ public class BookingServiceImpl {
         }else {
             user.getBooking().getGifts().add(gift);
         }
-        return giftViewMapper.viewBooking(booking,user);
+        return giftViewMapper.viewGiftCard(gift);
     }
 
     @Transactional
@@ -78,7 +77,7 @@ public class BookingServiceImpl {
     }
 
     @Transactional
-    public BookingResponse createBookingWish(Long wishId) {
+    public WishCardResponse createBookingWish(Long wishId) {
         User user = getAuthenticatedUser();
         if (user.getBooking()==null) {
             Booking booking  = new Booking();
@@ -98,7 +97,7 @@ public class BookingServiceImpl {
         }else {
             user.getBooking().getWishes().add(wish);
         }
-        return wishViewMapper.viewBooking(booking,user);
+        return wishViewMapper.viewWish(wish);
     }
 
     @Transactional
