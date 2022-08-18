@@ -1,9 +1,6 @@
 package kg.giftlist.giftlist.exception.handler;
 
-import kg.giftlist.giftlist.exception.AlreadyExistException;
-import kg.giftlist.giftlist.exception.ExceptionResponse;
-import kg.giftlist.giftlist.exception.IsEmptyException;
-import kg.giftlist.giftlist.exception.NotFoundException;
+import kg.giftlist.giftlist.exception.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -11,16 +8,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-
-    @ExceptionHandler(IsEmptyException.class)
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public ExceptionResponse handlerObjectNotFoundException(IsEmptyException e) {
-        return new ExceptionResponse(
-                HttpStatus.ACCEPTED,
-                e.getClass().getSimpleName(),
-                e.getMessage()
-        );
-    }
 
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
@@ -42,6 +29,14 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.FORBIDDEN)
     public ExceptionResponse handleForbiddenFoundException(GiftForbiddenException e) {
         return new ExceptionResponse(HttpStatus.FORBIDDEN,
+                e.getClass().getSimpleName(),
+                e.getMessage());
+    }
+
+    @ExceptionHandler(WishNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ExceptionResponse handleWishNotFoundException(WishNotFoundException e) {
+        return new ExceptionResponse(HttpStatus.NOT_FOUND,
                 e.getClass().getSimpleName(),
                 e.getMessage());
     }

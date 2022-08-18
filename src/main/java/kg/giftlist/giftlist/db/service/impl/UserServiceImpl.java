@@ -122,8 +122,8 @@ public class UserServiceImpl implements UserService{
 
     public UserResponse userRegister(UserRequest request) {
         if (userRepo.existsByEmail(request.getEmail())) {
-            throw new IsEmptyException(
-                    "this email is already have in!"
+            throw new AlreadyExistException(
+                    "Email already registered!"
             );
         }
         User user = editMapper.create(request);

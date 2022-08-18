@@ -21,25 +21,25 @@ public class FriendsApi {
     private final UserServiceImpl userService;
 
     @Operation(summary = "Request to friend", description = "User can send request to friend")
-    @PostMapping("/{userId}")
+    @PostMapping("request/{userId}")
     public SimpleResponse requestToFriend(@PathVariable Long userId) {
         return userService.requestToFriend(userId);
     }
 
     @Operation(summary = "Cancel Request to friend", description = "User can cancel request to friend")
-    @PostMapping("/cancel/{userId}")
+    @PostMapping("cancel/{userId}")
     public SimpleResponse cancelRequestToFriend(@PathVariable Long userId) {
         return userService.cancelRequestToFriend(userId);
     }
 
     @Operation(summary = "Accept request to friend", description = "User can accept request to friend")
-    @PostMapping("/accept/{userId}")
+    @PostMapping("accept/{userId}")
     public SimpleResponse acceptToFriend(@PathVariable Long userId) {
         return userService.acceptToFriend(userId);
     }
 
     @Operation(summary = "Reject request to friend", description = "User can reject request to friend ")
-    @PostMapping("/reject/{userId}")
+    @PostMapping("reject/{userId}")
     public SimpleResponse rejectFriend(@PathVariable Long userId) {
         return userService.rejectFriend(userId);
     }
@@ -63,13 +63,13 @@ public class FriendsApi {
     }
 
     @Operation(summary = "Get All Request to Friends", description = "User can get all request to friends list")
-    @GetMapping("/requests")
+    @GetMapping("requests")
     public List<UserFriendProfileResponse> getAllRequestToFriends() {
         return userService.getAllRequestToFriends();
     }
 
     @Operation(summary = "Get common user profile", description = "User can get common user profile")
-    @GetMapping("/profile/{userId}")
+    @GetMapping("profile/{userId}")
     public CommonUserProfileResponse getCommonUserProfile(@PathVariable Long userId) {
         return userService.getCommonFriendProfile(userId);
     }

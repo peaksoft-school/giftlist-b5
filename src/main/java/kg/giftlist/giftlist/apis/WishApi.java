@@ -51,4 +51,11 @@ public class WishApi {
     public List<WishResponse> getAllWishes() {
         return wishService.getAllWishes();
     }
+
+    @Operation(summary = "Add friend's wish to my wish", description = "User can add friend's wish to own wish")
+    @PostMapping("add/{wishId}")
+    public WishResponse addFriendWishToMyWish(@PathVariable Long wishId) {
+        return wishService.addToMyWish(wishId);
+    }
+
 }
