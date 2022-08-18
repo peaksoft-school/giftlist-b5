@@ -21,4 +21,6 @@ public interface GiftService {
     SimpleResponse deleteById(Long id);
 
     List<GiftResponse> getAll();
+
+    List<GiftResponse> filter(String search,Status status,Long categoryId,Long subCategoryId);
 }

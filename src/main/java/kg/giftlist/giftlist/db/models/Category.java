@@ -20,6 +20,7 @@ public class Category {
 
     private String name;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "category")
     private List<SubCategory> subCategories;
 }

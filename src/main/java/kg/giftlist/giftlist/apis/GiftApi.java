@@ -53,4 +53,13 @@ public class GiftApi {
         return giftService.getAll();
     }
 
+    @GetMapping("/")
+    public List<GiftResponse> filter(
+            @RequestParam(required = false,defaultValue = "all") String search,
+            @RequestParam(required = false) Status status,
+            @RequestParam(required = false) Long categoryId,
+            @RequestParam(required = false) Long subCategoryId){
+        return giftService.filter(search,status,categoryId,subCategoryId);
+    }
+
 }
