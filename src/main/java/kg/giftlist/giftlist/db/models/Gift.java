@@ -1,8 +1,6 @@
 package kg.giftlist.giftlist.db.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import kg.giftlist.giftlist.db.models.Category;
-import kg.giftlist.giftlist.db.models.User;
 
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.enums.Status;
@@ -47,6 +45,9 @@ public class Gift {
 
     @OneToOne
     private Category category;
+
+    @OneToOne
+    private SubCategory subCategory;
 
     @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
     @JsonIgnore

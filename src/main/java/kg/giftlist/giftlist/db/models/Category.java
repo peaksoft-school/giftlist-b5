@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.db.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +20,6 @@ public class Category {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "category")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "category")
     private List<SubCategory> subCategories;
 }

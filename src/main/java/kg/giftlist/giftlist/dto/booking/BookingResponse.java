@@ -1,5 +1,5 @@
 package kg.giftlist.giftlist.dto.booking;
-import kg.giftlist.giftlist.dto.gift.UserGiftResponse;
+import kg.giftlist.giftlist.dto.gift.UserGiftWishResponse;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 public class BookingResponse {
 
-    private UserGiftResponse userBooked;
+    private UserGiftWishResponse userBooked;
 
 }

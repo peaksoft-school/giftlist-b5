@@ -42,11 +42,10 @@ public class Wish {
     @JsonIgnore
     private Booking booking;
 
-    @ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
-    @JoinColumn(name = "users")
-    @NotNull(message = "User not set")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
     @JsonIgnore
     private User user;
+
     public Long getUserId(){
        return user.getId();
     }

@@ -2,11 +2,16 @@ package kg.giftlist.giftlist.apis;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.SimpleResponse;
-import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.db.service.impl.BookingServiceImpl;
+import kg.giftlist.giftlist.dto.gift.GiftCartResponse;
+import kg.giftlist.giftlist.dto.gift.GiftResponse;
+import kg.giftlist.giftlist.dto.wish.WishCardResponse;
+import kg.giftlist.giftlist.dto.wish.WishResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,16 +23,40 @@ public class BookingApi {
 
     private final BookingServiceImpl bookingService;
 
-    @Operation(summary = "Create Gift booking", description = "The user can booking only gift.")
-    @PostMapping("create/{giftId}")
-    public BookingResponse createBookingGift(@PathVariable Long giftId){
+    @Operation(summary = "Create Gift booking", description = "User can booking only gift.")
+    @PostMapping("gift-create/{giftId}")
+    public GiftCartResponse createBookingGift(@PathVariable Long giftId){
         return bookingService.createBookingGift(giftId);
     }
 
-    @Operation(summary = "Cancel Gift booking", description = "The user can cancel only gift booking.")
-    @PostMapping("cancel/{giftId}")
+    @Operation(summary = "Cancel Gift booking", description = "User can cancel only gift booking.")
+    @PostMapping("gift-cancel/{giftId}")
     public SimpleResponse cancelBookingGift(@PathVariable Long giftId){
         return bookingService.cancelBookingGift(giftId);
+    }
+
+    @Operation(summary = "Create Wish booking", description = "User can booking only wish.")
+    @PostMapping("wish-create/{wishId}")
+    public WishCardResponse createBookingWish(@PathVariable Long wishId){
+        return bookingService.createBookingWish(wishId);
+    }
+
+    @Operation(summary = "Cancel Wish booking", description = "User can cancel only wish booking.")
+    @PostMapping("wish-cancel/{wishId}")
+    public SimpleResponse cancelBookingWish(@PathVariable Long wishId){
+        return bookingService.cancelBookingWish(wishId);
+    }
+
+    @Operation(summary = "Get all booked wishes", description = "User can get own booked wishes.")
+    @GetMapping("wishes")
+    public List<WishResponse> getAllBookedWishes() {
+        return bookingService.getAllBookedWishes();
+    }
+
+    @Operation(summary = "Get all booked wishes", description = "User can get own booked wishes.")
+    @GetMapping("gifts")
+    public List<GiftResponse> getAllBookedGifts() {
+        return bookingService.getAllBookedGift();
     }
 
 }

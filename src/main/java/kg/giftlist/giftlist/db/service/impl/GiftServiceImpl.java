@@ -1,19 +1,14 @@
 package kg.giftlist.giftlist.db.service.impl;
+import kg.giftlist.giftlist.db.models.*;
+import kg.giftlist.giftlist.db.repositories.*;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
+import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
-import kg.giftlist.giftlist.db.models.Category;
-import kg.giftlist.giftlist.db.models.Gift;
-import kg.giftlist.giftlist.db.models.SubCategory;
-import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.db.repositories.CategoryRepository;
-import kg.giftlist.giftlist.db.repositories.GiftRepository;
-import kg.giftlist.giftlist.db.repositories.SubCategoryRepository;
-import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.GiftService;
 import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
 import lombok.RequiredArgsConstructor;
@@ -35,6 +30,7 @@ public class GiftServiceImpl implements GiftService {
     private final UserRepository  userRepository;
     private final CategoryRepository categoryRepository;
     private final SubCategoryRepository subCategoryRepository;
+    private final BookingRepository bookingRepository;
 
     @Override
     public GiftResponse create(GiftRequest request) {
@@ -45,7 +41,7 @@ public class GiftServiceImpl implements GiftService {
         gift.setCategory(category);
         SubCategory subCategory = subCategoryRepository.findById(request.getSubCategoryId()).orElseThrow(() ->
                 new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found"));
-        category.setSubCategories(List.of(subCategory));
+        gift.setSubCategory(subCategory);
         user.setGifts(List.of(gift));
         gift.setUser(user);
         gift.setCreatedAt(LocalDate.now());
@@ -78,23 +74,21 @@ public class GiftServiceImpl implements GiftService {
 
     @Override
     public SimpleResponse deleteById(Long giftId) {
-        User user = getAuthenticatedUser();
-        boolean exists = giftRepository.existsById(giftId);
-        if (!exists) {
-            throw new NotFoundException("Gift with id = " + giftId + " not found!");
+        Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
+                new NotFoundException("Wish with id = " + giftId + " not found!"));
+        if (gift.getBooking()!=null) {
+            User user = gift.getBooking().getUser();
+            user.getBooking().getGifts().remove(gift);
+            gift.setBooking(null);
         }
-        Gift gift = findById(giftId);
-        if (gift.getUser().equals(user)) {
-            giftRepository.deleteById(giftId);
-        }else {
-            throw new GiftForbiddenException("You can delete only your own gift");
-        }
+        giftRepository.deleteById(giftId);
         return new SimpleResponse("Deleted!", "Gift successfully deleted!");
     }
 
     @Override
     public List<GiftResponse> getAll() {
-        return giftViewMapper.getAllGifts(giftRepository.findAll());
+        User user = getAuthenticatedUser();
+        return giftViewMapper.getAllGifts(giftRepository.getAllUserGifts(user.getId()));
     }
 
     public GiftResponse getGiftById(Long giftId) {
