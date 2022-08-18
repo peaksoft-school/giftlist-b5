@@ -19,6 +19,6 @@ public class Category {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "category")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "category")
     private List<SubCategory> subCategories;
 }
