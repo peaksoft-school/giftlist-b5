@@ -6,6 +6,7 @@ import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
+import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.service.GiftService;
 import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
@@ -85,7 +86,8 @@ public class GiftServiceImpl implements GiftService {
 
     @Override
     public List<GiftResponse> getAll() {
-        return giftViewMapper.getAllGifts(giftRepository.findAll());
+        User user = getAuthenticatedUser();
+        return giftViewMapper.getAllGifts(giftRepository.getAllUserGifts(user.getId()));
     }
 
     public GiftResponse getGiftById(Long giftId) {

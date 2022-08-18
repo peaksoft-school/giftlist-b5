@@ -1,7 +1,7 @@
 package kg.giftlist.giftlist.db.service.impl;
 
+import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.HolidayService;
-import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
@@ -12,8 +12,11 @@ import kg.giftlist.giftlist.exception.WishNotFoundException;
 import kg.giftlist.giftlist.db.models.Holiday;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.HolidayRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.ws.rs.ForbiddenException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,18 +26,18 @@ public class HolidayServiceImpl implements HolidayService {
     private final HolidayRepository holidayRepository;
     private final HolidayViewMapper viewMapper;
     private final HolidayEditMapper editMapper;
-    private final UserServiceImpl userService;
+    private final UserRepository userRepository;
 
-    public HolidayServiceImpl(HolidayRepository holidayRepository, HolidayViewMapper viewMapper, HolidayEditMapper editMapper, UserServiceImpl userService) {
+    public HolidayServiceImpl(HolidayRepository holidayRepository, HolidayViewMapper viewMapper, HolidayEditMapper editMapper, UserRepository userRepository) {
         this.holidayRepository = holidayRepository;
         this.viewMapper = viewMapper;
         this.editMapper = editMapper;
-        this.userService = userService;
+        this.userRepository = userRepository;
     }
 
     public HolidayResponse create(HolidayRequest holidayRequest) {
         Holiday holiday =editMapper.create(holidayRequest);
-        User user = userService.getAuthenticatedUser();
+        User user = getAuthenticatedUser();
         holiday.setUser(user);
         holidayRepository.save(holiday);
         return viewMapper.viewHoliday(holiday);
@@ -72,6 +75,14 @@ public class HolidayServiceImpl implements HolidayService {
     }
 
     public List<HolidayResponse> getHolidays() {
-        return viewMapper.view(holidayRepository.findAll());
+        User user = getAuthenticatedUser();
+        return viewMapper.view(holidayRepository.getAllUserHolidays(user.getId()));
+    }
+
+    public User getAuthenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String login = authentication.getName();
+        return userRepository.findByEmail(login).orElseThrow(() ->
+                new ForbiddenException("User not found!"));
     }
 }

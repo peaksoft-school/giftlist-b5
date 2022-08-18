@@ -43,4 +43,6 @@ public class BookingApi {
         return bookingService.cancelBookingWish(wishId);
     }
 
+
+
 }
