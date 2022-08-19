@@ -29,6 +29,7 @@ public class Complaint {
 
     @OneToOne
     @JoinColumn(name = "wish_id")
+
     private Wish wish;
 
     @OneToOne
