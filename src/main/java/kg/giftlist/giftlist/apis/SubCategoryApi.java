@@ -13,12 +13,12 @@ import java.util.List;
 @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @CrossOrigin
 @RequestMapping("api/subCategories")
-@Tag(name = "SubCategory API", description = "Any can get all subCategories")
+@Tag(name = "SubCategory API", description = "Any user can get all subCategories")
 public class SubCategoryApi {
 
     private final SubCategoryService subCategoryService;
 
-    @Operation(summary = "SubCategory", description = "get all subCategories by Category Id")
+    @Operation(summary = "Get subCategory", description = "get all subCategories by Category Id")
     @GetMapping("{categoryId}")
     public List<SubCategoriesResponse> getAllSubCategoriesByCategoryId(@PathVariable Long categoryId) {
         return subCategoryService.getAllSubCategories(categoryId);

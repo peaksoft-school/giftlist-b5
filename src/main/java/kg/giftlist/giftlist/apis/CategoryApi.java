@@ -16,7 +16,7 @@ import java.util.List;
 @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @CrossOrigin
 @RequiredArgsConstructor
-@Tag(name = "Category API", description = "Any User can get all categories")
+@Tag(name = "Category API", description = "Any user can get all categories")
 public class CategoryApi {
     private final CategoryService categoryService;
 
