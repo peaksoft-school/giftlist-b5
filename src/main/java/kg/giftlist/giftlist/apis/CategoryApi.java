@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/categories")
-@PreAuthorize("hasAnyRole('ADMIN','USER')")
+@PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @CrossOrigin
 @RequiredArgsConstructor
 @Tag(name = "Category API", description = "Any User can get all categories")
