@@ -18,7 +18,7 @@ public class SubCategoryApi {
 
     private final SubCategoryService subCategoryService;
 
-    @Operation(summary = "Get subCategory", description = "get all subCategories by Category Id")
+    @Operation(summary = "Get subCategory", description = "Get all subCategories by Category Id")
     @GetMapping("{categoryId}")
     public List<SubCategoriesResponse> getAllSubCategoriesByCategoryId(@PathVariable Long categoryId) {
         return subCategoryService.getAllSubCategories(categoryId);

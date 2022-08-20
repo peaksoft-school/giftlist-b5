@@ -20,7 +20,7 @@ import java.util.List;
 public class CategoryApi {
     private final CategoryService categoryService;
 
-    @Operation(summary = "Get all categories", description = "get all categories")
+    @Operation(summary = "Get all categories", description = "Get all categories")
     @GetMapping
     public List<CategoryResponse> getAllCategories() {
         return categoryService.findAllCategories();

@@ -46,7 +46,7 @@ public class UserApi {
         return userService.changeUserPassword(userId, request);
     }
 
-    @Operation(summary = "Search users",description = "Find user by name and surname")
+    @Operation(summary = "Search users",description = "Find user by first name and last name")
     @GetMapping("/search/{name}")
     public List<UserResponse> findUser(@PathVariable String name){
         return userService.findUser(name);
