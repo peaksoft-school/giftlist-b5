@@ -24,9 +24,6 @@ public class Complaint {
     @JoinColumn(name = "from_user_id")
     private User fromUser;
 
-//    @OneToOne
-//    private User user;
-
     @OneToOne
     @JoinColumn(name = "wish_id")
 

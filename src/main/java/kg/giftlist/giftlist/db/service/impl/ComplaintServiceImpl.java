@@ -9,12 +9,9 @@ import kg.giftlist.giftlist.db.repositories.ComplaintRepository;
 import kg.giftlist.giftlist.db.repositories.GiftRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.repositories.WishRepository;
-import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
-import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintRequest;
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintViewMapper;
-import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
-import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -36,7 +33,7 @@ public class ComplaintServiceImpl {
     private final ComplaintRepository complaintRepository;
 
     @Transactional
-    public ComplaintResponse sendComplaintToWish(Long wishId, String text) {
+    public SimpleResponse sendComplaintToWish(Long wishId, String text) {
         User user = getAuthenticatedUser();
         Complaint complaint = new Complaint();
         Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
@@ -46,17 +43,14 @@ public class ComplaintServiceImpl {
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
 
-        return complaintViewMapper.viewComplaintWish(complaint, user);
+        return new SimpleResponse("Отправлено! Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
+
     }
 
     public List<ComplaintResponse> getAllComplaints(List<Complaint> complaints) {
         List<ComplaintResponse> complaintResponses = new ArrayList<>();
         for (Complaint complaint : complaints) {
-            if(complaint.getWish()!=null){
-            complaintResponses.add(complaintViewMapper.viewComplaintWish(complaint,getAuthenticatedUser()));}
-            else{
-            complaintResponses.add(complaintViewMapper.viewComplaintGift(complaint,getAuthenticatedUser()));
-        }
+            complaintResponses.add(complaintViewMapper.viewComplaints(complaint));
         }
         return complaintResponses;
     }
@@ -67,17 +61,18 @@ public class ComplaintServiceImpl {
     }
 
     @Transactional
-    public ComplaintResponse sendComplaintToGift(Long giftId,String text) {
+    public SimpleResponse sendComplaintToGift(Long giftId, String text) {
         User user = getAuthenticatedUser();
         Complaint complaint = new Complaint();
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
-              new NotFoundException("Gift with id: " + giftId + "not found"));
+                new NotFoundException("Gift with id: " + giftId + "not found"));
         complaint.setText(text);
         complaint.setGift(gift);
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
 
-        return complaintViewMapper.viewComplaintGift(complaint, user);
+        return new SimpleResponse("Отправлено!Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
+
     }
 
     public User getAuthenticatedUser() {

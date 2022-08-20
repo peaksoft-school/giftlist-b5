@@ -1,12 +1,9 @@
 package kg.giftlist.giftlist.dto.mapper.wish;
 
 import kg.giftlist.giftlist.db.models.Booking;
-import kg.giftlist.giftlist.db.models.Complaint;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.dto.gift.UserGiftWishResponse;
-import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintRequest;
-import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.db.models.Wish;
