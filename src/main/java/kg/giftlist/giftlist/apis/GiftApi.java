@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.apis;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.GiftServiceImpl;
@@ -10,7 +9,6 @@ import kg.giftlist.giftlist.enums.Status;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -53,6 +51,7 @@ public class GiftApi {
         return giftService.getAll();
     }
 
+    @Operation(summary = "Search gifts by Filter", description = "User can search gifts by filter")
     @GetMapping("/filter")
     public List<GiftResponse> filter(
             @RequestParam(required = false,defaultValue = "all") String search,

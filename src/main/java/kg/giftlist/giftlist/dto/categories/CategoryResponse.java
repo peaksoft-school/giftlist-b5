@@ -3,7 +3,6 @@ import kg.giftlist.giftlist.db.models.Category;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 public class CategoryResponse {

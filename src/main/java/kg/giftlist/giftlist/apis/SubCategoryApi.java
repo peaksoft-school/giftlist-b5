@@ -1,5 +1,4 @@
 package kg.giftlist.giftlist.apis;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.SubCategoryService;
@@ -7,7 +6,6 @@ import kg.giftlist.giftlist.dto.subCategories.SubCategoriesResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
