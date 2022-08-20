@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @PreAuthorize("hasAnyRole('ADMIN','USER')")
+@CrossOrigin
 @RequestMapping("api/subCategories")
 @Tag(name = "SubCategory API", description = "Any can get all subCategories")
 public class SubCategoryApi {
