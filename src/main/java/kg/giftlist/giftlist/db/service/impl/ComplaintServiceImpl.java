@@ -37,7 +37,7 @@ public class ComplaintServiceImpl {
         User user = getAuthenticatedUser();
         Complaint complaint = new Complaint();
         Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
-                new NotFoundException("Gift with id: " + wishId + "not found"));
+                new NotFoundException("Wish with id: " + wishId + "not found"));
         complaint.setText(text);
         complaint.setWish(wish);
         complaint.setFromUser(user);
@@ -47,17 +47,14 @@ public class ComplaintServiceImpl {
 
     }
 
-    public List<ComplaintResponse> getAllComplaints(List<Complaint> complaints) {
-        List<ComplaintResponse> complaintResponses = new ArrayList<>();
-        for (Complaint complaint : complaints) {
-            complaintResponses.add(complaintViewMapper.viewComplaints(complaint));
-        }
-        return complaintResponses;
-    }
 
     public List<ComplaintResponse> getComplaints() {
+        List<ComplaintResponse> complaintResponses = new ArrayList<>();
+        for (Complaint complaint : complaintRepository.getAllComplaint()) {
+            complaintResponses.add(complaintViewMapper.viewComplaints(complaint));
+        }
 
-        return getAllComplaints(complaintRepository.getAllComplaint());
+        return complaintResponses;
     }
 
     @Transactional

@@ -1,7 +1,6 @@
 package kg.giftlist.giftlist.dto.mapper.complaint;
 
 import kg.giftlist.giftlist.db.models.Complaint;
-import kg.giftlist.giftlist.db.models.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
