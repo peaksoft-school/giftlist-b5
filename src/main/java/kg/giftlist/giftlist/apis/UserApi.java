@@ -47,8 +47,8 @@ public class UserApi {
     }
 
     @Operation(summary = "Search users",description = "Find user by first name and last name")
-    @GetMapping("/search/{name}")
-    public List<UserResponse> findUser(@PathVariable String name){
+    @GetMapping("/search/{keyword}")
+    public List<UserResponse> findUser(@PathVariable("keyword") String name){
         return userService.findUser(name);
     }
 
