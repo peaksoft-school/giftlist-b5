@@ -51,7 +51,7 @@ public class GiftApi {
         return giftService.getAll();
     }
 
-    @Operation(summary = "Search gifts by Filter", description = "User can search gifts by filter")
+    @Operation(summary = "Search gifts by filter", description = "User can search gifts by filter")
     @GetMapping("/filter")
     public List<GiftResponse> filter(
             @RequestParam(required = false,defaultValue = "all") String search,

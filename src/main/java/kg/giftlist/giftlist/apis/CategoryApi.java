@@ -14,14 +14,9 @@ import java.util.List;
 @RestController
 @RequestMapping("api/categories")
 @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-<<<<<<< HEAD
 @RequiredArgsConstructor
 @Tag(name = "Category API", description = "Any users can get all categories")
-=======
 @CrossOrigin
-@RequiredArgsConstructor
-@Tag(name = "Category API", description = "Any user can get all categories")
->>>>>>> 31c5df82a735a4fee7dab7c3a4baaf98fe203696
 public class CategoryApi {
 
     private final CategoryService categoryService;
