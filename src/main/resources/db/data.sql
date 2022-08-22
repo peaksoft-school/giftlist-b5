@@ -22,3 +22,8 @@ values (1, 'Смартфоны и телефоны', 1),(2,'Аудиотехни
        (28,'Спортивная обувь',5),(29,'Сезонная обувь',5),(30,'Стельки и другие аксессуары',5),
        (31,'Автомобильная акустика',6),(32,'Автоэлектроника',6),(33,'Автозапчасти',6),
        (34,'Шины',6),(35,'Автомобильные аксессуары',6);
+
+insert into holidays(id, holiday_date, is_block, name, photo, user_id)
+values (1,'2022-03-08',false,'8-март','https://giftlist-bucket.s3.amazonaws.com/1661168068897march-8-pink-flowers-wallpaper-preview.jpg',2),
+       (2,'2022-12-31',false,'Новый год','https://giftlist-bucket.s3.amazonaws.com/1661168450017newyear-1173474360-612x612.jpg',2),
+       (3,'2022-03-21',false,'Нооруз','https://giftlist-bucket.s3.amazonaws.com/1661168510692nooruz.jpg',2);
