@@ -21,5 +21,11 @@ public class Complaint {
     private String text;
 
     @OneToOne
-    private User user;
+    private User fromUser;
+
+    @OneToOne
+    private Wish wish;
+
+    @OneToOne
+    private Gift gift;
 }
