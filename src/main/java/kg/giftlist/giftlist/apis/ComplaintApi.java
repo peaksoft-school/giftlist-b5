@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/complaints")
 @CrossOrigin
-@Tag(name = "Complaint API", description = "User with role \" User \"  can create send complaints, but cannot see all complaints\n Admin can only see all complaints")
+@Tag(name = "Complaint API", description = "User with role \" User \"  can send complaints, but cannot see all complaints. Only Admin can see all complaints")
 public class ComplaintApi {
 
     private final ComplaintServiceImpl complaintService;
