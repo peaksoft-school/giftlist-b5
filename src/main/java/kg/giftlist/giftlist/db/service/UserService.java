@@ -5,6 +5,8 @@ import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 
 import java.util.List;
 
+import java.util.List;
+
 public interface UserService {
 
     UserProfileResponse findById();
@@ -28,5 +30,7 @@ public interface UserService {
     List<UserFriendProfileResponse> getAllRequestToFriends();
 
     CommonUserProfileResponse getCommonFriendProfile(Long userId);
+
+    List<UserResponse> findUser(String name);
 
 }
