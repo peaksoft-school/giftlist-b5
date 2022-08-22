@@ -19,17 +19,14 @@ import javax.persistence.SequenceGenerator;
 @Setter
 @RequiredArgsConstructor
 public class ComplaintResponse {
-    private Long id;
 
+    private Long id;
     private String userPhoto;
     private String userName;
     private String userLastName;
-
     private Wish userWish;
     private Gift userGift;
-
     private String text;
-
     private String fromUserPhoto;
     private String fromUserLastName;
     private String fromUserName;

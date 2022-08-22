@@ -1,6 +1,5 @@
 package kg.giftlist.giftlist.db.service.impl;
 
-
 import kg.giftlist.giftlist.db.models.Complaint;
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.db.models.User;
@@ -18,7 +17,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.ws.rs.ForbiddenException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +24,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ComplaintServiceImpl {
+
     private final WishRepository wishRepository;
     private final GiftRepository giftRepository;
     private final ComplaintViewMapper complaintViewMapper;

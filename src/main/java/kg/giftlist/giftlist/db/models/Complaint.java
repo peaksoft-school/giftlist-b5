@@ -21,15 +21,11 @@ public class Complaint {
     private String text;
 
     @OneToOne
-    @JoinColumn(name = "from_user_id")
     private User fromUser;
 
     @OneToOne
-    @JoinColumn(name = "wish_id")
-
     private Wish wish;
 
     @OneToOne
-    @JoinColumn(name = "gift_id")
     private Gift gift;
 }

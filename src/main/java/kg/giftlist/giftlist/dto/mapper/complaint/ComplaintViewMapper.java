@@ -26,11 +26,9 @@ public class ComplaintViewMapper {
             complaintResponse.setUserPhoto(complaint.getGift().getUser().getPhoto());
             complaintResponse.setUserGift(complaint.getGift());
         }
-
         complaintResponse.setFromUserName(complaint.getFromUser().getFirstName());
         complaintResponse.setFromUserLastName(complaint.getFromUser().getLastName());
         complaintResponse.setFromUserPhoto(complaint.getFromUser().getPhoto());
         return complaintResponse;
     }
-
 }
