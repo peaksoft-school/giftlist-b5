@@ -6,11 +6,9 @@ import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
-import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.service.GiftService;
-import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,7 +28,6 @@ public class GiftServiceImpl implements GiftService {
     private final UserRepository  userRepository;
     private final CategoryRepository categoryRepository;
     private final SubCategoryRepository subCategoryRepository;
-    private final BookingRepository bookingRepository;
 
     @Override
     public GiftResponse create(GiftRequest request) {
@@ -41,7 +38,11 @@ public class GiftServiceImpl implements GiftService {
         gift.setCategory(category);
         SubCategory subCategory = subCategoryRepository.findById(request.getSubCategoryId()).orElseThrow(() ->
                 new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found"));
-        gift.setSubCategory(subCategory);
+        if (category.getSubCategories().contains(subCategory)) {
+            gift.setSubCategory(subCategory);
+        }else {
+            throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found");
+        }
         user.setGifts(List.of(gift));
         gift.setUser(user);
         gift.setCreatedAt(LocalDate.now());
@@ -60,7 +61,11 @@ public class GiftServiceImpl implements GiftService {
             gift.setCategory(category);
             SubCategory subCategory = subCategoryRepository.findById(request.getSubCategoryId()).orElseThrow(() ->
                     new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found"));
-            category.setSubCategories(List.of(subCategory));
+            if (category.getSubCategories().contains(subCategory)) {
+                gift.setSubCategory(subCategory);
+            }else {
+                throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found");
+            }
             giftEditMapper.update(gift,request);
         }
         return giftViewMapper.viewCommonGiftCard(user,gift);

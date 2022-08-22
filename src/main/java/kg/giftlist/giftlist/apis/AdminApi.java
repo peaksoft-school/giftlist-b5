@@ -1,15 +1,12 @@
 package kg.giftlist.giftlist.apis;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
-import kg.giftlist.giftlist.dto.user.UserProfileResponse;
 import kg.giftlist.giftlist.db.service.AdminService;
 import kg.giftlist.giftlist.db.service.UserService;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
