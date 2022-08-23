@@ -33,15 +33,15 @@ public class GiftServiceImpl implements GiftService {
     public GiftResponse create(GiftRequest request) {
         User user = getAuthenticatedUser();
         Category category = categoryRepository.findById(request.getCategoryId()).orElseThrow(() ->
-                new NotFoundException("Category with id: " + request.getCategoryId() + "not found"));
+                new NotFoundException("Category with id: " + request.getCategoryId() + " not found"));
         Gift gift = giftEditMapper.create(request);
         gift.setCategory(category);
         SubCategory subCategory = subCategoryRepository.findById(request.getSubCategoryId()).orElseThrow(() ->
-                new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found"));
-        if (category.getSubCategories().contains(subCategory)) {
+                new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found"));
+        if (subCategory.getCategory().getId().equals(category.getId())) {
             gift.setSubCategory(subCategory);
         }else {
-            throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found");
+            throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found");
         }
         user.setGifts(List.of(gift));
         gift.setUser(user);
@@ -57,14 +57,14 @@ public class GiftServiceImpl implements GiftService {
         Gift gift = findById(giftId);
         if (gift.getUser().equals(user)){
             Category category = categoryRepository.findById(request.getCategoryId()).orElseThrow(() ->
-                    new NotFoundException("Category with id: " + request.getCategoryId() + "not found"));
+                    new NotFoundException("Category with id: " + request.getCategoryId() + " not found"));
             gift.setCategory(category);
             SubCategory subCategory = subCategoryRepository.findById(request.getSubCategoryId()).orElseThrow(() ->
-                    new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found"));
+                    new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found"));
             if (category.getSubCategories().contains(subCategory)) {
                 gift.setSubCategory(subCategory);
             }else {
-                throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + "not found");
+                throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found");
             }
             giftEditMapper.update(gift,request);
         }

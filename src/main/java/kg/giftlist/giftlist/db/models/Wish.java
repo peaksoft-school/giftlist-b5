@@ -1,12 +1,9 @@
 package kg.giftlist.giftlist.db.models;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -42,7 +39,7 @@ public class Wish {
     @JsonIgnore
     private Booking booking;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
     @JsonIgnore
     private User user;
 
@@ -54,7 +51,7 @@ public class Wish {
     @JsonIgnore
     private User fromUser;
 
-    @ManyToOne(targetEntity = Holiday.class, fetch = FetchType.LAZY,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST})
+    @ManyToOne(targetEntity = Holiday.class, fetch = FetchType.EAGER,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST})
     @JoinColumn(name = "holidays")
     @JsonIgnore
     private Holiday holidays;
