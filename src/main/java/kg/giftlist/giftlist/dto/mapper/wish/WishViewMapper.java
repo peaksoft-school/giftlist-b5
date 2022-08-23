@@ -1,14 +1,10 @@
 package kg.giftlist.giftlist.dto.mapper.wish;
-
-import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.dto.booking.BookingResponse;
-import kg.giftlist.giftlist.dto.gift.UserGiftWishResponse;
+import kg.giftlist.giftlist.dto.wish.UserWishResponse;
 import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.db.models.Wish;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,20 +28,20 @@ public class WishViewMapper {
                 .build();
     }
 
-    public UserGiftWishResponse viewUserWish(User user){
+    public UserWishResponse viewUserWish(User user){
         if (user == null) {
             return null;
         }
-        UserGiftWishResponse userGiftResponse = new UserGiftWishResponse();
-        userGiftResponse.setUserId(user.getId());
-        userGiftResponse.setFirstName(user.getFirstName());
-        userGiftResponse.setLastName(user.getLastName());
-        userGiftResponse.setPhoto(user.getPhoto());
+        UserWishResponse userWishResponse = new UserWishResponse();
+        userWishResponse.setUserId(user.getId());
+        userWishResponse.setFirstName(user.getFirstName());
+        userWishResponse.setLastName(user.getLastName());
+        userWishResponse.setPhoto(user.getPhoto());
         if (user.getUserInfo()==null || user.getUserInfo().getPhoneNumber()==null){
-            return userGiftResponse;
+            return userWishResponse;
         }
-        userGiftResponse.setPhoneNumber(user.getUserInfo().getPhoneNumber());
-        return userGiftResponse;
+        userWishResponse.setPhoneNumber(user.getUserInfo().getPhoneNumber());
+        return userWishResponse;
     }
 
     public WishResponse viewCommonWishCard(User user, Wish wish) {
@@ -69,14 +65,5 @@ public class WishViewMapper {
             wishResponses.add(viewCommonWishCard(user,wish));
         }
         return wishResponses;
-    }
-
-    public BookingResponse viewBooking(Booking booking, User user) {
-        if (booking==null){
-            return null;
-        }
-        BookingResponse bookingResponse = new BookingResponse();
-        bookingResponse.setUserBooked(viewUserWish(user));
-        return bookingResponse;
     }
 }
