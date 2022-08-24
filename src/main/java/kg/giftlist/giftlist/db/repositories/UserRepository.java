@@ -23,7 +23,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("select f from User u join u.requestToFriends f where u.id=?1")
     List<User> findAllRequestToFriends(Long userId);
 
-    @Query("select u from User u where upper(concat(u.firstName,u.lastName)) like %?1%")
+    @Query("select u from User u where upper(u.firstName) like %?1% " +
+            "or upper(u.lastName) like %?1%")
     List<User> searchAllByFirstNameAndLastName(String name);
 
 }
