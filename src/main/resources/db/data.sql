@@ -40,10 +40,10 @@ values (1,'2022-08-22','Жакет с однобортной застежкой 
        (2,'2022-08-23','Bluetooth 5.0, тип зарядки кейса: Lightning, беспроводная зарядка, степень защиты: IPX4, время работы: 6 ч, время работы от аккумулятора в кейсе: 30 ч, вес: 42.19 г','https://www.kivano.kg/product/view/besprovodnye-naushniki-apple-airpods-3','Apple AirPods 3','https://giftlist-bucket.s3.amazonaws.com/1661168510692nooruz.jpg',false,false,'2022-12-31',null,null,2,2),
        (3,'2022-08-23','Серьги из серебра Opal C3292 шампань циркон 925 проба','https://svetofor.info/sergi-iz-serebra-opal-c3292-shampan-cirkon-925-proba-87.html','Серьги','https://giftlist-bucket.s3.amazonaws.com/1661168510692nooruz.jpg',false,false,'2023-03-21',null,null,3,2);
 
-insert into gifts(id, created_at, description, is_block, name, photo, status, booking_id, category_id, from_user_id, user_id)
-VALUES(1,'2022-08-23','Гордость и предубеждение, Джейн Остен',false,'Книга','photo-link','USED',null,3,null,2),
-      (2,'2022-08-23','Гитара классическая Yamaha C40',false,'Гитара','photo-link','USED',null,1,null,2),
-      (3,'2022-08-23','Детская обувь Levi''s Kids',false,'Обувь','photo-link','NEW',null,5,null,2);
+insert into gifts(id, created_at, description, is_block, name, photo, status, booking_id, category_id, from_user_id, sub_category_id, user_id)
+VALUES(1,'2022-08-23','Гордость и предубеждение, Джейн Остен',false,'Книга','photo-link','USED',null,3,null,15,2),
+      (2,'2022-08-23','Гитара классическая Yamaha C40',false,'Гитара','photo-link','USED',null,1,null,2,2),
+      (3,'2022-08-23','Детская обувь Levi''s Kids',false,'Обувь','photo-link','NEW',null,5,null,27,2);
 
 insert into friends
 VALUES (3,4),

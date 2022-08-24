@@ -23,7 +23,7 @@ public class Gift {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gift_gen")
-    @SequenceGenerator(name = "gift_gen",sequenceName = "gift_seq", allocationSize = 1)
+    @SequenceGenerator(name = "gift_gen",sequenceName = "gift_seq", initialValue = 4, allocationSize = 1)
     private Long id;
 
     private String name;
