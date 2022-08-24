@@ -2,10 +2,13 @@ package kg.giftlist.giftlist.apis;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kg.giftlist.giftlist.db.service.impl.HolidayServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.db.service.HolidayService;
+import kg.giftlist.giftlist.dto.wish.WishCardResponse;
+import kg.giftlist.giftlist.dto.wish.WishResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +24,7 @@ import java.util.List;
 public class HolidayApi {
 
     private final HolidayService service;
+    private final HolidayServiceImpl holidayService;
 
     @Operation(summary = "Create holiday", description = "User can create a holiday")
     @PostMapping
@@ -50,6 +54,12 @@ public class HolidayApi {
     @GetMapping
     public List<HolidayResponse> getHolidays() {
         return service.getHolidays();
+    }
+
+    @Operation(summary = "Get all holiday's wishes", description = "User can get all holiday's wishes")
+    @GetMapping("wishes/{holidayId}")
+    public List<WishResponse> getAllHolidayWishes(@PathVariable Long holidayId) {
+        return holidayService.getAllHolidayWishes(holidayId);
     }
 
 }

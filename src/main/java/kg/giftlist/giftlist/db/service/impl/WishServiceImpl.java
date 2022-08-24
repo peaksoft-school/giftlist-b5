@@ -1,7 +1,6 @@
 package kg.giftlist.giftlist.db.service.impl;
-import kg.giftlist.giftlist.db.models.Booking;
-import kg.giftlist.giftlist.db.repositories.BookingRepository;
-import kg.giftlist.giftlist.db.repositories.UserRepository;
+import kg.giftlist.giftlist.db.models.*;
+import kg.giftlist.giftlist.db.repositories.*;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
@@ -10,11 +9,6 @@ import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
-import kg.giftlist.giftlist.db.models.Holiday;
-import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.db.models.Wish;
-import kg.giftlist.giftlist.db.repositories.HolidayRepository;
-import kg.giftlist.giftlist.db.repositories.WishRepository;
 import kg.giftlist.giftlist.db.service.WishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -34,7 +28,7 @@ public class WishServiceImpl implements WishService {
     private final WishViewMapper viewMapper;
     private final UserRepository userRepository;
     private final HolidayRepository holidayRepository;
-    private final BookingRepository bookingRepository;
+    private final ComplaintRepository complaintRepository;
 
     @Override
     @Transactional
