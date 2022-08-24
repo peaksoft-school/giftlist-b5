@@ -1,7 +1,6 @@
 package kg.giftlist.giftlist.db.repositories;
 
 import kg.giftlist.giftlist.db.models.Holiday;
-import kg.giftlist.giftlist.db.models.Wish;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,5 +16,4 @@ public interface HolidayRepository extends JpaRepository<Holiday, Long> {
 
     @Query("select h from User u join u.holidays h where u.id=?1")
     List<Holiday> getAllUserHolidays(Long userId);
-
 }
