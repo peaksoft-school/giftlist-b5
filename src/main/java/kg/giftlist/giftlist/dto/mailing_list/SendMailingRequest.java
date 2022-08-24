@@ -22,12 +22,10 @@ public class SendMailingRequest {
                         "<img src=\"%s\" height=\"300\" width=\"300\" >\n" +
                         "<br>\n" +
                         "<h1>%s</h1>\n" +
-                        "<br>\n" +
-                        "<p>%s</p>\n" +
                         "<input type=\"date\"/>\n" +
                         "</body>\n" +
                         "</html>",
-                photo, title, text
+                photo, text
         );
     }
 }

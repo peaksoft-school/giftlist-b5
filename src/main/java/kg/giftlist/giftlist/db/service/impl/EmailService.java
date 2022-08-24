@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.db.service.impl;
+import kg.giftlist.giftlist.dto.mailing_list.SendMailingRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -14,10 +15,11 @@ public class EmailService {
     private final JavaMailSender mailSender;
 
     @Async
-    public void send(String to, String htmlMessage) {
+    public void send(String to, String htmlMessage,String subject) {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         try {
             MimeMessageHelper helper = new MimeMessageHelper( mimeMessage, true, "UTF-8" );
+            helper.setSubject(subject);
             helper.setFrom( "giftlist16@gmail.com" );
             helper.setTo( to );
             helper.setText( htmlMessage, true );
