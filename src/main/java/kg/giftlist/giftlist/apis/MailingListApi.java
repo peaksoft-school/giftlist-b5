@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin
 @PreAuthorize("hasAnyAuthority('ADMIN')")
-@Tag(name = "Mailing API", description = "Admin can send mailing on email")
+@Tag(name = "Mailing API", description = "User with role \" Admin \" can send mailing to user's email")
 public class MailingListApi {
 
     private final MailingListServiceImpl mailingListService;
 
-    @Operation(summary = "Send mail", description = "Admin can send mailing")
+    @Operation(summary = "Send mailing", description = "Admin can send mailing")
     @PostMapping("/send/mail")
-    public ResponseEntity<HttpStatus> sendMail(@RequestBody SendMailingRequest sendMailingRequest) {
+    public ResponseEntity<?> sendMail(@RequestBody SendMailingRequest sendMailingRequest) {
         mailingListService.send( sendMailingRequest );
         return ResponseEntity.ok( HttpStatus.OK );
     }

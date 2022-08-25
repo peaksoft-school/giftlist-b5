@@ -23,11 +23,10 @@ public class MailingListServiceImpl implements MailingListService {
 
     @Override
     public ResponseEntity<?> send(SendMailingRequest sendMailingRequest) {
-
         String htmlMessage = sendMailingRequest.createHtmlMessage();
         List<MailingList> mailingLists = repository.findAll();
         mailingLists.forEach( mailingList -> {
-                    emailService.send( mailingList.getEmail(), htmlMessage,sendMailingRequest.getTitle() );
+                    emailService.send( mailingList.getEmail(), htmlMessage, sendMailingRequest.getTitle() );
                 }
         );
         return ResponseEntity.ok( HttpStatus.OK );
