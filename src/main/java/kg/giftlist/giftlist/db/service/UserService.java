@@ -1,9 +1,8 @@
 package kg.giftlist.giftlist.db.service;
+
 import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
-
-import java.util.List;
 
 import java.util.List;
 

@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MailingListServiceImpl implements MailingListService {
+
     private final MailingListRepository repository;
+
     @Override
     public void save(MailingList mailingList) {
         repository.save(mailingList);

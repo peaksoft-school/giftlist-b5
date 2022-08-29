@@ -2,7 +2,7 @@ package kg.giftlist.giftlist.apis;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kg.giftlist.giftlist.config.s3.StorageService;
+import kg.giftlist.giftlist.service.StorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
