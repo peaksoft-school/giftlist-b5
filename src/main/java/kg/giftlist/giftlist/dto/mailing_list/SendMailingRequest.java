@@ -27,6 +27,5 @@ public class SendMailingRequest {
                         "</html>",
                 photo, text
         );
-
     }
 }
