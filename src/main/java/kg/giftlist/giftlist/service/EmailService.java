@@ -1,4 +1,5 @@
-package kg.giftlist.giftlist.db.service.impl;
+package kg.giftlist.giftlist.service;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;

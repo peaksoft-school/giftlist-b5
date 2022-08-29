@@ -4,6 +4,7 @@ import kg.giftlist.giftlist.db.models.MailingList;
 import kg.giftlist.giftlist.db.repositories.MailingListRepository;
 import kg.giftlist.giftlist.db.service.MailingListService;
 import kg.giftlist.giftlist.dto.mailing_list.SendMailingRequest;
+import kg.giftlist.giftlist.service.EmailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
