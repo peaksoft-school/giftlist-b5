@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.db.service.impl;
+
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -47,7 +48,6 @@ public class UserServiceImpl implements UserService{
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
-
 
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;

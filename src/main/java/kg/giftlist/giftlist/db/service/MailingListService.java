@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 
 
 public interface MailingListService {
+
     void save(MailingList mailingList);
 
     ResponseEntity<?> send(SendMailingRequest sendMailingRequest);

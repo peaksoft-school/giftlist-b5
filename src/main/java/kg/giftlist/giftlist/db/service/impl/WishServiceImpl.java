@@ -1,10 +1,10 @@
 package kg.giftlist.giftlist.db.service.impl;
+
 import kg.giftlist.giftlist.db.models.*;
 import kg.giftlist.giftlist.db.repositories.*;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
-import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
@@ -28,7 +28,6 @@ public class WishServiceImpl implements WishService {
     private final WishViewMapper viewMapper;
     private final UserRepository userRepository;
     private final HolidayRepository holidayRepository;
-    private final ComplaintRepository complaintRepository;
 
     @Override
     @Transactional

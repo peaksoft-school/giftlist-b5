@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.config.s3;
+package kg.giftlist.giftlist.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +23,7 @@ import java.util.Map;
 @Slf4j
 @RequiredArgsConstructor
 public class StorageService {
+
     private final S3Client s3;
 
     @Value("${s3.bucketName}")

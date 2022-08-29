@@ -16,6 +16,7 @@ import kg.giftlist.giftlist.exception.WishNotFoundException;
 import kg.giftlist.giftlist.db.models.Holiday;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.HolidayRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class HolidayServiceImpl implements HolidayService {
 
     private final HolidayRepository holidayRepository;
@@ -32,14 +34,6 @@ public class HolidayServiceImpl implements HolidayService {
     private final HolidayEditMapper editMapper;
     private final UserRepository userRepository;
     private final WishViewMapper wishViewMapper;
-
-    public HolidayServiceImpl(HolidayRepository holidayRepository, HolidayViewMapper viewMapper, HolidayEditMapper editMapper, UserRepository userRepository, WishViewMapper wishViewMapper) {
-        this.holidayRepository = holidayRepository;
-        this.viewMapper = viewMapper;
-        this.editMapper = editMapper;
-        this.userRepository = userRepository;
-        this.wishViewMapper = wishViewMapper;
-    }
 
     public HolidayResponse create(HolidayRequest holidayRequest) {
         Holiday holiday =editMapper.create(holidayRequest);
