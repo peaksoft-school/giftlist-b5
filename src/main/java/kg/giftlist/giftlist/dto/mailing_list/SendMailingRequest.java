@@ -19,7 +19,7 @@ public class SendMailingRequest {
                         "    <title>send email message</title>\n" +
                         "</head>\n" +
                         "<body>\n" +
-                        "<img src=\"%s\" height=\"300\" width=\"300\" >\n" +
+                        "<img src=\"%s\" height=\"300\" width=\"300\" />\n" +
                         "<br>\n" +
                         "<h1>%s</h1>\n" +
                         "<input type=\"date\"/>\n" +

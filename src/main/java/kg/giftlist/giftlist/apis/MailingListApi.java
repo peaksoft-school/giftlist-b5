@@ -20,7 +20,7 @@ public class MailingListApi {
     private final MailingListServiceImpl mailingListService;
 
     @Operation(summary = "Send mailing", description = "Admin can send mailing")
-    @PostMapping("/send/mail")
+    @PostMapping("/send")
     public ResponseEntity<?> sendMail(@RequestBody SendMailingRequest sendMailingRequest) {
         mailingListService.send( sendMailingRequest );
         return ResponseEntity.ok( HttpStatus.OK );
