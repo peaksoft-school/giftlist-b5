@@ -61,6 +61,10 @@ public class User implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Notification> notifications = new ArrayList<>();
 
+    void addNotification(Notification newNotification){
+        notifications.add(newNotification);
+    }
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Holiday> holidays = new ArrayList<>();
 

@@ -13,7 +13,7 @@ public class NotificationResponse {
 
     private Long notificationId;
     private Long userId;
-    private Long withIdOrGiftIdOrBookingId;
+    private Long wishIdOrGiftIdOrBookingId;
     private String photo;
     private String name;
     private NotificationStatus notificationStatus;
@@ -27,20 +27,18 @@ public class NotificationResponse {
         this.notificationId = notification.getId();
         this.userId = notification.getUser().getUserInfo().getId();
         switch (notification.getNotificationStatus()) {
-            case BOOKED_GIFT:
-                this.withIdOrGiftIdOrBookingId = notification.getGiftBooking().getId();
-                this.photo = notification.getGiftBooking().getPhoto();
-                this.name = notification.getGiftBooking().getName();
+            case ADD_GIFT_BOOKING:
+                this.wishIdOrGiftIdOrBookingId = notification.getGiftBooking().getId();
             case ADD_GIFT:
-                this.withIdOrGiftIdOrBookingId = notification.getGift().getId();
+                this.wishIdOrGiftIdOrBookingId = notification.getGift().getId();
                 this.photo = notification.getGift().getPhoto();
                 this.name = notification.getGift().getName();
             case ADD_WISH:
-                this.withIdOrGiftIdOrBookingId = notification.getWish().getId();
+                this.wishIdOrGiftIdOrBookingId = notification.getWish().getId();
                 this.photo = notification.getWish().getGiftPhoto();
                 this.name = notification.getWish().getGiftName();
             case ADD_HOLIDAY:
-                this.withIdOrGiftIdOrBookingId = notification.getHoliday().getId();
+                this.wishIdOrGiftIdOrBookingId = notification.getHoliday().getId();
                 this.photo = notification.getHoliday().getPhoto();
                 this.name = notification.getHoliday().getName();
             case REQUEST_TO_FRIEND:
