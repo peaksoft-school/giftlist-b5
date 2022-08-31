@@ -23,7 +23,7 @@ public class Complaint {
     @OneToOne
     private User fromUser;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Wish wish;
 
     @OneToOne
