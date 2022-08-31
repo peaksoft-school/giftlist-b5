@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import static javax.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "complaints")
@@ -24,9 +25,9 @@ public class Complaint {
     @OneToOne
     private User fromUser;
 
-    @OneToOne
-    private Wish wish;
+    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    private Wish wishes;
 
-    @OneToOne
+    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
     private Gift gift;
 }

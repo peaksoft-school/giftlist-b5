@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -29,6 +30,7 @@ public class GiftServiceImpl implements GiftService {
     private final UserRepository  userRepository;
     private final CategoryRepository categoryRepository;
     private final SubCategoryRepository subCategoryRepository;
+    private final ComplaintRepository complaintRepository;
 
     @Override
     public GiftResponse create(GiftRequest request) {
@@ -92,6 +94,8 @@ public class GiftServiceImpl implements GiftService {
             user.getBooking().getGifts().remove(gift);
             gift.setBooking(null);
         }
+        List<Complaint> complaints = complaintRepository.findAll();
+        complaints.removeIf(c -> Objects.equals(gift.getComplaints(), c));
         giftRepository.deleteById(giftId);
         return new SimpleResponse("Deleted!", "Gift successfully deleted!");
     }

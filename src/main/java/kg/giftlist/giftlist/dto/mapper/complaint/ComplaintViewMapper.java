@@ -15,11 +15,11 @@ public class ComplaintViewMapper {
         ComplaintResponse complaintResponse = new ComplaintResponse();
         complaintResponse.setId(complaint.getId());
         complaintResponse.setText(complaint.getText());
-        if (complaint.getWish()!=null){
-            complaintResponse.setUserName(complaint.getWish().getUser().getFirstName());
-            complaintResponse.setUserLastName(complaint.getWish().getUser().getLastName());
-            complaintResponse.setUserPhoto(complaint.getWish().getUser().getPhoto());
-            complaintResponse.setUserWish(complaint.getWish());
+        if (complaint.getWishes()!=null){
+            complaintResponse.setUserName(complaint.getWishes().getUser().getFirstName());
+            complaintResponse.setUserLastName(complaint.getWishes().getUser().getLastName());
+            complaintResponse.setUserPhoto(complaint.getWishes().getUser().getPhoto());
+            complaintResponse.setUserWish(complaint.getWishes());
         }else if (complaint.getGift() != null){
             complaintResponse.setUserName(complaint.getGift().getUser().getFirstName());
             complaintResponse.setUserLastName(complaint.getGift().getUser().getLastName());

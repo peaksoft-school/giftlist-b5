@@ -6,6 +6,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @Table(name = "wishes")
@@ -56,6 +59,10 @@ public class Wish {
     @JoinColumn(name = "holiday")
     @JsonIgnore
     private Holiday holiday;
+
+    @OneToMany(cascade = ALL, mappedBy = "wishes")
+    @JsonIgnore
+    private List<Complaint> complaints;
 
     public String getHolidayName(){
         return holiday.getName();
