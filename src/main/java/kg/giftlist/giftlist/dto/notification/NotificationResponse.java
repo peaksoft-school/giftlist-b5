@@ -1,6 +1,5 @@
 package kg.giftlist.giftlist.dto.notification;
 
-import kg.giftlist.giftlist.db.models.Notification;
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,37 +12,65 @@ public class NotificationResponse {
 
     private Long notificationId;
     private Long userId;
-    private Long wishIdOrGiftIdOrBookingId;
+    private Long othersId;
     private String photo;
-    private String name;
+    private String othersName;
     private NotificationStatus notificationStatus;
-    private String userName;
+    private String userFirstName;
+    private String userLastName;
     private LocalDate createdAt;
+    private Boolean isRead;
 
     public NotificationResponse() {
     }
 
-    public NotificationResponse(Notification notification) {
-        this.notificationId = notification.getId();
-        this.userId = notification.getUser().getUserInfo().getId();
-        switch (notification.getNotificationStatus()) {
-            case ADD_GIFT_BOOKING:
-                this.wishIdOrGiftIdOrBookingId = notification.getGiftBooking().getId();
-            case ADD_GIFT:
-                this.wishIdOrGiftIdOrBookingId = notification.getGift().getId();
-                this.photo = notification.getGift().getPhoto();
-                this.name = notification.getGift().getName();
-            case ADD_WISH:
-                this.wishIdOrGiftIdOrBookingId = notification.getWish().getId();
-                this.photo = notification.getWish().getGiftPhoto();
-                this.name = notification.getWish().getGiftName();
-            case ADD_HOLIDAY:
-                this.wishIdOrGiftIdOrBookingId = notification.getHoliday().getId();
-                this.photo = notification.getHoliday().getPhoto();
-                this.name = notification.getHoliday().getName();
-            case REQUEST_TO_FRIEND:
-                this.photo = notification.getUser().getPhoto();
-                this.name = notification.getUser().getFirstName();
-        }
+    public NotificationResponse(
+            Long notificationId, String userPhoto, Long userId, String userFirstName,
+            String userLastName, NotificationStatus notificationStatus, Long wishOrGiftOrHolidayId, String othersName,
+            LocalDate createdAt, Boolean isRead) {
+
+        this.notificationId = notificationId;
+        this.photo = userPhoto;
+        this.userId = userId;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.notificationStatus = notificationStatus;
+        this.othersId = wishOrGiftOrHolidayId;
+        this.othersName = othersName;
+        this.createdAt = createdAt;
+        this.isRead = isRead;
+    }
+
+    public NotificationResponse(
+            Long notificationId, Long othersId, String othersPhoto, String nameOfGiftOrWish,
+            NotificationStatus notificationStatus, Long userId,
+            String userFirstName, String userLastName,
+            LocalDate createdAt, Boolean isRead) {
+
+        this.notificationId = notificationId;
+        this.othersId = othersId;
+        this.photo = othersPhoto;
+        this.othersName = nameOfGiftOrWish;
+        this.notificationStatus = notificationStatus;
+        this.userId = userId;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.createdAt = createdAt;
+        this.isRead = isRead;
+    }
+
+    public NotificationResponse(
+            Long notificationId, Long userId, String userPhoto, String userFirstName, String userLastName,
+            NotificationStatus notificationStatus,
+            LocalDate createdAt, Boolean isRead) {
+
+        this.notificationId = notificationId;
+        this.userId = userId;
+        this.photo = userPhoto;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.notificationStatus = notificationStatus;
+        this.createdAt = createdAt;
+        this.isRead = isRead;
     }
 }
