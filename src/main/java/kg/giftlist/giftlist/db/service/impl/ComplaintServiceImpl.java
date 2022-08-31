@@ -47,7 +47,6 @@ public class ComplaintServiceImpl {
 
     }
 
-
     public List<ComplaintResponse> getComplaints() {
         List<ComplaintResponse> complaintResponses = new ArrayList<>();
         for (Complaint complaint : complaintRepository.getAllComplaint()) {

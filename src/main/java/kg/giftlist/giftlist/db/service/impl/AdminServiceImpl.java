@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.db.service.impl;
 
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
@@ -37,21 +38,21 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     @Transactional
-    public ResponseEntity<?> blockUser(Long id) {
+    public SimpleResponse blockUser(Long id) {
         User user = userRepository.findById(id).orElseThrow(() ->
                 new NotFoundException(
                         String.format("user with id = %s not found", id)));
         user.setIsBlock(true);
-        return ResponseEntity.ok("user is blocked");
+        return new SimpleResponse("BLOCK","user with id = "+String.valueOf(id)+" blocked");
     }
 
     @Override
     @Transactional
-    public ResponseEntity<?> unBlockUser(Long id) {
+    public SimpleResponse unBlockUser(Long id) {
         User user = userRepository.findById(id).orElseThrow(() ->
                 new NotFoundException(
                         String.format("user with id = %s not found", id)));
         user.setIsBlock(false);
-        return ResponseEntity.ok("user is unBlocked");
+        return new SimpleResponse("UN BLOCK","user with id = "+String.valueOf(id)+" un blocked");
     }
 }

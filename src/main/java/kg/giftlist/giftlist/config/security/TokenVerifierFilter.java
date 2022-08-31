@@ -1,8 +1,8 @@
 package kg.giftlist.giftlist.config.security;
 
-
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -15,16 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
+@RequiredArgsConstructor
 public class TokenVerifierFilter extends OncePerRequestFilter {
 
     private final JwtUtils jwtUtils;
     private final UserRepository userRepo;
-
-    public TokenVerifierFilter(JwtUtils jwtUtils,
-                               UserRepository userRepo) {
-        this.jwtUtils = jwtUtils;
-        this.userRepo = userRepo;
-    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -44,13 +39,8 @@ public class TokenVerifierFilter extends OncePerRequestFilter {
         }
 
         token = token.substring(7);
-
-        System.out.println("token = " + token);
-
         jwtUtils.isValidToken(token);
-
         String email = jwtUtils.getEmailFromJwt(token);
-
         User user = userRepo.findByEmail(email)
                 .orElse(null);
 

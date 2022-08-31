@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.db.service.impl;
+
 import kg.giftlist.giftlist.db.service.UserInfoService;
 import kg.giftlist.giftlist.dto.mapper.UserInfoEditMapper;
 import kg.giftlist.giftlist.dto.mapper.UserInfoViewMapper;
@@ -24,7 +25,6 @@ public class UserInfoServiceImpl implements UserInfoService {
     private final UserInfoEditMapper userInfoEditMapper;
     private final UserInfoViewMapper userInfoViewMapper;
     private final UserRepository userRepository;
-
 
     @Override
     public UserInfoResponse create(UserInfoRequest userInfoRequest) {

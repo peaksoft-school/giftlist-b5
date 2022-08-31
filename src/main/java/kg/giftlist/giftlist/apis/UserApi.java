@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/users/profile")
 @RequiredArgsConstructor
@@ -42,6 +44,12 @@ public class UserApi {
     @PostMapping("/{userId}")
     public SimpleResponse changePassword(@PathVariable Long userId, @RequestBody UserChangePasswordRequest request) {
         return userService.changeUserPassword(userId, request);
+    }
+
+    @Operation(summary = "Search users", description = "User can search by first name and last name")
+    @GetMapping("/{name}")
+    public List<UserResponse> findUser(@PathVariable String name){
+        return userService.findUser(name);
     }
 
 }

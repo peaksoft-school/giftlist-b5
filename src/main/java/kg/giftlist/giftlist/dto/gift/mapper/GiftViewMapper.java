@@ -2,7 +2,7 @@ package kg.giftlist.giftlist.dto.gift.mapper;
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.dto.gift.GiftCartResponse;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
-import kg.giftlist.giftlist.dto.gift.UserGiftWishResponse;
+import kg.giftlist.giftlist.dto.gift.UserGiftResponse;
 import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.db.models.User;
@@ -36,11 +36,11 @@ public class GiftViewMapper {
         return giftResponses;
     }
 
-    public UserGiftWishResponse viewUserGift(User user){
+    public UserGiftResponse viewUserGift(User user){
         if (user == null) {
             return null;
         }
-        UserGiftWishResponse userGiftResponse = new UserGiftWishResponse();
+        UserGiftResponse userGiftResponse = new UserGiftResponse();
         userGiftResponse.setUserId(user.getId());
         userGiftResponse.setFirstName(user.getFirstName());
         userGiftResponse.setLastName(user.getLastName());

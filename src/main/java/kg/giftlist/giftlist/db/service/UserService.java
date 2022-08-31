@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.db.service;
+
 import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
@@ -28,5 +29,7 @@ public interface UserService {
     List<UserFriendProfileResponse> getAllRequestToFriends();
 
     CommonUserProfileResponse getCommonFriendProfile(Long userId);
+
+    List<UserResponse> findUser(String name);
 
 }

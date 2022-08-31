@@ -1,6 +1,4 @@
 package kg.giftlist.giftlist.dto.wish;
-
-import kg.giftlist.giftlist.dto.gift.UserGiftWishResponse;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,8 +6,8 @@ import lombok.Setter;
 @Setter
 public class WishResponse {
 
-    private UserGiftWishResponse user;
+    private UserWishResponse user;
     private WishCardResponse wish;
-    private UserGiftWishResponse bookedUser;
+    private UserWishResponse bookedUser;
 
 }

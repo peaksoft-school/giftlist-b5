@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.db.service.impl;
+
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -36,6 +37,8 @@ import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -45,7 +48,6 @@ public class UserServiceImpl implements UserService{
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
-
 
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;
@@ -151,6 +153,19 @@ public class UserServiceImpl implements UserService{
             userRepo.save(user);
             return new SimpleResponse("Changed","Password successfully changed");
         }
+    }
+
+    @Override
+    public List<UserResponse> findUser(String name) {
+        return view(userRepo.searchAllByFirstNameAndLastName(name.toUpperCase()));
+    }
+
+    private List<UserResponse> view(List<User> users){
+        List<UserResponse> responses = new ArrayList<>();
+        for (User user : users) {
+            responses.add(new UserResponse(user));
+        }
+        return responses;
     }
 
     public User findByUserId(Long userId) {
