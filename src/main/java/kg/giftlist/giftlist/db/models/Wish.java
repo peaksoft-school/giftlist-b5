@@ -16,7 +16,7 @@ public class Wish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wish_gen")
-    @SequenceGenerator(name = "wish_gen",sequenceName = "wish_seq", initialValue = 4, allocationSize = 1)
+    @SequenceGenerator(name = "wish_gen",sequenceName = "wish_seq", initialValue = 7, allocationSize = 1)
     private Long id;
 
     private String giftName;
