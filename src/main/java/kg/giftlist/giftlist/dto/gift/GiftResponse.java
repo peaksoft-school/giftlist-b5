@@ -6,7 +6,7 @@ import lombok.Setter;
 @Setter
 public class GiftResponse {
 
-    private UserGiftResponse user;
+    private UserGiftResponse ownerUser;
     private GiftCartResponse gift;
     private UserGiftResponse bookedUser;
 

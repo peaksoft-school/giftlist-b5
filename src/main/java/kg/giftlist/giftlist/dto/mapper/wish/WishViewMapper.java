@@ -49,7 +49,7 @@ public class WishViewMapper {
             return null;
         }
         WishResponse response = new WishResponse();
-        response.setUser(viewUserWish(user));
+        response.setOwnerUser(viewUserWish(user));
         response.setWish(viewWish(wish));
         if (wish.getBooking()==null || wish.getBooking().getUser()==null) {
             return response;
