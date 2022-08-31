@@ -65,12 +65,16 @@ public class BookingServiceImpl {
     public SimpleResponse cancelBookingGift(Long giftId) {
         User user = getAuthenticatedUser();
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
-                new NotFoundException("Gift with id: " + giftId + "not found"));
+                 new NotFoundException("Gift with id: " + giftId + "not found"));
         if (gift.getBooking().equals(user.getBooking())) {
             user.getBooking().getGifts().remove(gift);
             gift.setBooking(null);
+        }else if(user.getGifts().contains(gift)) {
+            User bookedUser = gift.getBooking().getUser();
+            bookedUser.getBooking().getGifts().remove(gift);
+            gift.setBooking(null);
         }else {
-            throw new AlreadyExistException("You can cancel only own booking");
+            throw new AlreadyExistException("You can cancel only own booking or only your gift");
         }
         return new SimpleResponse("Canceled", "Successfully canceled ");
     }

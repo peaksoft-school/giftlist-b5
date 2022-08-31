@@ -22,7 +22,7 @@ public class UserInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userInfo_gen")
-    @SequenceGenerator(name = "userInfo_gen",sequenceName = "userInfo_seq", initialValue = 6, allocationSize = 1)
+    @SequenceGenerator(name = "userInfo_gen",sequenceName = "userInfo_seq", initialValue = 7, allocationSize = 1)
     private Long id;
 
     private String city;
@@ -39,8 +39,10 @@ public class UserInfo {
     @Max(44)
     private int shoeSize;
 
+    @Column(length = 4000)
     private String hobby;
 
+    @Column(length = 4000)
     private String importantNote;
 
     private String instagramLink;

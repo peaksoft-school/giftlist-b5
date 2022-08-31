@@ -10,9 +10,9 @@ import java.time.LocalDate;
 @Setter
 public class WishRequest {
     private String photo;
-    private String giftName;
-    private String giftLink;
+    private String wishName;
+    private String wishLink;
     private String description;
-    private String holidayName;
+    private Long holidayId;
     private LocalDate wishDate;
 }

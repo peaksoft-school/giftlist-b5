@@ -13,11 +13,9 @@ public class HolidayEditMapper {
         }
         Holiday holiday = new Holiday();
         holiday.setName(holidayRequest.getName());
-        holiday.setPhoto(holidayRequest.getPhoto());
         holiday.setHolidayDate(holidayRequest.getDate());
-
+        holiday.setPhoto(holidayRequest.getPhoto());
         return holiday;
-
     }
 
     public void update(Holiday holiday, HolidayRequest holidayRequest) {

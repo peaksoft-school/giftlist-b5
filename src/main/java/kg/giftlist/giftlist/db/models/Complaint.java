@@ -19,6 +19,7 @@ public class Complaint {
     @SequenceGenerator(name = "complaint_gen", sequenceName = "complaint_seq", allocationSize = 1)
     private Long id;
 
+    @Column(length = 4000)
     private String text;
 
     @OneToOne
