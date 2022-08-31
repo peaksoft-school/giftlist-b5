@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.CascadeType.DETACH;
 
@@ -56,6 +58,10 @@ public class Gift {
     @ManyToOne
     @JsonIgnore
     private User fromUser;
+
+    @OneToMany(cascade = ALL, mappedBy = "gift")
+    @JsonIgnore
+    private List<Complaint> complaints;
 
     public Gift(GiftRequest request) {
         this.name= getName();

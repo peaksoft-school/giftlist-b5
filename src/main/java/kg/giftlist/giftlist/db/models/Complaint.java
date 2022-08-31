@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "complaints")
@@ -23,9 +24,9 @@ public class Complaint {
     @OneToOne
     private User fromUser;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Wish wish;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Wish wishes;
 
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Gift gift;
 }

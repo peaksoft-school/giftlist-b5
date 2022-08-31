@@ -39,7 +39,7 @@ public class ComplaintServiceImpl {
         Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
                 new NotFoundException("Wish with id: " + wishId + "not found"));
         complaint.setText(text);
-        complaint.setWish(wish);
+        complaint.setWishes(wish);
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
 

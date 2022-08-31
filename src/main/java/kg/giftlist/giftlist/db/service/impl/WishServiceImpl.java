@@ -4,6 +4,7 @@ import kg.giftlist.giftlist.db.repositories.*;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
+import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
@@ -18,19 +19,18 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.ws.rs.ForbiddenException;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class WishServiceImpl implements WishService {
 
+    private final ComplaintRepository complaintRepository;
     private final WishRepository wishRepository;
     private final WishEditMapper editMapper;
     private final WishViewMapper viewMapper;
     private final UserRepository userRepository;
     private final HolidayRepository holidayRepository;
     private final BookingRepository bookingRepository;
-    private final ComplaintRepository complaintRepository;
 
     @Override
     @Transactional
@@ -80,8 +80,8 @@ public class WishServiceImpl implements WishService {
             user.getBooking().getWishes().remove(wish);
             wish.setBooking(null);
         }
-        List<Complaint> complaints = complaintRepository.getAllComplaint();
-        complaints.removeIf(c -> Objects.equals(wish.getId(), c.getWish().getId()));
+        List<Complaint> complaints = complaintRepository.findAll();
+        complaints.removeIf(c -> Objects.equals(wish.getComplaints(), c));
         wishRepository.deleteById(id);
         return new SimpleResponse("Deleted!", "Wish successfully deleted!");
     }
