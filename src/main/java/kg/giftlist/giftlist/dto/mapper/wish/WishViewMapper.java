@@ -17,13 +17,13 @@ public class WishViewMapper {
             return null;
         }
         return WishCardResponse.builder()
-                .id(wish.getId())
-                .giftName(wish.getGiftName())
-                .giftLink(wish.getGiftLink())
+                .wishId(wish.getId())
+                .wishName(wish.getWishName())
+                .wishLink(wish.getWishLink())
                 .description(wish.getDescription())
-                .photo(wish.getGiftPhoto())
+                .photo(wish.getWishPhoto())
                 .wishDate(wish.getWishDate())
-                .holidayName(wish.getHolidayName())
+                .holiday(wish.getHoliday())
                 .booking(wish.getBooking())
                 .build();
     }

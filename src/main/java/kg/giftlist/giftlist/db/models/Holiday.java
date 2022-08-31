@@ -36,7 +36,7 @@ public class Holiday {
     @JsonIgnore
     private User user;
 
-    @OneToMany(cascade = ALL, mappedBy = "holidays")
+    @OneToMany(cascade = ALL, mappedBy = "holiday")
     @JsonIgnore
     private List<Wish> wishes;
 }

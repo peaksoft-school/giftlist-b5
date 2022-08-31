@@ -19,16 +19,17 @@ public class Wish {
     @SequenceGenerator(name = "wish_gen",sequenceName = "wish_seq", initialValue = 7, allocationSize = 1)
     private Long id;
 
-    private String giftName;
+    private String wishName;
 
-    private String giftLink;
+    private String wishLink;
 
-    private String giftPhoto;
+    private String wishPhoto;
 
     private LocalDateTime createdAt;
 
     private LocalDate wishDate;
 
+    @Column(length = 4000)
     private String description;
 
     private Boolean isBlock;
@@ -52,12 +53,12 @@ public class Wish {
     private User fromUser;
 
     @ManyToOne(targetEntity = Holiday.class, fetch = FetchType.EAGER,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST})
-    @JoinColumn(name = "holidays")
+    @JoinColumn(name = "holiday")
     @JsonIgnore
-    private Holiday holidays;
+    private Holiday holiday;
 
     public String getHolidayName(){
-        return holidays.getName();
+        return holiday.getName();
     }
 
 

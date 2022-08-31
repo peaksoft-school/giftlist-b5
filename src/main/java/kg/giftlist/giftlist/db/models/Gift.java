@@ -30,6 +30,7 @@ public class Gift {
 
     private String photo;
 
+    @Column(length = 4000)
     private String description;
 
     private Boolean isBlock;

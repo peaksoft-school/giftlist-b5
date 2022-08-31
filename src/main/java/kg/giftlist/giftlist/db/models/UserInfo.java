@@ -39,8 +39,10 @@ public class UserInfo {
     @Max(44)
     private int shoeSize;
 
+    @Column(length = 4000)
     private String hobby;
 
+    @Column(length = 4000)
     private String importantNote;
 
     private String instagramLink;

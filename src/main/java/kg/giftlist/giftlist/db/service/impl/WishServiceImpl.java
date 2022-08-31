@@ -36,9 +36,13 @@ public class WishServiceImpl implements WishService {
         Wish wish = editMapper.create(wishRequest);
         wish.setUser(user);
         user.setWishes(List.of(wish));
-        Holiday holiday = holidayRepository.findByName(wishRequest.getHolidayName()).orElseThrow(()
+        Holiday holiday = holidayRepository.findById(wishRequest.getHolidayId()).orElseThrow(()
                 -> new NotFoundException("Holiday not found"));
-        wish.setHolidays(holiday);
+        if (user.getHolidays().contains(holiday)){
+            wish.setHoliday(holiday);
+        }else {
+            throw new NotFoundException("Holiday not found");
+        }
         return viewMapper.viewCommonWishCard(user,wish);
     }
 
@@ -47,9 +51,13 @@ public class WishServiceImpl implements WishService {
     public WishResponse update(Long id, WishRequest wishRequest) {
         User user = getAuthenticatedUser();
         Wish wish = wishRepository.findById(id).orElseThrow(() -> new WishNotFoundException("Wish with id " + id + " not found!"));
-        Holiday holiday = holidayRepository.findByName(wishRequest.getHolidayName()).orElseThrow(()
+        Holiday holiday = holidayRepository.findById(wishRequest.getHolidayId()).orElseThrow(()
                 -> new NotFoundException("Holiday not found"));
-        wish.setHolidays(holiday);
+        if (user.getHolidays().contains(holiday)){
+            wish.setHoliday(holiday);
+        }else {
+            throw new NotFoundException("Holiday not found");
+        }
         if (wish.getUser() == user) {
             editMapper.update(wish, wishRequest);
         }
@@ -98,12 +106,12 @@ public class WishServiceImpl implements WishService {
         User user = getAuthenticatedUser();
         Wish friendWish = getWishById(wishId);
         Wish newWish = new Wish();
-        newWish.setGiftName(friendWish.getGiftName());
-        newWish.setGiftLink(friendWish.getGiftLink());
-        newWish.setGiftPhoto(friendWish.getGiftPhoto());
+        newWish.setWishName(friendWish.getWishName());
+        newWish.setWishLink(friendWish.getWishLink());
+        newWish.setWishPhoto(friendWish.getWishPhoto());
         newWish.setWishDate(friendWish.getWishDate());
         newWish.setDescription(friendWish.getDescription());
-        newWish.setHolidays(friendWish.getHolidays());
+        newWish.setHoliday(friendWish.getHoliday());
         newWish.setUser(user);
         user.setWishes(List.of(newWish));
         return viewMapper.viewCommonWishCard(user,newWish);

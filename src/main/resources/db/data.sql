@@ -40,7 +40,7 @@ VALUES (1,'2022-03-08',false,'8-март','https://giftlist-bucket.s3.amazonaws.
        (5,'2022-12-31',false,'Новый год','https://giftlist-bucket.s3.amazonaws.com/1661168450017newyear-1173474360-612x612.jpg',4),
        (6,'2022-03-21',false,'Нооруз','https://giftlist-bucket.s3.amazonaws.com/1661168510692nooruz.jpg',4);
 
-insert into wishes(id,created_at,description,gift_link,gift_name,gift_photo,is_block,is_hidden,wish_date,booking_id,from_user_id, holidays,user_id)
+insert into wishes(id,created_at,description,wish_link,wish_name,wish_photo,is_block,is_hidden,wish_date,booking_id,from_user_id, holiday,user_id)
 values (1,'2022-08-22','Жакет с однобортной застежкой на пуговицу выполнен в двух цветах: черном и синем','https://loverepublic.ru/catalog/odezhda/zhakety/','ЖАКЕТ','https://giftlist-bucket.s3.amazonaws.com/1661168510692nooruz.jpg',false,false,'2022-09-01',null,null,1,2),
        (2,'2022-08-23','Bluetooth 5.0, тип зарядки кейса: Lightning, беспроводная зарядка, степень защиты: IPX4, время работы: 6 ч, время работы от аккумулятора в кейсе: 30 ч, вес: 42.19 г','https://www.kivano.kg/product/view/besprovodnye-naushniki-apple-airpods-3','Apple AirPods 3','https://giftlist-bucket.s3.amazonaws.com/1661168510692nooruz.jpg',false,false,'2022-12-31',null,null,2,2),
        (3,'2022-08-23','Серьги из серебра Opal C3292 шампань циркон 925 проба','https://svetofor.info/sergi-iz-serebra-opal-c3292-shampan-cirkon-925-proba-87.html','Серьги','https://giftlist-bucket.s3.amazonaws.com/1661168510692nooruz.jpg',false,false,'2023-03-21',null,null,3,2),
