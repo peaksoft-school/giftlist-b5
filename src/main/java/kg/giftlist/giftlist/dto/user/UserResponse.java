@@ -14,6 +14,7 @@ public class UserResponse {
     private Long id;
     private String firstName;
     private String lastName;
+    private String email;
     private String photo;
     private String jwt;
     private Role role;
@@ -22,6 +23,7 @@ public class UserResponse {
         this.id = user.getId();
         this.firstName= user.getFirstName();
         this.lastName= user.getLastName();
+        this.email= user.getEmail();
         this.photo= user.getPhoto();
     }
 }

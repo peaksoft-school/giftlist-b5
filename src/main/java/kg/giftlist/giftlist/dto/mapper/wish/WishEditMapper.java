@@ -12,19 +12,19 @@ public class WishEditMapper {
             return null;
         }
         Wish wish = new Wish();
-        wish.setGiftName(request.getGiftName());
-        wish.setGiftLink(request.getGiftLink());
+        wish.setWishName(request.getWishName());
+        wish.setWishLink(request.getWishLink());
         wish.setDescription(request.getDescription());
-        wish.setGiftPhoto(request.getPhoto());
+        wish.setWishPhoto(request.getPhoto());
         wish.setWishDate(request.getWishDate());
         return wish;
     }
 
     public void update(Wish wish, WishRequest wishRequest) {
 
-        wish.setGiftName(wishRequest.getGiftName());
-        wish.setGiftLink(wishRequest.getGiftLink());
-        wish.setGiftPhoto(wishRequest.getPhoto());
+        wish.setWishName(wishRequest.getWishName());
+        wish.setWishLink(wishRequest.getWishLink());
+        wish.setWishPhoto(wishRequest.getPhoto());
         wish.setDescription(wishRequest.getDescription());
         wish.setWishDate(wishRequest.getWishDate());
     }

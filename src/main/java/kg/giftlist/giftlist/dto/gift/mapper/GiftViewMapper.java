@@ -18,7 +18,7 @@ public class GiftViewMapper {
             return null;
         }
         GiftResponse response = new GiftResponse();
-        response.setUser(viewUserGift(user));
+        response.setOwnerUser(viewUserGift(user));
         response.setGift(viewGiftCard(gift));
         if (gift.getBooking()==null || gift.getBooking().getUser()==null) {
             return response;

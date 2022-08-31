@@ -1,5 +1,8 @@
 package kg.giftlist.giftlist.dto.mapper;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
+import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
+import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
+import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.config.security.JwtUtils;
@@ -18,10 +21,16 @@ public class UserViewMapper {
 
     private final JwtUtils utils;
     private final UserRepository userRepository;
+    private final GiftViewMapper giftViewMapper;
+    private final WishViewMapper wishViewMapper;
+    private final HolidayViewMapper holidayViewMapper;
 
-    public UserViewMapper(JwtUtils utils, UserRepository userRepository) {
+    public UserViewMapper(JwtUtils utils, UserRepository userRepository, GiftViewMapper giftViewMapper, WishViewMapper wishViewMapper, HolidayViewMapper holidayViewMapper) {
         this.utils = utils;
         this.userRepository = userRepository;
+        this.giftViewMapper = giftViewMapper;
+        this.wishViewMapper = wishViewMapper;
+        this.holidayViewMapper = holidayViewMapper;
     }
 
     public UserResponse viewUser(User user) {
@@ -32,6 +41,7 @@ public class UserViewMapper {
         response.setId(user.getId());
         response.setFirstName(user.getFirstName());
         response.setLastName(user.getLastName());
+        response.setEmail(user.getEmail());
         response.setPhoto(user.getPhoto());
         String jwt = utils.generateJwt(user);
         response.setJwt(jwt);
@@ -94,9 +104,9 @@ public class UserViewMapper {
          commonUserProfileResponse.setEmail(user.getEmail());
          commonUserProfileResponse.setPhoto(user.getPhoto());
          commonUserProfileResponse.setUserInfo(user.getUserInfo());
-         commonUserProfileResponse.setWishes(user.getWishes());
-         commonUserProfileResponse.setHolidays(user.getHolidays());
-         commonUserProfileResponse.setGifts(user.getGifts());
+         commonUserProfileResponse.setWishes(wishViewMapper.getAllWishes(user.getWishes()));
+         commonUserProfileResponse.setHolidays(holidayViewMapper.view(user.getHolidays()));
+         commonUserProfileResponse.setGifts(giftViewMapper.getAllGifts(user.getGifts()));
         if (user1.getRequestToFriends().contains(user)) {
             commonUserProfileResponse.setFriendStatus(FriendStatus.REQUEST_TO_FRIEND);
         }else if (user1.getFriends().contains(user)) {

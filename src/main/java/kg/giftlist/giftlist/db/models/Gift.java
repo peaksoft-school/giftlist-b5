@@ -23,13 +23,14 @@ public class Gift {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gift_gen")
-    @SequenceGenerator(name = "gift_gen",sequenceName = "gift_seq", initialValue = 4, allocationSize = 1)
+    @SequenceGenerator(name = "gift_gen",sequenceName = "gift_seq", initialValue = 7, allocationSize = 1)
     private Long id;
 
     private String name;
 
     private String photo;
 
+    @Column(length = 4000)
     private String description;
 
     private Boolean isBlock;
@@ -40,7 +41,6 @@ public class Gift {
     private Status status;
 
     @ManyToOne(cascade = ALL)
-    @JsonIgnore
     private Booking booking;
 
     @OneToOne

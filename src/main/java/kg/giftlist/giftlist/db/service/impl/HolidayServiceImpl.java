@@ -9,7 +9,6 @@ import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayEditMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
-import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
@@ -23,7 +22,6 @@ import org.springframework.stereotype.Service;
 
 import javax.ws.rs.ForbiddenException;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -37,6 +35,11 @@ public class HolidayServiceImpl implements HolidayService {
 
     public HolidayResponse create(HolidayRequest holidayRequest) {
         Holiday holiday =editMapper.create(holidayRequest);
+        if (holidayRequest.getPhoto()==null){
+            holiday.setPhoto("https://giftlist-bucket.s3.amazonaws.com/1661860597142holiday-default-image.jpg");
+        }else {
+            holiday.setPhoto(holidayRequest.getPhoto());
+        }
         User user = getAuthenticatedUser();
         holiday.setUser(user);
         holidayRepository.save(holiday);
