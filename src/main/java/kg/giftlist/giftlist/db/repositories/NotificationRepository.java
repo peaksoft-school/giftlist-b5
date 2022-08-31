@@ -7,15 +7,24 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
 
-    Optional<Notification> findByGiftId(Long giftId);
-    Optional<Notification> findByWishId(Long wishId);
-    Optional<Notification> findByHolidayId(Long holidayId);
-    Optional<Notification> findByUserId(Long userId);
+    @Query("select n from Notification n where n.id = ?1")
+    NotificationResponse findByNotificationId(Long id);
+
+    @Query("select n from Notification n where n.gift.id = ?1")
+    NotificationResponse findByGiftId(Long giftId);
+
+    @Query("select n from Notification n where n.wish.id = ?1")
+    NotificationResponse findByWishId(Long wishId);
+
+    @Query("select n from Notification n where n.holiday.id = ?1")
+    NotificationResponse findByHolidayId(Long holidayId);
+
+    @Query("select n from Notification n where n.user.id = ?1")
+    NotificationResponse findByUserId(Long userId);
 
     @Query("select n from Notification n order by n.isRead asc")
     List<NotificationResponse> findAllNotifications();

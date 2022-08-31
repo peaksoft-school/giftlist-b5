@@ -1,19 +1,23 @@
 package kg.giftlist.giftlist.db.service.impl;
 
-import kg.giftlist.giftlist.db.service.NotificationService;
+import kg.giftlist.giftlist.db.repositories.NotificationRepository;
 import kg.giftlist.giftlist.dto.notification.NotificationResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class NotificationServiceImpl implements NotificationService {
+@Service
+@RequiredArgsConstructor
+public class NotificationServiceImpl {
 
-    @Override
+    private final NotificationRepository notificationRepository;
+
     public NotificationResponse findById(Long notificationId) {
-        return null;
+        return notificationRepository.findByNotificationId(notificationId);
     }
 
-    @Override
     public List<NotificationResponse> findAll() {
-        return null;
+        return notificationRepository.findAllNotifications();
     }
 }
