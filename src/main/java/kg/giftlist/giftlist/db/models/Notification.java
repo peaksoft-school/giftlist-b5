@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "notifications")
@@ -45,8 +44,5 @@ public class Notification {
 
     @OneToOne
     private Booking wishBooking;
-
-    @OneToMany
-    private List<Type> types;
 
 }
