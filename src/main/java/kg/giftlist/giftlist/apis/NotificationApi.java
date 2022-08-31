@@ -3,7 +3,6 @@ package kg.giftlist.giftlist.apis;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.NotificationServiceImpl;
-import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.dto.notification.NotificationResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
