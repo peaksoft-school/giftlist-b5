@@ -2,6 +2,7 @@ package kg.giftlist.giftlist.apis;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.db.service.impl.UserInfoServiceImpl;
 import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
@@ -41,9 +42,9 @@ public class UserApi {
     }
 
     @Operation(summary = "Change password ", description = "User can change password")
-    @PostMapping("/{userId}")
-    public SimpleResponse changePassword(@PathVariable Long userId, @RequestBody UserChangePasswordRequest request) {
-        return userService.changeUserPassword(userId, request);
+    @PostMapping("/password")
+    public AuthResponse changePassword(@RequestBody UserChangePasswordRequest request) {
+        return userService.changeUserPassword(request);
     }
 
     @Operation(summary = "Search users", description = "User can search by first name and last name")

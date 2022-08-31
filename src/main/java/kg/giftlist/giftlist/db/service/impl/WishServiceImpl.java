@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.ForbiddenException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -34,10 +35,16 @@ public class WishServiceImpl implements WishService {
     public WishResponse create(WishRequest wishRequest) {
         User user = getAuthenticatedUser();
         Wish wish = editMapper.create(wishRequest);
+        if (wishRequest.getPhoto()==null){
+            wish.setWishPhoto("https://giftlist-bucket.s3.amazonaws.com/1661860549270wishes-default-image.png");
+        }else {
+            wish.setWishPhoto(wishRequest.getPhoto());
+        }
         wish.setUser(user);
         user.setWishes(List.of(wish));
         Holiday holiday = holidayRepository.findById(wishRequest.getHolidayId()).orElseThrow(()
                 -> new NotFoundException("Holiday not found"));
+        wish.setCreatedAt(LocalDateTime.now());
         if (user.getHolidays().contains(holiday)){
             wish.setHoliday(holiday);
         }else {

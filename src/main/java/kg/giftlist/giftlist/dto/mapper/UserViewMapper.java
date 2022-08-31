@@ -41,6 +41,7 @@ public class UserViewMapper {
         response.setId(user.getId());
         response.setFirstName(user.getFirstName());
         response.setLastName(user.getLastName());
+        response.setEmail(user.getEmail());
         response.setPhoto(user.getPhoto());
         String jwt = utils.generateJwt(user);
         response.setJwt(jwt);
