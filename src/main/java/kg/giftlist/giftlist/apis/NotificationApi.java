@@ -29,6 +29,6 @@ public class NotificationApi {
     @Operation(summary = "Get all notifications", description = "User can get all notifications")
     @GetMapping
     public List<NotificationResponse> findAll() {
-        return notificationService.findAll();
+        return notificationService.getAllNotifications();
     }
 }

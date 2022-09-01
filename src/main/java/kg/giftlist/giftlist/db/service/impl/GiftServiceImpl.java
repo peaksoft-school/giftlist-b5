@@ -7,6 +7,7 @@ import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
+import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.service.GiftService;
@@ -15,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
 import java.util.List;
@@ -23,12 +25,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GiftServiceImpl implements GiftService {
 
-    private final GiftRepository  giftRepository;
+    private final GiftRepository giftRepository;
     private final GiftViewMapper giftViewMapper;
     private final GiftEditMapper giftEditMapper;
-    private final UserRepository  userRepository;
+    private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
     private final SubCategoryRepository subCategoryRepository;
+    private final NotificationRepository notificationRepository;
 
     @Override
     public GiftResponse create(GiftRequest request) {
@@ -41,14 +44,22 @@ public class GiftServiceImpl implements GiftService {
                 new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found"));
         if (subCategory.getCategory().getId().equals(category.getId())) {
             gift.setSubCategory(subCategory);
-        }else {
+        } else {
             throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found");
         }
         user.setGifts(List.of(gift));
         gift.setUser(user);
         gift.setCreatedAt(LocalDate.now());
         giftRepository.save(gift);
-        return giftViewMapper.viewCommonGiftCard(user,gift);
+
+        Notification notification = new Notification();
+        notification.setNotificationStatus(NotificationStatus.ADD_GIFT);
+        notification.setCreatedAt(LocalDate.now());
+        notification.setUser(user);
+        user.addNotification(notification);
+        userRepository.save(user);
+        notificationRepository.saveAll(user.getNotifications());
+        return giftViewMapper.viewCommonGiftCard(user, gift);
     }
 
     @Override
@@ -56,7 +67,7 @@ public class GiftServiceImpl implements GiftService {
     public GiftResponse update(Long giftId, GiftRequest request) {
         User user = getAuthenticatedUser();
         Gift gift = findById(giftId);
-        if (gift.getUser().equals(user)){
+        if (gift.getUser().equals(user)) {
             Category category = categoryRepository.findById(request.getCategoryId()).orElseThrow(() ->
                     new NotFoundException("Category with id: " + request.getCategoryId() + " not found"));
             gift.setCategory(category);
@@ -64,12 +75,12 @@ public class GiftServiceImpl implements GiftService {
                     new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found"));
             if (category.getSubCategories().contains(subCategory)) {
                 gift.setSubCategory(subCategory);
-            }else {
+            } else {
                 throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found");
             }
-            giftEditMapper.update(gift,request);
+            giftEditMapper.update(gift, request);
         }
-        return giftViewMapper.viewCommonGiftCard(user,gift);
+        return giftViewMapper.viewCommonGiftCard(user, gift);
     }
 
     @Override
@@ -82,7 +93,7 @@ public class GiftServiceImpl implements GiftService {
     public SimpleResponse deleteById(Long giftId) {
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
                 new NotFoundException("Wish with id = " + giftId + " not found!"));
-        if (gift.getBooking()!=null) {
+        if (gift.getBooking() != null) {
             User user = gift.getBooking().getUser();
             user.getBooking().getGifts().remove(gift);
             gift.setBooking(null);
@@ -98,14 +109,14 @@ public class GiftServiceImpl implements GiftService {
     }
 
     @Override
-    public List<GiftResponse> filter(String search,Status status,Long categoryId,Long subCategoryId) {
-        return giftViewMapper.getAllGifts(giftRepository.filterGift(search,status,categoryId,subCategoryId));
+    public List<GiftResponse> filter(String search, Status status, Long categoryId, Long subCategoryId) {
+        return giftViewMapper.getAllGifts(giftRepository.filterGift(search, status, categoryId, subCategoryId));
     }
 
     public GiftResponse getGiftById(Long giftId) {
         Gift gift = findById(giftId);
         User user = gift.getUser();
-        return giftViewMapper.viewCommonGiftCard(user,gift);
+        return giftViewMapper.viewCommonGiftCard(user, gift);
     }
 
     public User getAuthenticatedUser() {

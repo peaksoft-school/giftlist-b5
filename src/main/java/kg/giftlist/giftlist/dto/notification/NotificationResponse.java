@@ -19,33 +19,16 @@ public class NotificationResponse {
     private String userFirstName;
     private String userLastName;
     private LocalDate createdAt;
-    private Boolean isRead;
+    private boolean isRead;
 
     public NotificationResponse() {
-    }
-
-    public NotificationResponse(
-            Long notificationId, String userPhoto, Long userId, String userFirstName,
-            String userLastName, NotificationStatus notificationStatus, Long wishOrGiftOrHolidayId, String othersName,
-            LocalDate createdAt, Boolean isRead) {
-
-        this.notificationId = notificationId;
-        this.photo = userPhoto;
-        this.userId = userId;
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
-        this.notificationStatus = notificationStatus;
-        this.othersId = wishOrGiftOrHolidayId;
-        this.othersName = othersName;
-        this.createdAt = createdAt;
-        this.isRead = isRead;
     }
 
     public NotificationResponse(
             Long notificationId, Long othersId, String othersPhoto, String nameOfGiftOrWish,
             NotificationStatus notificationStatus, Long userId,
             String userFirstName, String userLastName,
-            LocalDate createdAt, Boolean isRead) {
+            LocalDate createdAt, boolean isRead) {
 
         this.notificationId = notificationId;
         this.othersId = othersId;
@@ -59,18 +42,10 @@ public class NotificationResponse {
         this.isRead = isRead;
     }
 
-    public NotificationResponse(
-            Long notificationId, Long userId, String userPhoto, String userFirstName, String userLastName,
-            NotificationStatus notificationStatus,
-            LocalDate createdAt, Boolean isRead) {
+    public NotificationResponse(Long id, Long id1, String photo, NotificationStatus notificationStatus, String firstName, String lastName, LocalDate createdAt, boolean read) {
+    }
 
-        this.notificationId = notificationId;
-        this.userId = userId;
-        this.photo = userPhoto;
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
-        this.notificationStatus = notificationStatus;
-        this.createdAt = createdAt;
-        this.isRead = isRead;
+    public NotificationResponse(Long id, String photo, Long id1, String firstName, String lastName, NotificationStatus notificationStatus, Long id2, String name, LocalDate createdAt, boolean read) {
+
     }
 }

@@ -40,6 +40,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
@@ -195,14 +196,14 @@ public class UserServiceImpl implements UserService {
             throw new AlreadyExistException("Request already sent");
         }
         friend.addRequestToFriend(user);
-        for (User userFriend : user.getFriends()) {
-            Notification notification = new Notification();
-            notification.setUser(user);
-            notification.setNotificationStatus(NotificationStatus.REQUEST_TO_FRIEND);
-            userFriend.addNotification(notification);
-            userRepo.save(user);
-            notificationRepository.saveAll(userFriend.getNotifications());
-        }
+
+        Notification notification = new Notification();
+        notification.setNotificationStatus(NotificationStatus.REQUEST_TO_FRIEND);
+        notification.setCreatedAt(LocalDate.now());
+        notification.setUser(user);
+        friend.addNotification(notification);
+        userRepo.save(friend);
+        notificationRepository.saveAll(friend.getNotifications());
         return new SimpleResponse("Success", "Request to friend successfully send");
     }
 

@@ -2,117 +2,71 @@ package kg.giftlist.giftlist.dto.mapper.notification;
 
 import kg.giftlist.giftlist.db.models.Notification;
 import kg.giftlist.giftlist.dto.notification.NotificationResponse;
+import kg.giftlist.giftlist.enums.NotificationStatus;
+import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
+@Component
 public class NotificationViewMapper {
 
-    public NotificationResponse viewAddGiftNotifications(Notification notification) {
+    public NotificationResponse viewNotification(Notification notification) {
 
-        return new NotificationResponse(
-                notification.getId(),
-                notification.getUser().getPhoto(),
-                notification.getUser().getId(),
-                notification.getUser().getFirstName(),
-                notification.getUser().getLastName(),
-                notification.getNotificationStatus(),
-                notification.getGift().getId(),
-                notification.getGift().getName(),
-                notification.getCreatedAt(),
-                notification.getIsRead()
-        );
-    }
+        NotificationResponse response = new NotificationResponse();
+        response.setNotificationId(notification.getId());
+        if (notification.getNotificationStatus().equals(NotificationStatus.REQUEST_TO_FRIEND)) {
+            response.setUserId(notification.getUser().getId());
+            response.setPhoto(notification.getUser().getPhoto());
+            response.setNotificationStatus(notification.getNotificationStatus());
+            response.setUserFirstName(notification.getUser().getFirstName());
+            response.setUserLastName(notification.getUser().getLastName());
+        } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_GIFT)) {
+            response.setPhoto(notification.getUser().getPhoto());
+            response.setUserId(notification.getUser().getId());
+            response.setUserFirstName(notification.getUser().getFirstName());
+            response.setUserLastName(notification.getUser().getLastName());
+            response.setNotificationStatus(notification.getNotificationStatus());
+            response.setOthersId(notification.getGift().getId());
+            response.setOthersName(notification.getGift().getName());
 
-    public NotificationResponse viewAddWishNotifications(Notification notification) {
+        } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_WISH)) {
+            response.setPhoto(notification.getUser().getPhoto());
+            response.setUserId(notification.getUser().getId());
+            response.setUserFirstName(notification.getUser().getFirstName());
+            response.setUserLastName(notification.getUser().getLastName());
+            response.setNotificationStatus(notification.getNotificationStatus());
+            response.setOthersId(notification.getWish().getId());
+            response.setOthersName(notification.getWish().getGiftName());
 
-        return new NotificationResponse(
-                notification.getId(),
-                notification.getUser().getPhoto(),
-                notification.getUser().getId(),
-                notification.getUser().getFirstName(),
-                notification.getUser().getLastName(),
-                notification.getNotificationStatus(),
-                notification.getWish().getId(),
-                notification.getWish().getGiftName(),
-                notification.getCreatedAt(),
-                notification.getIsRead()
-        );
-    }
+        } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_HOLIDAY)) {
+            response.setPhoto(notification.getUser().getPhoto());
+            response.setUserId(notification.getUser().getId());
+            response.setUserFirstName(notification.getUser().getFirstName());
+            response.setUserLastName(notification.getUser().getLastName());
+            response.setNotificationStatus(notification.getNotificationStatus());
+            response.setOthersId(notification.getHoliday().getId());
+            response.setOthersName(notification.getHoliday().getName());
 
-    public NotificationResponse viewAddHolidayNotifications(Notification notification) {
-
-        return new NotificationResponse(
-                notification.getId(),
-                notification.getUser().getPhoto(),
-                notification.getUser().getId(),
-                notification.getUser().getFirstName(),
-                notification.getUser().getLastName(),
-                notification.getNotificationStatus(),
-                notification.getHoliday().getId(),
-                notification.getHoliday().getName(),
-                notification.getCreatedAt(),
-                notification.getIsRead()
-        );
-    }
-
-    public NotificationResponse viewBookingGiftNotification(Notification notification) {
-
-        return new NotificationResponse(
-                notification.getId(),
-                notification.getGift().getId(),
-                notification.getGift().getPhoto(),
-                notification.getGift().getName(),
-                notification.getNotificationStatus(),
-                notification.getUser().getId(),
-                notification.getUser().getFirstName(),
-                notification.getUser().getLastName(),
-                notification.getCreatedAt(),
-                notification.getIsRead()
-        );
-    }
-
-    public NotificationResponse viewBookingWishNotification(Notification notification) {
-
-        return new NotificationResponse(
-                notification.getId(),
-                notification.getWish().getId(),
-                notification.getWish().getGiftPhoto(),
-                notification.getWish().getGiftName(),
-                notification.getNotificationStatus(),
-                notification.getUser().getId(),
-                notification.getUser().getFirstName(),
-                notification.getUser().getLastName(),
-                notification.getCreatedAt(),
-                notification.getIsRead()
-        );
-    }
-
-    public NotificationResponse viewRequestToFriendNotification(Notification notification) {
-
-        return new NotificationResponse(
-                notification.getId(),
-                notification.getUser().getId(),
-                notification.getUser().getPhoto(),
-                notification.getUser().getFirstName(),
-                notification.getUser().getLastName(),
-                notification.getNotificationStatus(),
-                notification.getCreatedAt(),
-                notification.getIsRead()
-        );
-    }
-
-    public List<NotificationResponse> view(List<Notification> notifications) {
-
-        List<NotificationResponse> responses = new ArrayList<>();
-        for (Notification notification : notifications) {
-            responses.add(viewAddGiftNotifications(notification));
-            responses.add(viewAddWishNotifications(notification));
-            responses.add(viewAddHolidayNotifications(notification));
-            responses.add(viewBookingGiftNotification(notification));
-            responses.add(viewBookingWishNotification(notification));
-            responses.add(viewRequestToFriendNotification(notification));
         }
-        return responses;
+        else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_GIFT_BOOKING)) {
+            response.setOthersId(notification.getGift().getId());
+            response.setPhoto(notification.getGift().getPhoto());
+            response.setOthersName(notification.getGift().getName());
+            response.setNotificationStatus(notification.getNotificationStatus());
+            response.setUserId(notification.getUser().getId());
+            response.setUserFirstName(notification.getUser().getFirstName());
+            response.setUserLastName(notification.getUser().getLastName());
+
+        }
+        else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_WISH_BOOKING)) {
+            response.setOthersId(notification.getWish().getId());
+            response.setPhoto(notification.getWish().getGiftPhoto());
+            response.setOthersName(notification.getWish().getGiftName());
+            response.setNotificationStatus(notification.getNotificationStatus());
+            response.setUserId(notification.getUser().getId());
+            response.setUserFirstName(notification.getUser().getFirstName());
+            response.setUserLastName(notification.getUser().getLastName());
+        }
+        response.setCreatedAt(notification.getCreatedAt());
+        response.setRead(notification.isRead());
+        return response;
     }
 }
