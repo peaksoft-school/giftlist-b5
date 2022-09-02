@@ -28,6 +28,6 @@ public interface NotificationRepository extends JpaRepository<Notification, Long
 
 
     @Query("select n from User u join u.notifications n where u.id=?1")
-    List<Notification> getAllByUserId(Long userId);
+    List<Notification> getAllNotifications(Long userId);
 
 }
