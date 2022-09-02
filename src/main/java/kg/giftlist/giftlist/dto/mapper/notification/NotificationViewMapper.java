@@ -5,6 +5,9 @@ import kg.giftlist.giftlist.dto.notification.NotificationResponse;
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class NotificationViewMapper {
 
@@ -45,8 +48,7 @@ public class NotificationViewMapper {
             response.setOthersId(notification.getHoliday().getId());
             response.setOthersName(notification.getHoliday().getName());
 
-        }
-        else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_GIFT_BOOKING)) {
+        } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_GIFT_BOOKING)) {
             response.setOthersId(notification.getGift().getId());
             response.setPhoto(notification.getGift().getPhoto());
             response.setOthersName(notification.getGift().getName());
@@ -55,8 +57,7 @@ public class NotificationViewMapper {
             response.setUserFirstName(notification.getUser().getFirstName());
             response.setUserLastName(notification.getUser().getLastName());
 
-        }
-        else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_WISH_BOOKING)) {
+        } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_WISH_BOOKING)) {
             response.setOthersId(notification.getWish().getId());
             response.setPhoto(notification.getWish().getGiftPhoto());
             response.setOthersName(notification.getWish().getGiftName());
@@ -68,5 +69,13 @@ public class NotificationViewMapper {
         response.setCreatedAt(notification.getCreatedAt());
         response.setRead(notification.isRead());
         return response;
+    }
+
+    public List<NotificationResponse> getAll(List<Notification> notifications) {
+        List<NotificationResponse> responses = new ArrayList<>();
+        for (Notification notification : notifications) {
+            responses.add(viewNotification(notification));
+        }
+        return responses;
     }
 }

@@ -191,19 +191,19 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public SimpleResponse requestToFriend(Long friendId) {
         User user = getAuthenticatedUser();
+        Notification notification = new Notification();
         User friend = findByUserId(friendId);
         if (friend.getRequestToFriends().contains(user)) {
             throw new AlreadyExistException("Request already sent");
         }
         friend.addRequestToFriend(user);
-
-        Notification notification = new Notification();
-        notification.setNotificationStatus(NotificationStatus.REQUEST_TO_FRIEND);
-        notification.setCreatedAt(LocalDate.now());
-        notification.setUser(user);
-        friend.addNotification(notification);
-        userRepo.save(friend);
-        notificationRepository.saveAll(friend.getNotifications());
+        for (User fr : user.getFriends()) {
+            notification.setNotificationStatus(NotificationStatus.REQUEST_TO_FRIEND);
+            notification.setCreatedAt(LocalDate.now());
+            notification.setUser(user);
+            fr.addNotification(notification);
+            notificationRepository.saveAll(fr.getNotifications());
+        }
         return new SimpleResponse("Success", "Request to friend successfully send");
     }
 
