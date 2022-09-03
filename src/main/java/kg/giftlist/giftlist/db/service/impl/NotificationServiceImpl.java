@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.db.service.impl;
 
+import kg.giftlist.giftlist.db.models.Notification;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.NotificationRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
@@ -26,11 +27,11 @@ public class NotificationServiceImpl {
     public NotificationResponse findById(Long notificationId) {
         return notificationRepository.findByNotificationId(notificationId);
     }
-
-    public List<NotificationResponse> getAll() {
-        return viewMapper.getAll(notificationRepository.
-                getAllNotifications(getAuthenticatedUser().getId()));
-    }
+//
+//    public List<NotificationResponse> getAll() {
+//        return viewMapper.getAll(notificationRepository.
+//                getAllNotifications(getAuthenticatedUser().getId()));
+//    }
 
     public User getAuthenticatedUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

@@ -3,6 +3,7 @@ package kg.giftlist.giftlist.apis;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.NotificationServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import kg.giftlist.giftlist.dto.notification.NotificationResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,7 +20,7 @@ import java.util.List;
 public class NotificationApi {
 
     private final NotificationServiceImpl notificationService;
-
+    private final UserServiceImpl userService;
     @Operation(summary = "Get notification", description = "User can get notification")
     @GetMapping("/{id}")
     public NotificationResponse findById(@PathVariable Long id) {
@@ -29,6 +30,6 @@ public class NotificationApi {
     @Operation(summary = "Get all notifications", description = "User can get all notifications")
     @GetMapping
     public List<NotificationResponse> findAll() {
-        return notificationService.getAll();
+        return userService.getAllNotifications();
     }
 }

@@ -12,6 +12,8 @@ import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
+import kg.giftlist.giftlist.dto.mapper.notification.NotificationViewMapper;
+import kg.giftlist.giftlist.dto.notification.NotificationResponse;
 import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
@@ -54,6 +56,7 @@ public class UserServiceImpl implements UserService {
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
     private final NotificationRepository notificationRepository;
+    private final NotificationViewMapper notificationViewMapper;
 
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;
@@ -200,11 +203,17 @@ public class UserServiceImpl implements UserService {
         notification.setNotificationStatus(NotificationStatus.REQUEST_TO_FRIEND);
         notification.setCreatedAt(LocalDate.now());
         notification.setUser(user);
+        notification.setRecipientId(friendId);
         friend.addNotification(notification);
         notificationRepository.saveAll(friend.getNotifications());
-
         return new SimpleResponse("Success", "Request to friend successfully send");
     }
+
+    public List<NotificationResponse> getAllNotifications() {
+        return notificationViewMapper.getAll(notificationRepository.
+                getAllNotifications(findById().getUserId()));
+    }
+
 
     @Override
     @Transactional

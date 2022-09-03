@@ -7,6 +7,8 @@ import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
+import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
+import kg.giftlist.giftlist.dto.user.UserProfileResponse;
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
@@ -32,6 +34,7 @@ public class GiftServiceImpl implements GiftService {
     private final CategoryRepository categoryRepository;
     private final SubCategoryRepository subCategoryRepository;
     private final NotificationRepository notificationRepository;
+    private final UserViewMapper userViewMapper;
 
     @Override
     public GiftResponse create(GiftRequest request) {
@@ -50,18 +53,22 @@ public class GiftServiceImpl implements GiftService {
         user.setGifts(List.of(gift));
         gift.setUser(user);
         gift.setCreatedAt(LocalDate.now());
-        giftRepository.save(gift);
 
-        Notification notification = new Notification();
-        notification.setNotificationStatus(NotificationStatus.ADD_GIFT);
-        notification.setCreatedAt(LocalDate.now());
-        notification.setUser(user);
-        user.addNotification(notification);
-        userRepository.save(user);
-        notificationRepository.saveAll(user.getNotifications());
+//        Notification notification = new Notification();
+//        notification.setNotificationStatus(NotificationStatus.ADD_GIFT);
+//        notification.setCreatedAt(LocalDate.now());
+//        notification.setUser(user);
+//        notification.setRecipientId(findById().getUserId());
+//        user.addNotification(notification);
+//        notificationRepository.saveAll(user.getNotifications());
+        giftRepository.save(gift);
         return giftViewMapper.viewCommonGiftCard(user, gift);
     }
 
+    public UserProfileResponse findById() {
+        User user1 = getAuthenticatedUser();
+        return userViewMapper.viewUserProfile(user1);
+    }
     @Override
     @Transactional
     public GiftResponse update(Long giftId, GiftRequest request) {

@@ -28,6 +28,8 @@ public class Notification {
 
     private boolean isRead;
 
+    private Long recipientId;
+
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
     @JsonIgnore
     private User user;
