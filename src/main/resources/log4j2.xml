@@ -31,7 +31,7 @@
     </Loggers>
     <Appenders>
         <LogzioAppender name="Logzio">
-            <logzioToken>LQJIpkRYLYQVNjxkLpqofwUNZcRyNMjH</logzioToken>
+            <logzioToken>WfyQhXpsuDvfPIuuUNgKSPseyNYBZspA</logzioToken>
             <logzioType>gift-list-app</logzioType>
             <logzioUrl>https://listener-eu.logz.io:8071</logzioUrl>
         </LogzioAppender>
