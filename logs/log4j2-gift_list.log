@@ -153,3 +153,706 @@
 2022-09-01 23:46:05.466  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2022-09-01 23:46:05.524  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
 2022-09-01 23:46:05.530  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-03 17:22:17.930  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on MacBook-Air-Tattusha-Dzh.local with PID 21536 (/Users/seiitbeknarynbaev/IdeaProjects/giftlist/target/classes started by seiitbeknarynbaev in /Users/seiitbeknarynbaev/IdeaProjects/giftlist)
+2022-09-03 17:22:17.933  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "seit"
+2022-09-03 17:22:18.348  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-03 17:22:18.380  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 12 JPA repository interfaces.
+2022-09-03 17:22:18.644  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5001 (http)
+2022-09-03 17:22:18.650  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5001"]
+2022-09-03 17:22:18.650  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-03 17:22:18.650  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-03 17:22:18.702  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-03 17:22:18.702  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 751 ms
+2022-09-03 17:22:18.778  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-03 17:22:18.803  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-03 17:22:18.857  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-03 17:22:18.893  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-03 17:22:18.933  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-03 17:22:18.944  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-03 17:22:19.193  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.193  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings" does not exist, skipping
+2022-09-03 17:22:19.194  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.194  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
+2022-09-03 17:22:19.194  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.194  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
+2022-09-03 17:22:19.194  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.194  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
+2022-09-03 17:22:19.195  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.195  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
+2022-09-03 17:22:19.195  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.195  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:22:19.195  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.195  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:22:19.196  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.196  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:22:19.196  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.196  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
+2022-09-03 17:22:19.196  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.196  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
+2022-09-03 17:22:19.197  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.197  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:22:19.197  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.197  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:22:19.197  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.197  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:22:19.198  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.198  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:22:19.198  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.198  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:22:19.198  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.198  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "holidays" does not exist, skipping
+2022-09-03 17:22:19.199  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.199  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications" does not exist, skipping
+2022-09-03 17:22:19.199  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.199  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
+2022-09-03 17:22:19.199  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.199  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
+2022-09-03 17:22:19.199  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.199  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
+2022-09-03 17:22:19.200  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.200  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
+2022-09-03 17:22:19.200  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.200  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "sub_categories" does not exist, skipping
+2022-09-03 17:22:19.200  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.200  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:22:19.201  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.201  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:22:19.201  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.201  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:22:19.201  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.201  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:22:19.201  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.201  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "users" does not exist, skipping
+2022-09-03 17:22:19.202  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.202  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:22:19.202  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.202  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:22:19.202  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.202  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:22:19.202  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.202  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:22:19.203  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.203  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings" does not exist, skipping
+2022-09-03 17:22:19.203  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.203  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_gifts" does not exist, skipping
+2022-09-03 17:22:19.203  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.203  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_wishes" does not exist, skipping
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "categories" does not exist, skipping
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "complaints" does not exist, skipping
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "friends" does not exist, skipping
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "gifts" does not exist, skipping
+2022-09-03 17:22:19.204  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "holidays" does not exist, skipping
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "mailing_lists" does not exist, skipping
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications" does not exist, skipping
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications_types" does not exist, skipping
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.205  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "request_to_friends" does not exist, skipping
+2022-09-03 17:22:19.206  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.206  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "sub_categories" does not exist, skipping
+2022-09-03 17:22:19.206  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.206  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "types" does not exist, skipping
+2022-09-03 17:22:19.206  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.206  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users" does not exist, skipping
+2022-09-03 17:22:19.206  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.206  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users_info" does not exist, skipping
+2022-09-03 17:22:19.207  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.207  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "wishes" does not exist, skipping
+2022-09-03 17:22:19.207  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.207  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "booking_seq" does not exist, skipping
+2022-09-03 17:22:19.207  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.207  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "category_seq" does not exist, skipping
+2022-09-03 17:22:19.207  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.207  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "complaint_seq" does not exist, skipping
+2022-09-03 17:22:19.208  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.208  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "gift_seq" does not exist, skipping
+2022-09-03 17:22:19.208  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.208  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "holiday_seq" does not exist, skipping
+2022-09-03 17:22:19.208  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.208  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "mailing_list_seq" does not exist, skipping
+2022-09-03 17:22:19.208  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.208  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "notification_seq" does not exist, skipping
+2022-09-03 17:22:19.209  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.209  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "sub_category_seq" does not exist, skipping
+2022-09-03 17:22:19.209  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.209  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "type_seq" does not exist, skipping
+2022-09-03 17:22:19.209  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.209  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_seq" does not exist, skipping
+2022-09-03 17:22:19.209  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.209  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_info_seq" does not exist, skipping
+2022-09-03 17:22:19.210  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:22:19.210  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "wish_seq" does not exist, skipping
+2022-09-03 17:22:19.271  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-03 17:22:19.274  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-03 17:22:19.561  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-03 17:22:20.029  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-03 17:22:20.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorization' defined in class path resource [kg/giftlist/giftlist/config/security/WebAppSecurity.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorization' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+2022-09-03 17:22:20.071  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-03 17:22:20.071  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-03 17:22:20.104  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-03 17:22:20.106  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-03 17:22:20.107  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Stopping service [Tomcat]
+2022-09-03 17:22:20.113  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-03 17:22:20.125 ERROR MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.SpringApplication                  : Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorization' defined in class path resource [kg/giftlist/giftlist/config/security/WebAppSecurity.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorization' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:719)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at kg.giftlist.giftlist.GiftlistApplication.main(GiftlistApplication.java:15)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorization' defined in class path resource [kg/giftlist/giftlist/config/security/WebAppSecurity.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorization' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:759)
+	... 20 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorization' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 36 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1160)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer$MvcCorsFilter.getMvcCorsFilter(CorsConfigurer.java:111)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer$MvcCorsFilter.access$000(CorsConfigurer.java:94)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.getCorsFilter(CorsConfigurer.java:89)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.configure(CorsConfigurer.java:67)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.configure(CorsConfigurer.java:41)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.configure(AbstractConfiguredSecurityBuilder.java:349)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:303)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38)
+	at kg.giftlist.giftlist.config.security.WebAppSecurity.authorization(WebAppSecurity.java:61)
+	at kg.giftlist.giftlist.config.security.WebAppSecurity$$EnhancerBySpringCGLIB$$86d55c70.CGLIB$authorization$1(<generated>)
+	at kg.giftlist.giftlist.config.security.WebAppSecurity$$EnhancerBySpringCGLIB$$86d55c70$$FastClassBySpringCGLIB$$c4e4c20e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at kg.giftlist.giftlist.config.security.WebAppSecurity$$EnhancerBySpringCGLIB$$86d55c70.authorization(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 37 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:673)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1308)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:378)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.initHandlerMappings(HandlerMappingIntrospector.java:226)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.afterPropertiesSet(HandlerMappingIntrospector.java:115)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 61 more
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 74 more
+2022-09-03 17:24:40.292  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on MacBook-Air-Tattusha-Dzh.local with PID 21615 (/Users/seiitbeknarynbaev/IdeaProjects/giftlist/target/classes started by seiitbeknarynbaev in /Users/seiitbeknarynbaev/IdeaProjects/giftlist)
+2022-09-03 17:24:40.296  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "seit"
+2022-09-03 17:24:40.662  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-03 17:24:40.698  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 12 JPA repository interfaces.
+2022-09-03 17:24:41.005  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5001 (http)
+2022-09-03 17:24:41.011  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5001"]
+2022-09-03 17:24:41.012  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-03 17:24:41.012  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-03 17:24:41.066  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-03 17:24:41.067  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 753 ms
+2022-09-03 17:24:41.125  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-03 17:24:41.144  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-03 17:24:41.189  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-03 17:24:41.216  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-03 17:24:41.270  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-03 17:24:41.277  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-03 17:24:41.557  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.557  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings" does not exist, skipping
+2022-09-03 17:24:41.557  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.557  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
+2022-09-03 17:24:41.557  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.557  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
+2022-09-03 17:24:41.558  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.558  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
+2022-09-03 17:24:41.558  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.558  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
+2022-09-03 17:24:41.558  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.558  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:24:41.558  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.558  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:24:41.559  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.559  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:24:41.559  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.559  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
+2022-09-03 17:24:41.559  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.559  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
+2022-09-03 17:24:41.559  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.560  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:24:41.561  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.561  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "holidays" does not exist, skipping
+2022-09-03 17:24:41.561  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.561  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications" does not exist, skipping
+2022-09-03 17:24:41.561  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.561  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
+2022-09-03 17:24:41.561  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.561  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
+2022-09-03 17:24:41.562  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.562  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
+2022-09-03 17:24:41.562  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.562  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
+2022-09-03 17:24:41.562  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.562  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "sub_categories" does not exist, skipping
+2022-09-03 17:24:41.562  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.562  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:24:41.563  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.563  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:24:41.563  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.563  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:24:41.563  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.563  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:24:41.563  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.563  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "users" does not exist, skipping
+2022-09-03 17:24:41.564  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.564  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:24:41.564  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.564  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:24:41.564  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.564  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:24:41.564  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.564  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:24:41.565  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.565  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings" does not exist, skipping
+2022-09-03 17:24:41.565  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.565  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_gifts" does not exist, skipping
+2022-09-03 17:24:41.565  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.565  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_wishes" does not exist, skipping
+2022-09-03 17:24:41.565  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.565  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "categories" does not exist, skipping
+2022-09-03 17:24:41.566  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.566  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "complaints" does not exist, skipping
+2022-09-03 17:24:41.566  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.566  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "friends" does not exist, skipping
+2022-09-03 17:24:41.566  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.566  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "gifts" does not exist, skipping
+2022-09-03 17:24:41.566  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.566  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "holidays" does not exist, skipping
+2022-09-03 17:24:41.567  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.567  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "mailing_lists" does not exist, skipping
+2022-09-03 17:24:41.567  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.567  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications" does not exist, skipping
+2022-09-03 17:24:41.567  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.567  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications_types" does not exist, skipping
+2022-09-03 17:24:41.567  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.567  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "request_to_friends" does not exist, skipping
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "sub_categories" does not exist, skipping
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "types" does not exist, skipping
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users" does not exist, skipping
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users_info" does not exist, skipping
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.568  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "wishes" does not exist, skipping
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "booking_seq" does not exist, skipping
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "category_seq" does not exist, skipping
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "complaint_seq" does not exist, skipping
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "gift_seq" does not exist, skipping
+2022-09-03 17:24:41.569  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "holiday_seq" does not exist, skipping
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "mailing_list_seq" does not exist, skipping
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "notification_seq" does not exist, skipping
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "sub_category_seq" does not exist, skipping
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.570  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "type_seq" does not exist, skipping
+2022-09-03 17:24:41.571  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.571  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_seq" does not exist, skipping
+2022-09-03 17:24:41.571  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.571  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_info_seq" does not exist, skipping
+2022-09-03 17:24:41.571  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:24:41.571  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "wish_seq" does not exist, skipping
+2022-09-03 17:24:41.629  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-03 17:24:41.633  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-03 17:24:41.919  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-03 17:24:42.435  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-03 17:24:42.483  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorization' defined in class path resource [kg/giftlist/giftlist/config/security/WebAppSecurity.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorization' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+2022-09-03 17:24:42.486  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-03 17:24:42.486  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-03 17:24:42.523  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-03 17:24:42.525  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-03 17:24:42.525  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Stopping service [Tomcat]
+2022-09-03 17:24:42.531  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-03 17:24:42.542 ERROR MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.SpringApplication                  : Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorization' defined in class path resource [kg/giftlist/giftlist/config/security/WebAppSecurity.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorization' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:719)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at kg.giftlist.giftlist.GiftlistApplication.main(GiftlistApplication.java:15)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorization' defined in class path resource [kg/giftlist/giftlist/config/security/WebAppSecurity.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorization' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:759)
+	... 20 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorization' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 36 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1160)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer$MvcCorsFilter.getMvcCorsFilter(CorsConfigurer.java:111)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer$MvcCorsFilter.access$000(CorsConfigurer.java:94)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.getCorsFilter(CorsConfigurer.java:89)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.configure(CorsConfigurer.java:67)
+	at org.springframework.security.config.annotation.web.configurers.CorsConfigurer.configure(CorsConfigurer.java:41)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.configure(AbstractConfiguredSecurityBuilder.java:349)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:303)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38)
+	at kg.giftlist.giftlist.config.security.WebAppSecurity.authorization(WebAppSecurity.java:61)
+	at kg.giftlist.giftlist.config.security.WebAppSecurity$$EnhancerBySpringCGLIB$$86d55c70.CGLIB$authorization$1(<generated>)
+	at kg.giftlist.giftlist.config.security.WebAppSecurity$$EnhancerBySpringCGLIB$$86d55c70$$FastClassBySpringCGLIB$$c4e4c20e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at kg.giftlist.giftlist.config.security.WebAppSecurity$$EnhancerBySpringCGLIB$$86d55c70.authorization(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 37 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:673)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1308)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:378)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.initHandlerMappings(HandlerMappingIntrospector.java:226)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.afterPropertiesSet(HandlerMappingIntrospector.java:115)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 61 more
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'giftApi' method 
+kg.giftlist.giftlist.apis.GiftApi#getAllOwnGifts()
+to {GET [/api/gifts]}: There is already 'giftApi' bean method
+kg.giftlist.giftlist.apis.GiftApi#getAllGifts() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 74 more
+2022-09-03 17:26:43.863  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on MacBook-Air-Tattusha-Dzh.local with PID 21663 (/Users/seiitbeknarynbaev/IdeaProjects/giftlist/target/classes started by seiitbeknarynbaev in /Users/seiitbeknarynbaev/IdeaProjects/giftlist)
+2022-09-03 17:26:43.866  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "seit"
+2022-09-03 17:26:44.245  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-03 17:26:44.280  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 12 JPA repository interfaces.
+2022-09-03 17:26:44.520  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5001 (http)
+2022-09-03 17:26:44.526  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5001"]
+2022-09-03 17:26:44.526  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-03 17:26:44.526  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-03 17:26:44.578  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-03 17:26:44.578  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 694 ms
+2022-09-03 17:26:44.646  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-03 17:26:44.666  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-03 17:26:44.711  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-03 17:26:44.744  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-03 17:26:44.786  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-03 17:26:44.793  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-03 17:26:45.057  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.058  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings" does not exist, skipping
+2022-09-03 17:26:45.058  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.058  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
+2022-09-03 17:26:45.058  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.058  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
+2022-09-03 17:26:45.058  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.059  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
+2022-09-03 17:26:45.059  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.059  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
+2022-09-03 17:26:45.059  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.059  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:26:45.059  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.059  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:26:45.060  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.060  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-03 17:26:45.060  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.060  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
+2022-09-03 17:26:45.060  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.060  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
+2022-09-03 17:26:45.061  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.061  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:26:45.061  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.061  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:26:45.061  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.061  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:26:45.062  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.062  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:26:45.062  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.062  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-03 17:26:45.062  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.062  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "holidays" does not exist, skipping
+2022-09-03 17:26:45.062  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.063  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications" does not exist, skipping
+2022-09-03 17:26:45.063  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.063  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
+2022-09-03 17:26:45.063  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.063  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
+2022-09-03 17:26:45.063  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.064  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
+2022-09-03 17:26:45.064  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.064  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
+2022-09-03 17:26:45.064  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.064  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "sub_categories" does not exist, skipping
+2022-09-03 17:26:45.064  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.064  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:26:45.065  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.065  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:26:45.065  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.065  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:26:45.065  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.065  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-03 17:26:45.066  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.066  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "users" does not exist, skipping
+2022-09-03 17:26:45.066  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.066  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:26:45.066  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.066  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:26:45.066  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.067  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:26:45.067  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.067  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-03 17:26:45.067  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.067  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings" does not exist, skipping
+2022-09-03 17:26:45.067  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.067  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_gifts" does not exist, skipping
+2022-09-03 17:26:45.068  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.068  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_wishes" does not exist, skipping
+2022-09-03 17:26:45.068  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.068  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "categories" does not exist, skipping
+2022-09-03 17:26:45.068  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.068  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "complaints" does not exist, skipping
+2022-09-03 17:26:45.068  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "friends" does not exist, skipping
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "gifts" does not exist, skipping
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "holidays" does not exist, skipping
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "mailing_lists" does not exist, skipping
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.069  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications" does not exist, skipping
+2022-09-03 17:26:45.070  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.070  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications_types" does not exist, skipping
+2022-09-03 17:26:45.070  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.070  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "request_to_friends" does not exist, skipping
+2022-09-03 17:26:45.070  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.070  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "sub_categories" does not exist, skipping
+2022-09-03 17:26:45.070  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.070  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "types" does not exist, skipping
+2022-09-03 17:26:45.071  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.071  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users" does not exist, skipping
+2022-09-03 17:26:45.071  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.071  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users_info" does not exist, skipping
+2022-09-03 17:26:45.071  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.071  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "wishes" does not exist, skipping
+2022-09-03 17:26:45.072  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.072  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "booking_seq" does not exist, skipping
+2022-09-03 17:26:45.072  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.072  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "category_seq" does not exist, skipping
+2022-09-03 17:26:45.072  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.072  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "complaint_seq" does not exist, skipping
+2022-09-03 17:26:45.072  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.072  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "gift_seq" does not exist, skipping
+2022-09-03 17:26:45.073  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.073  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "holiday_seq" does not exist, skipping
+2022-09-03 17:26:45.073  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.073  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "mailing_list_seq" does not exist, skipping
+2022-09-03 17:26:45.073  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.073  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "notification_seq" does not exist, skipping
+2022-09-03 17:26:45.073  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.074  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "sub_category_seq" does not exist, skipping
+2022-09-03 17:26:45.074  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.074  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "type_seq" does not exist, skipping
+2022-09-03 17:26:45.074  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.074  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_seq" does not exist, skipping
+2022-09-03 17:26:45.074  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.074  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_info_seq" does not exist, skipping
+2022-09-03 17:26:45.075  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-03 17:26:45.075  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "wish_seq" does not exist, skipping
+2022-09-03 17:26:45.129  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-03 17:26:45.132  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-03 17:26:45.413  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-03 17:26:45.874  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-03 17:26:46.170  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@56114349, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46c28400, org.springframework.security.web.context.SecurityContextPersistenceFilter@3958e148, org.springframework.security.web.header.HeaderWriterFilter@66978c15, org.springframework.web.filter.CorsFilter@2d6abfc7, org.springframework.security.web.authentication.logout.LogoutFilter@7322013f, kg.giftlist.giftlist.config.security.TokenVerifierFilter@75a6bd06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23f9d0ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53c0424a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f5d587c, org.springframework.security.web.session.SessionManagementFilter@6527f68a, org.springframework.security.web.access.ExceptionTranslationFilter@2d0ce8a1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a925ac4]
+2022-09-03 17:26:46.354  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5001"]
+2022-09-03 17:26:46.363  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5001 (http) with context path ''
+2022-09-03 17:26:46.369  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 2.633 seconds (JVM running for 3.286)
+2022-09-03 17:27:07.611  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-03 17:27:07.612  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-03 17:27:07.628  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 16 ms
+2022-09-03 17:27:08.209  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-8] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 346 ms
+2022-09-03 17:27:44.132  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-9] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-03 17:30:38.418  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-03 17:30:38.421  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-03 17:30:38.481  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-03 17:30:38.483  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.

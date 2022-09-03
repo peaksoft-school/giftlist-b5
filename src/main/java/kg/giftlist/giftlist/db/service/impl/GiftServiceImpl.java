@@ -112,6 +112,10 @@ public class GiftServiceImpl implements GiftService {
         return giftViewMapper.getAllGifts(giftRepository.getAllUserGifts(user.getId()));
     }
 
+    public List<GiftResponse> getAllGifts(){
+        return giftViewMapper.getAllGifts(giftRepository.findAll());
+    }
+
     @Override
     public List<GiftResponse> filter(String search,Status status,Long categoryId,Long subCategoryId) {
         return giftViewMapper.getAllGifts(giftRepository.filterGift(search,status,categoryId,subCategoryId));

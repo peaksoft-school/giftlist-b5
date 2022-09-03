@@ -11,7 +11,7 @@
         </Console>
         <!-- Rolling File Appender -->
         <RollingFile name="FileAppender" fileName="logs/log4j2-gift_list.log"
-                     filePattern="logs/log4j2-item-%d{yyyy-MM-dd} %logger{36}:%L-%i.log">
+                     filePattern="logs/log4j2-item-%d{yyyy-MM-dd}-%i.log">
             [%-5p] %c{1}:%L - %m%n
             <PatternLayout>
                 <Pattern>${LOG_PATTERN}</Pattern>
@@ -29,17 +29,17 @@
             <AppenderRef ref="FileAppender" />
         </Root>
     </Loggers>
-    <Appenders>
-        <LogzioAppender name="Logzio">
-            <logzioToken>WfyQhXpsuDvfPIuuUNgKSPseyNYBZspA</logzioToken>
-            <logzioType>gift-list-app</logzioType>
-            <logzioUrl>https://listener-eu.logz.io:8071</logzioUrl>
-        </LogzioAppender>
-    </Appenders>
+<!--    <Appenders>-->
+<!--        <LogzioAppender name="Logzio">-->
+<!--            <logzioToken>WfyQhXpsuDvfPIuuUNgKSPseyNYBZspA</logzioToken>-->
+<!--            <logzioType>gift-list-app</logzioType>-->
+<!--            <logzioUrl>https://listener-eu.logz.io:8071</logzioUrl>-->
+<!--        </LogzioAppender>-->
+<!--    </Appenders>-->
 
-    <Loggers>
-        <Root level="info">
-            <AppenderRef ref="Logzio"/>
-        </Root>
-    </Loggers>
+<!--    <Loggers>-->
+<!--        <Root level="info">-->
+<!--            <AppenderRef ref="Logzio"/>-->
+<!--        </Root>-->
+<!--    </Loggers>-->
 </Configuration>
