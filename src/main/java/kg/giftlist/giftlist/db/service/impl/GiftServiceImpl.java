@@ -11,6 +11,8 @@ import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.service.GiftService;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,7 @@ public class GiftServiceImpl implements GiftService {
     private final CategoryRepository categoryRepository;
     private final SubCategoryRepository subCategoryRepository;
     private final ComplaintRepository complaintRepository;
+    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     @Override
     public GiftResponse create(GiftRequest request) {
@@ -55,6 +58,7 @@ public class GiftServiceImpl implements GiftService {
         gift.setUser(user);
         gift.setCreatedAt(LocalDate.now());
         giftRepository.save(gift);
+        logger.info("Gift with id: {} successfully saved in db", gift.getId());
         return giftViewMapper.viewCommonGiftCard(user,gift);
     }
 
@@ -75,6 +79,7 @@ public class GiftServiceImpl implements GiftService {
                 throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found");
             }
             giftEditMapper.update(gift,request);
+            logger.info("Gift with id: {} successfully updated in db", gift.getId());
         }
         return giftViewMapper.viewCommonGiftCard(user,gift);
     }
@@ -97,6 +102,7 @@ public class GiftServiceImpl implements GiftService {
         List<Complaint> complaints = complaintRepository.findAll();
         complaints.removeIf(c -> Objects.equals(gift.getComplaints(), c));
         giftRepository.deleteById(giftId);
+        logger.info("Gift with id: {} successfully deleted from db", giftId);
         return new SimpleResponse("Deleted!", "Gift successfully deleted!");
     }
 

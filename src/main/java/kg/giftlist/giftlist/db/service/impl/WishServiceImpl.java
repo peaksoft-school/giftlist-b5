@@ -11,6 +11,8 @@ import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
 import kg.giftlist.giftlist.db.service.WishService;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -32,6 +34,7 @@ public class WishServiceImpl implements WishService {
     private final UserRepository userRepository;
     private final HolidayRepository holidayRepository;
     private final BookingRepository bookingRepository;
+    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     @Override
     @Transactional
@@ -53,6 +56,7 @@ public class WishServiceImpl implements WishService {
         }else {
             throw new NotFoundException("Holiday not found");
         }
+        logger.info("Wish with id: {} successfully saved in db", wish.getId());
         return viewMapper.viewCommonWishCard(user,wish);
     }
 
@@ -71,6 +75,7 @@ public class WishServiceImpl implements WishService {
         if (wish.getUser() == user) {
             editMapper.update(wish, wishRequest);
         }
+        logger.info("Wish with id: {} successfully updated in db", wish.getId());
         return viewMapper.viewCommonWishCard(user, wish);
     }
 
@@ -98,6 +103,7 @@ public class WishServiceImpl implements WishService {
         List<Complaint> complaints = complaintRepository.findAll();
         complaints.removeIf(c -> Objects.equals(wish.getComplaints(), c));
         wishRepository.deleteById(id);
+        logger.info("Wish with id: {} successfully deleted from db", id);
         return new SimpleResponse("Deleted!", "Wish successfully deleted!");
     }
 
@@ -126,6 +132,7 @@ public class WishServiceImpl implements WishService {
         newWish.setHoliday(friendWish.getHoliday());
         newWish.setUser(user);
         user.setWishes(List.of(newWish));
+        logger.info("Wish with id: {} successfully saved in db", newWish.getId());
         return viewMapper.viewCommonWishCard(user,newWish);
     }
 }

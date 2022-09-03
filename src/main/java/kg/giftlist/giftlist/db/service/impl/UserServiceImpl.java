@@ -21,8 +21,8 @@ import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.config.security.JwtUtils;
 import kg.giftlist.giftlist.db.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService{
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;
 
-    Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+   private final Logger logger = LogManager.getLogger(UserServiceImpl.class);
 
     @PostConstruct
     public void initialize() {
@@ -105,9 +105,11 @@ public class UserServiceImpl implements UserService{
                     Role.USER
             );
             user = userRepo.save(newUser);
+            logger.info("Successfully saved user with id: {} in db", newUser.getId());
         }
         else {
-            user = userRepo.findByEmail(decodedToken.getEmail()).get();
+            user = userRepo.findByEmail(decodedToken.getEmail()).orElseThrow(()->
+                    new NotFoundException("Not found email "));
         }
         return new AuthResponse(
                 user.getId(),
@@ -122,6 +124,7 @@ public class UserServiceImpl implements UserService{
 
     public UserResponse userRegister(UserRequest request) {
         if (userRepo.existsByEmail(request.getEmail())) {
+            logger.error("Email already registered!");
             throw new AlreadyExistException(
                     "Email already registered!"
             );
@@ -129,6 +132,7 @@ public class UserServiceImpl implements UserService{
         User user = editMapper.create(request);
         user.setPassword(encoder.encode(request.getPassword()));
         userRepo.save(user);
+        logger.info("Successfully saved user with id: {} in db", user.getId());
         return viewMapper.viewUser(user);
     }
 
@@ -143,11 +147,13 @@ public class UserServiceImpl implements UserService{
     public AuthResponse changeUserPassword(UserChangePasswordRequest userChangePasswordRequest) {
         User user = getAuthenticatedUser();
         if (!encoder.matches(userChangePasswordRequest.getCurrentPassword(), user.getPassword())) {
+            logger.error("invalid password");
             throw new NotFoundException(
                     "invalid password");
         }else {
             editMapper.changePassword(user, userChangePasswordRequest);
             user.setPassword(encoder.encode(userChangePasswordRequest.getNewPassword()));
+            logger.info("Password successfully changed");
             return new AuthResponse(
                     user.getId(),
                     user.getFirstName(),
@@ -196,6 +202,7 @@ public class UserServiceImpl implements UserService{
             throw new AlreadyExistException("Request already sent");
         }
         friend.addRequestToFriend(user);
+        logger.info("Request to friend successfully send");
         return new SimpleResponse("Success","Request to friend successfully send");
     }
 
@@ -221,6 +228,7 @@ public class UserServiceImpl implements UserService{
             friend.acceptToFriend(user);
             user.getRequestToFriends().remove(friend);
             user.acceptToFriend(friend);
+            logger.info("Successfully accept to friend with id: {}", friend.getId());
         }else {
             throw new AlreadyExistException("You are already friend");
         }
@@ -234,6 +242,7 @@ public class UserServiceImpl implements UserService{
         User friend = findByUserId(friendId);
         if (user.getRequestToFriends().contains(friend)) {
             user.getRequestToFriends().remove(friend);
+            logger.info("Successfully rejected user with id {}", friend.getId());
         }else {
             throw new NotFoundException("You have not request to reject");
         }
@@ -248,6 +257,7 @@ public class UserServiceImpl implements UserService{
         if (user.getFriends().contains(friend)) {
             friend.getFriends().remove(user);
             user.getFriends().remove(friend);
+            logger.info("Successfully deleted user with id: {}", friend.getId());
         }else {
             throw new NotFoundException("You have not friend with name "+friend.getFirstName());
         }

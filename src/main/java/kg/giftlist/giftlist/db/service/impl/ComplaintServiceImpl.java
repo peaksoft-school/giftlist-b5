@@ -14,6 +14,8 @@ import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintViewMapper;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,7 @@ public class ComplaintServiceImpl {
     private final ComplaintViewMapper complaintViewMapper;
     private final UserRepository userRepo;
     private final ComplaintRepository complaintRepository;
+    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     @Transactional
     public SimpleResponse sendComplaintToWish(Long wishId, String text) {
@@ -42,6 +45,7 @@ public class ComplaintServiceImpl {
         complaint.setWishes(wish);
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
+        logger.info("Complaint to wish with id: {} successfully send", wish.getId());
 
         return new SimpleResponse("Отправлено! Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
 
@@ -66,6 +70,7 @@ public class ComplaintServiceImpl {
         complaint.setGift(gift);
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
+        logger.info("Complaint to gift with id: {} successfully send", gift.getId());
 
         return new SimpleResponse("Отправлено!Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
 
@@ -77,6 +82,7 @@ public class ComplaintServiceImpl {
             throw new NotFoundException("Complaint with id = " + id + " not found!");
         }
         complaintRepository.deleteById(id);
+        logger.info("Complaint to with id: {} successfully send", id);
         return new SimpleResponse("Deleted!", "Complaint successfully deleted!");
     }
 

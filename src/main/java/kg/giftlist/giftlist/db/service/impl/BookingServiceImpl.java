@@ -19,6 +19,8 @@ import kg.giftlist.giftlist.db.repositories.GiftRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -36,6 +38,7 @@ public class BookingServiceImpl {
     private final WishRepository wishRepository;
     private final WishViewMapper wishViewMapper;
     private final BookingRepository bookingRepository;
+    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     @Transactional
     public GiftCartResponse createBookingGift(Long giftId) {
@@ -50,6 +53,7 @@ public class BookingServiceImpl {
         Booking booking = user.getBooking();
         if (gift.getBooking()==null) {
             gift.setBooking(booking);
+            logger.info("Gift with id: {} successfully booked with id: {}", gift.getId(), booking.getId());
         }else {
             throw new AlreadyExistException("Gift already booked");
         }
@@ -69,6 +73,7 @@ public class BookingServiceImpl {
         if (gift.getBooking().equals(user.getBooking())) {
             user.getBooking().getGifts().remove(gift);
             gift.setBooking(null);
+            logger.info("Gift with id: {} successfully cancel booking", gift.getId());
         }else if(user.getGifts().contains(gift)) {
             User bookedUser = gift.getBooking().getUser();
             bookedUser.getBooking().getGifts().remove(gift);
@@ -99,6 +104,7 @@ public class BookingServiceImpl {
         Booking booking = user.getBooking();
         if (wish.getBooking()==null) {
             wish.setBooking(booking);
+            logger.info("Wish with id: {} successfully booked with id: {}", wish.getId(), booking.getId());
         }else {
             throw new AlreadyExistException("Wish already booked");
         }
@@ -118,6 +124,7 @@ public class BookingServiceImpl {
         if (wish.getBooking().equals(user.getBooking())) {
             user.getBooking().getWishes().remove(wish);
             wish.setBooking(null);
+            logger.info("Wish with id: {} successfully cancel booking", wish.getId());
         }else {
             throw new AlreadyExistException("You can cancel only own booking");
         }
