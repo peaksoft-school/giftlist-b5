@@ -166,6 +166,18 @@ public class UserServiceImpl implements UserService {
         return view(userRepo.searchAllByFirstNameAndLastName(name.toUpperCase()));
     }
 
+    public UserResponse findByUsername(String username) {
+        return viewMapper.viewUser(userRepo.findByUsername(username.toUpperCase()).orElseThrow(()->new NotFoundException(
+                "User with username: " + username + " not found"
+        )));
+    }
+
+    public UserResponse findUserByUserId(Long userId) {
+        return viewMapper.viewUser(userRepo.findById(userId).orElseThrow(()->new NotFoundException(
+                "User with userId: " + userId + " not found"
+        )));
+    }
+
     private List<UserResponse> view(List<User> users) {
         List<UserResponse> responses = new ArrayList<>();
         for (User user : users) {
