@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.db.models;
+
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
 import lombok.Getter;
@@ -6,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.ArrayList;
@@ -61,7 +63,7 @@ public class User implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Notification> notifications = new ArrayList<>();
 
-  public void addNotification(Notification newNotification){
+    public void addNotification(Notification newNotification) {
         notifications.add(newNotification);
     }
 
@@ -117,14 +119,14 @@ public class User implements UserDetails {
     }
 
     public void addRequestToFriend(User user) {
-        if (requestToFriends==null) {
+        if (requestToFriends == null) {
             requestToFriends = new ArrayList<>();
         }
         requestToFriends.add(user);
     }
 
     public void acceptToFriend(User user) {
-        if (friends==null) {
+        if (friends == null) {
             friends = new ArrayList<>();
         }
         friends.add(user);

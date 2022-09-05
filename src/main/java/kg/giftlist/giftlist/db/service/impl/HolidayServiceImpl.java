@@ -1,7 +1,10 @@
 package kg.giftlist.giftlist.db.service.impl;
 
+import kg.giftlist.giftlist.db.models.Holiday;
 import kg.giftlist.giftlist.db.models.Notification;
+import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.models.Wish;
+import kg.giftlist.giftlist.db.repositories.HolidayRepository;
 import kg.giftlist.giftlist.db.repositories.NotificationRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.HolidayService;
@@ -11,14 +14,10 @@ import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayEditMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
-import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
-import kg.giftlist.giftlist.db.models.Holiday;
-import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.db.repositories.HolidayRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -27,7 +26,6 @@ import org.springframework.stereotype.Service;
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -43,20 +41,20 @@ public class HolidayServiceImpl implements HolidayService {
     public HolidayResponse create(HolidayRequest holidayRequest) {
         Holiday holiday =editMapper.create(holidayRequest);
         User user = getAuthenticatedUser();
-        Notification notification = new Notification();
         holiday.setUser(user);
         holidayRepository.save(holiday);
 
         for (User fr : user.getFriends()) {
+            Notification notification = new Notification();
             notification.setNotificationStatus(NotificationStatus.ADD_HOLIDAY);
             notification.setCreatedAt(LocalDate.now());
             notification.setUser(user);
             notification.setHoliday(holiday);
             notification.setRecipientId(fr.getId());
             user.addNotification(notification);
+            notificationRepository.save(notification);
         }
-        notificationRepository.save(notification);
-        return viewMapper.viewHoliday(holiday);
+            return viewMapper.viewHoliday(holiday);
 
     }
 

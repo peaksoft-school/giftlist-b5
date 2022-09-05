@@ -2,17 +2,16 @@ package kg.giftlist.giftlist.db.service.impl;
 
 import kg.giftlist.giftlist.db.models.*;
 import kg.giftlist.giftlist.db.repositories.*;
+import kg.giftlist.giftlist.db.service.GiftService;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
-import kg.giftlist.giftlist.dto.user.UserProfileResponse;
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
-import kg.giftlist.giftlist.db.service.GiftService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -39,7 +38,7 @@ public class GiftServiceImpl implements GiftService {
     @Override
     public GiftResponse create(GiftRequest request) {
         User user = getAuthenticatedUser();
-        Notification notification = new Notification();
+
 
         Category category = categoryRepository.findById(request.getCategoryId()).orElseThrow(() ->
                 new NotFoundException("Category with id: " + request.getCategoryId() + " not found"));
@@ -59,15 +58,16 @@ public class GiftServiceImpl implements GiftService {
 
 
         for (User fr : user.getFriends()) {
+            Notification notification = new Notification();
             notification.setNotificationStatus(NotificationStatus.ADD_GIFT);
             notification.setCreatedAt(LocalDate.now());
             notification.setUser(user);
             notification.setGift(gift);
             notification.setRecipientId(fr.getId());
             user.addNotification(notification);
-        }
-        notificationRepository.save(notification);
 
+            notificationRepository.save(notification);
+        }
 
         return giftViewMapper.viewCommonGiftCard(user, gift);
     }

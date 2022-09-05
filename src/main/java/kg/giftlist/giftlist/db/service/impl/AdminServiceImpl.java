@@ -1,16 +1,14 @@
 package kg.giftlist.giftlist.db.service.impl;
 
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
+import kg.giftlist.giftlist.db.service.AdminService;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
-
-import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.db.repositories.UserRepository;
-import kg.giftlist.giftlist.db.service.AdminService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

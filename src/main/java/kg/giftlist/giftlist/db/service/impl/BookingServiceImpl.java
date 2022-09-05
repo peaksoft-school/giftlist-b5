@@ -37,7 +37,6 @@ public class BookingServiceImpl {
     @Transactional
     public GiftCartResponse createBookingGift(Long giftId) {
         User user = getAuthenticatedUser();
-        Notification notification = new Notification();
 
         if (user.getBooking()==null) {
             Booking booking  = new Booking();
@@ -59,14 +58,17 @@ public class BookingServiceImpl {
         }
 
         for (User fr : user.getFriends()) {
+            Notification notification = new Notification();
             notification.setNotificationStatus(NotificationStatus.ADD_GIFT_BOOKING);
             notification.setCreatedAt(LocalDate.now());
             notification.setUser(user);
             notification.setGiftBooking(booking);
+            notification.setGift(gift);
             notification.setRecipientId(fr.getId());
             user.addNotification(notification);
+
+            notificationRepository.save(notification);
         }
-        notificationRepository.save(notification);
         return giftViewMapper.viewGiftCard(gift);
     }
 
@@ -94,7 +96,6 @@ public class BookingServiceImpl {
     @Transactional
     public WishCardResponse createBookingWish(Long wishId) {
         User user = getAuthenticatedUser();
-        Notification notification = new Notification();
         if (user.getBooking()==null) {
             Booking booking  = new Booking();
             user.setBooking(booking);
@@ -114,14 +115,17 @@ public class BookingServiceImpl {
             user.getBooking().getWishes().add(wish);
         }
         for (User fr : user.getFriends()) {
+            Notification notification = new Notification();
             notification.setNotificationStatus(NotificationStatus.ADD_WISH_BOOKING);
             notification.setCreatedAt(LocalDate.now());
             notification.setUser(user);
-            notification.setGiftBooking(booking);
+            notification.setWishBooking(booking);
+            notification.setWish(wish);
             notification.setRecipientId(fr.getId());
             user.addNotification(notification);
+
+            notificationRepository.save(notification);
         }
-        notificationRepository.save(notification);
 
         return wishViewMapper.viewWish(wish);
     }

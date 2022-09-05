@@ -36,7 +36,6 @@ public class WishServiceImpl implements WishService {
     @Transactional
     public WishResponse create(WishRequest wishRequest) {
         User user = getAuthenticatedUser();
-        Notification notification = new Notification();
 
         Wish wish = editMapper.create(wishRequest);
         wish.setUser(user);
@@ -46,14 +45,15 @@ public class WishServiceImpl implements WishService {
         wish.setHolidays(holiday);
 
         for (User fr : user.getFriends()) {
+            Notification notification = new Notification();
             notification.setNotificationStatus(NotificationStatus.ADD_WISH);
             notification.setCreatedAt(LocalDate.now());
             notification.setUser(user);
             notification.setWish(wish);
             notification.setRecipientId(fr.getId());
             user.addNotification(notification);
+            notificationRepository.save(notification);
         }
-        notificationRepository.save(notification);
 
         return viewMapper.viewCommonWishCard(user,wish);
     }
