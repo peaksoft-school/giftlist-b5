@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.ForbiddenException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -126,9 +127,16 @@ public class WishServiceImpl implements WishService {
         newWish.setWishName(friendWish.getWishName());
         newWish.setWishLink(friendWish.getWishLink());
         newWish.setWishPhoto(friendWish.getWishPhoto());
-        newWish.setWishDate(friendWish.getWishDate());
+        newWish.setWishDate(LocalDate.now());
+        newWish.setCreatedAt(LocalDateTime.now());
         newWish.setDescription(friendWish.getDescription());
-        newWish.setHoliday(friendWish.getHoliday());
+        Holiday holiday = new Holiday();
+        holiday.setPhoto(friendWish.getHoliday().getPhoto());
+        holiday.setName(friendWish.getHoliday().getName());
+        holiday.setHolidayDate(friendWish.getHoliday().getHolidayDate());
+        holiday.setUser(user);
+        holidayRepository.save(holiday);
+        newWish.setHoliday(holiday);
         newWish.setUser(user);
         user.setWishes(List.of(newWish));
         log.info("Wish with id: {} successfully saved in db", newWish.getId());

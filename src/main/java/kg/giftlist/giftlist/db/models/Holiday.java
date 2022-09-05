@@ -1,6 +1,8 @@
 package kg.giftlist.giftlist.db.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +30,8 @@ public class Holiday {
 
     private String photo;
 
+    @JsonFormat(pattern="dd.MM.yyyy")
+    @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate holidayDate;
 
     private Boolean isBlock;

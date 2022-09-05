@@ -125,6 +125,11 @@
 			<artifactId>logzio-log4j2-appender</artifactId>
 			<version>1.0.16</version>
 		</dependency>
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>1.6.6</version>
+		</dependency>
 
 	</dependencies>
 

@@ -1,6 +1,8 @@
 package kg.giftlist.giftlist.db.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 import kg.giftlist.giftlist.dto.user.UserInfoRequest;
 import kg.giftlist.giftlist.enums.ClothingSize;
 import lombok.Getter;
@@ -28,6 +30,8 @@ public class UserInfo {
     private String city;
 
     @Past
+    @JsonFormat(pattern="dd.MM.yyyy")
+    @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate dateOfBirth;
 
     private String phoneNumber;
