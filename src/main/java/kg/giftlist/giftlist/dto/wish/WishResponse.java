@@ -6,7 +6,7 @@ import lombok.Setter;
 @Setter
 public class WishResponse {
 
-    private UserWishResponse user;
+    private UserWishResponse ownerUser;
     private WishCardResponse wish;
     private UserWishResponse bookedUser;
 

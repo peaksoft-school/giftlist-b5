@@ -1,10 +1,10 @@
 package kg.giftlist.giftlist.db.service.impl;
-
 import kg.giftlist.giftlist.db.models.*;
 import kg.giftlist.giftlist.db.repositories.*;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
+import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.enums.NotificationStatus;
@@ -19,17 +19,21 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
 public class WishServiceImpl implements WishService {
 
+    private final ComplaintRepository complaintRepository;
     private final WishRepository wishRepository;
     private final WishEditMapper editMapper;
     private final WishViewMapper viewMapper;
     private final UserRepository userRepository;
     private final HolidayRepository holidayRepository;
+    private final BookingRepository bookingRepository;
     private final NotificationRepository notificationRepository;
 
     @Override
@@ -38,10 +42,21 @@ public class WishServiceImpl implements WishService {
         User user = getAuthenticatedUser();
 
         Wish wish = editMapper.create(wishRequest);
+        if (wishRequest.getPhoto()==null){
+            wish.setWishPhoto("https://giftlist-bucket.s3.amazonaws.com/1661860549270wishes-default-image.png");
+        }else {
+            wish.setWishPhoto(wishRequest.getPhoto());
+        }
         wish.setUser(user);
         user.setWishes(List.of(wish));
-        Holiday holiday = holidayRepository.findByName(wishRequest.getHolidayName()).orElseThrow(()
+        Holiday holiday = holidayRepository.findById(wishRequest.getHolidayId()).orElseThrow(()
                 -> new NotFoundException("Holiday not found"));
+        wish.setCreatedAt(LocalDateTime.now());
+        if (user.getHolidays().contains(holiday)){
+            wish.setHoliday(holiday);
+        }else {
+            throw new NotFoundException("Holiday not found");
+        }
         wish.setHolidays(holiday);
 
         for (User fr : user.getFriends()) {
@@ -63,9 +78,13 @@ public class WishServiceImpl implements WishService {
     public WishResponse update(Long id, WishRequest wishRequest) {
         User user = getAuthenticatedUser();
         Wish wish = wishRepository.findById(id).orElseThrow(() -> new WishNotFoundException("Wish with id " + id + " not found!"));
-        Holiday holiday = holidayRepository.findByName(wishRequest.getHolidayName()).orElseThrow(()
+        Holiday holiday = holidayRepository.findById(wishRequest.getHolidayId()).orElseThrow(()
                 -> new NotFoundException("Holiday not found"));
-        wish.setHolidays(holiday);
+        if (user.getHolidays().contains(holiday)){
+            wish.setHoliday(holiday);
+        }else {
+            throw new NotFoundException("Holiday not found");
+        }
         if (wish.getUser() == user) {
             editMapper.update(wish, wishRequest);
         }
@@ -93,6 +112,8 @@ public class WishServiceImpl implements WishService {
             user.getBooking().getWishes().remove(wish);
             wish.setBooking(null);
         }
+        List<Complaint> complaints = complaintRepository.findAll();
+        complaints.removeIf(c -> Objects.equals(wish.getComplaints(), c));
         wishRepository.deleteById(id);
         return new SimpleResponse("Deleted!", "Wish successfully deleted!");
     }
@@ -114,12 +135,12 @@ public class WishServiceImpl implements WishService {
         User user = getAuthenticatedUser();
         Wish friendWish = getWishById(wishId);
         Wish newWish = new Wish();
-        newWish.setGiftName(friendWish.getGiftName());
-        newWish.setGiftLink(friendWish.getGiftLink());
-        newWish.setGiftPhoto(friendWish.getGiftPhoto());
+        newWish.setWishName(friendWish.getWishName());
+        newWish.setWishLink(friendWish.getWishLink());
+        newWish.setWishPhoto(friendWish.getWishPhoto());
         newWish.setWishDate(friendWish.getWishDate());
         newWish.setDescription(friendWish.getDescription());
-        newWish.setHolidays(friendWish.getHolidays());
+        newWish.setHoliday(friendWish.getHoliday());
         newWish.setUser(user);
         user.setWishes(List.of(newWish));
         return viewMapper.viewCommonWishCard(user,newWish);

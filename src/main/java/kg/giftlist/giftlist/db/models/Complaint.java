@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import static javax.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "complaints")
@@ -18,14 +19,15 @@ public class Complaint {
     @SequenceGenerator(name = "complaint_gen", sequenceName = "complaint_seq", allocationSize = 1)
     private Long id;
 
+    @Column(length = 4000)
     private String text;
 
     @OneToOne
     private User fromUser;
 
-    @OneToOne
-    private Wish wish;
+    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    private Wish wishes;
 
-    @OneToOne
+    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
     private Gift gift;
 }

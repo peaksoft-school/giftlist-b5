@@ -39,4 +39,11 @@ public class ComplaintApi {
     public SimpleResponse sendComplaintToGift(@PathVariable Long giftId, @RequestParam String text) {
         return complaintService.sendComplaintToGift(giftId, text);
     }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Delete complaint", description = "Only Admin can delete complaint.")
+    @DeleteMapping("/{complaintId}")
+    public SimpleResponse deleteComplaintById(@PathVariable Long complaintId) {
+        return complaintService.deleteComplaintById(complaintId);
+    }
 }

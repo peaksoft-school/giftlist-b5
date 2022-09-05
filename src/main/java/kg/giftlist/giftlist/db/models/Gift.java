@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.CascadeType.DETACH;
 
@@ -23,13 +25,14 @@ public class Gift {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gift_gen")
-    @SequenceGenerator(name = "gift_gen",sequenceName = "gift_seq", initialValue = 4, allocationSize = 1)
+    @SequenceGenerator(name = "gift_gen",sequenceName = "gift_seq", initialValue = 7, allocationSize = 1)
     private Long id;
 
     private String name;
 
     private String photo;
 
+    @Column(length = 4000)
     private String description;
 
     private Boolean isBlock;
@@ -40,7 +43,6 @@ public class Gift {
     private Status status;
 
     @ManyToOne(cascade = ALL)
-    @JsonIgnore
     private Booking booking;
 
     @OneToOne
@@ -56,6 +58,10 @@ public class Gift {
     @ManyToOne
     @JsonIgnore
     private User fromUser;
+
+    @OneToMany(cascade = ALL, mappedBy = "gift")
+    @JsonIgnore
+    private List<Complaint> complaints;
 
     public Gift(GiftRequest request) {
         this.name= getName();

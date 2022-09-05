@@ -38,17 +38,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
     private final UserRepository userRepo;
     private final JwtUtils jwtUtils;
     private final UserEditMapper editMapper;
@@ -88,7 +86,7 @@ public class UserServiceImpl implements UserService {
                     "invalid password"
             );
         }
-        if (user.getIsBlock() == true) {
+        if (user.getIsBlock()==true){
             return null;
         }
         String jwt = jwtUtils.generateJwt(user);
@@ -150,16 +148,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public SimpleResponse changeUserPassword(Long userId, UserChangePasswordRequest userChangePasswordRequest) {
-        User user = findByUserId(userId);
+    public AuthResponse changeUserPassword(UserChangePasswordRequest userChangePasswordRequest) {
+        User user = getAuthenticatedUser();
         if (!encoder.matches(userChangePasswordRequest.getCurrentPassword(), user.getPassword())) {
             throw new NotFoundException(
                     "invalid password");
         } else {
             editMapper.changePassword(user, userChangePasswordRequest);
             user.setPassword(encoder.encode(userChangePasswordRequest.getNewPassword()));
-            userRepo.save(user);
-            return new SimpleResponse("Changed", "Password successfully changed");
+            return new AuthResponse(
+                    user.getId(),
+                    user.getFirstName(),
+                    user.getLastName(),
+                    user.getPhoto(),
+                    user.getEmail(),
+                    jwtUtils.generateJwt(user),
+                    user.getRole()
+            );
         }
     }
 

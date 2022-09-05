@@ -6,6 +6,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @Table(name = "wishes")
@@ -16,19 +19,20 @@ public class Wish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wish_gen")
-    @SequenceGenerator(name = "wish_gen",sequenceName = "wish_seq", initialValue = 4, allocationSize = 1)
+    @SequenceGenerator(name = "wish_gen",sequenceName = "wish_seq", initialValue = 7, allocationSize = 1)
     private Long id;
 
-    private String giftName;
+    private String wishName;
 
-    private String giftLink;
+    private String wishLink;
 
-    private String giftPhoto;
+    private String wishPhoto;
 
     private LocalDateTime createdAt;
 
     private LocalDate wishDate;
 
+    @Column(length = 4000)
     private String description;
 
     private Boolean isBlock;
@@ -52,12 +56,16 @@ public class Wish {
     private User fromUser;
 
     @ManyToOne(targetEntity = Holiday.class, fetch = FetchType.EAGER,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST})
-    @JoinColumn(name = "holidays")
+    @JoinColumn(name = "holiday")
     @JsonIgnore
-    private Holiday holidays;
+    private Holiday holiday;
+
+    @OneToMany(cascade = ALL, mappedBy = "wishes")
+    @JsonIgnore
+    private List<Complaint> complaints;
 
     public String getHolidayName(){
-        return holidays.getName();
+        return holiday.getName();
     }
 
 

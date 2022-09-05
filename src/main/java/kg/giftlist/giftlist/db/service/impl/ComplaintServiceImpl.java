@@ -12,6 +12,7 @@ import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintViewMapper;
 import kg.giftlist.giftlist.exception.NotFoundException;
+import kg.giftlist.giftlist.exception.WishNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -38,7 +39,7 @@ public class ComplaintServiceImpl {
         Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
                 new NotFoundException("Wish with id: " + wishId + "not found"));
         complaint.setText(text);
-        complaint.setWish(wish);
+        complaint.setWishes(wish);
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
 
@@ -68,6 +69,15 @@ public class ComplaintServiceImpl {
 
         return new SimpleResponse("Отправлено!Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
 
+    }
+
+    public SimpleResponse deleteComplaintById(Long id) {
+        boolean exists = complaintRepository.existsById(id);
+        if (!exists) {
+            throw new NotFoundException("Complaint with id = " + id + " not found!");
+        }
+        complaintRepository.deleteById(id);
+        return new SimpleResponse("Deleted!", "Complaint successfully deleted!");
     }
 
     public User getAuthenticatedUser() {

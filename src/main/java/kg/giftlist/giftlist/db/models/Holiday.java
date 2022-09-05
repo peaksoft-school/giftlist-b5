@@ -21,7 +21,7 @@ public class Holiday {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "holiday_gen")
-    @SequenceGenerator(name = "holiday_gen",sequenceName = "holiday_seq", initialValue = 4, allocationSize = 1)
+    @SequenceGenerator(name = "holiday_gen",sequenceName = "holiday_seq", initialValue = 7, allocationSize = 1)
     private Long id;
 
     private String name;
@@ -36,7 +36,7 @@ public class Holiday {
     @JsonIgnore
     private User user;
 
-    @OneToMany(cascade = ALL, mappedBy = "holidays")
+    @OneToMany(cascade = ALL, mappedBy = "holiday")
     @JsonIgnore
     private List<Wish> wishes;
 }
