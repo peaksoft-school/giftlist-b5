@@ -37,7 +37,7 @@ public class NotificationViewMapper {
             response.setUserLastName(notification.getUser().getLastName());
             response.setNotificationStatus(notification.getNotificationStatus());
             response.setOthersId(notification.getWish().getId());
-            response.setOthersName(notification.getWish().getGiftName());
+            response.setOthersName(notification.getWish().getWishName());
 
         } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_HOLIDAY)) {
             response.setPhoto(notification.getUser().getPhoto());
@@ -59,8 +59,8 @@ public class NotificationViewMapper {
 
         } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_WISH_BOOKING)) {
             response.setOthersId(notification.getWish().getId());
-            response.setPhoto(notification.getWish().getGiftPhoto());
-            response.setOthersName(notification.getWish().getGiftName());
+            response.setPhoto(notification.getWish().getWishPhoto());
+            response.setOthersName(notification.getWish().getWishName());
             response.setNotificationStatus(notification.getNotificationStatus());
             response.setUserId(notification.getUser().getId());
             response.setUserFirstName(notification.getUser().getFirstName());

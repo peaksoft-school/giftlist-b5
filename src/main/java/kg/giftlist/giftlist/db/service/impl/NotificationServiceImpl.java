@@ -24,10 +24,15 @@ public class NotificationServiceImpl {
     public List<NotificationResponse> markAsRead(Authentication authentication) {
         User user = userRepository.findByEmail(authentication.getName())
                 .orElseThrow(() -> new NotFoundException("Пользователь не найден"));
-        for (Notification notification : user.getNotifications()) {
-            notification.setRead(true);
+
+        for (User fr : user.getFriends()) {
+            for (Notification notification : fr.getNotifications()) {
+                notification.setRead(true);
+            }
+            notificationRepository.saveAll(fr.getNotifications());
         }
-        notificationRepository.saveAll(user.getNotifications());
+
+
         return viewMapper.getAll(user.getNotifications());
     }
 }
