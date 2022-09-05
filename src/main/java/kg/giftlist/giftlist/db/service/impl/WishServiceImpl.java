@@ -1,16 +1,16 @@
 package kg.giftlist.giftlist.db.service.impl;
+
 import kg.giftlist.giftlist.db.models.*;
 import kg.giftlist.giftlist.db.repositories.*;
+import kg.giftlist.giftlist.db.service.WishService;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
-import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
-import kg.giftlist.giftlist.db.service.WishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -57,7 +57,7 @@ public class WishServiceImpl implements WishService {
         }else {
             throw new NotFoundException("Holiday not found");
         }
-        wish.setHolidays(holiday);
+        wish.setHoliday(holiday);
 
         for (User fr : user.getFriends()) {
             Notification notification = new Notification();
