@@ -1,30 +1,34 @@
 package kg.giftlist.giftlist.db.repositories;
 
-import kg.giftlist.giftlist.db.models.Notification;
-import kg.giftlist.giftlist.dto.notification.NotificationResponse;
+import kg.giftlist.giftlist.db.models.*;
+import kg.giftlist.giftlist.dto.gift.GiftResponse;
+import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
+import kg.giftlist.giftlist.dto.user.UserInfoResponse;
+import kg.giftlist.giftlist.dto.wish.WishResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
 
-    @Query("select n from Notification n where n.id = ?1")
-    NotificationResponse findByNotificationId(Long id);
+    @Query("select u from Notification n join n.user u where upper(u.firstName) like %?1% or upper(u.lastName) like %?1%")
+    Optional<UserInfoResponse> findUserByUsername(String username);
 
-    @Query("select n from Notification n where n.gift.id = ?1")
-    NotificationResponse findByGiftId(Long giftId);
+    @Query("select u from Notification n join n.user u where u.id=?1")
+    Optional<UserInfoResponse> findUserById(Long userId);
 
-    @Query("select n from Notification n where n.wish.id = ?1")
-    NotificationResponse findByWishId(Long wishId);
+    @Query("select g from Notification n join n.gift g where g.id=?1")
+    Optional<GiftResponse> findGiftById(Long giftId);
 
-    @Query("select n from Notification n where n.holiday.id = ?1")
-    NotificationResponse findByHolidayId(Long holidayId);
+    @Query("select w from Notification n join n.wish w where w.id=?1")
+    Optional<WishResponse> findWishById(Long wishId);
 
-    @Query("select n from Notification n where n.user.id = ?1")
-    NotificationResponse findByUserId(Long userId);
+    @Query("select h from Notification n join n.holiday h where h.id=?1")
+    Optional<HolidayResponse> findHolidayById(Long holidayId);
 
     @Query("select n from Notification n where n.recipientId=?1")
     List<Notification> getAllNotifications(Long userId);
