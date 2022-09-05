@@ -19,8 +19,7 @@ import kg.giftlist.giftlist.db.repositories.GiftRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
 import lombok.RequiredArgsConstructor;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -29,6 +28,7 @@ import javax.ws.rs.ForbiddenException;
 import java.util.List;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class BookingServiceImpl {
 
@@ -38,7 +38,6 @@ public class BookingServiceImpl {
     private final WishRepository wishRepository;
     private final WishViewMapper wishViewMapper;
     private final BookingRepository bookingRepository;
-    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     @Transactional
     public GiftCartResponse createBookingGift(Long giftId) {
@@ -53,11 +52,13 @@ public class BookingServiceImpl {
         Booking booking = user.getBooking();
         if (gift.getBooking()==null) {
             gift.setBooking(booking);
-            logger.info("Gift with id: {} successfully booked with id: {}", gift.getId(), booking.getId());
+            log.info("Gift with id: {} successfully booked with id: {}", gift.getId(), booking.getId());
         }else {
+            log.error("Gift already booked");
             throw new AlreadyExistException("Gift already booked");
         }
         if (user.getGifts().contains(gift)) {
+            log.warn("You can not booking your gift");
             throw new GiftForbiddenException("You can not booking your gift");
         }else {
             user.getBooking().getGifts().add(gift);
@@ -73,12 +74,13 @@ public class BookingServiceImpl {
         if (gift.getBooking().equals(user.getBooking())) {
             user.getBooking().getGifts().remove(gift);
             gift.setBooking(null);
-            logger.info("Gift with id: {} successfully cancel booking", gift.getId());
+            log.info("Gift with id: {} successfully cancel booking", gift.getId());
         }else if(user.getGifts().contains(gift)) {
             User bookedUser = gift.getBooking().getUser();
             bookedUser.getBooking().getGifts().remove(gift);
             gift.setBooking(null);
         }else {
+            log.warn("You can cancel only own booking or only your gift");
             throw new AlreadyExistException("You can cancel only own booking or only your gift");
         }
         return new SimpleResponse("Canceled", "Successfully canceled ");
@@ -104,11 +106,13 @@ public class BookingServiceImpl {
         Booking booking = user.getBooking();
         if (wish.getBooking()==null) {
             wish.setBooking(booking);
-            logger.info("Wish with id: {} successfully booked with id: {}", wish.getId(), booking.getId());
+            log.info("Wish with id: {} successfully booked with id: {}", wish.getId(), booking.getId());
         }else {
+            log.warn("Wish already booked");
             throw new AlreadyExistException("Wish already booked");
         }
         if (user.getWishes().contains(wish)) {
+            log.warn("You can not booking your wish");
             throw new GiftForbiddenException("You can not booking your wish");
         }else {
             user.getBooking().getWishes().add(wish);
@@ -124,8 +128,9 @@ public class BookingServiceImpl {
         if (wish.getBooking().equals(user.getBooking())) {
             user.getBooking().getWishes().remove(wish);
             wish.setBooking(null);
-            logger.info("Wish with id: {} successfully cancel booking", wish.getId());
+            log.info("Wish with id: {} successfully cancel booking", wish.getId());
         }else {
+            log.warn("You can cancel only own booking");
             throw new AlreadyExistException("You can cancel only own booking");
         }
         return new SimpleResponse("Canceled", "Successfully canceled ");

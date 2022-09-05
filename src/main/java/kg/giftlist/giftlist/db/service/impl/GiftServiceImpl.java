@@ -11,8 +11,7 @@ import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.service.GiftService;
 import lombok.RequiredArgsConstructor;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -23,6 +22,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class GiftServiceImpl implements GiftService {
 
@@ -33,7 +33,6 @@ public class GiftServiceImpl implements GiftService {
     private final CategoryRepository categoryRepository;
     private final SubCategoryRepository subCategoryRepository;
     private final ComplaintRepository complaintRepository;
-    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     @Override
     public GiftResponse create(GiftRequest request) {
@@ -47,6 +46,7 @@ public class GiftServiceImpl implements GiftService {
         if (subCategory.getCategory().getId().equals(category.getId())) {
             gift.setSubCategory(subCategory);
         }else {
+            log.error("SubCategory with id: " + request.getSubCategoryId() + " not found");
             throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found");
         }
         if (request.getPhoto()==null){
@@ -58,7 +58,7 @@ public class GiftServiceImpl implements GiftService {
         gift.setUser(user);
         gift.setCreatedAt(LocalDate.now());
         giftRepository.save(gift);
-        logger.info("Gift with id: {} successfully saved in db", gift.getId());
+        log.info("Gift with id: {} successfully saved in db", gift.getId());
         return giftViewMapper.viewCommonGiftCard(user,gift);
     }
 
@@ -76,10 +76,11 @@ public class GiftServiceImpl implements GiftService {
             if (category.getSubCategories().contains(subCategory)) {
                 gift.setSubCategory(subCategory);
             }else {
+                log.error("SubCategory with id: " + request.getSubCategoryId() + " not found");
                 throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found");
             }
             giftEditMapper.update(gift,request);
-            logger.info("Gift with id: {} successfully updated in db", gift.getId());
+            log.info("Gift with id: {} successfully updated in db", gift.getId());
         }
         return giftViewMapper.viewCommonGiftCard(user,gift);
     }
@@ -102,7 +103,7 @@ public class GiftServiceImpl implements GiftService {
         List<Complaint> complaints = complaintRepository.findAll();
         complaints.removeIf(c -> Objects.equals(gift.getComplaints(), c));
         giftRepository.deleteById(giftId);
-        logger.info("Gift with id: {} successfully deleted from db", giftId);
+        log.info("Gift with id: {} successfully deleted from db", giftId);
         return new SimpleResponse("Deleted!", "Gift successfully deleted!");
     }
 

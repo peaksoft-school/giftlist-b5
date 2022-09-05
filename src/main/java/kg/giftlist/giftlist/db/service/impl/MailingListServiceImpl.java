@@ -6,25 +6,24 @@ import kg.giftlist.giftlist.db.service.MailingListService;
 import kg.giftlist.giftlist.dto.mailing_list.SendMailingRequest;
 import kg.giftlist.giftlist.service.EmailService;
 import lombok.RequiredArgsConstructor;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class MailingListServiceImpl implements MailingListService {
 
     private final MailingListRepository repository;
     private final EmailService emailService;
-    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     @Override
     public void save(MailingList mailingList) {
-        repository.save(mailingList);
-        logger.info("Email successfully saved in db");
+            repository.save(mailingList);
+            log.info("Email successfully saved in db");
     }
 
     @Override
@@ -35,7 +34,7 @@ public class MailingListServiceImpl implements MailingListService {
                     emailService.send( mailingList.getEmail(), htmlMessage, sendMailingRequest.getTitle() );
                 }
         );
-        logger.info("Mailing list successfully send");
+        log.info("Mailing list successfully send");
         return ResponseEntity.ok( HttpStatus.OK );
     }
 }

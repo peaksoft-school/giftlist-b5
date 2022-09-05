@@ -23,23 +23,25 @@
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
     </Appenders>
+
     <Loggers>
         <Root level="info">
             <AppenderRef ref="ConsoleAppender" />
             <AppenderRef ref="FileAppender" />
         </Root>
     </Loggers>
-<!--    <Appenders>-->
-<!--        <LogzioAppender name="Logzio">-->
-<!--            <logzioToken>WfyQhXpsuDvfPIuuUNgKSPseyNYBZspA</logzioToken>-->
-<!--            <logzioType>gift-list-app</logzioType>-->
-<!--            <logzioUrl>https://listener-eu.logz.io:8071</logzioUrl>-->
-<!--        </LogzioAppender>-->
-<!--    </Appenders>-->
 
-<!--    <Loggers>-->
-<!--        <Root level="info">-->
-<!--            <AppenderRef ref="Logzio"/>-->
-<!--        </Root>-->
-<!--    </Loggers>-->
+    <Appenders>
+        <LogzioAppender name="Logzio">
+            <logzioToken>WfyQhXpsuDvfPIuuUNgKSPseyNYBZspA</logzioToken>
+            <logzioType>gift-list-app</logzioType>
+            <logzioUrl>https://listener-eu.logz.io:8071</logzioUrl>
+        </LogzioAppender>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Logzio"/>
+        </Root>
+    </Loggers>
 </Configuration>

@@ -16,8 +16,7 @@ import kg.giftlist.giftlist.db.models.Holiday;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.HolidayRepository;
 import lombok.RequiredArgsConstructor;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -26,6 +25,7 @@ import javax.ws.rs.ForbiddenException;
 import java.util.List;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class HolidayServiceImpl implements HolidayService {
 
@@ -34,7 +34,6 @@ public class HolidayServiceImpl implements HolidayService {
     private final HolidayEditMapper editMapper;
     private final UserRepository userRepository;
     private final WishViewMapper wishViewMapper;
-    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     public HolidayResponse create(HolidayRequest holidayRequest) {
         Holiday holiday =editMapper.create(holidayRequest);
@@ -46,7 +45,7 @@ public class HolidayServiceImpl implements HolidayService {
         User user = getAuthenticatedUser();
         holiday.setUser(user);
         holidayRepository.save(holiday);
-        logger.info("Holiday with id: {} successfully saved in db", holiday.getId());
+        log.info("Holiday with id: {} successfully saved in db", holiday.getId());
         return viewMapper.viewHoliday(holiday);
 
     }
@@ -55,7 +54,7 @@ public class HolidayServiceImpl implements HolidayService {
         Holiday holiday = holidayRepository.findById(id).orElseThrow(() ->
                 new NotFoundException("Holiday with id = " + id + " not found!"));
         editMapper.update(holiday, holidayRequest);
-        logger.info("Holiday with id: {} successfully updated in db", holiday.getId());
+        log.info("Holiday with id: {} successfully updated in db", holiday.getId());
         return viewMapper.viewHoliday(holidayRepository.save(holiday));
     }
 
@@ -68,10 +67,11 @@ public class HolidayServiceImpl implements HolidayService {
     public SimpleResponse deleteById(Long id) {
         boolean exists = holidayRepository.existsById(id);
         if (!exists) {
+            log.error("Holiday with id = " + id + " not found!");
             throw new WishNotFoundException("Holiday with id = " + id + " not found!");
         }
         holidayRepository.deleteById(id);
-        logger.info("Holiday with id: {} successfully deleted from db", id);
+        log.info("Holiday with id: {} successfully deleted from db", id);
         return new SimpleResponse("Deleted!", "Holiday successfully deleted!");
     }
 

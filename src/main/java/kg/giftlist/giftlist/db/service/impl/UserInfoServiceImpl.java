@@ -11,8 +11,7 @@ import kg.giftlist.giftlist.db.models.UserInfo;
 import kg.giftlist.giftlist.db.repositories.UserInfoRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -20,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class UserInfoServiceImpl implements UserInfoService {
 
@@ -27,7 +27,6 @@ public class UserInfoServiceImpl implements UserInfoService {
     private final UserInfoEditMapper userInfoEditMapper;
     private final UserInfoViewMapper userInfoViewMapper;
     private final UserRepository userRepository;
-    private final Logger logger = LogManager.getLogger(AdminServiceImpl.class);
 
     @Override
     public UserInfoResponse create(UserInfoRequest userInfoRequest) {
@@ -41,7 +40,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         userInfo.setUser(user);
         user.setUserInfo(userInfo);
         userInfoRepository.save(userInfo);
-        logger.info("User info with id: {} successfully saved in db", userInfo.getId());
+        log.info("User info with id: {} successfully saved in db", userInfo.getId());
         return userInfoViewMapper.viewUserInfo(userInfo, user);
     }
 
@@ -66,7 +65,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         }
         UserInfo userInfo = findByUserInfoId(userInfoId);
         userInfoEditMapper.update(userInfo, userInfoRequest);
-        logger.info("User info with id: {} successfully updated in db", userInfo.getId());
+        log.info("User info with id: {} successfully updated in db", userInfo.getId());
         return userInfoViewMapper.viewUserInfo(userInfoRepository.save(userInfo),user);
     }
 
