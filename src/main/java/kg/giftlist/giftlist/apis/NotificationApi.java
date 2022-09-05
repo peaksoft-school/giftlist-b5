@@ -6,10 +6,11 @@ import kg.giftlist.giftlist.db.service.impl.*;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
 import kg.giftlist.giftlist.dto.notification.NotificationResponse;
-import kg.giftlist.giftlist.dto.user.UserResponse;
+import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,23 +23,18 @@ import java.util.List;
 @Tag(name = "Notification API", description = "User with role \"User\"  can findAll and findById notifications")
 public class NotificationApi {
 
-    private final NotificationServiceImpl notificationService;
     private final UserServiceImpl userService;
     private final GiftServiceImpl giftService;
     private final WishServiceImpl wishService;
     private final HolidayServiceImpl holidayService;
+    private final NotificationServiceImpl notificationService;
 
-    @Operation(summary = "Get user", description = "User can get user by id")
-    @GetMapping("/user/{id}")
-    public UserResponse findUserById(@PathVariable Long id) {
-        return userService.findUserByUserId(id);
+    @Operation(summary = "Get user by id", description = "User can get user by id")
+    @GetMapping("/user/{userId}")
+    public UserFriendProfileResponse findUserById(@PathVariable Long userId) {
+        return userService.findUserByUserId(userId);
     }
 
-    @Operation(summary = "Get user", description = "User can get user by username")
-    @GetMapping("/user/{username}")
-    public UserResponse findUserByUsername(@PathVariable String username) {
-        return userService.findByUsername(username);
-    }
 
     @Operation(summary = "Find gift by id", description = "The user can find gift")
     @GetMapping("gift/{giftId}")
@@ -63,4 +59,11 @@ public class NotificationApi {
     public List<NotificationResponse> findAll() {
         return userService.getAllNotifications();
     }
+
+    @PutMapping("/markAsRead")
+    @Operation(summary = "mark as read", description = "mark as read return notifications list")
+    public List<NotificationResponse> markAsRead(Authentication authentication) {
+        return notificationService.markAsRead(authentication);
+    }
+
 }

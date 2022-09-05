@@ -10,6 +10,7 @@ import kg.giftlist.giftlist.config.security.JwtUtils;
 import kg.giftlist.giftlist.db.models.Notification;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.NotificationRepository;
+import kg.giftlist.giftlist.db.repositories.UserInfoRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.UserService;
 import kg.giftlist.giftlist.dto.AuthRequest;
@@ -55,6 +56,7 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder encoder;
     private final NotificationRepository notificationRepository;
     private final NotificationViewMapper notificationViewMapper;
+    private final UserInfoRepository userInfoRepository;
 
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;
@@ -166,14 +168,9 @@ public class UserServiceImpl implements UserService {
         return view(userRepo.searchAllByFirstNameAndLastName(name.toUpperCase()));
     }
 
-    public UserResponse findByUsername(String username) {
-        return viewMapper.viewUser(userRepo.findByUsername(username.toUpperCase()).orElseThrow(()->new NotFoundException(
-                "User with username: " + username + " not found"
-        )));
-    }
 
-    public UserResponse findUserByUserId(Long userId) {
-        return viewMapper.viewUser(userRepo.findById(userId).orElseThrow(()->new NotFoundException(
+    public UserFriendProfileResponse findUserByUserId(Long userId) {
+        return viewMapper.viewFriendProfile(userRepo.findById(userId).orElseThrow(()->new NotFoundException(
                 "User with userId: " + userId + " not found"
         )));
     }

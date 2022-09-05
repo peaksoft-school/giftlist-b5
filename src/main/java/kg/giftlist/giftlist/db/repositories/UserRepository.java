@@ -1,7 +1,6 @@
 package kg.giftlist.giftlist.db.repositories;
 
 import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.dto.user.UserResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -26,8 +25,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("select u from User u where upper(u.firstName) like %?1% or upper(u.lastName) like %?1%")
     List<User> searchAllByFirstNameAndLastName(String name);
-
-    @Query("select u from User u where upper(u.firstName) like %?1% or upper(u.lastName) like %?1%")
-    Optional<User> findByUsername(String username);
 
 }
