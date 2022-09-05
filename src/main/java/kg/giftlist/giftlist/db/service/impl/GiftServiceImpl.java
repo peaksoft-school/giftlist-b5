@@ -39,6 +39,8 @@ public class GiftServiceImpl implements GiftService {
     @Override
     public GiftResponse create(GiftRequest request) {
         User user = getAuthenticatedUser();
+        Notification notification = new Notification();
+
         Category category = categoryRepository.findById(request.getCategoryId()).orElseThrow(() ->
                 new NotFoundException("Category with id: " + request.getCategoryId() + " not found"));
         Gift gift = giftEditMapper.create(request);
@@ -53,22 +55,24 @@ public class GiftServiceImpl implements GiftService {
         user.setGifts(List.of(gift));
         gift.setUser(user);
         gift.setCreatedAt(LocalDate.now());
-
-//        Notification notification = new Notification();
-//        notification.setNotificationStatus(NotificationStatus.ADD_GIFT);
-//        notification.setCreatedAt(LocalDate.now());
-//        notification.setUser(user);
-//        notification.setRecipientId(findById().getUserId());
-//        user.addNotification(notification);
-//        notificationRepository.saveAll(user.getNotifications());
         giftRepository.save(gift);
+
+
+        for (User fr : user.getFriends()) {
+            notification.setNotificationStatus(NotificationStatus.ADD_GIFT);
+            notification.setCreatedAt(LocalDate.now());
+            notification.setUser(user);
+            notification.setGift(gift);
+            notification.setRecipientId(fr.getId());
+            user.addNotification(notification);
+        }
+        notificationRepository.save(notification);
+
+
         return giftViewMapper.viewCommonGiftCard(user, gift);
     }
 
-    public UserProfileResponse findById() {
-        User user1 = getAuthenticatedUser();
-        return userViewMapper.viewUserProfile(user1);
-    }
+
     @Override
     @Transactional
     public GiftResponse update(Long giftId, GiftRequest request) {

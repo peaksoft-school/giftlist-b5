@@ -7,6 +7,7 @@ import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
+import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
 import kg.giftlist.giftlist.db.service.WishService;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.ForbiddenException;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -28,17 +30,31 @@ public class WishServiceImpl implements WishService {
     private final WishViewMapper viewMapper;
     private final UserRepository userRepository;
     private final HolidayRepository holidayRepository;
+    private final NotificationRepository notificationRepository;
 
     @Override
     @Transactional
     public WishResponse create(WishRequest wishRequest) {
         User user = getAuthenticatedUser();
+        Notification notification = new Notification();
+
         Wish wish = editMapper.create(wishRequest);
         wish.setUser(user);
         user.setWishes(List.of(wish));
         Holiday holiday = holidayRepository.findByName(wishRequest.getHolidayName()).orElseThrow(()
                 -> new NotFoundException("Holiday not found"));
         wish.setHolidays(holiday);
+
+        for (User fr : user.getFriends()) {
+            notification.setNotificationStatus(NotificationStatus.ADD_WISH);
+            notification.setCreatedAt(LocalDate.now());
+            notification.setUser(user);
+            notification.setWish(wish);
+            notification.setRecipientId(fr.getId());
+            user.addNotification(notification);
+        }
+        notificationRepository.save(notification);
+
         return viewMapper.viewCommonWishCard(user,wish);
     }
 

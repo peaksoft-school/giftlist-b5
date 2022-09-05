@@ -1,8 +1,7 @@
 package kg.giftlist.giftlist.db.service.impl;
 
-import kg.giftlist.giftlist.db.models.Wish;
-import kg.giftlist.giftlist.db.repositories.BookingRepository;
-import kg.giftlist.giftlist.db.repositories.WishRepository;
+import kg.giftlist.giftlist.db.models.*;
+import kg.giftlist.giftlist.db.repositories.*;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftCartResponse;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
@@ -10,13 +9,9 @@ import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
+import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.NotFoundException;
-import kg.giftlist.giftlist.db.models.Booking;
-import kg.giftlist.giftlist.db.models.Gift;
-import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.db.repositories.GiftRepository;
-import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -24,6 +19,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.ws.rs.ForbiddenException;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -36,10 +32,13 @@ public class BookingServiceImpl {
     private final WishRepository wishRepository;
     private final WishViewMapper wishViewMapper;
     private final BookingRepository bookingRepository;
+    private final NotificationRepository notificationRepository;
 
     @Transactional
     public GiftCartResponse createBookingGift(Long giftId) {
         User user = getAuthenticatedUser();
+        Notification notification = new Notification();
+
         if (user.getBooking()==null) {
             Booking booking  = new Booking();
             user.setBooking(booking);
@@ -58,6 +57,16 @@ public class BookingServiceImpl {
         }else {
             user.getBooking().getGifts().add(gift);
         }
+
+        for (User fr : user.getFriends()) {
+            notification.setNotificationStatus(NotificationStatus.ADD_GIFT_BOOKING);
+            notification.setCreatedAt(LocalDate.now());
+            notification.setUser(user);
+            notification.setGiftBooking(booking);
+            notification.setRecipientId(fr.getId());
+            user.addNotification(notification);
+        }
+        notificationRepository.save(notification);
         return giftViewMapper.viewGiftCard(gift);
     }
 
@@ -85,6 +94,7 @@ public class BookingServiceImpl {
     @Transactional
     public WishCardResponse createBookingWish(Long wishId) {
         User user = getAuthenticatedUser();
+        Notification notification = new Notification();
         if (user.getBooking()==null) {
             Booking booking  = new Booking();
             user.setBooking(booking);
@@ -103,6 +113,16 @@ public class BookingServiceImpl {
         }else {
             user.getBooking().getWishes().add(wish);
         }
+        for (User fr : user.getFriends()) {
+            notification.setNotificationStatus(NotificationStatus.ADD_WISH_BOOKING);
+            notification.setCreatedAt(LocalDate.now());
+            notification.setUser(user);
+            notification.setGiftBooking(booking);
+            notification.setRecipientId(fr.getId());
+            user.addNotification(notification);
+        }
+        notificationRepository.save(notification);
+
         return wishViewMapper.viewWish(wish);
     }
 

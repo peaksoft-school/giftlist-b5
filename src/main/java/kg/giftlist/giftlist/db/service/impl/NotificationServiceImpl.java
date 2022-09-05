@@ -1,6 +1,5 @@
 package kg.giftlist.giftlist.db.service.impl;
 
-import kg.giftlist.giftlist.db.models.Notification;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.NotificationRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
@@ -13,7 +12,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.ws.rs.ForbiddenException;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
