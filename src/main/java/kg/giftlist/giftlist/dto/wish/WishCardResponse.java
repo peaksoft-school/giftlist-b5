@@ -24,7 +24,7 @@ public class WishCardResponse {
     @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate wishDate;
     private Holiday holiday;
-    private Booking booking;
     private AddWishStatus addWishStatus;
     private ComplaintStatus complaintStatus;
+    private Booking booking;
 }

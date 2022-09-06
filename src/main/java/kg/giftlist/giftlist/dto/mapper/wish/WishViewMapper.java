@@ -36,14 +36,19 @@ public class WishViewMapper {
         wishCardResponse.setHoliday(wish.getHoliday());
         wishCardResponse.setBooking(wish.getBooking());
         User user = getAuthenticatedUser();
-        Wish wish2 = user.getWishes().stream().filter(wish1 -> wish1.getWishName().equals(wish.getWishName()))
-                .findAny()
-                .orElseThrow(() -> new NotFoundException("Wish not found"));
-        if (wish2!=null) {
+//        Wish wish2 = user.getWishes().stream().filter(wish1 -> wish1.getWishName().equals(wish.getWishName()))
+//                .findAny()
+//                .orElseThrow(() -> new NotFoundException("Wish not found dfsfsfsfsfsf"));
+        if (user.getWishes().stream().anyMatch(wish1 -> wish1.getWishName().equals(wish.getWishName()))) {
             wishCardResponse.setAddWishStatus(AddWishStatus.ADDED);
-        } else {
-            wishCardResponse.setAddWishStatus(AddWishStatus.ADD);
-        }
+        }else {
+            wishCardResponse.setAddWishStatus(AddWishStatus.NOT_ADD);
+          }
+//        if (wish2!=null) {
+//            wishCardResponse.setAddWishStatus(AddWishStatus.ADDED);
+//        } else {
+//            wishCardResponse.setAddWishStatus(AddWishStatus.ADD);
+//        }
         return wishCardResponse;
     }
 

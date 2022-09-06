@@ -2,6 +2,6 @@ package kg.giftlist.giftlist.enums;
 
 public enum AddWishStatus {
 
-    ADD,
+    NOT_ADD,
     ADDED
 }

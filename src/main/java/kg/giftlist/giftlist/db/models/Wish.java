@@ -40,8 +40,6 @@ public class Wish {
 
     private Boolean isHidden;
 
-    private Boolean isAddToMyWish;
-
     @ManyToOne
     @JsonIgnore
     private Booking booking;
