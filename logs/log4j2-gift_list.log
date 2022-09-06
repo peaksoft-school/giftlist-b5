@@ -146,3 +146,1056 @@
 2022-09-06 09:34:56.827  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
 2022-09-06 09:34:56.836  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 9 ms
 2022-09-06 09:34:57.660  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-8] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 438 ms
+2022-09-06 11:17:58.977  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on WIN-UUE7M0ACEC3 with PID 4536 (C:\Users\user\IdeaProjects\giftlist-app\target\classes started by user in C:\Users\user\IdeaProjects\giftlist-app)
+2022-09-06 11:17:59.048  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "almaz"
+2022-09-06 11:18:00.663  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 11:18:00.741  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 11 JPA repository interfaces.
+2022-09-06 11:18:01.263  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-06 11:18:01.278  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:18:01.278  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-06 11:18:01.278  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-06 11:18:01.450  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-06 11:18:01.450  INFO WIN-UUE7M0ACEC3 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2355 ms
+2022-09-06 11:18:01.576  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-06 11:18:01.639  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-06 11:18:01.779  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-06 11:18:01.873  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-06 11:18:02.057  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-06 11:18:02.073  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings" не существует, пропускается
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.872  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "holidays" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:18:02.888  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "sub_categories" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "users" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_gifts" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_wishes" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "categories" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "complaints" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "friends" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "gifts" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "holidays" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "mailing_lists" не существует, пропускается
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.903  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "notifications" не существует, пропускается
+2022-09-06 11:18:02.919  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "request_to_friends" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "sub_categories" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users_info" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "wishes" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "booking_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "category_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "complaint_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "gift_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "holiday_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "mailing_list_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "notification_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "sub_category_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_info_seq" не существует, пропускается
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:18:02.920  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "wish_seq" не существует, пропускается
+2022-09-06 11:18:03.159  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-06 11:18:03.174  INFO WIN-UUE7M0ACEC3 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:18:03.799  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-06 11:18:04.643  WARN WIN-UUE7M0ACEC3 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 11:18:05.324  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a16ee0d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1444e35f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1eeb9e5c, org.springframework.security.web.header.HeaderWriterFilter@3524ee20, org.springframework.web.filter.CorsFilter@3f563397, org.springframework.security.web.authentication.logout.LogoutFilter@64c1a76e, kg.giftlist.giftlist.config.security.TokenVerifierFilter@464abed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e1535e0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c27be1d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@268ee31d, org.springframework.security.web.session.SessionManagementFilter@5a8d03ce, org.springframework.security.web.access.ExceptionTranslationFilter@6e8426aa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12128849]
+2022-09-06 11:18:05.621  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:18:05.637  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-06 11:18:05.653  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 7.532 seconds (JVM running for 9.223)
+2022-09-06 11:18:26.444  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 11:18:26.444  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-06 11:18:26.444  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
+2022-09-06 11:18:27.853  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-6] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 604 ms
+2022-09-06 11:18:50.673  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-3] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:19:48.185  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-6] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 3
+2022-09-06 11:19:52.209 ERROR WIN-UUE7M0ACEC3 --- [nio-5000-exec-9] k.g.g.d.s.i.UserServiceImpl              : You are already friend
+2022-09-06 11:19:56.774  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 6
+2022-09-06 11:19:58.221 ERROR WIN-UUE7M0ACEC3 --- [io-5000-exec-10] k.g.g.d.s.i.UserServiceImpl              : You are already friend
+2022-09-06 11:20:14.083  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-8] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
+2022-09-06 11:20:22.413  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-7] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
+2022-09-06 11:20:38.257  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-3] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 7 successfully saved in db
+2022-09-06 11:20:46.206  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-4] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 8 successfully saved in db
+2022-09-06 11:21:08.161  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:26:39.807  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:26:39.807  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-06 11:26:39.912  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-06 11:26:39.929  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-06 11:26:49.866  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on WIN-UUE7M0ACEC3 with PID 8312 (C:\Users\user\IdeaProjects\giftlist-app\target\classes started by user in C:\Users\user\IdeaProjects\giftlist-app)
+2022-09-06 11:26:49.906  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "almaz"
+2022-09-06 11:26:50.743  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 11:26:50.850  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 11 JPA repository interfaces.
+2022-09-06 11:26:51.320  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-06 11:26:51.336  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:26:51.336  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-06 11:26:51.336  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-06 11:26:51.477  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-06 11:26:51.477  INFO WIN-UUE7M0ACEC3 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1507 ms
+2022-09-06 11:26:51.617  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-06 11:26:51.681  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-06 11:26:51.759  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-06 11:26:51.822  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-06 11:26:51.977  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-06 11:26:51.977  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-06 11:26:52.647  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.647  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings" не существует, пропускается
+2022-09-06 11:26:52.647  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.647  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:26:52.647  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.663  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:26:52.664  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.665  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:26:52.667  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.667  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:26:52.668  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.669  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:26:52.670  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.671  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:26:52.672  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:26:52.673  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.680  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "holidays" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "sub_categories" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "users" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.681  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_gifts" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_wishes" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "categories" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "complaints" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "friends" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "gifts" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "holidays" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "mailing_lists" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "notifications" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "request_to_friends" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "sub_categories" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users" не существует, пропускается
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.696  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users_info" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "wishes" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "booking_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "category_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "complaint_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "gift_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "holiday_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "mailing_list_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "notification_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "sub_category_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_info_seq" не существует, пропускается
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:26:52.712  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "wish_seq" не существует, пропускается
+2022-09-06 11:26:52.965  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-06 11:26:52.981  INFO WIN-UUE7M0ACEC3 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:26:53.561  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-06 11:26:54.420  WARN WIN-UUE7M0ACEC3 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 11:26:55.144  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@79177bc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3fe33c59, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c289070, org.springframework.security.web.header.HeaderWriterFilter@130bd00e, org.springframework.web.filter.CorsFilter@4a5cddd9, org.springframework.security.web.authentication.logout.LogoutFilter@1d0f03f6, kg.giftlist.giftlist.config.security.TokenVerifierFilter@7d95a717, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e41e0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e214d39, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@34e700f4, org.springframework.security.web.session.SessionManagementFilter@738ed8d3, org.springframework.security.web.access.ExceptionTranslationFilter@7e2c8622, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@71cdde0c]
+2022-09-06 11:26:55.456  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:26:55.472  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-06 11:26:55.487  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 6.485 seconds (JVM running for 8.386)
+2022-09-06 11:27:00.040  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 11:27:00.040  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-06 11:27:00.040  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
+2022-09-06 11:27:01.348  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 595 ms
+2022-09-06 11:27:28.932  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-7] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:27:50.796  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-8] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 3
+2022-09-06 11:27:57.057  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-9] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 6
+2022-09-06 11:28:12.530  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-4] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
+2022-09-06 11:28:26.130  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-6] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 7 successfully saved in db
+2022-09-06 11:28:43.006  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:29:37.219  INFO WIN-UUE7M0ACEC3 --- [io-5000-exec-10] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:31:26.036  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:31:26.036  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-06 11:31:26.147  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-06 11:31:26.163  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-06 11:31:35.356  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on WIN-UUE7M0ACEC3 with PID 11828 (C:\Users\user\IdeaProjects\giftlist-app\target\classes started by user in C:\Users\user\IdeaProjects\giftlist-app)
+2022-09-06 11:31:35.392  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "almaz"
+2022-09-06 11:31:36.207  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 11:31:36.313  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 11 JPA repository interfaces.
+2022-09-06 11:31:36.813  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-06 11:31:36.829  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:31:36.829  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-06 11:31:36.829  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-06 11:31:37.003  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-06 11:31:37.003  INFO WIN-UUE7M0ACEC3 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1556 ms
+2022-09-06 11:31:37.144  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-06 11:31:37.175  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-06 11:31:37.270  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-06 11:31:37.348  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-06 11:31:37.482  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-06 11:31:37.482  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings" не существует, пропускается
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.241  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "holidays" не существует, пропускается
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.257  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "sub_categories" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "users" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings" не существует, пропускается
+2022-09-06 11:31:38.272  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_gifts" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_wishes" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "categories" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "complaints" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "friends" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "gifts" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "holidays" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "mailing_lists" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "notifications" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "request_to_friends" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "sub_categories" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users_info" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "wishes" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "booking_seq" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "category_seq" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "complaint_seq" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "gift_seq" не существует, пропускается
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.288  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "holiday_seq" не существует, пропускается
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "mailing_list_seq" не существует, пропускается
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "notification_seq" не существует, пропускается
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "sub_category_seq" не существует, пропускается
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_seq" не существует, пропускается
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_info_seq" не существует, пропускается
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:31:38.304  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "wish_seq" не существует, пропускается
+2022-09-06 11:31:38.556  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-06 11:31:38.556  INFO WIN-UUE7M0ACEC3 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:31:39.189  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-06 11:31:40.133  WARN WIN-UUE7M0ACEC3 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 11:31:40.890  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@71cdde0c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23f16852, org.springframework.security.web.context.SecurityContextPersistenceFilter@130bd00e, org.springframework.security.web.header.HeaderWriterFilter@73cdf5f9, org.springframework.web.filter.CorsFilter@dc6a186, org.springframework.security.web.authentication.logout.LogoutFilter@37e967df, kg.giftlist.giftlist.config.security.TokenVerifierFilter@7254a68a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78fd1179, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13cec4ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30a8ac50, org.springframework.security.web.session.SessionManagementFilter@4b02dc4e, org.springframework.security.web.access.ExceptionTranslationFilter@49f32bcb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3c2188b0]
+2022-09-06 11:31:41.171  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:31:41.202  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-06 11:31:41.218  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 6.686 seconds (JVM running for 8.453)
+2022-09-06 11:31:45.847  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 11:31:45.847  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-06 11:31:45.847  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
+2022-09-06 11:31:46.783  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-9] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 569 ms
+2022-09-06 11:32:15.427  INFO WIN-UUE7M0ACEC3 --- [io-5000-exec-10] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:32:40.673  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 3
+2022-09-06 11:32:44.054  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 6
+2022-09-06 11:32:56.976  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-7] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
+2022-09-06 11:33:10.128  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-8] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 7 successfully saved in db
+2022-09-06 11:33:37.067  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-9] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:34:36.217  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:38:53.263  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:38:53.263  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-06 11:38:53.385  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-06 11:38:53.396  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-06 11:39:01.567  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on WIN-UUE7M0ACEC3 with PID 1836 (C:\Users\user\IdeaProjects\giftlist-app\target\classes started by user in C:\Users\user\IdeaProjects\giftlist-app)
+2022-09-06 11:39:01.607  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "almaz"
+2022-09-06 11:39:02.404  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 11:39:02.498  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 11 JPA repository interfaces.
+2022-09-06 11:39:02.968  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-06 11:39:02.983  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:39:02.983  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-06 11:39:02.983  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-06 11:39:03.117  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-06 11:39:03.117  INFO WIN-UUE7M0ACEC3 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1456 ms
+2022-09-06 11:39:03.241  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-06 11:39:03.288  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-06 11:39:03.367  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-06 11:39:03.430  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-06 11:39:03.700  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-06 11:39:03.715  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-06 11:39:04.386  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.386  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings" не существует, пропускается
+2022-09-06 11:39:04.391  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.391  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:39:04.392  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.392  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:39:04.395  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.395  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:39:04.396  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.396  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:39:04.398  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.399  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:39:04.400  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.400  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:39:04.402  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.402  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:39:04.403  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.403  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:39:04.403  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.406  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:39:04.406  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.406  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:39:04.408  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.408  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:39:04.408  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.408  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:39:04.411  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.412  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:39:04.413  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.414  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:39:04.414  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "holidays" не существует, пропускается
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.415  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:39:04.422  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.422  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:39:04.422  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.423  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:39:04.425  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.425  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:39:04.426  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.427  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "sub_categories" не существует, пропускается
+2022-09-06 11:39:04.427  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.428  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "users" не существует, пропускается
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings" не существует, пропускается
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_gifts" не существует, пропускается
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_wishes" не существует, пропускается
+2022-09-06 11:39:04.429  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.437  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "categories" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "complaints" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "friends" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "gifts" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "holidays" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "mailing_lists" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "notifications" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "request_to_friends" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "sub_categories" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users_info" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "wishes" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "booking_seq" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "category_seq" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "complaint_seq" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "gift_seq" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "holiday_seq" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "mailing_list_seq" не существует, пропускается
+2022-09-06 11:39:04.438  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "notification_seq" не существует, пропускается
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "sub_category_seq" не существует, пропускается
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_seq" не существует, пропускается
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_info_seq" не существует, пропускается
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:39:04.453  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "wish_seq" не существует, пропускается
+2022-09-06 11:39:04.737  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-06 11:39:04.752  INFO WIN-UUE7M0ACEC3 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:39:05.509  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-06 11:39:06.338  WARN WIN-UUE7M0ACEC3 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 11:39:07.028  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a0c0680, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18d963be, org.springframework.security.web.context.SecurityContextPersistenceFilter@5687ba39, org.springframework.security.web.header.HeaderWriterFilter@51f31fad, org.springframework.web.filter.CorsFilter@2d2697a8, org.springframework.security.web.authentication.logout.LogoutFilter@98c4a8b, kg.giftlist.giftlist.config.security.TokenVerifierFilter@7d95a717, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6abbdcde, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41ad6c00, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17f5b53a, org.springframework.security.web.session.SessionManagementFilter@3ad5f99, org.springframework.security.web.access.ExceptionTranslationFilter@6bbff652, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d776105]
+2022-09-06 11:39:07.319  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:39:07.335  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-06 11:39:07.350  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 6.078 seconds (JVM running for 7.598)
+2022-09-06 11:39:23.609  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 11:39:23.609  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-06 11:39:23.609  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
+2022-09-06 11:39:25.602  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 1088 ms
+2022-09-06 11:39:51.670  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-2] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:40:21.615  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-3] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 3
+2022-09-06 11:40:25.874  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-4] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 6
+2022-09-06 11:40:46.950  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-6] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
+2022-09-06 11:41:04.212  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-8] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 7 successfully saved in db
+2022-09-06 11:41:16.772 ERROR WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
+java.util.ConcurrentModificationException
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+	at org.hibernate.collection.internal.AbstractPersistentCollection$IteratorProxy.next(AbstractPersistentCollection.java:893)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.saveAll(SimpleJpaRepository.java:699)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at jdk.proxy2/jdk.proxy2.$Proxy162.saveAll(Unknown Source)
+	at kg.giftlist.giftlist.db.service.impl.UserServiceImpl.markAsRead(UserServiceImpl.java:244)
+	at kg.giftlist.giftlist.db.service.impl.UserServiceImpl$$FastClassBySpringCGLIB$$f487aab3.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at kg.giftlist.giftlist.db.service.impl.UserServiceImpl$$EnhancerBySpringCGLIB$$b8998c32.markAsRead(<generated>)
+	at kg.giftlist.giftlist.apis.NotificationApi.markAsRead(NotificationApi.java:64)
+	at kg.giftlist.giftlist.apis.NotificationApi$$FastClassBySpringCGLIB$$9a0bcf8c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at kg.giftlist.giftlist.apis.NotificationApi$$EnhancerBySpringCGLIB$$bced4992.markAsRead(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at kg.giftlist.giftlist.config.security.TokenVerifierFilter.doFilterInternal(TokenVerifierFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1787)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-09-06 11:41:44.010  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-3] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:42:33.599  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:42:33.599  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-06 11:42:33.725  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-06 11:42:33.731  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-06 11:42:42.209  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on WIN-UUE7M0ACEC3 with PID 8184 (C:\Users\user\IdeaProjects\giftlist-app\target\classes started by user in C:\Users\user\IdeaProjects\giftlist-app)
+2022-09-06 11:42:42.244  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "almaz"
+2022-09-06 11:42:43.188  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 11:42:43.282  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 11 JPA repository interfaces.
+2022-09-06 11:42:43.767  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-06 11:42:43.767  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:42:43.767  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-06 11:42:43.767  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-06 11:42:43.911  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-06 11:42:43.911  INFO WIN-UUE7M0ACEC3 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1605 ms
+2022-09-06 11:42:44.036  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-06 11:42:44.094  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-06 11:42:44.172  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-06 11:42:44.251  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-06 11:42:44.381  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-06 11:42:44.397  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings" не существует, пропускается
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.092  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "holidays" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.108  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "sub_categories" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "users" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_gifts" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_wishes" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "categories" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "complaints" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "friends" не существует, пропускается
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.123  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "gifts" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "holidays" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "mailing_lists" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "notifications" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "request_to_friends" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "sub_categories" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users_info" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "wishes" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "booking_seq" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "category_seq" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "complaint_seq" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "gift_seq" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "holiday_seq" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "mailing_list_seq" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "notification_seq" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "sub_category_seq" не существует, пропускается
+2022-09-06 11:42:45.139  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.155  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_seq" не существует, пропускается
+2022-09-06 11:42:45.155  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.155  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_info_seq" не существует, пропускается
+2022-09-06 11:42:45.155  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:42:45.155  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "wish_seq" не существует, пропускается
+2022-09-06 11:42:45.372  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-06 11:42:45.388  INFO WIN-UUE7M0ACEC3 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:42:45.969  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-06 11:42:46.795  WARN WIN-UUE7M0ACEC3 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 11:42:47.485  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@23f16852, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@dc6a186, org.springframework.security.web.context.SecurityContextPersistenceFilter@6db84cae, org.springframework.security.web.header.HeaderWriterFilter@76a86677, org.springframework.web.filter.CorsFilter@30a8ac50, org.springframework.security.web.authentication.logout.LogoutFilter@715ea64a, kg.giftlist.giftlist.config.security.TokenVerifierFilter@13cae908, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32aa27a7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c7c22ce, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f0a29f7, org.springframework.security.web.session.SessionManagementFilter@515a2afd, org.springframework.security.web.access.ExceptionTranslationFilter@ea3491d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@9751c9]
+2022-09-06 11:42:47.786  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:42:47.802  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-06 11:42:47.818  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 5.955 seconds (JVM running for 7.536)
+2022-09-06 11:43:14.344  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 11:43:14.344  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-06 11:43:14.344  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
+2022-09-06 11:43:19.641  INFO WIN-UUE7M0ACEC3 --- [io-5000-exec-10] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 1117 ms
+2022-09-06 11:43:59.777  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:44:23.656  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-6] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 3
+2022-09-06 11:44:29.615  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-7] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 6
+2022-09-06 11:44:49.574  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-3] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
+2022-09-06 11:45:06.757  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-9] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 7 successfully saved in db
+2022-09-06 11:45:40.772  INFO WIN-UUE7M0ACEC3 --- [io-5000-exec-10] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:46:48.099  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:58:14.667  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:58:14.667  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-06 11:58:14.790  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-06 11:58:14.798  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-06 11:58:23.013  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on WIN-UUE7M0ACEC3 with PID 12228 (C:\Users\user\IdeaProjects\giftlist-app\target\classes started by user in C:\Users\user\IdeaProjects\giftlist-app)
+2022-09-06 11:58:23.055  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "almaz"
+2022-09-06 11:58:23.856  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 11:58:23.966  INFO WIN-UUE7M0ACEC3 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 11 JPA repository interfaces.
+2022-09-06 11:58:24.467  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-06 11:58:24.467  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:58:24.467  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-06 11:58:24.467  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-06 11:58:24.608  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-06 11:58:24.608  INFO WIN-UUE7M0ACEC3 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1505 ms
+2022-09-06 11:58:24.733  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-06 11:58:24.780  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-06 11:58:24.873  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-06 11:58:24.920  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-06 11:58:25.065  INFO WIN-UUE7M0ACEC3 --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-06 11:58:25.081  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-06 11:58:25.763  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.763  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings" не существует, пропускается
+2022-09-06 11:58:25.763  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.763  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:58:25.779  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "holidays" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "sub_categories" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "users" не существует, пропускается
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.794  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_gifts" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_wishes" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "categories" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "complaints" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "friends" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "gifts" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "holidays" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "mailing_lists" не существует, пропускается
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.810  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "notifications" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "request_to_friends" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "sub_categories" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users_info" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "wishes" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "booking_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "category_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "complaint_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "gift_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "holiday_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "mailing_list_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "notification_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "sub_category_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_seq" не существует, пропускается
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.826  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_info_seq" не существует, пропускается
+2022-09-06 11:58:25.841  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-06 11:58:25.841  WARN WIN-UUE7M0ACEC3 --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "wish_seq" не существует, пропускается
+2022-09-06 11:58:26.079  INFO WIN-UUE7M0ACEC3 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-06 11:58:26.079  INFO WIN-UUE7M0ACEC3 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 11:58:26.661  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-06 11:58:27.511  WARN WIN-UUE7M0ACEC3 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 11:58:28.241  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5b9ed77b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a8177f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@24244ea, org.springframework.security.web.header.HeaderWriterFilter@668ea404, org.springframework.web.filter.CorsFilter@7b88a2e2, org.springframework.security.web.authentication.logout.LogoutFilter@52238861, kg.giftlist.giftlist.config.security.TokenVerifierFilter@5d2bc446, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67c61551, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bca98d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@664217a8, org.springframework.security.web.session.SessionManagementFilter@6421e9e7, org.springframework.security.web.access.ExceptionTranslationFilter@5220e6ff, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b024fb2]
+2022-09-06 11:58:28.609  INFO WIN-UUE7M0ACEC3 --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-06 11:58:28.624  INFO WIN-UUE7M0ACEC3 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-06 11:58:28.640  INFO WIN-UUE7M0ACEC3 --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 5.969 seconds (JVM running for 7.754)
+2022-09-06 11:58:38.937  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-06 11:58:38.937  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-06 11:58:38.945  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 8 ms
+2022-09-06 11:58:40.579  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 1087 ms
+2022-09-06 11:59:05.176  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-9] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 11:59:32.542  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-8] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 3
+2022-09-06 11:59:39.913  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-4] k.g.g.d.s.i.UserServiceImpl              : Successfully accept to friend with id: 6
+2022-09-06 11:59:51.898  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-3] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
+2022-09-06 12:00:05.959  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-6] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 7 successfully saved in db
+2022-09-06 12:00:31.578  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 12:01:30.258  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-7] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in

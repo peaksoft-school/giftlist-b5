@@ -56,7 +56,6 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder encoder;
     private final NotificationRepository notificationRepository;
     private final NotificationViewMapper notificationViewMapper;
-    private final UserInfoRepository userInfoRepository;
 
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;
@@ -116,9 +115,8 @@ public class UserServiceImpl implements UserService {
             );
             user = userRepo.save(newUser);
             log.info("Successfully saved user with id: {} in db", newUser.getId());
-        }
-        else {
-            user = userRepo.findByEmail(decodedToken.getEmail()).orElseThrow(()->
+        } else {
+            user = userRepo.findByEmail(decodedToken.getEmail()).orElseThrow(() ->
                     new NotFoundException("Not found email "));
             log.error("Not found email");
         }
@@ -237,15 +235,14 @@ public class UserServiceImpl implements UserService {
                 getAllNotifications(findById().getUserId()));
     }
 
-
     public List<NotificationResponse> markAsRead() {
-        User user = findByUserId(findById().getUserId());
-        for (Notification notification : user.getNotifications()) {
+        List<Notification> notifications = notificationRepository.findByRecipientId(findById().getUserId());
+        for (Notification notification : notifications) {
             notification.setRead(true);
             notificationRepository.save(notification);
         }
-        return notificationViewMapper.getAll(notificationRepository.
-                getAllNotifications(findById().getUserId()));
+
+        return notificationViewMapper.getAll(notificationRepository.getAllNotifications(findById().getUserId()));
     }
 
     @Override
@@ -271,11 +268,11 @@ public class UserServiceImpl implements UserService {
             user.getRequestToFriends().remove(friend);
             user.acceptToFriend(friend);
             log.info("Successfully accept to friend with id: {}", friend.getId());
-        }else {
+        } else {
             log.error("You are already friend");
             throw new AlreadyExistException("You are already friend");
         }
-        return new SimpleResponse("Accepted","Successfully accept to friend");
+        return new SimpleResponse("Accepted", "Successfully accept to friend");
     }
 
     @Override
@@ -286,11 +283,11 @@ public class UserServiceImpl implements UserService {
         if (user.getRequestToFriends().contains(friend)) {
             user.getRequestToFriends().remove(friend);
             log.info("Successfully rejected user with id {}", friend.getId());
-        }else {
+        } else {
             log.error("You have not request to reject");
             throw new NotFoundException("You have not request to reject");
         }
-        return new SimpleResponse("Rejected","Successfully rejected");
+        return new SimpleResponse("Rejected", "Successfully rejected");
     }
 
     @Override
@@ -302,11 +299,11 @@ public class UserServiceImpl implements UserService {
             friend.getFriends().remove(user);
             user.getFriends().remove(friend);
             log.info("Successfully deleted user with id: {}", friend.getId());
-        }else {
-            log.error("You have not friend with id "+friend.getId());
-            throw new NotFoundException("You have not friend with id "+friend.getId());
+        } else {
+            log.error("You have not friend with id " + friend.getId());
+            throw new NotFoundException("You have not friend with id " + friend.getId());
         }
-        return new SimpleResponse("Deleted","Successfully deleted");
+        return new SimpleResponse("Deleted", "Successfully deleted");
     }
 
     @Override
@@ -337,7 +334,7 @@ public class UserServiceImpl implements UserService {
     public CommonUserProfileResponse getCommonFriendProfile(Long userId) {
 
         User user = userRepo.findById(userId).orElseThrow(() ->
-                new NotFoundException("User with id "+userId+" not found"));
+                new NotFoundException("User with id " + userId + " not found"));
         return viewMapper.viewCommonFriendProfile(user);
     }
 }
