@@ -11,6 +11,7 @@ import kg.giftlist.giftlist.db.models.UserInfo;
 import kg.giftlist.giftlist.db.repositories.UserInfoRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class UserInfoServiceImpl implements UserInfoService {
 
@@ -38,6 +40,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         userInfo.setUser(user);
         user.setUserInfo(userInfo);
         userInfoRepository.save(userInfo);
+        log.info("User info with id: {} successfully saved in db", userInfo.getId());
         return userInfoViewMapper.viewUserInfo(userInfo, user);
     }
 
@@ -62,6 +65,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         }
         UserInfo userInfo = findByUserInfoId(userInfoId);
         userInfoEditMapper.update(userInfo, userInfoRequest);
+        log.info("User info with id: {} successfully updated in db", userInfo.getId());
         return userInfoViewMapper.viewUserInfo(userInfoRepository.save(userInfo),user);
     }
 

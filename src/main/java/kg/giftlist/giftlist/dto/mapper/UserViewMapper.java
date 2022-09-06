@@ -111,6 +111,8 @@ public class UserViewMapper {
             commonUserProfileResponse.setFriendStatus(FriendStatus.REQUEST_TO_FRIEND);
         }else if (user1.getFriends().contains(user)) {
             commonUserProfileResponse.setFriendStatus(FriendStatus.FRIEND);
+        }else if (user.getRequestToFriends().contains(user1)) {
+            commonUserProfileResponse.setFriendStatus(FriendStatus.REQUESTED);
         }else {
             commonUserProfileResponse.setFriendStatus(FriendStatus.NOT_FRIEND);
         }

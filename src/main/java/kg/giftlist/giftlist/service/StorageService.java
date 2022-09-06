@@ -1,12 +1,9 @@
 package kg.giftlist.giftlist.service;
-
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.*;
@@ -20,7 +17,7 @@ import java.util.Map;
 @Service
 @Getter
 @Setter
-@Slf4j
+@Log4j2
 @RequiredArgsConstructor
 public class StorageService {
 
