@@ -17,7 +17,6 @@ import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.NotFoundException;
-import kg.giftlist.giftlist.exception.WishNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
@@ -52,8 +51,6 @@ public class HolidayServiceImpl implements HolidayService {
         holiday.setUser(user);
         holidayRepository.save(holiday);
         log.info("Holiday with id: {} successfully saved in db", holiday.getId());
-        return viewMapper.viewHoliday(holiday);
-
         for (User fr : user.getFriends()) {
             Notification notification = new Notification();
             notification.setNotificationStatus(NotificationStatus.ADD_HOLIDAY);

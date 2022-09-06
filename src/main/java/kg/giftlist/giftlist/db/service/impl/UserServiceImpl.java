@@ -121,8 +121,6 @@ public class UserServiceImpl implements UserService {
             user = userRepo.findByEmail(decodedToken.getEmail()).orElseThrow(()->
                     new NotFoundException("Not found email "));
             log.error("Not found email");
-        } else {
-            user = userRepo.findByEmail(decodedToken.getEmail()).get();
         }
         return new AuthResponse(
                 user.getId(),
@@ -224,7 +222,6 @@ public class UserServiceImpl implements UserService {
         }
         friend.addRequestToFriend(user);
         log.info("Request to friend successfully send");
-        return new SimpleResponse("Success","Request to friend successfully send");
         Notification notification = new Notification();
         notification.setNotificationStatus(NotificationStatus.REQUEST_TO_FRIEND);
         notification.setCreatedAt(LocalDate.now());
