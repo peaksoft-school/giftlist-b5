@@ -27,7 +27,6 @@ public class NotificationApi {
     private final GiftServiceImpl giftService;
     private final WishServiceImpl wishService;
     private final HolidayServiceImpl holidayService;
-    private final NotificationServiceImpl notificationService;
 
     @Operation(summary = "Get user by id", description = "User can get user by id")
     @GetMapping("/user/{userId}")
@@ -60,10 +59,10 @@ public class NotificationApi {
         return userService.getAllNotifications();
     }
 
-    @PutMapping("/markAsRead")
     @Operation(summary = "mark as read", description = "mark as read return notifications list")
-    public List<NotificationResponse> markAsRead(Authentication authentication) {
-        return notificationService.markAsRead(authentication);
+    @PutMapping("/markAsRead")
+    public List<NotificationResponse> markAsRead() {
+        return userService.markAsRead();
     }
 
 }

@@ -38,6 +38,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
@@ -47,7 +48,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private final UserRepository userRepo;
     private final JwtUtils jwtUtils;
     private final UserEditMapper editMapper;
@@ -87,7 +88,7 @@ public class UserServiceImpl implements UserService{
                     "invalid password"
             );
         }
-        if (user.getIsBlock()==true){
+        if (user.getIsBlock() == true) {
             return null;
         }
         String jwt = jwtUtils.generateJwt(user);
@@ -176,7 +177,7 @@ public class UserServiceImpl implements UserService{
 
 
     public UserFriendProfileResponse findUserByUserId(Long userId) {
-        return viewMapper.viewFriendProfile(userRepo.findById(userId).orElseThrow(()->new NotFoundException(
+        return viewMapper.viewFriendProfile(userRepo.findById(userId).orElseThrow(() -> new NotFoundException(
                 "User with userId: " + userId + " not found"
         )));
     }
@@ -227,6 +228,16 @@ public class UserServiceImpl implements UserService{
                 getAllNotifications(findById().getUserId()));
     }
 
+
+    public List<NotificationResponse> markAsRead() {
+        User user = findByUserId(findById().getUserId());
+        for (Notification notification : user.getNotifications()) {
+            notification.setRead(true);
+            notificationRepository.save(notification);
+        }
+        return notificationViewMapper.getAll(notificationRepository.
+                getAllNotifications(findById().getUserId()));
+    }
 
     @Override
     @Transactional
