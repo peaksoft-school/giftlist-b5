@@ -1,4 +1,7 @@
-package kg.giftlist.giftlist.enums;/**
-    *@author seiitbeknarynbaev
-*/public enum ComplaintStatus {
+package kg.giftlist.giftlist.enums;
+
+public enum ComplaintStatus {
+
+    COMPLAINT,
+    COMPLAINED
 }

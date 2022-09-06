@@ -123,6 +123,7 @@ public class WishServiceImpl implements WishService {
     public WishResponse addToMyWish(Long wishId) {
         User user = getAuthenticatedUser();
         Wish friendWish = getWishById(wishId);
+        friendWish.setIsAddToMyWish(true);
         Wish newWish = new Wish();
         newWish.setWishName(friendWish.getWishName());
         newWish.setWishLink(friendWish.getWishLink());

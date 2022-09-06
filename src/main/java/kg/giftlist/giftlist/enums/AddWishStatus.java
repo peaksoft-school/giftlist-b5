@@ -1,6 +1,6 @@
 package kg.giftlist.giftlist.enums;
 
-public enum WishAndGiftStatus {
+public enum AddWishStatus {
 
     ADD,
     ADDED
