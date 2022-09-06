@@ -53,7 +53,7 @@ public class BookingApi {
         return bookingService.getAllBookedWishes();
     }
 
-    @Operation(summary = "Get all booked wishes", description = "User can get own booked wishes.")
+    @Operation(summary = "Get all booked gifts", description = "User can get own booked gifts.")
     @GetMapping("gifts")
     public List<GiftResponse> getAllBookedGifts() {
         return bookingService.getAllBookedGift();

@@ -34,6 +34,7 @@ public class HolidayServiceImpl implements HolidayService {
     private final HolidayEditMapper editMapper;
     private final UserRepository userRepository;
     private final WishViewMapper wishViewMapper;
+    private final WishServiceImpl wishService;
 
     public HolidayResponse create(HolidayRequest holidayRequest) {
         Holiday holiday =editMapper.create(holidayRequest);
@@ -65,10 +66,11 @@ public class HolidayServiceImpl implements HolidayService {
     }
 
     public SimpleResponse deleteById(Long id) {
-        boolean exists = holidayRepository.existsById(id);
-        if (!exists) {
-            log.error("Holiday with id = " + id + " not found!");
-            throw new WishNotFoundException("Holiday with id = " + id + " not found!");
+        Holiday holiday = holidayRepository.findById(id).orElseThrow(() ->
+                new NotFoundException("Holiday with id = " + id + " not found!"));
+        List<Wish> wishes = holiday.getWishes();
+        for (Wish wish : wishes) {
+            wishService.deleteById(wish.getId());
         }
         holidayRepository.deleteById(id);
         log.info("Holiday with id: {} successfully deleted from db", id);
