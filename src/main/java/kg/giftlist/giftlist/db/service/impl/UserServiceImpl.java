@@ -241,7 +241,6 @@ public class UserServiceImpl implements UserService {
             notification.setRead(true);
             notificationRepository.save(notification);
         }
-
         return notificationViewMapper.getAll(notificationRepository.getAllNotifications(findById().getUserId()));
     }
 
