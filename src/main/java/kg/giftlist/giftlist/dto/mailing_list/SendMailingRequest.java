@@ -2,6 +2,8 @@ package kg.giftlist.giftlist.dto.mailing_list;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 public class SendMailingRequest {
@@ -22,7 +24,6 @@ public class SendMailingRequest {
                         "<img src=\"%s\" height=\"300\" width=\"300\"/>\n" +
                         "<br>\n" +
                         "<h1>%s</h1>\n" +
-                        "<input type=\"date\"/>\n" +
                         "</body>\n" +
                         "</html>",
                 photo, text
