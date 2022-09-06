@@ -171,6 +171,26 @@ public class UserServiceImpl implements UserService{
         return view(userRepo.searchAllByFirstNameAndLastName(name.toUpperCase()));
     }
 
+    @Override
+    @Transactional
+    public AuthResponse changeNewPassword(Long userId, String newPassword) {
+        User user = userRepo.findById( userId ).orElseThrow(() -> new UsernameNotFoundException(
+                "user with id = " + userId + " not found!"
+        ));
+        user.setPassword( encoder.encode( newPassword ) );
+
+        return new AuthResponse(
+                user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getPhoto(),
+                user.getEmail(),
+                jwtUtils.generateJwt(user),
+                user.getRole()
+        );
+
+    }
+
     private List<UserResponse> view(List<User> users){
         List<UserResponse> responses = new ArrayList<>();
         for (User user : users) {

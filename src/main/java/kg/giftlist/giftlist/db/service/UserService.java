@@ -33,4 +33,6 @@ public interface UserService {
 
     List<UserResponse> findUser(String name);
 
+    AuthResponse changeNewPassword(Long userId,String newPassword);
+
 }

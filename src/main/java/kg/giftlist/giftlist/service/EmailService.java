@@ -43,9 +43,9 @@ public class EmailService {
         }
     }
 
-    public void getApiKey(String to, String linkForNewPassword) throws IOException {
+    public void sendLinkToChangeUserPassword(String to, String linkForNewPassword) throws IOException {
         Email from = new Email( "giftlist16@gmail.com" );
-        Email toUser = new Email( to );
+        Email toUser = new Email(to);
         Content content = new Content( "text/plain", linkForNewPassword );
         Mail mail = new Mail( from, "[GIFT LIST] password reset link ", toUser, content );
         SendGrid sg = new SendGrid( "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" );

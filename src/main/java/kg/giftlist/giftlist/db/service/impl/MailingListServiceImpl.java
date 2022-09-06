@@ -2,7 +2,6 @@ package kg.giftlist.giftlist.db.service.impl;
 
 import kg.giftlist.giftlist.db.models.MailingList;
 import kg.giftlist.giftlist.db.repositories.MailingListRepository;
-import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.MailingListService;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mailing_list.SendMailingRequest;
@@ -22,7 +21,6 @@ public class MailingListServiceImpl implements MailingListService {
 
     private final MailingListRepository repository;
     private final EmailService emailService;
-    private final UserRepository userRepository;
 
     @Override
     public void save(MailingList mailingList) {
@@ -43,10 +41,9 @@ public class MailingListServiceImpl implements MailingListService {
     }
 
 
-
     @Override
     public SimpleResponse sentLink(String email, String linkForNewPassword) throws Exception {
-        emailService.getApiKey( email, linkForNewPassword );
-        return new SimpleResponse( "OK","Here working" );
+        emailService.sendLinkToChangeUserPassword( email, linkForNewPassword );
+        return new SimpleResponse( "OK", "Here working" );
     }
 }
