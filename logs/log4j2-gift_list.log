@@ -1199,3 +1199,12 @@ java.util.ConcurrentModificationException
 2022-09-06 12:00:05.959  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-6] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 7 successfully saved in db
 2022-09-06 12:00:31.578  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
 2022-09-06 12:01:30.258  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-7] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 12:12:00.960  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-6] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 12:12:31.953  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-5] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
+2022-09-06 12:12:45.871  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-9] k.g.g.d.s.i.GiftServiceImpl              : Gift with id: 8 successfully saved in db
+2022-09-06 12:13:01.469  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-8] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 12:14:36.826  INFO WIN-UUE7M0ACEC3 --- [nio-5000-exec-2] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-06 12:20:44.996  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 12:20:44.996  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-06 12:20:45.114  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-06 12:20:45.120  INFO WIN-UUE7M0ACEC3 --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
