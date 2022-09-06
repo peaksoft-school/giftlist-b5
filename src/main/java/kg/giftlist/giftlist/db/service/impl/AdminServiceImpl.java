@@ -4,21 +4,19 @@ import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
-
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.AdminService;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-@Slf4j
+
 @Service
+@Log4j2
 @AllArgsConstructor
 public class AdminServiceImpl implements AdminService {
 
@@ -32,7 +30,6 @@ public class AdminServiceImpl implements AdminService {
         for (User i : users) {
             userList.add(userEditMapper.createUser(i));
         }
-        log.info("Find all Users works");
         return userList;
     }
 
@@ -43,6 +40,7 @@ public class AdminServiceImpl implements AdminService {
                 new NotFoundException(
                         String.format("user with id = %s not found", id)));
         user.setIsBlock(true);
+        log.info("Successfully blocked user with id: {}", user.getId());
         return new SimpleResponse("BLOCK","user with id = "+String.valueOf(id)+" blocked");
     }
 
@@ -53,6 +51,7 @@ public class AdminServiceImpl implements AdminService {
                 new NotFoundException(
                         String.format("user with id = %s not found", id)));
         user.setIsBlock(false);
+        log.info("Successfully unblocked user with id: {}", user.getId());
         return new SimpleResponse("UN BLOCK","user with id = "+String.valueOf(id)+" un blocked");
     }
 }

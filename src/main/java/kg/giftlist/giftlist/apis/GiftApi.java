@@ -45,10 +45,16 @@ public class GiftApi {
         return giftService.getGiftById(giftId);
     }
 
+    @Operation(summary = "Get all own gifts", description = "User can get only own all gifts")
+    @GetMapping("my-gifts")
+    public List<GiftResponse> getAllOwnGifts() {
+        return giftService.getAll();
+    }
+
     @Operation(summary = "Get all gifts", description = "User can get all gifts")
     @GetMapping
     public List<GiftResponse> getAllGifts() {
-        return giftService.getAll();
+        return giftService.getAllGifts();
     }
 
     @Operation(summary = "Search gifts by filter", description = "User can search gifts by filter")

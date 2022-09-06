@@ -4,24 +4,26 @@ import kg.giftlist.giftlist.db.repositories.*;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.wish.WishEditMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
-import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.exception.WishNotFoundException;
 import kg.giftlist.giftlist.db.service.WishService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.ForbiddenException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class WishServiceImpl implements WishService {
 
@@ -31,7 +33,6 @@ public class WishServiceImpl implements WishService {
     private final WishViewMapper viewMapper;
     private final UserRepository userRepository;
     private final HolidayRepository holidayRepository;
-    private final BookingRepository bookingRepository;
 
     @Override
     @Transactional
@@ -51,8 +52,10 @@ public class WishServiceImpl implements WishService {
         if (user.getHolidays().contains(holiday)){
             wish.setHoliday(holiday);
         }else {
+            log.error("Holiday not found");
             throw new NotFoundException("Holiday not found");
         }
+        log.info("Wish with id: {} successfully saved in db", wish.getId());
         return viewMapper.viewCommonWishCard(user,wish);
     }
 
@@ -66,11 +69,13 @@ public class WishServiceImpl implements WishService {
         if (user.getHolidays().contains(holiday)){
             wish.setHoliday(holiday);
         }else {
+            log.error("Holiday not found");
             throw new NotFoundException("Holiday not found");
         }
         if (wish.getUser() == user) {
             editMapper.update(wish, wishRequest);
         }
+        log.info("Wish with id: {} successfully updated in db", wish.getId());
         return viewMapper.viewCommonWishCard(user, wish);
     }
 
@@ -98,6 +103,7 @@ public class WishServiceImpl implements WishService {
         List<Complaint> complaints = complaintRepository.findAll();
         complaints.removeIf(c -> Objects.equals(wish.getComplaints(), c));
         wishRepository.deleteById(id);
+        log.info("Wish with id: {} successfully deleted from db", id);
         return new SimpleResponse("Deleted!", "Wish successfully deleted!");
     }
 
@@ -121,11 +127,19 @@ public class WishServiceImpl implements WishService {
         newWish.setWishName(friendWish.getWishName());
         newWish.setWishLink(friendWish.getWishLink());
         newWish.setWishPhoto(friendWish.getWishPhoto());
-        newWish.setWishDate(friendWish.getWishDate());
+        newWish.setWishDate(LocalDate.now());
+        newWish.setCreatedAt(LocalDateTime.now());
         newWish.setDescription(friendWish.getDescription());
-        newWish.setHoliday(friendWish.getHoliday());
+        Holiday holiday = new Holiday();
+        holiday.setPhoto(friendWish.getHoliday().getPhoto());
+        holiday.setName(friendWish.getHoliday().getName());
+        holiday.setHolidayDate(friendWish.getHoliday().getHolidayDate());
+        holiday.setUser(user);
+        holidayRepository.save(holiday);
+        newWish.setHoliday(holiday);
         newWish.setUser(user);
         user.setWishes(List.of(newWish));
+        log.info("Wish with id: {} successfully saved in db", newWish.getId());
         return viewMapper.viewCommonWishCard(user,newWish);
     }
 }
