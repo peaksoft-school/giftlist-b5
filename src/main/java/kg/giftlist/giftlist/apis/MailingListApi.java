@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.*;
 public class MailingListApi {
 
     private final MailingListServiceImpl mailingListService;
-    private final UserRepository userRepository;
 
     @Operation(summary = "Send mailing", description = "Admin can send mailing")
     @PostMapping("/send")
@@ -28,6 +27,4 @@ public class MailingListApi {
         mailingListService.send( sendMailingRequest );
         return ResponseEntity.ok( HttpStatus.OK );
     }
-
-
 }

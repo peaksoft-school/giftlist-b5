@@ -34,7 +34,6 @@ build/
 src/main/resources/application-man.properties
 src/main/resources/application-1.properties
 src/main/resources/application-seit.yml
-
 src/main/resources/dinara.yml
 src/main/resources/application-arlen.properties
 
