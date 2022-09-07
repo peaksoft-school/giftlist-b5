@@ -31,8 +31,10 @@ public class WishViewMapper {
         WishCardResponse wishCardResponse = new WishCardResponse();
         wishCardResponse.setWishId(wish.getId());
         wishCardResponse.setWishName(wish.getWishName());
+        wishCardResponse.setPhoto(wish.getWishPhoto());
         wishCardResponse.setWishLink(wish.getWishLink());
         wishCardResponse.setDescription(wish.getDescription());
+        wishCardResponse.setWishDate(wish.getWishDate());
         wishCardResponse.setHoliday(wish.getHoliday());
         wishCardResponse.setBooking(wish.getBooking());
         User user = getAuthenticatedUser();
