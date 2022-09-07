@@ -1,31 +1,48 @@
 package kg.giftlist.giftlist.dto.mapper.wish;
 import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.dto.wish.UserWishResponse;
 import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.db.models.Wish;
+import kg.giftlist.giftlist.enums.AddWishStatus;
+import kg.giftlist.giftlist.exception.NotFoundException;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+
+import javax.ws.rs.ForbiddenException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class WishViewMapper {
+
+    private final UserRepository userRepository;
 
     public WishCardResponse viewWish(Wish wish) {
 
         if (wish == null) {
             return null;
         }
-        return WishCardResponse.builder()
-                .wishId(wish.getId())
-                .wishName(wish.getWishName())
-                .wishLink(wish.getWishLink())
-                .description(wish.getDescription())
-                .photo(wish.getWishPhoto())
-                .wishDate(wish.getWishDate())
-                .holiday(wish.getHoliday())
-                .booking(wish.getBooking())
-                .build();
+        WishCardResponse wishCardResponse = new WishCardResponse();
+        wishCardResponse.setWishId(wish.getId());
+        wishCardResponse.setWishName(wish.getWishName());
+        wishCardResponse.setWishLink(wish.getWishLink());
+        wishCardResponse.setDescription(wish.getDescription());
+        wishCardResponse.setHoliday(wish.getHoliday());
+        wishCardResponse.setBooking(wish.getBooking());
+        User user = getAuthenticatedUser();
+
+        if (user.getWishes().stream().anyMatch(wish1 -> wish1.getWishName().equals(wish.getWishName()))) {
+            wishCardResponse.setAddWishStatus(AddWishStatus.ADDED);
+        }else {
+            wishCardResponse.setAddWishStatus(AddWishStatus.NOT_ADD);
+          }
+        return wishCardResponse;
     }
 
     public UserWishResponse viewUserWish(User user){
@@ -65,5 +82,12 @@ public class WishViewMapper {
             wishResponses.add(viewCommonWishCard(user,wish));
         }
         return wishResponses;
+    }
+
+    public User getAuthenticatedUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String login = authentication.getName();
+        return userRepository.findByEmail(login).orElseThrow(() ->
+                new ForbiddenException("User not found!"));
     }
 }

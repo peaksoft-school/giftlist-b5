@@ -138,6 +138,7 @@ public class WishServiceImpl implements WishService {
         holidayRepository.save(holiday);
         newWish.setHoliday(holiday);
         newWish.setUser(user);
+        wishRepository.save(newWish);
         user.setWishes(List.of(newWish));
         log.info("Wish with id: {} successfully saved in db", newWish.getId());
         return viewMapper.viewCommonWishCard(user,newWish);
