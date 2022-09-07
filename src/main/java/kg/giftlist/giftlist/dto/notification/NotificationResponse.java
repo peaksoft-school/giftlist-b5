@@ -12,9 +12,9 @@ public class NotificationResponse {
 
     private Long notificationId;
     private Long userId;
-    private Long othersId;
+    private Long wishOrGiftOrHolidayId;
     private String photo;
-    private String othersName;
+    private String wishOrGiftOrHolidayName;
     private NotificationStatus notificationStatus;
     private String userFirstName;
     private String userLastName;
@@ -31,9 +31,9 @@ public class NotificationResponse {
             LocalDate createdAt, boolean isRead) {
 
         this.notificationId = notificationId;
-        this.othersId = othersId;
+        this.wishOrGiftOrHolidayId = othersId;
         this.photo = othersPhoto;
-        this.othersName = nameOfGiftOrWish;
+        this.wishOrGiftOrHolidayName = nameOfGiftOrWish;
         this.notificationStatus = notificationStatus;
         this.userId = userId;
         this.userFirstName = userFirstName;

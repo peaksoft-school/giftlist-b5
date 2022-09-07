@@ -27,8 +27,8 @@ public class NotificationViewMapper {
             response.setUserFirstName(notification.getUser().getFirstName());
             response.setUserLastName(notification.getUser().getLastName());
             response.setNotificationStatus(notification.getNotificationStatus());
-            response.setOthersId(notification.getGift().getId());
-            response.setOthersName(notification.getGift().getName());
+            response.setWishOrGiftOrHolidayId(notification.getGift().getId());
+            response.setWishOrGiftOrHolidayName(notification.getGift().getName());
 
         } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_WISH)) {
             response.setPhoto(notification.getUser().getPhoto());
@@ -36,8 +36,8 @@ public class NotificationViewMapper {
             response.setUserFirstName(notification.getUser().getFirstName());
             response.setUserLastName(notification.getUser().getLastName());
             response.setNotificationStatus(notification.getNotificationStatus());
-            response.setOthersId(notification.getWish().getId());
-            response.setOthersName(notification.getWish().getWishName());
+            response.setWishOrGiftOrHolidayId(notification.getWish().getId());
+            response.setWishOrGiftOrHolidayName(notification.getWish().getWishName());
 
         } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_HOLIDAY)) {
             response.setPhoto(notification.getUser().getPhoto());
@@ -45,22 +45,22 @@ public class NotificationViewMapper {
             response.setUserFirstName(notification.getUser().getFirstName());
             response.setUserLastName(notification.getUser().getLastName());
             response.setNotificationStatus(notification.getNotificationStatus());
-            response.setOthersId(notification.getHoliday().getId());
-            response.setOthersName(notification.getHoliday().getName());
+            response.setWishOrGiftOrHolidayId(notification.getHoliday().getId());
+            response.setWishOrGiftOrHolidayName(notification.getHoliday().getName());
 
         } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_GIFT_BOOKING)) {
-            response.setOthersId(notification.getGift().getId());
+            response.setWishOrGiftOrHolidayId(notification.getGift().getId());
             response.setPhoto(notification.getGift().getPhoto());
-            response.setOthersName(notification.getGift().getName());
+            response.setWishOrGiftOrHolidayName(notification.getGift().getName());
             response.setNotificationStatus(notification.getNotificationStatus());
             response.setUserId(notification.getUser().getId());
             response.setUserFirstName(notification.getUser().getFirstName());
             response.setUserLastName(notification.getUser().getLastName());
 
         } else if (notification.getNotificationStatus().equals(NotificationStatus.ADD_WISH_BOOKING)) {
-            response.setOthersId(notification.getWish().getId());
+            response.setWishOrGiftOrHolidayId(notification.getWish().getId());
             response.setPhoto(notification.getWish().getWishPhoto());
-            response.setOthersName(notification.getWish().getWishName());
+            response.setWishOrGiftOrHolidayName(notification.getWish().getWishName());
             response.setNotificationStatus(notification.getNotificationStatus());
             response.setUserId(notification.getUser().getId());
             response.setUserFirstName(notification.getUser().getFirstName());

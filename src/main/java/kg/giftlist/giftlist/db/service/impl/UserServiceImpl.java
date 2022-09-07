@@ -236,7 +236,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<NotificationResponse> markAsRead() {
-        List<Notification> notifications = notificationRepository.findByRecipientId(findById().getUserId());
+        List<Notification> notifications = notificationRepository.getAllNotifications(findById().getUserId());
         for (Notification notification : notifications) {
             notification.setRead(true);
             notificationRepository.save(notification);
