@@ -5,7 +5,6 @@ import io.swagger.annotations.ApiModelProperty;
 import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Holiday;
 import kg.giftlist.giftlist.enums.AddWishStatus;
-import kg.giftlist.giftlist.enums.ComplaintStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +24,5 @@ public class WishCardResponse {
     private LocalDate wishDate;
     private Holiday holiday;
     private AddWishStatus addWishStatus;
-    private ComplaintStatus complaintStatus;
     private Booking booking;
 }

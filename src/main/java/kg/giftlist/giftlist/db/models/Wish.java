@@ -65,11 +65,4 @@ public class Wish {
     @JsonIgnore
     private List<Complaint> complaints;
 
-    public String getHolidayName(){
-        return holiday.getName();
-    }
-
-
-
-
 }

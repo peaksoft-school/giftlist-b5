@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -114,7 +115,15 @@ public class GiftServiceImpl implements GiftService {
     }
 
     public List<GiftResponse> getAllGifts(){
-        return giftViewMapper.getAllGifts(giftRepository.findAll());
+        User user = getAuthenticatedUser();
+        List<Gift> allGifts = giftRepository.findAll();
+        List<Gift> gifts = new ArrayList<>();
+        for (Gift gift : allGifts) {
+            if (!user.getGifts().contains(gift)) {
+                gifts.add(gift);
+            }
+        }
+        return giftViewMapper.getAllGifts(gifts);
     }
 
     @Override
