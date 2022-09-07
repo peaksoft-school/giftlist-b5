@@ -138,8 +138,6 @@ public class GiftServiceImpl implements GiftService {
             }
         }
         return giftViewMapper.getAllGifts(gifts);
-    public List<GiftResponse> getAllGifts() {
-        return giftViewMapper.getAllGifts(giftRepository.findAll());
     }
 
     @Override

@@ -10,7 +10,6 @@ import kg.giftlist.giftlist.config.security.JwtUtils;
 import kg.giftlist.giftlist.db.models.Notification;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.NotificationRepository;
-import kg.giftlist.giftlist.db.repositories.UserInfoRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.UserService;
 import kg.giftlist.giftlist.dto.AuthRequest;
