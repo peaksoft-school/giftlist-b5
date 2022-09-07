@@ -1,10 +1,10 @@
 insert into users_info(id, city,clothing_size, date_of_birth, facebook_link, hobby, important_note, instagram_link, phone_number, shoe_size, telegram_link, vk_link)
-values (1, 'California', 'XXL', '2004-12-12', 'facebook.com', 'playing pubg', 'I love eat', 'instagram.com','0777 345 342', 34, 'telegram.com', 'vk.com'),
-       (2, 'Texas', 'XS', '1999-05-15', 'facebook.com', 'music', 'I love soccer', null, '0777 345 879', 42, 'telegram.com', 'vk.com'),
-       (3, 'Issyk-Kul', 'XL', null, 'facebook.com', 'music', 'I love guitar', 'instagram.com', '0777 005 399', 40, 'telegram.com', 'vk.com'),
-       (4, 'Batken', 'L', '1999-10-15', 'facebook.com', 'music', 'I love music', 'instagram.com', '0777 044 345', 42, 'telegram.com', 'vk.com'),
-       (5, 'Jalal-Abad', 'M', '1999-02-15', 'facebook.com', 'music', 'I love PUBG', 'instagram.com', '0777 935 134', 42, 'telegram.com', 'vk.com'),
-       (6, 'Naryn', 'S', '2004-02-15', 'facebook.com', 'music', 'I love PUBG', 'instagram.com', '0999 433 333', 39, 'telegram.com', 'vk.com');
+values (1, 'California', 'XXL', '2004-12-12', 'facebook.com', 'playing pubg', 'I love eat', 'https://www.instagram.com','0777 345 342', 34, 'https://www.telegram.com', 'https://www.vk.com'),
+       (2, 'Texas', 'XS', '1999-05-15', 'facebook.com', 'music', 'I love soccer', null, '0777 345 879', 42, 'https://www.telegram.com', 'https://www.vk.com'),
+       (3, 'Issyk-Kul', 'XL', null, 'facebook.com', 'music', 'I love guitar', 'https://www.instagram.com', '0777 005 399', 40, 'https://www.telegram.com', 'https://www.vk.com'),
+       (4, 'Batken', 'L', '1999-10-15', 'facebook.com', 'music', 'I love music', 'https://www.instagram.com', '0777 044 345', 42, 'https://www.telegram.com', 'https://www.vk.com'),
+       (5, 'Jalal-Abad', 'M', '1999-02-15', 'facebook.com', 'music', 'I love PUBG', 'https://www.instagram.com', '0777 935 134', 42, 'telegram.com', 'https://www.vk.com'),
+       (6, 'Naryn', 'S', '2004-02-15', 'facebook.com', 'music', 'I love PUBG', 'https://www.instagram.com', '0999 433 333', 39, 'https://www.telegram.com', 'https://www.vk.com');
 
 insert into users(id, email, first_name, is_block, last_name, password, photo,role, user_info_id)
 VALUES (1, 'admin@gmail.com', 'Steve', false , 'Jobs','$2a$12$xEFzerKnyLVgXyBQ/ecOjuVs5rDd2KgixXHHvPSIqTN7TDnRH0Oba','https://giftlist-bucket.s3.amazonaws.com/1661869658858user_photo1.jpg', 'ADMIN', 1),
