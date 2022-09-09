@@ -34,7 +34,6 @@ public class WishServiceImpl implements WishService {
     private final WishViewMapper viewMapper;
     private final UserRepository userRepository;
     private final HolidayRepository holidayRepository;
-    private final BookingRepository bookingRepository;
     private final NotificationRepository notificationRepository;
 
     @Override
