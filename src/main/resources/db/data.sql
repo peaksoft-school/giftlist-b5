@@ -11,7 +11,7 @@ VALUES (1, 'admin@gmail.com', 'Steve', false , 'Jobs','$2a$12$xEFzerKnyLVgXyBQ/e
        (2, 'user@gmail.com', 'Bill', false , 'Gates','$2a$12$YVsqnm/x/Z4xxsqzdPIAWeq3TNLZx/KEmMvAMQ4i8obMHd9YkxhYW','https://giftlist-bucket.s3.amazonaws.com/1661869658858user_photo1.jpg', 'USER', 2),
        (3, 'seit@gmail.com', 'Сейитбек', false , 'Нарынбаев','$2a$12$0biFEVvYS8vuacj1xQT0k.L0sxgAfmgOlLiFDo77cGFxE8l6RLgau','https://giftlist-bucket.s3.amazonaws.com/1661869658858user_photo1.jpg', 'USER', 3),
        (4, 'kunzaada@gmail.com', 'Кунзаада', false , 'Бекжанова','$2a$12$c3erzd4PElusy1mI.18YFePnZp2Em5quAHxmF/MoHHt4AKu9k8rum','https://giftlist-bucket.s3.amazonaws.com/1661869658858user_photo1.jpg', 'USER', 4),
-       (5, 'elmirbek@gmail.com', 'Элмирбек', false , 'Алишеров','$2a$12$QQY9Efc7tiLfFuRBgM5Cz..DCsrSFWljmUSZyaEBn1fhVoMc7TV6O','https://giftlist-bucket.s3.amazonaws.com/1661869658858user_photo1.jpg', 'USER', 5),
+       (5, 'elmirbekalisherov24@gmail.com', 'Элмирбек', false , 'Алишеров','$2a$12$QQY9Efc7tiLfFuRBgM5Cz..DCsrSFWljmUSZyaEBn1fhVoMc7TV6O','https://giftlist-bucket.s3.amazonaws.com/1661869658858user_photo1.jpg', 'USER', 5),
        (6, 'dinara@gmail.com', 'Dinara', false , 'Rahatbek kyzy','$2a$10$iOruTCPtGMtkbC5P2Wo0ne/.KBGmHIrQ.kOYTKIMKrp1k.3iYNjJq','https://giftlist-bucket.s3.amazonaws.com/1661869658858user_photo1.jpg', 'USER', 6);
 
 insert into categories(id, name)

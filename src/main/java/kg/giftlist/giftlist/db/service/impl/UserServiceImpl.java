@@ -36,13 +36,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 @Service
 @Log4j2
@@ -85,7 +84,7 @@ public class UserServiceImpl implements UserService {
                     "invalid password"
             );
         }
-        if (user.getIsBlock() == true) {
+        if (user.getIsBlock()==true){
             return null;
         }
         String jwt = jwtUtils.generateJwt(user);
@@ -114,7 +113,8 @@ public class UserServiceImpl implements UserService {
             );
             user = userRepo.save(newUser);
             log.info("Successfully saved user with id: {} in db", newUser.getId());
-        } else {
+        }
+        else {
             user = userRepo.findByEmail(decodedToken.getEmail()).orElseThrow(() ->
                     new NotFoundException("Not found email "));
             log.error("Not found email");
@@ -147,7 +147,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserProfileResponse findById() {
         User user1 = getAuthenticatedUser();
-        return viewMapper.viewUserProfile(user1);
+            return viewMapper.viewUserProfile(user1);
     }
 
     @Override
@@ -158,7 +158,7 @@ public class UserServiceImpl implements UserService {
             log.error("invalid password");
             throw new NotFoundException(
                     "invalid password");
-        } else {
+        }else {
             editMapper.changePassword(user, userChangePasswordRequest);
             user.setPassword(encoder.encode(userChangePasswordRequest.getNewPassword()));
             log.info("Password successfully changed");
@@ -178,15 +178,27 @@ public class UserServiceImpl implements UserService {
     public List<UserResponse> findUser(String name) {
         return view(userRepo.searchAllByFirstNameAndLastName(name.toUpperCase()));
     }
+    @Override
+    @Transactional
+    public AuthResponse changeNewPassword(Long userId, String newPassword) {
+        User user = userRepo.findById( userId ).orElseThrow(() -> new UsernameNotFoundException(
+                "user with id = " + userId + " not found!"
+        ));
+        user.setPassword( encoder.encode( newPassword ) );
 
+        return new AuthResponse(
+                user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getPhoto(),
+                user.getEmail(),
+                jwtUtils.generateJwt(user),
+                user.getRole()
+        );
 
-    public UserFriendProfileResponse findUserByUserId(Long userId) {
-        return viewMapper.viewFriendProfile(userRepo.findById(userId).orElseThrow(() -> new NotFoundException(
-                "User with userId: " + userId + " not found"
-        )));
     }
 
-    private List<UserResponse> view(List<User> users) {
+    private List<UserResponse> view(List<User> users){
         List<UserResponse> responses = new ArrayList<>();
         for (User user : users) {
             responses.add(new UserResponse(user));
@@ -197,11 +209,11 @@ public class UserServiceImpl implements UserService {
     public User findByUserId(Long userId) {
         return userRepo.findById(userId)
                 .orElseThrow(() -> new NotFoundException(
-                        String.format("user with id = %s does not exists", userId)
+                String.format("user with id = %s does not exists", userId)
                 ));
     }
 
-    public User getAuthenticatedUser() {
+    public User getAuthenticatedUser(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String login = authentication.getName();
         return userRepo.findByEmail(login).orElseThrow(() ->
@@ -226,7 +238,7 @@ public class UserServiceImpl implements UserService {
         notification.setRecipientId(friendId);
         friend.addNotification(notification);
         notificationRepository.saveAll(friend.getNotifications());
-        return new SimpleResponse("Success", "Request to friend successfully send");
+        return new SimpleResponse("Success","Request to friend successfully send");
     }
 
     public List<NotificationResponse> getAllNotifications() {
@@ -250,10 +262,10 @@ public class UserServiceImpl implements UserService {
         User friend = findByUserId(friendId);
         if (friend.getRequestToFriends().contains(user)) {
             friend.getRequestToFriends().remove(user);
-        } else {
+        }else {
             throw new NotFoundException("No request to friend");
         }
-        return new SimpleResponse("Success", "Request to friend successfully cancel");
+        return new SimpleResponse("Success","Request to friend successfully cancel");
     }
 
     @Override
@@ -266,11 +278,11 @@ public class UserServiceImpl implements UserService {
             user.getRequestToFriends().remove(friend);
             user.acceptToFriend(friend);
             log.info("Successfully accept to friend with id: {}", friend.getId());
-        } else {
+        }else {
             log.error("You are already friend");
             throw new AlreadyExistException("You are already friend");
         }
-        return new SimpleResponse("Accepted", "Successfully accept to friend");
+        return new SimpleResponse("Accepted","Successfully accept to friend");
     }
 
     @Override
@@ -281,11 +293,11 @@ public class UserServiceImpl implements UserService {
         if (user.getRequestToFriends().contains(friend)) {
             user.getRequestToFriends().remove(friend);
             log.info("Successfully rejected user with id {}", friend.getId());
-        } else {
+        }else {
             log.error("You have not request to reject");
             throw new NotFoundException("You have not request to reject");
         }
-        return new SimpleResponse("Rejected", "Successfully rejected");
+        return new SimpleResponse("Rejected","Successfully rejected");
     }
 
     @Override
@@ -297,11 +309,11 @@ public class UserServiceImpl implements UserService {
             friend.getFriends().remove(user);
             user.getFriends().remove(friend);
             log.info("Successfully deleted user with id: {}", friend.getId());
-        } else {
-            log.error("You have not friend with id " + friend.getId());
-            throw new NotFoundException("You have not friend with id " + friend.getId());
+        }else {
+            log.error("You have not friend with id "+friend.getId());
+            throw new NotFoundException("You have not friend with id "+friend.getId());
         }
-        return new SimpleResponse("Deleted", "Successfully deleted");
+        return new SimpleResponse("Deleted","Successfully deleted");
     }
 
     @Override
@@ -332,7 +344,7 @@ public class UserServiceImpl implements UserService {
     public CommonUserProfileResponse getCommonFriendProfile(Long userId) {
 
         User user = userRepo.findById(userId).orElseThrow(() ->
-                new NotFoundException("User with id " + userId + " not found"));
+                new NotFoundException("User with id "+userId+" not found"));
         return viewMapper.viewCommonFriendProfile(user);
     }
 }
