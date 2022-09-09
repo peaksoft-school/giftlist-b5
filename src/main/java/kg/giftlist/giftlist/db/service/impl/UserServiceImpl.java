@@ -178,6 +178,7 @@ public class UserServiceImpl implements UserService {
     public List<UserResponse> findUser(String name) {
         return view(userRepo.searchAllByFirstNameAndLastName(name.toUpperCase()));
     }
+
     @Override
     @Transactional
     public AuthResponse changeNewPassword(Long userId, String newPassword) {
