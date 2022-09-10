@@ -51,7 +51,7 @@ public class GiftServiceImpl implements GiftService {
             throw new NotFoundException("SubCategory with id: " + request.getSubCategoryId() + " not found");
         }
         if (request.getPhoto()==null){
-            gift.setPhoto("https://giftlist-bucket.s3.amazonaws.com/1661860640125charity-default-image.jpg");
+            gift.setPhoto("https://giftlist-bucket.s3.amazonaws.com/1662787640327placeholder.webp");
         }else {
             gift.setPhoto(request.getPhoto());
         }

@@ -23,7 +23,7 @@ public class Holiday {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "holiday_gen")
-    @SequenceGenerator(name = "holiday_gen",sequenceName = "holiday_seq", initialValue = 7, allocationSize = 1)
+    @SequenceGenerator(name = "holiday_gen",sequenceName = "holiday_seq", initialValue = 8, allocationSize = 1)
     private Long id;
 
     private String name;

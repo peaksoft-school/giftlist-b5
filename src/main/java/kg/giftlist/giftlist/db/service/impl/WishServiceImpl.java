@@ -15,12 +15,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Service
 @Log4j2
@@ -40,7 +38,7 @@ public class WishServiceImpl implements WishService {
         User user = getAuthenticatedUser();
         Wish wish = editMapper.create(wishRequest);
         if (wishRequest.getPhoto()==null){
-            wish.setWishPhoto("https://giftlist-bucket.s3.amazonaws.com/1661860549270wishes-default-image.png");
+            wish.setWishPhoto("https://giftlist-bucket.s3.amazonaws.com/1662787640327placeholder.webp");
         }else {
             wish.setWishPhoto(wishRequest.getPhoto());
         }
@@ -110,6 +108,16 @@ public class WishServiceImpl implements WishService {
     public List<WishResponse> getAllWishes() {
         User user = getAuthenticatedUser();
         return viewMapper.getAllWishes(wishRepository.getAllUserWishes(user.getId()));
+    }
+
+    public List<WishResponse> getWishesForFeed() {
+        User user = getAuthenticatedUser();
+        List<Wish> allFriendWishes = wishRepository.getAllFriendWishes(user.getId());
+        List<Wish> allWishes = wishRepository.getAllWishes();
+        List<Wish> sortedWishes  = new ArrayList<>(allFriendWishes);
+        allWishes.removeAll(allFriendWishes);
+        sortedWishes.addAll(allWishes);
+        return viewMapper.getAllWishes(sortedWishes);
     }
 
     public User getAuthenticatedUser() {
