@@ -119,7 +119,7 @@ public class GiftServiceImpl implements GiftService {
         List<Gift> allGifts = giftRepository.findAll();
         List<Gift> gifts = new ArrayList<>();
         for (Gift gift : allGifts) {
-            if (!user.getGifts().contains(gift)) {
+            if (!user.getGifts().contains(gift) && !gift.getIsBlock()) {
                 gifts.add(gift);
             }
         }

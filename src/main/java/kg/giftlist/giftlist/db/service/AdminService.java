@@ -10,5 +10,13 @@ public interface AdminService {
 
     List<AdminPageUserGetAllResponse> getAllUsers();
     SimpleResponse blockUser(Long id);
+    SimpleResponse blockWish(Long wishId);
+    SimpleResponse blockHoliday(Long holidayId);
+    SimpleResponse blockGift(Long giftId);
+
     SimpleResponse unBlockUser(Long id);
+    SimpleResponse unBlockWish(Long wishId);
+    SimpleResponse unBlockHoliday(Long holidayId);
+    SimpleResponse unBlockGift(Long giftId);
+
 }

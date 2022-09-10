@@ -1,5 +1,11 @@
 package kg.giftlist.giftlist.db.service.impl;
 
+import kg.giftlist.giftlist.db.models.Gift;
+import kg.giftlist.giftlist.db.models.Holiday;
+import kg.giftlist.giftlist.db.models.Wish;
+import kg.giftlist.giftlist.db.repositories.GiftRepository;
+import kg.giftlist.giftlist.db.repositories.HolidayRepository;
+import kg.giftlist.giftlist.db.repositories.WishRepository;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
@@ -22,6 +28,9 @@ public class AdminServiceImpl implements AdminService {
 
     private UserEditMapper userEditMapper;
     private UserRepository userRepository;
+    private WishRepository wishRepository;
+    private HolidayRepository holidayRepository;
+    private GiftRepository giftRepository;
 
     @Override
     public List<AdminPageUserGetAllResponse> getAllUsers() {
@@ -42,6 +51,70 @@ public class AdminServiceImpl implements AdminService {
         user.setIsBlock(true);
         log.info("Successfully blocked user with id: {}", user.getId());
         return new SimpleResponse("BLOCK","user with id = "+String.valueOf(id)+" blocked");
+    }
+    @Override
+    @Transactional
+    public SimpleResponse blockWish(Long wishId) {
+        Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
+                new NotFoundException(
+                        String.format("Wish with id = %s not found", wishId)));
+        wish.setIsBlock(true);
+        log.info("Successfully blocked Wish with id: {}", wish.getId());
+        return new SimpleResponse("BLOCK","Wish with id = "+String.valueOf(wishId)+" blocked");
+    }
+
+    @Override
+    public SimpleResponse blockHoliday(Long holidayId) {
+        Holiday holiday = holidayRepository.findById(holidayId).orElseThrow(()->
+                new NotFoundException(
+                        String.format("Holiday with id = %s not found", holidayId)));
+        holiday.setIsBlock(true);
+        log.info("Successfully blocked Holiday with id: {}", holiday.getId());
+        return new SimpleResponse("BLOCK","Holiday with id = "+String.valueOf(holidayId)+" blocked");
+
+    }
+
+    @Override
+    public SimpleResponse blockGift(Long giftId) {
+        Gift gift = giftRepository.findById(giftId).orElseThrow(()->
+                new NotFoundException(
+                        String.format("Gift with id = %s not found", giftId)));
+        gift.setIsBlock(true);
+        log.info("Successfully blocked Gift with id: {}", gift.getId());
+        return new SimpleResponse("BLOCK","Gift with id = "+String.valueOf(giftId)+" blocked");
+
+    }
+
+    @Override
+    public SimpleResponse unBlockWish(Long wishId) {
+        Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
+                new NotFoundException(
+                        String.format("Wish with id = %s not found", wishId)));
+        wish.setIsBlock(false);
+        log.info("Successfully unblocked Wish with id: {}", wish.getId());
+        return new SimpleResponse("UN BLOCK","Wish with id = "+String.valueOf(wishId)+" un blocked");
+    }
+
+    @Override
+    public SimpleResponse unBlockHoliday(Long holidayId) {
+        Holiday holiday = holidayRepository.findById(holidayId).orElseThrow(() ->
+                new NotFoundException(
+                        String.format("Holiday with id = %s not found", holidayId)));
+        holiday.setIsBlock(false);
+        log.info("Successfully unblocked Holiday with id: {}", holiday.getId());
+        return new SimpleResponse("UN BLOCK","Holiday with id = "+String.valueOf(holidayId)+" un blocked");
+
+    }
+
+    @Override
+    public SimpleResponse unBlockGift(Long giftId) {
+        Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
+                new NotFoundException(
+                        String.format("Gift with id = %s not found", giftId)));
+        gift.setIsBlock(false);
+        log.info("Successfully unblocked Gift with id: {}", gift.getId());
+        return new SimpleResponse("UN BLOCK","Gift with id = "+String.valueOf(giftId)+" un blocked");
+
     }
 
     @Override

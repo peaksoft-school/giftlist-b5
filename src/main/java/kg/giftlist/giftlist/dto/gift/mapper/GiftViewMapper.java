@@ -31,7 +31,9 @@ public class GiftViewMapper {
         List<GiftResponse> giftResponses = new ArrayList<>();
         for (Gift gift : gifts) {
             User user = gift.getUser();
-            giftResponses.add(viewCommonGiftCard(user,gift));
+            if(!gift.getIsBlock()) {
+                giftResponses.add(viewCommonGiftCard(user, gift));
+            }
         }
         return giftResponses;
     }
@@ -53,7 +55,7 @@ public class GiftViewMapper {
     }
 
     public GiftCartResponse viewGiftCard(Gift gift){
-        if (gift == null) {
+        if (gift == null && !gift.getIsBlock()) {
             return null;
         }
         GiftCartResponse giftCartResponse = new GiftCartResponse();
