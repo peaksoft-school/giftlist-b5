@@ -1090,3 +1090,471 @@ org.postgresql.util.PSQLException: ОШИБКА: UPDATE или DELETE в таб�
 2022-09-09 21:49:00.801  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-09-09 21:49:00.890  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
 2022-09-09 21:49:00.934  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 12:26:46.892  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 11068 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 12:26:46.960  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 12:26:49.466  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 12:26:49.704  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 218 ms. Found 12 JPA repository interfaces.
+2022-09-10 12:26:50.940  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 12:26:50.958  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:26:50.959  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 12:26:50.961  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 12:26:51.377  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 12:26:51.378  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4271 ms
+2022-09-10 12:26:51.703  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 12:26:51.823  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 12:26:52.239  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 12:26:52.456  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 12:26:52.955  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 12:26:52.987  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 12:26:55.971  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 12:26:55.987  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:26:57.731  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 12:27:00.023  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 12:27:03.129  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@208ce928, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@577b2c5f, org.springframework.security.web.context.SecurityContextPersistenceFilter@27f6e2c3, org.springframework.security.web.header.HeaderWriterFilter@3cc5ca01, org.springframework.web.filter.CorsFilter@71eb4ea4, org.springframework.security.web.authentication.logout.LogoutFilter@36e95b7b, kg.giftlist.giftlist.config.security.TokenVerifierFilter@406decb2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@665c79a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e79473d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2456716b, org.springframework.security.web.session.SessionManagementFilter@5a983f8a, org.springframework.security.web.access.ExceptionTranslationFilter@2f1b8770, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ef03158]
+2022-09-10 12:27:04.101  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:27:04.158  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 12:27:04.187  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 18.604 seconds (JVM running for 24.964)
+2022-09-10 12:27:34.829  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-10 12:27:34.830  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-10 12:27:34.834  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
+2022-09-10 12:27:38.546  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-8] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 2510 ms
+2022-09-10 12:29:22.445  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-2] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-10 12:30:26.927 ERROR DESKTOP-1L3HC8D --- [nio-5000-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/admin/users/block/1': {public kg.giftlist.giftlist.dto.SimpleResponse kg.giftlist.giftlist.apis.AdminApi.blockGift(java.lang.Long), public kg.giftlist.giftlist.dto.SimpleResponse kg.giftlist.giftlist.apis.AdminApi.blockHoliday(java.lang.Long)}] with root cause
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/admin/users/block/1': {public kg.giftlist.giftlist.dto.SimpleResponse kg.giftlist.giftlist.apis.AdminApi.blockGift(java.lang.Long), public kg.giftlist.giftlist.dto.SimpleResponse kg.giftlist.giftlist.apis.AdminApi.blockHoliday(java.lang.Long)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:383)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:125)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:67)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:498)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1261)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1043)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at kg.giftlist.giftlist.config.security.TokenVerifierFilter.doFilterInternal(TokenVerifierFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1787)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-09-10 12:32:02.262  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:32:02.327  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 12:32:02.474  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 12:32:45.050  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 11372 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 12:32:45.282  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 12:32:48.497  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 12:32:48.752  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 232 ms. Found 12 JPA repository interfaces.
+2022-09-10 12:32:50.767  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 12:32:50.800  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:32:50.802  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 12:32:50.804  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 12:32:51.407  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 12:32:51.409  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5850 ms
+2022-09-10 12:32:51.824  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 12:32:51.956  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 12:32:52.666  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 12:32:52.876  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 12:32:53.589  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 12:32:53.630  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 12:32:56.276  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 12:32:56.292  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:32:58.436  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 12:33:01.289  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 12:33:04.291  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3cb4f1a6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e301795, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a983f8a, org.springframework.security.web.header.HeaderWriterFilter@74fd5fb0, org.springframework.web.filter.CorsFilter@7b1a9ab3, org.springframework.security.web.authentication.logout.LogoutFilter@443d94ae, kg.giftlist.giftlist.config.security.TokenVerifierFilter@4440750, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54c1878b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27f6e2c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@605c2b9f, org.springframework.security.web.session.SessionManagementFilter@389fad5b, org.springframework.security.web.access.ExceptionTranslationFilter@24ffe853, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@427946b9]
+2022-09-10 12:33:05.399  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:33:05.453  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 12:33:05.476  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 22.182 seconds (JVM running for 30.759)
+2022-09-10 12:34:42.141  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:34:42.145  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 12:34:42.161  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 12:35:06.394  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 7004 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 12:35:06.451  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 12:35:08.260  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 12:35:08.506  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 222 ms. Found 12 JPA repository interfaces.
+2022-09-10 12:35:09.664  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 12:35:09.681  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:35:09.682  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 12:35:09.684  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 12:35:10.048  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 12:35:10.049  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3474 ms
+2022-09-10 12:35:10.385  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 12:35:10.506  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 12:35:10.833  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 12:35:11.021  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 12:35:11.356  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 12:35:11.399  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 12:35:14.283  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 12:35:14.298  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:35:15.989  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 12:35:17.817  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 12:35:20.559  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2db07651, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@718b9d56, org.springframework.security.web.context.SecurityContextPersistenceFilter@18f1a81a, org.springframework.security.web.header.HeaderWriterFilter@308d8de8, org.springframework.web.filter.CorsFilter@36a59d8, org.springframework.security.web.authentication.logout.LogoutFilter@1cecd0a9, kg.giftlist.giftlist.config.security.TokenVerifierFilter@53b7f08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@304933cb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a4199e5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51751265, org.springframework.security.web.session.SessionManagementFilter@309b6768, org.springframework.security.web.access.ExceptionTranslationFilter@77587422, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a5a8c6f]
+2022-09-10 12:35:21.494  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:35:21.535  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 12:35:21.557  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 16.383 seconds (JVM running for 20.656)
+2022-09-10 12:38:40.343  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-10 12:38:40.345  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-10 12:38:40.352  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 5 ms
+2022-09-10 12:39:17.194  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-3] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 2075 ms
+2022-09-10 12:40:05.499  INFO DESKTOP-1L3HC8D --- [io-5000-exec-10] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-10 12:41:22.455  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-2] k.g.g.d.s.i.AdminServiceImpl             : Successfully blocked Wish with id: 1
+2022-09-10 14:58:23.769  WARN DESKTOP-1L3HC8D --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h28m38s959ms416µs100ns).
+2022-09-10 16:41:11.960  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 16:41:12.147  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 16:41:12.258  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 16:41:45.824  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 11356 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 16:41:45.920  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 16:41:49.333  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 16:41:49.568  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 216 ms. Found 12 JPA repository interfaces.
+2022-09-10 16:41:50.958  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 16:41:50.979  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 16:41:50.981  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 16:41:50.983  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 16:41:51.560  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 16:41:51.562  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5419 ms
+2022-09-10 16:41:51.981  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 16:41:52.116  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 16:41:52.426  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 16:41:52.622  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 16:41:52.922  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 16:41:52.953  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 16:41:55.793  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 16:41:55.808  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 16:41:57.631  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 16:41:59.606  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 16:42:03.423  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77e42cbf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68bef3df, org.springframework.security.web.context.SecurityContextPersistenceFilter@64ba5a71, org.springframework.security.web.header.HeaderWriterFilter@a15e3c1, org.springframework.web.filter.CorsFilter@6aeb769d, org.springframework.security.web.authentication.logout.LogoutFilter@138110f8, kg.giftlist.giftlist.config.security.TokenVerifierFilter@37d3e740, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2286dfcd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4557723a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51f412e6, org.springframework.security.web.session.SessionManagementFilter@31f4fdc5, org.springframework.security.web.access.ExceptionTranslationFilter@519e14f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5379488c]
+2022-09-10 16:42:05.090  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 16:42:05.150  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 16:42:05.175  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 20.683 seconds (JVM running for 26.081)
+2022-09-10 17:36:50.520  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 17:36:50.680  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 17:36:50.759  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 12:26:46.892  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 11068 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 12:26:46.960  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 12:26:49.466  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 12:26:49.704  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 218 ms. Found 12 JPA repository interfaces.
+2022-09-10 12:26:50.940  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 12:26:50.958  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:26:50.959  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 12:26:50.961  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 12:26:51.377  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 12:26:51.378  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4271 ms
+2022-09-10 12:26:51.703  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 12:26:51.823  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 12:26:52.239  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 12:26:52.456  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 12:26:52.955  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 12:26:52.987  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 12:26:55.971  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 12:26:55.987  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:26:57.731  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 12:27:00.023  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 12:27:03.129  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@208ce928, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@577b2c5f, org.springframework.security.web.context.SecurityContextPersistenceFilter@27f6e2c3, org.springframework.security.web.header.HeaderWriterFilter@3cc5ca01, org.springframework.web.filter.CorsFilter@71eb4ea4, org.springframework.security.web.authentication.logout.LogoutFilter@36e95b7b, kg.giftlist.giftlist.config.security.TokenVerifierFilter@406decb2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@665c79a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e79473d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2456716b, org.springframework.security.web.session.SessionManagementFilter@5a983f8a, org.springframework.security.web.access.ExceptionTranslationFilter@2f1b8770, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ef03158]
+2022-09-10 12:27:04.101  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:27:04.158  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 12:27:04.187  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 18.604 seconds (JVM running for 24.964)
+2022-09-10 12:27:34.829  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-10 12:27:34.830  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-10 12:27:34.834  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
+2022-09-10 12:27:38.546  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-8] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 2510 ms
+2022-09-10 12:29:22.445  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-2] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-10 12:30:26.927 ERROR DESKTOP-1L3HC8D --- [nio-5000-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/admin/users/block/1': {public kg.giftlist.giftlist.dto.SimpleResponse kg.giftlist.giftlist.apis.AdminApi.blockGift(java.lang.Long), public kg.giftlist.giftlist.dto.SimpleResponse kg.giftlist.giftlist.apis.AdminApi.blockHoliday(java.lang.Long)}] with root cause
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/admin/users/block/1': {public kg.giftlist.giftlist.dto.SimpleResponse kg.giftlist.giftlist.apis.AdminApi.blockGift(java.lang.Long), public kg.giftlist.giftlist.dto.SimpleResponse kg.giftlist.giftlist.apis.AdminApi.blockHoliday(java.lang.Long)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:383)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:125)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:67)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:498)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1261)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1043)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at kg.giftlist.giftlist.config.security.TokenVerifierFilter.doFilterInternal(TokenVerifierFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1787)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-09-10 12:32:02.262  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:32:02.327  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 12:32:02.474  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 12:32:45.050  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 11372 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 12:32:45.282  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 12:32:48.497  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 12:32:48.752  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 232 ms. Found 12 JPA repository interfaces.
+2022-09-10 12:32:50.767  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 12:32:50.800  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:32:50.802  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 12:32:50.804  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 12:32:51.407  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 12:32:51.409  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5850 ms
+2022-09-10 12:32:51.824  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 12:32:51.956  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 12:32:52.666  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 12:32:52.876  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 12:32:53.589  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 12:32:53.630  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 12:32:56.276  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 12:32:56.292  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:32:58.436  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 12:33:01.289  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 12:33:04.291  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3cb4f1a6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e301795, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a983f8a, org.springframework.security.web.header.HeaderWriterFilter@74fd5fb0, org.springframework.web.filter.CorsFilter@7b1a9ab3, org.springframework.security.web.authentication.logout.LogoutFilter@443d94ae, kg.giftlist.giftlist.config.security.TokenVerifierFilter@4440750, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54c1878b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27f6e2c3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@605c2b9f, org.springframework.security.web.session.SessionManagementFilter@389fad5b, org.springframework.security.web.access.ExceptionTranslationFilter@24ffe853, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@427946b9]
+2022-09-10 12:33:05.399  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:33:05.453  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 12:33:05.476  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 22.182 seconds (JVM running for 30.759)
+2022-09-10 12:34:42.141  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:34:42.145  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 12:34:42.161  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 12:35:06.394  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 7004 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 12:35:06.451  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 12:35:08.260  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 12:35:08.506  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 222 ms. Found 12 JPA repository interfaces.
+2022-09-10 12:35:09.664  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 12:35:09.681  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:35:09.682  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 12:35:09.684  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 12:35:10.048  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 12:35:10.049  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3474 ms
+2022-09-10 12:35:10.385  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 12:35:10.506  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 12:35:10.833  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 12:35:11.021  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 12:35:11.356  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 12:35:11.399  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 12:35:14.283  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 12:35:14.298  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 12:35:15.989  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 12:35:17.817  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 12:35:20.559  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2db07651, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@718b9d56, org.springframework.security.web.context.SecurityContextPersistenceFilter@18f1a81a, org.springframework.security.web.header.HeaderWriterFilter@308d8de8, org.springframework.web.filter.CorsFilter@36a59d8, org.springframework.security.web.authentication.logout.LogoutFilter@1cecd0a9, kg.giftlist.giftlist.config.security.TokenVerifierFilter@53b7f08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@304933cb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a4199e5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51751265, org.springframework.security.web.session.SessionManagementFilter@309b6768, org.springframework.security.web.access.ExceptionTranslationFilter@77587422, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a5a8c6f]
+2022-09-10 12:35:21.494  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 12:35:21.535  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 12:35:21.557  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 16.383 seconds (JVM running for 20.656)
+2022-09-10 12:38:40.343  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-10 12:38:40.345  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-10 12:38:40.352  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 5 ms
+2022-09-10 12:39:17.194  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-3] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 2075 ms
+2022-09-10 12:40:05.499  INFO DESKTOP-1L3HC8D --- [io-5000-exec-10] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-10 12:41:22.455  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-2] k.g.g.d.s.i.AdminServiceImpl             : Successfully blocked Wish with id: 1
+2022-09-10 14:58:23.769  WARN DESKTOP-1L3HC8D --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h28m38s959ms416µs100ns).
+2022-09-10 16:41:11.960  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 16:41:12.147  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 16:41:12.258  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 16:41:45.824  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 11356 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 16:41:45.920  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 16:41:49.333  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 16:41:49.568  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 216 ms. Found 12 JPA repository interfaces.
+2022-09-10 16:41:50.958  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 16:41:50.979  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 16:41:50.981  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 16:41:50.983  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 16:41:51.560  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 16:41:51.562  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5419 ms
+2022-09-10 16:41:51.981  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 16:41:52.116  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 16:41:52.426  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 16:41:52.622  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 16:41:52.922  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 16:41:52.953  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 16:41:55.793  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 16:41:55.808  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 16:41:57.631  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 16:41:59.606  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 16:42:03.423  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77e42cbf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68bef3df, org.springframework.security.web.context.SecurityContextPersistenceFilter@64ba5a71, org.springframework.security.web.header.HeaderWriterFilter@a15e3c1, org.springframework.web.filter.CorsFilter@6aeb769d, org.springframework.security.web.authentication.logout.LogoutFilter@138110f8, kg.giftlist.giftlist.config.security.TokenVerifierFilter@37d3e740, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2286dfcd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4557723a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51f412e6, org.springframework.security.web.session.SessionManagementFilter@31f4fdc5, org.springframework.security.web.access.ExceptionTranslationFilter@519e14f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5379488c]
+2022-09-10 16:42:05.090  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 16:42:05.150  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 16:42:05.175  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 20.683 seconds (JVM running for 26.081)
+2022-09-10 17:36:50.520  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 17:36:50.680  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 17:36:50.759  INFO DESKTOP-1L3HC8D --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2022-09-10 17:37:20.127  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on DESKTOP-1L3HC8D with PID 7248 (C:\Users\12345\IdeaProjects\giftlist\target\classes started by 12345 in C:\Users\12345\IdeaProjects\giftlist)
+2022-09-10 17:37:20.204  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "1"
+2022-09-10 17:37:22.260  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 17:37:22.585  INFO DESKTOP-1L3HC8D --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 266 ms. Found 12 JPA repository interfaces.
+2022-09-10 17:37:23.973  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
+2022-09-10 17:37:23.993  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
+2022-09-10 17:37:23.994  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 17:37:23.996  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 17:37:24.468  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 17:37:24.475  INFO DESKTOP-1L3HC8D --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4134 ms
+2022-09-10 17:37:24.982  INFO DESKTOP-1L3HC8D --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 17:37:25.111  INFO DESKTOP-1L3HC8D --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 17:37:25.529  INFO DESKTOP-1L3HC8D --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 17:37:25.956  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 17:37:26.287  INFO DESKTOP-1L3HC8D --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 17:37:26.320  INFO DESKTOP-1L3HC8D --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 17:37:29.198  INFO DESKTOP-1L3HC8D --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 17:37:29.214  INFO DESKTOP-1L3HC8D --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 17:37:31.007  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 17:37:33.166  WARN DESKTOP-1L3HC8D --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 17:37:36.837  INFO DESKTOP-1L3HC8D --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17d606c9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f45a2fd, org.springframework.security.web.context.SecurityContextPersistenceFilter@2735a7dc, org.springframework.security.web.header.HeaderWriterFilter@4bc75792, org.springframework.web.filter.CorsFilter@6792aa3e, org.springframework.security.web.authentication.logout.LogoutFilter@5984742f, kg.giftlist.giftlist.config.security.TokenVerifierFilter@3d6745ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c9430c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66978c15, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1027cdcd, org.springframework.security.web.session.SessionManagementFilter@145ce025, org.springframework.security.web.access.ExceptionTranslationFilter@773ad729, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2b592f17]
+2022-09-10 17:37:39.097  INFO DESKTOP-1L3HC8D --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
+2022-09-10 17:37:39.158  INFO DESKTOP-1L3HC8D --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
+2022-09-10 17:37:39.189  INFO DESKTOP-1L3HC8D --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 19.867 seconds (JVM running for 24.325)
+2022-09-10 17:39:19.520  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-10 17:39:19.524  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-10 17:39:19.581  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 56 ms
+2022-09-10 17:39:23.707  INFO DESKTOP-1L3HC8D --- [io-5000-exec-10] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 2220 ms
+2022-09-10 17:42:33.666  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-1] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-10 17:43:18.649  INFO DESKTOP-1L3HC8D --- [nio-5000-exec-6] k.g.g.d.s.i.AdminServiceImpl             : Successfully blocked Gift with id: 2
