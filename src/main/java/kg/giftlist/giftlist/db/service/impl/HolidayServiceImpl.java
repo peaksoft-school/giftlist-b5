@@ -39,7 +39,7 @@ public class HolidayServiceImpl implements HolidayService {
     public HolidayResponse create(HolidayRequest holidayRequest) {
         Holiday holiday =editMapper.create(holidayRequest);
         if (holidayRequest.getPhoto()==null){
-            holiday.setPhoto("https://giftlist-bucket.s3.amazonaws.com/1661860597142holiday-default-image.jpg");
+            holiday.setPhoto("https://giftlist-bucket.s3.amazonaws.com/1662787640327placeholder.webp");
         }else {
             holiday.setPhoto(holidayRequest.getPhoto());
         }

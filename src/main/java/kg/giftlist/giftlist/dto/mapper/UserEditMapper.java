@@ -45,7 +45,7 @@ public class UserEditMapper {
                   return null;
               }
               AdminPageUserGetAllResponse adminUserGetAllResponse = new AdminPageUserGetAllResponse();
-              adminUserGetAllResponse.setId(user.getUserInfo().getId());
+              adminUserGetAllResponse.setId(user.getId());
               adminUserGetAllResponse.setCountGift(user.getGifts().size());
               adminUserGetAllResponse.setFirst_name(user.getFirstName());
               adminUserGetAllResponse.setLast_name(user.getLastName());

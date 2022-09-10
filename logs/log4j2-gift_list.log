@@ -1,773 +1,152 @@
-2022-09-06 09:34:47.118  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on MacBook-Air-Tattusha-Dzh.local with PID 42967 (/Users/seiitbeknarynbaev/IdeaProjects/giftlist/target/classes started by seiitbeknarynbaev in /Users/seiitbeknarynbaev/IdeaProjects/giftlist)
-2022-09-06 09:34:47.136  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "seit"
-2022-09-06 09:34:47.540  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-06 09:34:47.577  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 12 JPA repository interfaces.
-2022-09-06 09:34:47.837  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5001 (http)
-2022-09-06 09:34:47.841  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5001"]
-2022-09-06 09:34:47.841  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
-2022-09-06 09:34:47.841  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-09-06 09:34:47.907  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
-2022-09-06 09:34:47.907  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 745 ms
-2022-09-06 09:34:47.967  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-09-06 09:34:47.986  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-09-06 09:34:48.055  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-09-06 09:34:48.094  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
-2022-09-06 09:34:48.133  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
-2022-09-06 09:34:48.139  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2022-09-06 09:34:48.451  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.451  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings" does not exist, skipping
-2022-09-06 09:34:48.452  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.452  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
-2022-09-06 09:34:48.452  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.452  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
-2022-09-06 09:34:48.453  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.453  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
-2022-09-06 09:34:48.453  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.453  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
-2022-09-06 09:34:48.454  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.454  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-06 09:34:48.454  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.454  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-06 09:34:48.455  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.455  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-06 09:34:48.455  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.455  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
-2022-09-06 09:34:48.456  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.456  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
-2022-09-06 09:34:48.456  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.456  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-06 09:34:48.456  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.456  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-06 09:34:48.457  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.457  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-06 09:34:48.457  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.457  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-06 09:34:48.458  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.458  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-06 09:34:48.458  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.458  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "holidays" does not exist, skipping
-2022-09-06 09:34:48.459  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.459  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications" does not exist, skipping
-2022-09-06 09:34:48.459  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.459  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
-2022-09-06 09:34:48.459  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.459  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
-2022-09-06 09:34:48.460  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.460  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
-2022-09-06 09:34:48.460  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.460  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
-2022-09-06 09:34:48.460  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.461  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "sub_categories" does not exist, skipping
-2022-09-06 09:34:48.461  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.461  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-06 09:34:48.461  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.461  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-06 09:34:48.462  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.462  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-06 09:34:48.462  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.462  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-06 09:34:48.462  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.463  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "users" does not exist, skipping
-2022-09-06 09:34:48.463  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.463  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-06 09:34:48.463  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.463  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-06 09:34:48.463  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.464  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-06 09:34:48.464  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.464  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-06 09:34:48.464  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.464  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings" does not exist, skipping
-2022-09-06 09:34:48.465  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.465  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_gifts" does not exist, skipping
-2022-09-06 09:34:48.465  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.465  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_wishes" does not exist, skipping
-2022-09-06 09:34:48.465  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.465  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "categories" does not exist, skipping
-2022-09-06 09:34:48.466  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.466  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "complaints" does not exist, skipping
-2022-09-06 09:34:48.466  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.466  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "friends" does not exist, skipping
-2022-09-06 09:34:48.466  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.466  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "gifts" does not exist, skipping
-2022-09-06 09:34:48.467  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.467  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "holidays" does not exist, skipping
-2022-09-06 09:34:48.467  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.467  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "mailing_lists" does not exist, skipping
-2022-09-06 09:34:48.467  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.467  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications" does not exist, skipping
-2022-09-06 09:34:48.468  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.468  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications_types" does not exist, skipping
-2022-09-06 09:34:48.468  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.468  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "request_to_friends" does not exist, skipping
-2022-09-06 09:34:48.468  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.468  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "sub_categories" does not exist, skipping
-2022-09-06 09:34:48.469  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.469  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "types" does not exist, skipping
-2022-09-06 09:34:48.469  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.469  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users" does not exist, skipping
-2022-09-06 09:34:48.469  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.469  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users_info" does not exist, skipping
-2022-09-06 09:34:48.469  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.469  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "wishes" does not exist, skipping
-2022-09-06 09:34:48.470  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.470  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "booking_seq" does not exist, skipping
-2022-09-06 09:34:48.470  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.470  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "category_seq" does not exist, skipping
-2022-09-06 09:34:48.470  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.470  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "complaint_seq" does not exist, skipping
-2022-09-06 09:34:48.470  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.470  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "gift_seq" does not exist, skipping
-2022-09-06 09:34:48.471  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.471  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "holiday_seq" does not exist, skipping
-2022-09-06 09:34:48.471  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.471  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "mailing_list_seq" does not exist, skipping
-2022-09-06 09:34:48.471  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.471  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "notification_seq" does not exist, skipping
-2022-09-06 09:34:48.471  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.472  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "sub_category_seq" does not exist, skipping
-2022-09-06 09:34:48.472  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.472  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "type_seq" does not exist, skipping
-2022-09-06 09:34:48.472  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.472  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_seq" does not exist, skipping
-2022-09-06 09:34:48.472  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.473  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_info_seq" does not exist, skipping
-2022-09-06 09:34:48.473  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-06 09:34:48.473  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "wish_seq" does not exist, skipping
-2022-09-06 09:34:48.542  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-09-06 09:34:48.545  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-09-06 09:34:48.837  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
-2022-09-06 09:34:49.372  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-09-06 09:34:49.693  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6acdca3a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32ae890, org.springframework.security.web.context.SecurityContextPersistenceFilter@56f4f385, org.springframework.security.web.header.HeaderWriterFilter@67c61551, org.springframework.web.filter.CorsFilter@45bb502f, org.springframework.security.web.authentication.logout.LogoutFilter@76a86677, kg.giftlist.giftlist.config.security.TokenVerifierFilter@24482a4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18f1631c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ad5f99, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7aac6d13, org.springframework.security.web.session.SessionManagementFilter@79a88f45, org.springframework.security.web.access.ExceptionTranslationFilter@552b7481, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19e67cc2]
-2022-09-06 09:34:49.896  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5001"]
-2022-09-06 09:34:49.905  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5001 (http) with context path ''
-2022-09-06 09:34:49.911  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 3.481 seconds (JVM running for 4.543)
-2022-09-06 09:34:56.823  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-09-06 09:34:56.827  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
-2022-09-06 09:34:56.836  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 9 ms
-2022-09-06 09:34:57.660  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-8] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 438 ms
-2022-09-06 11:44:56.306  INFO LAPTOP-Q9VS4IDS --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 17.0.1 on LAPTOP-Q9VS4IDS with PID 15952 (D:\Projects B-5\giftlist\target\classes started by schoo in D:\Projects B-5\giftlist)
-2022-09-06 11:44:56.349  INFO LAPTOP-Q9VS4IDS --- [           main] k.g.g.GiftlistApplication                : No active profile set, falling back to 1 default profile: "default"
-2022-09-06 11:44:57.330  INFO LAPTOP-Q9VS4IDS --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-06 11:44:57.465  INFO LAPTOP-Q9VS4IDS --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 12 JPA repository interfaces.
-2022-09-06 11:44:58.044  INFO LAPTOP-Q9VS4IDS --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
-2022-09-06 11:44:58.054  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
-2022-09-06 11:44:58.055  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
-2022-09-06 11:44:58.057  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-09-06 11:44:58.291  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
-2022-09-06 11:44:58.292  INFO LAPTOP-Q9VS4IDS --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1887 ms
-2022-09-06 11:44:58.439  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-09-06 11:44:58.496  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-09-06 11:44:58.654  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-09-06 11:44:58.748  INFO LAPTOP-Q9VS4IDS --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
-2022-09-06 11:45:00.274  INFO LAPTOP-Q9VS4IDS --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
-2022-09-06 11:45:00.292  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2022-09-06 11:45:13.726  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-09-06 11:45:13.737  INFO LAPTOP-Q9VS4IDS --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-09-06 11:45:14.420  INFO LAPTOP-Q9VS4IDS --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
-2022-09-06 11:45:15.460  WARN LAPTOP-Q9VS4IDS --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-09-06 11:45:17.102  INFO LAPTOP-Q9VS4IDS --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@bda4cbe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24df4805, org.springframework.security.web.context.SecurityContextPersistenceFilter@756b703d, org.springframework.security.web.header.HeaderWriterFilter@4dfbe8c2, org.springframework.web.filter.CorsFilter@3bbc8c82, org.springframework.security.web.authentication.logout.LogoutFilter@21e32876, kg.giftlist.giftlist.config.security.TokenVerifierFilter@6500e886, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@203ba07, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e572ad6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5545137d, org.springframework.security.web.session.SessionManagementFilter@12ef7db5, org.springframework.security.web.access.ExceptionTranslationFilter@4a0a93ce, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73625632]
-2022-09-06 11:45:18.858  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
-2022-09-06 11:45:18.879  INFO LAPTOP-Q9VS4IDS --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
-2022-09-06 11:45:18.891  INFO LAPTOP-Q9VS4IDS --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 23.481 seconds (JVM running for 26.316)
-2022-09-06 11:45:46.444  INFO LAPTOP-Q9VS4IDS --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-09-06 11:45:46.446  INFO LAPTOP-Q9VS4IDS --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
-2022-09-06 11:45:46.450  INFO LAPTOP-Q9VS4IDS --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
-2022-09-07 12:59:52.149  INFO LAPTOP-Q9VS4IDS --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 17.0.1 on LAPTOP-Q9VS4IDS with PID 11096 (D:\Projects B-5\giftlist\target\classes started by schoo in D:\Projects B-5\giftlist)
-2022-09-07 12:59:52.196  INFO LAPTOP-Q9VS4IDS --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "dev"
-2022-09-07 12:59:53.220  INFO LAPTOP-Q9VS4IDS --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-07 12:59:53.329  INFO LAPTOP-Q9VS4IDS --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 12 JPA repository interfaces.
-2022-09-07 12:59:53.827  INFO LAPTOP-Q9VS4IDS --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5000 (http)
-2022-09-07 12:59:53.843  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5000"]
-2022-09-07 12:59:53.843  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
-2022-09-07 12:59:53.843  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-09-07 12:59:54.053  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
-2022-09-07 12:59:54.053  INFO LAPTOP-Q9VS4IDS --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1818 ms
-2022-09-07 12:59:54.193  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-09-07 12:59:54.250  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-09-07 12:59:54.412  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-09-07 12:59:54.501  INFO LAPTOP-Q9VS4IDS --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
-2022-09-07 12:59:54.683  INFO LAPTOP-Q9VS4IDS --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
-2022-09-07 12:59:54.683  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2022-09-07 12:59:55.481  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.481  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings" не существует, пропускается
-2022-09-07 12:59:55.481  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.481  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
-2022-09-07 12:59:55.481  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.481  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_gifts" не существует, пропускается
-2022-09-07 12:59:55.481  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.481  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
-2022-09-07 12:59:55.498  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.498  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "bookings_wishes" не существует, пропускается
-2022-09-07 12:59:55.498  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.498  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
-2022-09-07 12:59:55.500  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.500  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
-2022-09-07 12:59:55.502  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.502  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "complaints" не существует, пропускается
-2022-09-07 12:59:55.503  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.503  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
-2022-09-07 12:59:55.504  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.505  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "friends" не существует, пропускается
-2022-09-07 12:59:55.505  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.506  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
-2022-09-07 12:59:55.506  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.507  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "gifts" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "holidays" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications_types" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "notifications_types" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "request_to_friends" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "sub_categories" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "types" не существует, пропускается
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.508  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "types" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "types" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "types" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "users" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : отношение "wishes" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_gifts" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "bookings_wishes" не существует, пропускается
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.526  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "categories" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "complaints" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "friends" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "gifts" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "holidays" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "mailing_lists" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "notifications" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "notifications_types" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "request_to_friends" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "sub_categories" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "types" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "users_info" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : таблица "wishes" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "booking_seq" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "category_seq" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "complaint_seq" не существует, пропускается
-2022-09-07 12:59:55.542  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "gift_seq" не существует, пропускается
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "holiday_seq" не существует, пропускается
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "mailing_list_seq" не существует, пропускается
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "notification_seq" не существует, пропускается
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "sub_category_seq" не существует, пропускается
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "type_seq" не существует, пропускается
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_seq" не существует, пропускается
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "user_info_seq" не существует, пропускается
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 12:59:55.558  WARN LAPTOP-Q9VS4IDS --- [           main] o.h.e.j.s.SqlExceptionHelper             : последовательность "wish_seq" не существует, пропускается
-2022-09-07 12:59:55.838  INFO LAPTOP-Q9VS4IDS --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-09-07 12:59:55.853  INFO LAPTOP-Q9VS4IDS --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-09-07 12:59:56.451  INFO LAPTOP-Q9VS4IDS --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
-2022-09-07 12:59:58.946  INFO LAPTOP-Q9VS4IDS --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20dfe8b2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5911dd25, org.springframework.security.web.context.SecurityContextPersistenceFilter@73ccdfc1, org.springframework.security.web.header.HeaderWriterFilter@715ea64a, org.springframework.web.filter.CorsFilter@6d8cbd1a, org.springframework.security.web.authentication.logout.LogoutFilter@72f91c91, kg.giftlist.giftlist.config.security.TokenVerifierFilter@205b73d8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@502dc93a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f2bf80d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3725242e, org.springframework.security.web.session.SessionManagementFilter@1a9e2c3b, org.springframework.security.web.access.ExceptionTranslationFilter@67836d4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@81f9b01]
-2022-09-07 12:59:59.356  INFO LAPTOP-Q9VS4IDS --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5000"]
-2022-09-07 12:59:59.374  INFO LAPTOP-Q9VS4IDS --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5000 (http) with context path ''
-2022-09-07 12:59:59.374  INFO LAPTOP-Q9VS4IDS --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 7.581 seconds (JVM running for 9.617)
-2022-09-07 14:31:24.340  WARN LAPTOP-Q9VS4IDS --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m27s102ms870µs800ns).
-2022-09-07 14:59:14.422  INFO LAPTOP-Q9VS4IDS --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-09-07 14:59:14.440  INFO LAPTOP-Q9VS4IDS --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2022-09-07 14:59:14.550  INFO LAPTOP-Q9VS4IDS --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
-2022-09-07 14:59:14.590  INFO LAPTOP-Q9VS4IDS --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
-2022-09-07 13:05:39.297  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on MacBook-Air-Tattusha-Dzh.local with PID 53789 (/Users/seiitbeknarynbaev/IdeaProjects/giftlist/target/classes started by seiitbeknarynbaev in /Users/seiitbeknarynbaev/IdeaProjects/giftlist)
-2022-09-07 13:05:39.307  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "seit"
-2022-09-07 13:05:39.684  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-07 13:05:39.725  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 12 JPA repository interfaces.
-2022-09-07 13:05:39.967  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5001 (http)
-2022-09-07 13:05:39.976  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5001"]
-2022-09-07 13:05:39.976  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
-2022-09-07 13:05:39.976  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-09-07 13:05:40.027  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
-2022-09-07 13:05:40.027  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 702 ms
-2022-09-07 13:05:40.086  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-09-07 13:05:40.105  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-09-07 13:05:40.162  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-09-07 13:05:40.197  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
-2022-09-07 13:05:40.234  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
-2022-09-07 13:05:40.240  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2022-09-07 13:05:40.512  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.513  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings" does not exist, skipping
-2022-09-07 13:05:40.513  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.513  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
-2022-09-07 13:05:40.513  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.514  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
-2022-09-07 13:05:40.514  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.514  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
-2022-09-07 13:05:40.514  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.514  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
-2022-09-07 13:05:40.515  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.515  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 13:05:40.515  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.515  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 13:05:40.516  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.516  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 13:05:40.516  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.516  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
-2022-09-07 13:05:40.516  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.516  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
-2022-09-07 13:05:40.517  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.517  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 13:05:40.517  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.517  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 13:05:40.517  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.517  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 13:05:40.518  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.518  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 13:05:40.518  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.518  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 13:05:40.518  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.519  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "holidays" does not exist, skipping
-2022-09-07 13:05:40.519  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.519  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications" does not exist, skipping
-2022-09-07 13:05:40.519  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.519  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
-2022-09-07 13:05:40.519  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.520  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
-2022-09-07 13:05:40.520  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.520  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
-2022-09-07 13:05:40.520  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.520  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
-2022-09-07 13:05:40.521  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.521  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "sub_categories" does not exist, skipping
-2022-09-07 13:05:40.521  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.521  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 13:05:40.521  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.521  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 13:05:40.522  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.522  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 13:05:40.522  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.522  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 13:05:40.522  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.522  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "users" does not exist, skipping
-2022-09-07 13:05:40.522  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.523  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 13:05:40.523  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.523  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 13:05:40.523  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.523  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 13:05:40.523  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.523  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 13:05:40.524  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.524  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings" does not exist, skipping
-2022-09-07 13:05:40.524  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.524  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_gifts" does not exist, skipping
-2022-09-07 13:05:40.525  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.525  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_wishes" does not exist, skipping
-2022-09-07 13:05:40.525  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.525  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "categories" does not exist, skipping
-2022-09-07 13:05:40.525  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.525  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "complaints" does not exist, skipping
-2022-09-07 13:05:40.525  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.526  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "friends" does not exist, skipping
-2022-09-07 13:05:40.526  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.526  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "gifts" does not exist, skipping
-2022-09-07 13:05:40.526  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.526  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "holidays" does not exist, skipping
-2022-09-07 13:05:40.526  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.526  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "mailing_lists" does not exist, skipping
-2022-09-07 13:05:40.526  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.527  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications" does not exist, skipping
-2022-09-07 13:05:40.527  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.527  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications_types" does not exist, skipping
-2022-09-07 13:05:40.527  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.527  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "request_to_friends" does not exist, skipping
-2022-09-07 13:05:40.527  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.527  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "sub_categories" does not exist, skipping
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "types" does not exist, skipping
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users" does not exist, skipping
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users_info" does not exist, skipping
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "wishes" does not exist, skipping
-2022-09-07 13:05:40.528  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.529  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "booking_seq" does not exist, skipping
-2022-09-07 13:05:40.529  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.529  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "category_seq" does not exist, skipping
-2022-09-07 13:05:40.529  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.529  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "complaint_seq" does not exist, skipping
-2022-09-07 13:05:40.529  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.529  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "gift_seq" does not exist, skipping
-2022-09-07 13:05:40.530  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.530  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "holiday_seq" does not exist, skipping
-2022-09-07 13:05:40.530  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.530  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "mailing_list_seq" does not exist, skipping
-2022-09-07 13:05:40.530  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.530  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "notification_seq" does not exist, skipping
-2022-09-07 13:05:40.530  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.531  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "sub_category_seq" does not exist, skipping
-2022-09-07 13:05:40.531  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.531  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "type_seq" does not exist, skipping
-2022-09-07 13:05:40.531  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.531  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_seq" does not exist, skipping
-2022-09-07 13:05:40.531  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.531  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_info_seq" does not exist, skipping
-2022-09-07 13:05:40.532  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 13:05:40.532  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "wish_seq" does not exist, skipping
-2022-09-07 13:05:40.608  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-09-07 13:05:40.612  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-09-07 13:05:40.885  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
-2022-09-07 13:05:41.402  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-09-07 13:05:41.718  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5fb392e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19e67cc2, org.springframework.security.web.context.SecurityContextPersistenceFilter@552b7481, org.springframework.security.web.header.HeaderWriterFilter@75128cf, org.springframework.web.filter.CorsFilter@62525579, org.springframework.security.web.authentication.logout.LogoutFilter@70d24586, kg.giftlist.giftlist.config.security.TokenVerifierFilter@2ce3d95a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24244ea, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69c7fb94, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c80b1d2, org.springframework.security.web.session.SessionManagementFilter@6a4f15bc, org.springframework.security.web.access.ExceptionTranslationFilter@71c2cb26, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47483211]
-2022-09-07 13:05:41.923  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5001"]
-2022-09-07 13:05:41.936  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5001 (http) with context path ''
-2022-09-07 13:05:41.947  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 3.314 seconds (JVM running for 4.068)
-2022-09-07 13:05:45.695  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-09-07 13:05:45.696  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
-2022-09-07 13:05:45.698  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
-2022-09-07 13:05:46.447  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-8] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 398 ms
-2022-09-07 19:29:16.943  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on MacBook-Air-Tattusha-Dzh.local with PID 57225 (/Users/seiitbeknarynbaev/IdeaProjects/giftlist/target/classes started by seiitbeknarynbaev in /Users/seiitbeknarynbaev/IdeaProjects/giftlist)
-2022-09-07 19:29:16.954  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "seit"
-2022-09-07 19:29:17.341  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-07 19:29:17.382  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 12 JPA repository interfaces.
-2022-09-07 19:29:17.644  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5001 (http)
-2022-09-07 19:29:17.648  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5001"]
-2022-09-07 19:29:17.648  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
-2022-09-07 19:29:17.648  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-09-07 19:29:17.699  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
-2022-09-07 19:29:17.700  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 729 ms
-2022-09-07 19:29:17.757  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-09-07 19:29:17.784  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-09-07 19:29:17.851  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-09-07 19:29:17.898  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
-2022-09-07 19:29:17.941  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
-2022-09-07 19:29:17.947  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2022-09-07 19:29:18.238  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.238  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings" does not exist, skipping
-2022-09-07 19:29:18.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
-2022-09-07 19:29:18.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
-2022-09-07 19:29:18.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
-2022-09-07 19:29:18.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
-2022-09-07 19:29:18.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 19:29:18.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 19:29:18.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 19:29:18.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
-2022-09-07 19:29:18.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
-2022-09-07 19:29:18.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:29:18.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:29:18.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:29:18.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:29:18.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:29:18.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "holidays" does not exist, skipping
-2022-09-07 19:29:18.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications" does not exist, skipping
-2022-09-07 19:29:18.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
-2022-09-07 19:29:18.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
-2022-09-07 19:29:18.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
-2022-09-07 19:29:18.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
-2022-09-07 19:29:18.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "sub_categories" does not exist, skipping
-2022-09-07 19:29:18.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 19:29:18.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 19:29:18.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 19:29:18.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 19:29:18.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "users" does not exist, skipping
-2022-09-07 19:29:18.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 19:29:18.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 19:29:18.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 19:29:18.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 19:29:18.251  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.251  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings" does not exist, skipping
-2022-09-07 19:29:18.251  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.251  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_gifts" does not exist, skipping
-2022-09-07 19:29:18.251  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.251  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_wishes" does not exist, skipping
-2022-09-07 19:29:18.252  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.252  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "categories" does not exist, skipping
-2022-09-07 19:29:18.252  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.252  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "complaints" does not exist, skipping
-2022-09-07 19:29:18.252  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.252  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "friends" does not exist, skipping
-2022-09-07 19:29:18.253  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.253  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "gifts" does not exist, skipping
-2022-09-07 19:29:18.253  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.253  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "holidays" does not exist, skipping
-2022-09-07 19:29:18.253  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.253  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "mailing_lists" does not exist, skipping
-2022-09-07 19:29:18.254  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.254  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications" does not exist, skipping
-2022-09-07 19:29:18.254  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.254  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications_types" does not exist, skipping
-2022-09-07 19:29:18.254  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.254  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "request_to_friends" does not exist, skipping
-2022-09-07 19:29:18.255  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.255  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "sub_categories" does not exist, skipping
-2022-09-07 19:29:18.255  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.255  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "types" does not exist, skipping
-2022-09-07 19:29:18.255  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.255  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users" does not exist, skipping
-2022-09-07 19:29:18.255  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.255  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users_info" does not exist, skipping
-2022-09-07 19:29:18.256  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.256  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "wishes" does not exist, skipping
-2022-09-07 19:29:18.256  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.256  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "booking_seq" does not exist, skipping
-2022-09-07 19:29:18.256  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.256  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "category_seq" does not exist, skipping
-2022-09-07 19:29:18.256  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.256  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "complaint_seq" does not exist, skipping
-2022-09-07 19:29:18.257  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.257  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "gift_seq" does not exist, skipping
-2022-09-07 19:29:18.257  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.257  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "holiday_seq" does not exist, skipping
-2022-09-07 19:29:18.257  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.257  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "mailing_list_seq" does not exist, skipping
-2022-09-07 19:29:18.257  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.257  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "notification_seq" does not exist, skipping
-2022-09-07 19:29:18.258  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.258  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "sub_category_seq" does not exist, skipping
-2022-09-07 19:29:18.258  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.258  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "type_seq" does not exist, skipping
-2022-09-07 19:29:18.258  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.258  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_seq" does not exist, skipping
-2022-09-07 19:29:18.258  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.259  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_info_seq" does not exist, skipping
-2022-09-07 19:29:18.259  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:29:18.259  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "wish_seq" does not exist, skipping
-2022-09-07 19:29:18.323  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-09-07 19:29:18.326  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-09-07 19:29:18.636  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
-2022-09-07 19:29:19.147  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-09-07 19:29:19.451  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a5cddd9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34e700f4, org.springframework.security.web.context.SecurityContextPersistenceFilter@60515ab1, org.springframework.security.web.header.HeaderWriterFilter@517fb2c3, org.springframework.web.filter.CorsFilter@38c7ad43, org.springframework.security.web.authentication.logout.LogoutFilter@3dc5eb8f, kg.giftlist.giftlist.config.security.TokenVerifierFilter@37fd496a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16a89351, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@395854dd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ee04ff6, org.springframework.security.web.session.SessionManagementFilter@31a9eaa, org.springframework.security.web.access.ExceptionTranslationFilter@32aa27a7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@dc6a186]
-2022-09-07 19:29:19.649  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5001"]
-2022-09-07 19:29:19.660  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5001 (http) with context path ''
-2022-09-07 19:29:19.665  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 2.886 seconds (JVM running for 3.404)
-2022-09-07 19:30:01.540  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-09-07 19:30:01.542  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2022-09-07 19:30:01.591  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
-2022-09-07 19:30:01.595  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
-2022-09-07 19:30:06.077  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on MacBook-Air-Tattusha-Dzh.local with PID 57266 (/Users/seiitbeknarynbaev/IdeaProjects/giftlist/target/classes started by seiitbeknarynbaev in /Users/seiitbeknarynbaev/IdeaProjects/giftlist)
-2022-09-07 19:30:06.090  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "seit"
-2022-09-07 19:30:06.439  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-09-07 19:30:06.471  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 12 JPA repository interfaces.
-2022-09-07 19:30:06.700  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5001 (http)
-2022-09-07 19:30:06.704  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5001"]
-2022-09-07 19:30:06.704  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
-2022-09-07 19:30:06.704  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
-2022-09-07 19:30:06.760  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
-2022-09-07 19:30:06.760  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 646 ms
-2022-09-07 19:30:06.817  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-09-07 19:30:06.840  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-09-07 19:30:06.887  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-09-07 19:30:06.922  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
-2022-09-07 19:30:06.961  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
-2022-09-07 19:30:06.967  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2022-09-07 19:30:07.228  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.229  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings" does not exist, skipping
-2022-09-07 19:30:07.229  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.229  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
-2022-09-07 19:30:07.229  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.229  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
-2022-09-07 19:30:07.230  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.230  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
-2022-09-07 19:30:07.230  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.230  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
-2022-09-07 19:30:07.231  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.231  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 19:30:07.231  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.231  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 19:30:07.232  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.232  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
-2022-09-07 19:30:07.232  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.232  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
-2022-09-07 19:30:07.232  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.233  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
-2022-09-07 19:30:07.233  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.233  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:30:07.233  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.233  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:30:07.234  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.234  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:30:07.234  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.234  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:30:07.234  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.234  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
-2022-09-07 19:30:07.235  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.235  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "holidays" does not exist, skipping
-2022-09-07 19:30:07.235  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.235  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications" does not exist, skipping
-2022-09-07 19:30:07.235  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.236  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
-2022-09-07 19:30:07.236  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.236  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
-2022-09-07 19:30:07.236  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.236  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
-2022-09-07 19:30:07.237  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.237  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
-2022-09-07 19:30:07.237  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.237  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "sub_categories" does not exist, skipping
-2022-09-07 19:30:07.237  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.237  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 19:30:07.238  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.238  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 19:30:07.238  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.238  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 19:30:07.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
-2022-09-07 19:30:07.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "users" does not exist, skipping
-2022-09-07 19:30:07.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.239  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 19:30:07.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 19:30:07.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 19:30:07.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.240  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
-2022-09-07 19:30:07.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings" does not exist, skipping
-2022-09-07 19:30:07.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_gifts" does not exist, skipping
-2022-09-07 19:30:07.241  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_wishes" does not exist, skipping
-2022-09-07 19:30:07.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "categories" does not exist, skipping
-2022-09-07 19:30:07.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "complaints" does not exist, skipping
-2022-09-07 19:30:07.242  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "friends" does not exist, skipping
-2022-09-07 19:30:07.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "gifts" does not exist, skipping
-2022-09-07 19:30:07.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "holidays" does not exist, skipping
-2022-09-07 19:30:07.243  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "mailing_lists" does not exist, skipping
-2022-09-07 19:30:07.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications" does not exist, skipping
-2022-09-07 19:30:07.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.244  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications_types" does not exist, skipping
-2022-09-07 19:30:07.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "request_to_friends" does not exist, skipping
-2022-09-07 19:30:07.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "sub_categories" does not exist, skipping
-2022-09-07 19:30:07.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "types" does not exist, skipping
-2022-09-07 19:30:07.245  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users" does not exist, skipping
-2022-09-07 19:30:07.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users_info" does not exist, skipping
-2022-09-07 19:30:07.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "wishes" does not exist, skipping
-2022-09-07 19:30:07.246  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "booking_seq" does not exist, skipping
-2022-09-07 19:30:07.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "category_seq" does not exist, skipping
-2022-09-07 19:30:07.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "complaint_seq" does not exist, skipping
-2022-09-07 19:30:07.247  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "gift_seq" does not exist, skipping
-2022-09-07 19:30:07.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "holiday_seq" does not exist, skipping
-2022-09-07 19:30:07.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "mailing_list_seq" does not exist, skipping
-2022-09-07 19:30:07.248  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "notification_seq" does not exist, skipping
-2022-09-07 19:30:07.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "sub_category_seq" does not exist, skipping
-2022-09-07 19:30:07.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.249  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "type_seq" does not exist, skipping
-2022-09-07 19:30:07.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_seq" does not exist, skipping
-2022-09-07 19:30:07.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_info_seq" does not exist, skipping
-2022-09-07 19:30:07.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
-2022-09-07 19:30:07.250  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "wish_seq" does not exist, skipping
-2022-09-07 19:30:07.306  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-09-07 19:30:07.309  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-09-07 19:30:07.595  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
-2022-09-07 19:30:08.058  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-09-07 19:30:08.376  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7955b4d4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@489e1887, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a10407e, org.springframework.security.web.header.HeaderWriterFilter@6a9c848, org.springframework.web.filter.CorsFilter@7421213d, org.springframework.security.web.authentication.logout.LogoutFilter@13cec4ff, kg.giftlist.giftlist.config.security.TokenVerifierFilter@36e98434, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a35efac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70d24586, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e98fd10, org.springframework.security.web.session.SessionManagementFilter@3fbf66e7, org.springframework.security.web.access.ExceptionTranslationFilter@51f31fad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@188500e9]
-2022-09-07 19:30:08.560  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5001"]
-2022-09-07 19:30:08.574  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5001 (http) with context path ''
-2022-09-07 19:30:08.581  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 3.178 seconds (JVM running for 3.623)
-2022-09-07 19:30:13.226  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-09-07 19:30:13.240  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
-2022-09-07 19:30:13.243  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
-2022-09-07 19:30:14.242  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-8] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 327 ms
-2022-09-07 19:30:43.029  INFO MacBook-Air-Tattusha-Dzh.local --- [io-5001-exec-10] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
-2022-09-07 19:32:12.320  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-7] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
-2022-09-07 19:43:28.552  WARN MacBook-Air-Tattusha-Dzh.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m51s400ms).
-2022-09-07 19:46:09.420  WARN MacBook-Air-Tattusha-Dzh.local --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m40s881ms).
-2022-09-07 19:47:19.970  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-3] k.g.g.d.s.i.WishServiceImpl              : Wish with id: null successfully saved in db
-2022-09-07 19:48:45.587  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-6] k.g.g.d.s.i.UserServiceImpl              : User successfully logged in
+2022-09-10 11:14:46.468  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Starting GiftlistApplication using Java 18 on MacBook-Air-Tattusha-Dzh.local with PID 78021 (/Users/seiitbeknarynbaev/IdeaProjects/giftlist/target/classes started by seiitbeknarynbaev in /Users/seiitbeknarynbaev/IdeaProjects/giftlist)
+2022-09-10 11:14:46.481  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : The following 1 profile is active: "seit"
+2022-09-10 11:14:46.864  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-10 11:14:46.899  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 12 JPA repository interfaces.
+2022-09-10 11:14:47.233  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 5001 (http)
+2022-09-10 11:14:47.239  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-5001"]
+2022-09-10 11:14:47.239  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2022-09-10 11:14:47.239  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-09-10 11:14:47.317  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2022-09-10 11:14:47.317  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 819 ms
+2022-09-10 11:14:47.392  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-10 11:14:47.410  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-10 11:14:47.458  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-10 11:14:47.494  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2022-09-10 11:14:47.539  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2022-09-10 11:14:47.544  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-09-10 11:14:47.824  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.824  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings" does not exist, skipping
+2022-09-10 11:14:47.825  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.825  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
+2022-09-10 11:14:47.825  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.825  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_gifts" does not exist, skipping
+2022-09-10 11:14:47.825  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.825  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
+2022-09-10 11:14:47.826  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.826  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "bookings_wishes" does not exist, skipping
+2022-09-10 11:14:47.826  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.826  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-10 11:14:47.827  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.827  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-10 11:14:47.827  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.827  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "complaints" does not exist, skipping
+2022-09-10 11:14:47.828  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.828  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
+2022-09-10 11:14:47.828  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.828  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "friends" does not exist, skipping
+2022-09-10 11:14:47.828  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.829  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-10 11:14:47.829  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.829  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-10 11:14:47.829  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.829  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-10 11:14:47.830  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.830  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-10 11:14:47.830  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.830  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "gifts" does not exist, skipping
+2022-09-10 11:14:47.830  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.831  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "holidays" does not exist, skipping
+2022-09-10 11:14:47.831  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.831  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications" does not exist, skipping
+2022-09-10 11:14:47.831  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.831  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
+2022-09-10 11:14:47.832  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.832  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "notifications_types" does not exist, skipping
+2022-09-10 11:14:47.832  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.832  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
+2022-09-10 11:14:47.832  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.833  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "request_to_friends" does not exist, skipping
+2022-09-10 11:14:47.833  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.833  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "sub_categories" does not exist, skipping
+2022-09-10 11:14:47.833  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.833  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-10 11:14:47.834  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.834  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-10 11:14:47.834  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.834  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-10 11:14:47.834  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.834  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "types" does not exist, skipping
+2022-09-10 11:14:47.835  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.835  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "users" does not exist, skipping
+2022-09-10 11:14:47.835  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.835  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-10 11:14:47.835  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.836  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-10 11:14:47.836  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.836  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-10 11:14:47.836  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.836  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : relation "wishes" does not exist, skipping
+2022-09-10 11:14:47.837  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.837  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings" does not exist, skipping
+2022-09-10 11:14:47.837  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.837  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_gifts" does not exist, skipping
+2022-09-10 11:14:47.837  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.837  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "bookings_wishes" does not exist, skipping
+2022-09-10 11:14:47.838  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.838  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "categories" does not exist, skipping
+2022-09-10 11:14:47.838  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.838  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "complaints" does not exist, skipping
+2022-09-10 11:14:47.838  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.838  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "friends" does not exist, skipping
+2022-09-10 11:14:47.838  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.839  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "gifts" does not exist, skipping
+2022-09-10 11:14:47.839  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.839  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "holidays" does not exist, skipping
+2022-09-10 11:14:47.839  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.839  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "mailing_lists" does not exist, skipping
+2022-09-10 11:14:47.840  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.840  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications" does not exist, skipping
+2022-09-10 11:14:47.840  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.840  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "notifications_types" does not exist, skipping
+2022-09-10 11:14:47.840  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.840  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "request_to_friends" does not exist, skipping
+2022-09-10 11:14:47.841  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.841  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "sub_categories" does not exist, skipping
+2022-09-10 11:14:47.841  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.841  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "types" does not exist, skipping
+2022-09-10 11:14:47.841  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.841  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users" does not exist, skipping
+2022-09-10 11:14:47.841  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.842  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "users_info" does not exist, skipping
+2022-09-10 11:14:47.842  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.842  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : table "wishes" does not exist, skipping
+2022-09-10 11:14:47.842  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.842  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "booking_seq" does not exist, skipping
+2022-09-10 11:14:47.842  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.843  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "category_seq" does not exist, skipping
+2022-09-10 11:14:47.843  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.843  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "complaint_seq" does not exist, skipping
+2022-09-10 11:14:47.843  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.843  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "gift_seq" does not exist, skipping
+2022-09-10 11:14:47.844  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.844  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "holiday_seq" does not exist, skipping
+2022-09-10 11:14:47.844  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.844  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "mailing_list_seq" does not exist, skipping
+2022-09-10 11:14:47.844  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.844  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "notification_seq" does not exist, skipping
+2022-09-10 11:14:47.845  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.845  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "sub_category_seq" does not exist, skipping
+2022-09-10 11:14:47.845  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.845  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "type_seq" does not exist, skipping
+2022-09-10 11:14:47.845  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.845  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_seq" does not exist, skipping
+2022-09-10 11:14:47.846  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.846  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "user_info_seq" does not exist, skipping
+2022-09-10 11:14:47.846  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Warning Code: 0, SQLState: 00000
+2022-09-10 11:14:47.846  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.j.s.SqlExceptionHelper             : sequence "wish_seq" does not exist, skipping
+2022-09-10 11:14:47.911  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-10 11:14:47.915  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 11:14:48.272  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.d.s.i.UserServiceImpl              : Firebase application has been initialized
+2022-09-10 11:14:48.796  WARN MacBook-Air-Tattusha-Dzh.local --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-10 11:14:49.098  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a917e07, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63019596, org.springframework.security.web.context.SecurityContextPersistenceFilter@13cec4ff, org.springframework.security.web.header.HeaderWriterFilter@75937998, org.springframework.web.filter.CorsFilter@6edd80fe, org.springframework.security.web.authentication.logout.LogoutFilter@53b60595, kg.giftlist.giftlist.config.security.TokenVerifierFilter@1cd2e348, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24b05292, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34d6e9a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60eb9c29, org.springframework.security.web.session.SessionManagementFilter@130bd00e, org.springframework.security.web.access.ExceptionTranslationFilter@23b02f37, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@301434fb]
+2022-09-10 11:14:49.302  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-5001"]
+2022-09-10 11:14:49.313  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 5001 (http) with context path ''
+2022-09-10 11:14:49.318  INFO MacBook-Air-Tattusha-Dzh.local --- [           main] k.g.g.GiftlistApplication                : Started GiftlistApplication in 3.491 seconds (JVM running for 4.192)
+2022-09-10 11:14:55.362  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-10 11:14:55.368  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2022-09-10 11:14:55.397  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 29 ms
+2022-09-10 11:14:58.270  INFO MacBook-Air-Tattusha-Dzh.local --- [nio-5001-exec-8] o.s.a.AbstractOpenApiResource            : Init duration for springdoc-openapi is: 792 ms
+2022-09-10 11:17:01.352  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-10 11:17:01.364  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-10 11:17:01.479  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2022-09-10 11:17:01.491  INFO MacBook-Air-Tattusha-Dzh.local --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
