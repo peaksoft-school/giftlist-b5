@@ -40,6 +40,13 @@ public class ComplaintApi {
         return complaintService.sendComplaintToGift(giftId, text);
     }
 
+    @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Send complaint to Holiday", description = "User can send complaint to Admin.")
+    @PostMapping("holiday/{holidayId}")
+    public SimpleResponse sendComplaintToHoliday(@PathVariable Long holidayId, @RequestParam String text) {
+        return complaintService.sendComplaintToHoliday(holidayId, text);
+    }
+
     @PreAuthorize("hasAuthority('ADMIN')")
     @Operation(summary = "Delete complaint", description = "Only Admin can delete complaint.")
     @DeleteMapping("/{complaintId}")

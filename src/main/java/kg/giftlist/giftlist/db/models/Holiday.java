@@ -43,4 +43,9 @@ public class Holiday {
     @OneToMany(cascade = ALL, mappedBy = "holiday")
     @JsonIgnore
     private List<Wish> wishes;
+
+
+    @OneToMany(cascade = ALL, mappedBy = "holiday")
+    @JsonIgnore
+    private List<Complaint> complaints;
 }

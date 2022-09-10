@@ -1,6 +1,7 @@
 package kg.giftlist.giftlist.dto.mapper.complaint;
 
 import kg.giftlist.giftlist.db.models.Gift;
+import kg.giftlist.giftlist.db.models.Holiday;
 import kg.giftlist.giftlist.db.models.Wish;
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
@@ -26,6 +27,7 @@ public class ComplaintResponse {
     private String userLastName;
     private Wish userWish;
     private Gift userGift;
+    private Holiday userHoliday;
     private String text;
     private String fromUserPhoto;
     private String fromUserLastName;

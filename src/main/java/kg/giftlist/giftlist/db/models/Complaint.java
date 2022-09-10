@@ -30,4 +30,7 @@ public class Complaint {
 
     @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
     private Gift gift;
+
+    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    private Holiday holiday;
 }

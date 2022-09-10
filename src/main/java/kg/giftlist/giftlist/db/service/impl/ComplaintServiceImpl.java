@@ -1,13 +1,7 @@
 package kg.giftlist.giftlist.db.service.impl;
 
-import kg.giftlist.giftlist.db.models.Complaint;
-import kg.giftlist.giftlist.db.models.Gift;
-import kg.giftlist.giftlist.db.models.User;
-import kg.giftlist.giftlist.db.models.Wish;
-import kg.giftlist.giftlist.db.repositories.ComplaintRepository;
-import kg.giftlist.giftlist.db.repositories.GiftRepository;
-import kg.giftlist.giftlist.db.repositories.UserRepository;
-import kg.giftlist.giftlist.db.repositories.WishRepository;
+import kg.giftlist.giftlist.db.models.*;
+import kg.giftlist.giftlist.db.repositories.*;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintViewMapper;
@@ -32,6 +26,7 @@ public class ComplaintServiceImpl {
     private final ComplaintViewMapper complaintViewMapper;
     private final UserRepository userRepo;
     private final ComplaintRepository complaintRepository;
+    private final HolidayRepository holidayRepository;
 
     @Transactional
     public SimpleResponse sendComplaintToWish(Long wishId, String text) {
@@ -69,6 +64,21 @@ public class ComplaintServiceImpl {
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
         log.info("Complaint to gift with id: {} successfully send", gift.getId());
+
+        return new SimpleResponse("Отправлено!Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
+
+    }
+
+    public SimpleResponse sendComplaintToHoliday(Long holidayId, String text) {
+        User user = getAuthenticatedUser();
+        Complaint complaint = new Complaint();
+        Holiday holiday = holidayRepository.findById(holidayId).orElseThrow(() ->
+                new NotFoundException("Gift with id: " + holidayId + "not found"));
+        complaint.setText(text);
+        complaint.setHoliday(holiday);
+        complaint.setFromUser(user);
+        complaintRepository.save(complaint);
+        log.info("Complaint to holiday with id: {} successfully send", holiday.getId());
 
         return new SimpleResponse("Отправлено!Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
 
