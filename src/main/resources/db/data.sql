@@ -39,7 +39,7 @@ VALUES (1,'2022-03-08',false,'8-март','https://giftlist-bucket.s3.amazonaws.
        (2,'2022-12-31',false,'Новый год','https://giftlist-bucket.s3.amazonaws.com/1662788130775istockphoto-1175405816-612x612.jpg',2),
        (3,'2022-03-21',false,'Нооруз','https://giftlist-bucket.s3.amazonaws.com/1662788242139images.jpeg',2),
 
-       (4,'2022-03-08',false,'Happy New Year','Новый год','https://giftlist-bucket.s3.amazonaws.com/1662788388376Happy-Birthday-580x386.jpg',4),
+       (4,'2022-03-08',false,'Happy New Year','https://giftlist-bucket.s3.amazonaws.com/1662788388376Happy-Birthday-580x386.jpg',4),
        (5,'2022-12-31',false,'Birth day','https://giftlist-bucket.s3.amazonaws.com/1661168450017newyear-1173474360-612x612.jpg',4),
        (6,'2022-03-21',false,'Helloween','https://giftlist-bucket.s3.amazonaws.com/1662788550256helloween-3756252_960_720.jpg',4),
        (7,'2022-10-21',false,'Орозо Айт','https://giftlist-bucket.s3.amazonaws.com/1662788930279Orozo Ait.png',6);
