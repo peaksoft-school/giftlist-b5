@@ -1,6 +1,7 @@
 package kg.giftlist.giftlist.apis;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kg.giftlist.giftlist.db.service.impl.ComplaintServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.db.service.AdminService;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/admin/users")
+@RequestMapping("api/admin")
 @CrossOrigin
 @PreAuthorize("hasAnyAuthority('ADMIN')")
 @Tag(name = "Admin API", description = "User with role 'Admin'  can block, unblock and get users")
@@ -22,9 +23,10 @@ public class AdminApi {
 
     private final AdminService adminService;
     private final UserService userService;
+    private final ComplaintServiceImpl complaintService;
 
     @Operation(summary = "Get all users", description = "Get all users ")
-    @GetMapping
+    @GetMapping("users")
     public List<AdminPageUserGetAllResponse> getAllUsers() {
         return adminService.getAllUsers();
     }
@@ -59,19 +61,6 @@ public class AdminApi {
         return adminService.unBlockWish(wishId);
     }
 
-
-    @Operation(summary = "Block Holiday", description = "block holiday by id")
-    @PutMapping("/blockHolidday/{holidayId}")
-    public SimpleResponse blockHoliday(@PathVariable Long holidayId) {
-        return adminService.blockHoliday(holidayId);
-    }
-
-    @Operation(summary = "UnBlock Holiday", description = "UnBlock holiday by id")
-    @PutMapping("/unBlockHoliday/{holidayId}")
-    public SimpleResponse unBlockHoliday(@PathVariable Long holidayId) {
-        return adminService.unBlockHoliday(holidayId);
-    }
-
     @Operation(summary = "Block Gift", description = "block gift by id")
     @PutMapping("/blockGift/{giftId}")
     public SimpleResponse blockGift(@PathVariable Long giftId) {
@@ -83,6 +72,5 @@ public class AdminApi {
     public SimpleResponse unBlockGift(@PathVariable Long giftId) {
         return adminService.unBlockGift(giftId);
     }
-
 
 }

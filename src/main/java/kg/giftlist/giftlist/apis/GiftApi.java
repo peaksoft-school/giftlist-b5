@@ -15,48 +15,54 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/gifts")
 @CrossOrigin
-@PreAuthorize("hasAnyAuthority('USER')")
-@Tag(name = "Gift API", description = "User with role \"User\"  can create, update or delete gifts")
+@Tag(name = "Gift API", description = "User with role \"User, Admin\"  can create, update or delete gifts")
 public class GiftApi {
 
     private final GiftServiceImpl giftService;
 
+    @PreAuthorize("hasAnyAuthority('USER')")
     @Operation(summary = "Create gift", description = "The user can create a gift")
     @PostMapping
     public GiftResponse create(@RequestBody GiftRequest giftRequest) {
         return giftService.create(giftRequest);
     }
 
+    @PreAuthorize("hasAnyAuthority('USER')")
     @Operation(summary = "Update gift", description = "The user can update a gift ")
     @PutMapping("/{giftId}")
     public GiftResponse update(@PathVariable Long giftId, @RequestBody GiftRequest request) {
         return giftService.update(giftId, request);
     }
 
+    @PreAuthorize("hasAnyAuthority('USER')")
     @Operation(summary = "Delete gift", description = " User can delete by gift id")
     @DeleteMapping("/{giftId}")
     public SimpleResponse deleteById(@PathVariable Long giftId) {
         return giftService.deleteById(giftId);
     }
 
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     @Operation(summary = "Find gift by id", description = "The user can find gift")
     @GetMapping("/{giftId}")
     public GiftResponse findById(@PathVariable Long giftId) {
         return giftService.getGiftById(giftId);
     }
 
+    @PreAuthorize("hasAnyAuthority('USER')")
     @Operation(summary = "Get all own gifts", description = "User can get only own all gifts")
     @GetMapping("my-gifts")
     public List<GiftResponse> getAllOwnGifts() {
         return giftService.getAll();
     }
 
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     @Operation(summary = "Get all gifts", description = "User can get all gifts")
     @GetMapping
     public List<GiftResponse> getAllGifts() {
         return giftService.getAllGifts();
     }
 
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     @Operation(summary = "Search gifts by filter", description = "User can search gifts by filter")
     @GetMapping("/filter")
     public List<GiftResponse> filter(

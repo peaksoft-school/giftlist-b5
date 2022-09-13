@@ -34,15 +34,15 @@ values (1, 'Смартфоны и телефоны', 1),(2,'Аудиотехни
 insert into bookings(id, user_id)
 VALUES (1,3);
 
-insert into holidays(id, holiday_date, is_block, name, photo, user_id)
-VALUES (1,'2022-03-08',false,'8-март','https://giftlist-bucket.s3.amazonaws.com/1662788168761e13920daf2d40a92b8d0e51d2d374232.jpg',2),
-       (2,'2022-12-31',false,'Новый год','https://giftlist-bucket.s3.amazonaws.com/1662788130775istockphoto-1175405816-612x612.jpg',2),
-       (3,'2022-03-21',false,'Нооруз','https://giftlist-bucket.s3.amazonaws.com/1662788242139images.jpeg',2),
+insert into holidays(id, holiday_date, name, photo, user_id)
+VALUES (1,'2022-03-08','8-март','https://giftlist-bucket.s3.amazonaws.com/1662788168761e13920daf2d40a92b8d0e51d2d374232.jpg',2),
+       (2,'2022-12-31','Новый год','https://giftlist-bucket.s3.amazonaws.com/1662788130775istockphoto-1175405816-612x612.jpg',2),
+       (3,'2022-03-21','Нооруз','https://giftlist-bucket.s3.amazonaws.com/1662788242139images.jpeg',2),
 
-       (4,'2022-03-08',false,'Happy New Year','https://giftlist-bucket.s3.amazonaws.com/1662788388376Happy-Birthday-580x386.jpg',4),
-       (5,'2022-12-31',false,'Birth day','https://giftlist-bucket.s3.amazonaws.com/1661168450017newyear-1173474360-612x612.jpg',4),
-       (6,'2022-03-21',false,'Helloween','https://giftlist-bucket.s3.amazonaws.com/1662788550256helloween-3756252_960_720.jpg',4),
-       (7,'2022-10-21',false,'Орозо Айт','https://giftlist-bucket.s3.amazonaws.com/1662788930279Orozo Ait.png',6);
+       (4,'2022-03-08','Happy New Year','https://giftlist-bucket.s3.amazonaws.com/1662788388376Happy-Birthday-580x386.jpg',4),
+       (5,'2022-12-31','Birth day','https://giftlist-bucket.s3.amazonaws.com/1661168450017newyear-1173474360-612x612.jpg',4),
+       (6,'2022-03-21','Helloween','https://giftlist-bucket.s3.amazonaws.com/1662788550256helloween-3756252_960_720.jpg',4),
+       (7,'2022-10-21','Орозо Айт','https://giftlist-bucket.s3.amazonaws.com/1662788930279Orozo Ait.png',6);
 
 insert into wishes(id,created_at,description,wish_link,wish_name,wish_photo,is_block,is_hidden,wish_date,booking_id,from_user_id, holiday,user_id)
 values (1,'2021-04-05','Жакет с однобортной застежкой на пуговицу выполнен в двух цветах: черном и синем','https://loverepublic.ru/catalog/odezhda/zhakety/','ЖАКЕТ','https://giftlist-bucket.s3.amazonaws.com/1662789066271Gear-Cloudburst-Jacket---Mandarin-Front-square-grey-back.jpg.webp',false,false,'2021-09-23',1,null,1,2),

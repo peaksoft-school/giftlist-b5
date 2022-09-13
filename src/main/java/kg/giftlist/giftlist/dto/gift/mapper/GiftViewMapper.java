@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.gift.mapper;
+import kg.giftlist.giftlist.db.models.Complaint;
 import kg.giftlist.giftlist.dto.booking.BookingResponse;
 import kg.giftlist.giftlist.dto.gift.GiftCartResponse;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
@@ -6,6 +7,8 @@ import kg.giftlist.giftlist.dto.gift.UserGiftResponse;
 import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintGiftResponse;
+import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
@@ -67,17 +70,29 @@ public class GiftViewMapper {
         giftCartResponse.setDescription(gift.getDescription());
         giftCartResponse.setCategory(gift.getCategory());
         giftCartResponse.setSubCategory(gift.getSubCategory());
+        giftCartResponse.setComplaints(viewAllComplaints(gift.getComplaints()));
+        giftCartResponse.setIsBlock(gift.getIsBlock());
         giftCartResponse.setBooking(gift.getBooking());
         return giftCartResponse;
     }
 
-    public BookingResponse viewBooking(Booking booking, User user) {
-        if (booking==null){
+    public ComplaintGiftResponse viewComplaints(Complaint complaint) {
+        if (complaint == null) {
             return null;
         }
-        BookingResponse bookingResponse = new BookingResponse();
-        bookingResponse.setUserBooked(viewUserGift(user));
-        return bookingResponse;
+        ComplaintGiftResponse complaintGiftResponse = new ComplaintGiftResponse();
+        complaintGiftResponse.setComplaintId(complaint.getId());
+        complaintGiftResponse.setText(complaint.getText());
+        complaintGiftResponse.setFromUser(viewUserGift(complaint.getFromUser()));
+        return complaintGiftResponse;
+    }
+
+    public List<ComplaintGiftResponse> viewAllComplaints(List<Complaint> complaints) {
+        List<ComplaintGiftResponse> complaintResponses = new ArrayList<>();
+        for (Complaint complaint : complaints) {
+            complaintResponses.add(viewComplaints(complaint));
+        }
+        return complaintResponses;
     }
 
 }

@@ -18,4 +18,7 @@ public interface WishRepository extends JpaRepository<Wish, Long> {
 
     @Query("select aw from Wish aw order by aw.createdAt DESC")
     List<Wish> getAllWishes();
+
+    @Query("select w from Wish w where w.complaints.size>0")
+    List<Wish> getAllComplaintsWishes();
 }
