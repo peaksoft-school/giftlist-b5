@@ -24,4 +24,7 @@ public interface GiftRepository extends JpaRepository<Gift, Long> {
             "and (:subCategoryId is null or :subCategoryId = g.subCategory.id)")
     List<Gift> filterGift(String name,Status status,Long categoryId,Long subCategoryId);
 
+    @Query("select g from Gift g where g.complaints.size>0")
+    List<Gift> getAllComplaintGifts();
+
 }

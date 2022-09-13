@@ -1,23 +1,36 @@
 package kg.giftlist.giftlist.dto.gift.mapper;
-import kg.giftlist.giftlist.dto.booking.BookingResponse;
+import kg.giftlist.giftlist.db.models.Complaint;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.dto.gift.GiftCartResponse;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.UserGiftResponse;
-import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintGiftResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+
+import javax.ws.rs.ForbiddenException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class GiftViewMapper {
 
+    private final UserRepository userRepository;
+
     public GiftResponse viewCommonGiftCard(User user, Gift gift) {
+        User user2 = getAuthenticatedUser();
+        GiftResponse response = new GiftResponse();
         if (gift == null) {
             return null;
         }
-        GiftResponse response = new GiftResponse();
+        if (gift.getIsBlock().equals(true) && !gift.getUser().equals(user2)) {
+            return null;
+        }
         response.setOwnerUser(viewUserGift(user));
         response.setGift(viewGiftCard(gift));
         if (gift.getBooking()==null || gift.getBooking().getUser()==null) {
@@ -31,7 +44,7 @@ public class GiftViewMapper {
         List<GiftResponse> giftResponses = new ArrayList<>();
         for (Gift gift : gifts) {
             User user = gift.getUser();
-            giftResponses.add(viewCommonGiftCard(user,gift));
+                giftResponses.add(viewCommonGiftCard(user, gift));
         }
         return giftResponses;
     }
@@ -53,7 +66,7 @@ public class GiftViewMapper {
     }
 
     public GiftCartResponse viewGiftCard(Gift gift){
-        if (gift == null) {
+        if (gift == null && !gift.getIsBlock()) {
             return null;
         }
         GiftCartResponse giftCartResponse = new GiftCartResponse();
@@ -65,17 +78,39 @@ public class GiftViewMapper {
         giftCartResponse.setDescription(gift.getDescription());
         giftCartResponse.setCategory(gift.getCategory());
         giftCartResponse.setSubCategory(gift.getSubCategory());
+        giftCartResponse.setIsBlock(gift.getIsBlock());
+        giftCartResponse.setComplaints(viewAllComplaints(gift.getComplaints()));
         giftCartResponse.setBooking(gift.getBooking());
         return giftCartResponse;
     }
 
-    public BookingResponse viewBooking(Booking booking, User user) {
-        if (booking==null){
+    public ComplaintGiftResponse viewComplaints(Complaint complaint) {
+        if (complaint == null) {
             return null;
         }
-        BookingResponse bookingResponse = new BookingResponse();
-        bookingResponse.setUserBooked(viewUserGift(user));
-        return bookingResponse;
+        ComplaintGiftResponse complaintGiftResponse = new ComplaintGiftResponse();
+        complaintGiftResponse.setComplaintId(complaint.getId());
+        complaintGiftResponse.setText(complaint.getText());
+        complaintGiftResponse.setFromUser(viewUserGift(complaint.getFromUser()));
+        return complaintGiftResponse;
+    }
+
+    public List<ComplaintGiftResponse> viewAllComplaints(List<Complaint> complaints) {
+        if (complaints == null) {
+            return null;
+        }
+        List<ComplaintGiftResponse> complaintResponses = new ArrayList<>();
+        for (Complaint complaint : complaints) {
+            complaintResponses.add(viewComplaints(complaint));
+        }
+        return complaintResponses;
+    }
+
+    public User getAuthenticatedUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String login = authentication.getName();
+        return userRepository.findByEmail(login).orElseThrow(() ->
+                new ForbiddenException("User not found!"));
     }
 
 }

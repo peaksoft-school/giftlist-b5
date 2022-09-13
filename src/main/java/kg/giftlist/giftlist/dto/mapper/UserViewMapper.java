@@ -107,6 +107,7 @@ public class UserViewMapper {
          commonUserProfileResponse.setWishes(wishViewMapper.getAllWishes(user.getWishes()));
          commonUserProfileResponse.setHolidays(holidayViewMapper.view(user.getHolidays()));
          commonUserProfileResponse.setGifts(giftViewMapper.getAllGifts(user.getGifts()));
+         commonUserProfileResponse.setIsBlock(user.getIsBlock());
         if (user1.getRequestToFriends().contains(user)) {
             commonUserProfileResponse.setFriendStatus(FriendStatus.REQUEST_TO_FRIEND);
         }else if (user1.getFriends().contains(user)) {

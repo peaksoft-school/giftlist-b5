@@ -1,5 +1,6 @@
 package kg.giftlist.giftlist.db.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,11 +24,14 @@ public class Complaint {
     private String text;
 
     @OneToOne
+    @JsonIgnore
     private User fromUser;
 
     @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    @JsonIgnore
     private Wish wishes;
 
     @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    @JsonIgnore
     private Gift gift;
 }

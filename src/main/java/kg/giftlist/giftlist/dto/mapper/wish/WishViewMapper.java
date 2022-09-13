@@ -1,13 +1,13 @@
 package kg.giftlist.giftlist.dto.mapper.wish;
+import kg.giftlist.giftlist.db.models.Complaint;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
+import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.dto.wish.UserWishResponse;
 import kg.giftlist.giftlist.dto.wish.WishCardResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.db.models.Wish;
 import kg.giftlist.giftlist.enums.AddWishStatus;
-import kg.giftlist.giftlist.exception.NotFoundException;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -35,6 +35,8 @@ public class WishViewMapper {
         wishCardResponse.setWishLink(wish.getWishLink());
         wishCardResponse.setDescription(wish.getDescription());
         wishCardResponse.setWishDate(wish.getWishDate());
+        wishCardResponse.setIsBlock(wish.getIsBlock());
+        wishCardResponse.setComplaints(viewAllComplaints(wish.getComplaints()));
         wishCardResponse.setHoliday(wish.getHoliday());
         wishCardResponse.setBooking(wish.getBooking());
         User user = getAuthenticatedUser();
@@ -64,10 +66,14 @@ public class WishViewMapper {
     }
 
     public WishResponse viewCommonWishCard(User user, Wish wish) {
+        User user1 = getAuthenticatedUser();
+        WishResponse response = new WishResponse();
         if (wish == null) {
             return null;
         }
-        WishResponse response = new WishResponse();
+        if (wish.getIsBlock().equals(true) && !wish.getUser().equals(user1)) {
+            return null;
+        }
         response.setOwnerUser(viewUserWish(user));
         response.setWish(viewWish(wish));
         if (wish.getBooking()==null || wish.getBooking().getUser()==null) {
@@ -91,5 +97,27 @@ public class WishViewMapper {
         String login = authentication.getName();
         return userRepository.findByEmail(login).orElseThrow(() ->
                 new ForbiddenException("User not found!"));
+    }
+
+    public ComplaintResponse viewComplaints(Complaint complaint) {
+        if (complaint == null) {
+            return null;
+        }
+        ComplaintResponse complaintResponse = new ComplaintResponse();
+        complaintResponse.setComplaintId(complaint.getId());
+        complaintResponse.setText(complaint.getText());
+        complaintResponse.setFromUser(viewUserWish(complaint.getFromUser()));
+        return complaintResponse;
+    }
+
+    public List<ComplaintResponse> viewAllComplaints(List<Complaint> complaints) {
+        if (complaints == null) {
+            return null;
+        }
+        List<ComplaintResponse> complaintResponses = new ArrayList<>();
+        for (Complaint complaint : complaints) {
+            complaintResponses.add(viewComplaints(complaint));
+        }
+        return complaintResponses;
     }
 }

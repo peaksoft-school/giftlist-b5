@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Holiday;
+import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.enums.AddWishStatus;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,7 +24,9 @@ public class WishCardResponse {
     @JsonFormat(pattern="dd.MM.yyyy")
     @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate wishDate;
+    private Boolean isBlock;
     private Holiday holiday;
     private AddWishStatus addWishStatus;
+    private List<ComplaintResponse> complaints;
     private Booking booking;
 }

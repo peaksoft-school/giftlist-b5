@@ -20,6 +20,7 @@ import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.config.security.JwtUtils;
 import kg.giftlist.giftlist.db.service.UserService;
+import kg.giftlist.giftlist.exception.UserForbiddenException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
@@ -218,6 +219,9 @@ public class UserServiceImpl implements UserService{
     public SimpleResponse requestToFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
+        if (friend.equals(user)) {
+            throw new UserForbiddenException("You can not request to you");
+        }
         if (friend.getRequestToFriends().contains(user)) {
             log.error("Request already sent");
             throw new AlreadyExistException("Request already sent");

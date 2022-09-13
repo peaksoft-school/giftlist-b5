@@ -38,7 +38,7 @@ public class Gift {
     @Column(length = 4000)
     private String description;
 
-    private Boolean isBlock;
+    private Boolean isBlock = false;
 
     private LocalDate createdAt;
 
