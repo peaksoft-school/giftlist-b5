@@ -23,4 +23,5 @@ public class CommonUserProfileResponse {
     private List<HolidayResponse> holidays;
     private List<GiftResponse> gifts;
     private FriendStatus friendStatus;
+    private Boolean isBlock;
 }
