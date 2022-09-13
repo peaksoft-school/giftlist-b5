@@ -36,7 +36,7 @@ public class Wish {
     @Column(length = 4000)
     private String description;
 
-    private Boolean isBlock;
+    private Boolean isBlock = false;
 
     private Boolean isHidden;
 

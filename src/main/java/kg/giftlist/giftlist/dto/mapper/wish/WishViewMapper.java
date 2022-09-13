@@ -66,6 +66,7 @@ public class WishViewMapper {
     }
 
     public WishResponse viewCommonWishCard(User user, Wish wish) {
+        User user1 = getAuthenticatedUser();
         if (wish == null) {
             return null;
         }
@@ -76,7 +77,14 @@ public class WishViewMapper {
             return response;
         }
         response.setBookedUser(viewUserWish(wish.getBooking().getUser()));
+
+        if (wish.getUser().getId().equals(user1.getId())) {
+            return response;
+        }else if (wish.getIsBlock().equals(true)) {
+            return null;
+        }
         return response;
+
     }
 
     public List<WishResponse> getAllWishes(List<Wish> wishes) {
@@ -107,6 +115,9 @@ public class WishViewMapper {
     }
 
     public List<ComplaintResponse> viewAllComplaints(List<Complaint> complaints) {
+        if (complaints == null) {
+            return null;
+        }
         List<ComplaintResponse> complaintResponses = new ArrayList<>();
         for (Complaint complaint : complaints) {
             complaintResponses.add(viewComplaints(complaint));
