@@ -23,14 +23,10 @@ public class GiftViewMapper {
     private final UserRepository userRepository;
 
     public GiftResponse viewCommonGiftCard(User user, Gift gift) {
-        User user2 = getAuthenticatedUser();
-        GiftResponse response = new GiftResponse();
         if (gift == null) {
             return null;
         }
-        if (gift.getIsBlock().equals(true) && !gift.getUser().equals(user2)) {
-            return null;
-        }
+        GiftResponse response = new GiftResponse();
         response.setOwnerUser(viewUserGift(user));
         response.setGift(viewGiftCard(gift));
         if (gift.getBooking()==null || gift.getBooking().getUser()==null) {
