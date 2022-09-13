@@ -60,7 +60,7 @@ public class AdminServiceImpl implements AdminService {
                         String.format("user with id = %s not found", id)));
         user.setIsBlock(false);
         log.info("Successfully unblocked user with id: {}", user.getId());
-        return new SimpleResponse("UN BLOCK","user with id = "+String.valueOf(id)+" un blocked");
+        return new SimpleResponse("UNBLOCK","user with id = "+String.valueOf(id)+" unblocked");
     }
 
     @Override
@@ -82,7 +82,7 @@ public class AdminServiceImpl implements AdminService {
                         String.format("Wish with id = %s not found", wishId)));
         wish.setIsBlock(false);
         log.info("Successfully unblocked Wish with id: {}", wish.getId());
-        return new SimpleResponse("UN BLOCK","Wish with id = "+String.valueOf(wishId)+" un blocked");
+        return new SimpleResponse("UNBLOCK","Wish with id = "+String.valueOf(wishId)+" unblocked");
     }
 
     @Override
@@ -105,7 +105,7 @@ public class AdminServiceImpl implements AdminService {
                         String.format("Gift with id = %s not found", giftId)));
         gift.setIsBlock(false);
         log.info("Successfully unblocked Gift with id: {}", gift.getId());
-        return new SimpleResponse("UN BLOCK","Gift with id = "+String.valueOf(giftId)+" un blocked");
+        return new SimpleResponse("UNBLOCK","Gift with id = "+String.valueOf(giftId)+" unblocked");
     }
 
 }
