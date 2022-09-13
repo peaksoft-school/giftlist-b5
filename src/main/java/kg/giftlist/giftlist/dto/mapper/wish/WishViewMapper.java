@@ -66,14 +66,10 @@ public class WishViewMapper {
     }
 
     public WishResponse viewCommonWishCard(User user, Wish wish) {
-        User user1 = getAuthenticatedUser();
-        WishResponse response = new WishResponse();
         if (wish == null) {
             return null;
         }
-        if (wish.getIsBlock().equals(true) && !wish.getUser().equals(user1)) {
-            return null;
-        }
+        WishResponse response = new WishResponse();
         response.setOwnerUser(viewUserWish(user));
         response.setWish(viewWish(wish));
         if (wish.getBooking()==null || wish.getBooking().getUser()==null) {
