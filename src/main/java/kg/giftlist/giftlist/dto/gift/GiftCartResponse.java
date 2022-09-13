@@ -3,7 +3,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import kg.giftlist.giftlist.db.models.SubCategory;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintGiftResponse;
-import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Category;
@@ -26,7 +25,7 @@ public class GiftCartResponse {
     private String description;
     private Category category;
     private SubCategory subCategory;
-    private List<ComplaintGiftResponse> complaints;
     private Boolean isBlock;
+    private List<ComplaintGiftResponse> complaints;
     private Booking booking;
 }
