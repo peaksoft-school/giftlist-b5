@@ -4,7 +4,9 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.ComplaintServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
+import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
+import kg.giftlist.giftlist.dto.wish.WishResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -26,13 +28,6 @@ public class ComplaintApi {
         return complaintService.sendComplaintToWish(wishId, text);
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
-    @Operation(summary = "All complains", description = "Only Admin can see all complains")
-    @GetMapping
-    public List<ComplaintResponse> getAllComplaints() {
-        return complaintService.getComplaints();
-    }
-
     @PreAuthorize("hasAuthority('USER')")
     @Operation(summary = "Send complaint to Gift", description = "User can send complaint to Admin.")
     @PostMapping("gift/{giftId}")
@@ -41,9 +36,38 @@ public class ComplaintApi {
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")
-    @Operation(summary = "Delete complaint", description = "Only Admin can delete complaint.")
+    @Operation(summary = "Delete complaint by id", description = "Only Admin can delete complaint.")
     @DeleteMapping("/{complaintId}")
     public SimpleResponse deleteComplaintById(@PathVariable Long complaintId) {
         return complaintService.deleteComplaintById(complaintId);
     }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "All complaint wishes", description = "Admin can see all complaint wishes")
+    @GetMapping("wishes")
+    public List<WishResponse> getAllComplaintWishes() {
+        return complaintService.getAllComplaintWishes();
+    }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "All complaint gifts", description = "Admin can see all complaint gifts")
+    @GetMapping("gifts")
+    public List<GiftResponse> getAllComplaintGifts() {
+        return complaintService.getAllComplaintGifts();
+    }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Get complaint wish by id", description = "Admin can get wish by id")
+    @GetMapping("/{wishId}")
+    public WishResponse getComplaintWishById(@PathVariable Long wishId) {
+        return complaintService.getComplaintWishById(wishId);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @Operation(summary = "Get complaint gift by id", description = "Admin can get gift by id")
+    @GetMapping("/{giftId}")
+    public GiftResponse getComplaintGiftById(@PathVariable Long giftId) {
+        return complaintService.getComplaintGiftById(giftId);
+    }
+
 }

@@ -20,7 +20,6 @@ public class HolidayViewMapper {
         response.setName(holiday.getName());
         response.setPhoto(holiday.getPhoto());
         response.setHolidayDate(holiday.getHolidayDate());
-
         return response;
     }
 

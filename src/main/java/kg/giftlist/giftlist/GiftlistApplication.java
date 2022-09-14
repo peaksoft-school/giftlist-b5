@@ -20,4 +20,5 @@ public class GiftlistApplication {
 	public String greetingPage(){
 		return "<h1>Welcome to Giftlist application!!!<h1/>";
 	}
+
 }

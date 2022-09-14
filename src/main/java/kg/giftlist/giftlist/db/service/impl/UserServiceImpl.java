@@ -25,6 +25,11 @@ import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.NotFoundException;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
+import kg.giftlist.giftlist.config.security.JwtUtils;
+import kg.giftlist.giftlist.db.service.UserService;
+import kg.giftlist.giftlist.exception.UserForbiddenException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
@@ -46,7 +51,7 @@ import java.util.ArrayList;
 @Service
 @Log4j2
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
     private final UserRepository userRepo;
     private final JwtUtils jwtUtils;
     private final UserEditMapper editMapper;
@@ -115,7 +120,7 @@ public class UserServiceImpl implements UserService {
             log.info("Successfully saved user with id: {} in db", newUser.getId());
         }
         else {
-            user = userRepo.findByEmail(decodedToken.getEmail()).orElseThrow(() ->
+            user = userRepo.findByEmail(decodedToken.getEmail()).orElseThrow(()->
                     new NotFoundException("Not found email "));
             log.error("Not found email");
         }
@@ -226,6 +231,9 @@ public class UserServiceImpl implements UserService {
     public SimpleResponse requestToFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
+        if (friend.equals(user)) {
+            throw new UserForbiddenException("You can not request to you");
+        }
         if (friend.getRequestToFriends().contains(user)) {
             log.error("Request already sent");
             throw new AlreadyExistException("Request already sent");
