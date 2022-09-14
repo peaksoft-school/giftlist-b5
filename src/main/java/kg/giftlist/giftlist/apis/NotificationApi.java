@@ -41,19 +41,19 @@ public class NotificationApi {
         return giftService.getGiftById(giftId);
     }
 
-//    @PreAuthorize("hasAnyAuthority('ADMIN')")
-//    @Operation(summary = "Find complaint by giftId", description = "The user can find complaint")
-//    @GetMapping("complaint/{giftId}")
-//    public GiftResponse findComplaintByGiftId(@PathVariable Long giftId) {
-//        return complaintService.getComplaintGiftById(giftId);
-//    }
-//
-//    @PreAuthorize("hasAnyAuthority('ADMIN')")
-//    @Operation(summary = "Find complaint by wishId", description = "The user can find complaint")
-//    @GetMapping("complaint/{wishId}")
-//    public WishResponse findComplaintByWishId(@PathVariable Long wishId) {
-//        return complaintService.getComplaintWishById(wishId);
-//    }
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Get complaint wish by id", description = "Admin can get wish by id")
+    @GetMapping("/complaint/wish/{wishId}")
+    public WishResponse getComplaintWishById(@PathVariable Long wishId) {
+        return complaintService.getComplaintWishById(wishId);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @Operation(summary = "Get complaint gift by id", description = "Admin can get gift by id")
+    @GetMapping("/complaint/gift/{giftId}")
+    public GiftResponse getComplaintGiftById(@PathVariable Long giftId) {
+        return complaintService.getComplaintGiftById(giftId);
+    }
 
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     @Operation(summary = "Find wish by id", description = "The user can find wish")
