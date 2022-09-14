@@ -50,6 +50,7 @@ public class UserEditMapper {
               adminUserGetAllResponse.setFirst_name(user.getFirstName());
               adminUserGetAllResponse.setLast_name(user.getLastName());
               adminUserGetAllResponse.setPhoto(user.getPhoto());
+              adminUserGetAllResponse.setIsBlock(user.getIsBlock());
 
               return adminUserGetAllResponse;
           }

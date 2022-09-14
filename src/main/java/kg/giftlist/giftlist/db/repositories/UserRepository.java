@@ -26,4 +26,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("select u from User u where upper(u.firstName) like %?1% or upper(u.lastName) like %?1%")
     List<User> searchAllByFirstNameAndLastName(String name);
 
+    @Query("select u from User u where u.role = 'USER' ")
+    List<User> getAll();
+
 }
