@@ -72,7 +72,6 @@ public class GiftServiceImpl implements GiftService {
             notification.setGift(gift);
             notification.setRecipientId(fr.getId());
             user.addNotification(notification);
-
             notificationRepository.save(notification);
         }
 

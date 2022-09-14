@@ -71,7 +71,6 @@ public class BookingServiceImpl {
             notification.setGift(gift);
             notification.setRecipientId(fr.getId());
             user.addNotification(notification);
-
             notificationRepository.save(notification);
         }
         return giftViewMapper.viewGiftCard(gift);
