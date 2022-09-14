@@ -33,7 +33,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<AdminPageUserGetAllResponse> getAllUsers() {
-        List<User> users = userRepository.findAll();
+        List<User> users = userRepository.getAll();
         List<AdminPageUserGetAllResponse> userList = new ArrayList<>();
         for (User i : users) {
             userList.add(userEditMapper.createUser(i));
