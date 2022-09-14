@@ -6,5 +6,7 @@ public enum NotificationStatus {
     ADD_GIFT,
     ADD_HOLIDAY,
     ADD_GIFT_BOOKING,
-    ADD_WISH_BOOKING
+    ADD_WISH_BOOKING,
+    COMPLAINT_TO_GIFT,
+    COMPLAINT_TO_WISH
 }

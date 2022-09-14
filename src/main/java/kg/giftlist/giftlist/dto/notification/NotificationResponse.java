@@ -19,6 +19,7 @@ public class NotificationResponse {
     private String userFirstName;
     private String userLastName;
     private LocalDate createdAt;
+    private Long complaintId;
     private boolean isRead;
 
     public NotificationResponse() {
@@ -46,6 +47,10 @@ public class NotificationResponse {
     }
 
     public NotificationResponse(Long id, String photo, Long id1, String firstName, String lastName, NotificationStatus notificationStatus, Long id2, String name, LocalDate createdAt, boolean read) {
+
+    }
+
+    public NotificationResponse(Long id, String photo, Long id1, String firstName, String lastName,Long complaintId, NotificationStatus notificationStatus, Long id2, String name, LocalDate createdAt, boolean read) {
 
     }
 }

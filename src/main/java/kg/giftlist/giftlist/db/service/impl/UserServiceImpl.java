@@ -356,4 +356,11 @@ public class UserServiceImpl implements UserService{
                 new NotFoundException("User with id "+userId+" not found"));
         return viewMapper.viewCommonFriendProfile(user);
     }
+
+    public UserFriendProfileResponse findUserByUserId(Long userId) {
+        User user = userRepo.findById(userId).orElseThrow(() -> new NotFoundException(
+                "User with id: " + userId + " not found!"
+        ));
+        return viewMapper.viewFriendProfile(user);
+    }
 }

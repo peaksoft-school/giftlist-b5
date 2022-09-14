@@ -49,4 +49,9 @@ public class Notification {
     @OneToOne
     private Booking wishBooking;
 
+    @OneToOne
+    private Complaint complaintGift;
+
+    @OneToOne
+    private Complaint complaintWish;
 }

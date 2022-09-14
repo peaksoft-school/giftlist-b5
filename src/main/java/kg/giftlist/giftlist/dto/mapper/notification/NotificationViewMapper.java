@@ -65,6 +65,27 @@ public class NotificationViewMapper {
             response.setUserId(notification.getUser().getId());
             response.setUserFirstName(notification.getUser().getFirstName());
             response.setUserLastName(notification.getUser().getLastName());
+
+        } else if (notification.getNotificationStatus().equals(NotificationStatus.COMPLAINT_TO_GIFT)) {
+            response.setUserId(notification.getUser().getId());
+            response.setPhoto(notification.getUser().getPhoto());
+            response.setUserFirstName(notification.getUser().getFirstName());
+            response.setUserLastName(notification.getUser().getLastName());
+            response.setComplaintId(notification.getComplaintGift().getId());
+            response.setNotificationStatus(notification.getNotificationStatus());
+            response.setWishOrGiftOrHolidayId(notification.getGift().getId());
+            response.setWishOrGiftOrHolidayName(notification.getGift().getName());
+
+        } else if (notification.getNotificationStatus().equals(NotificationStatus.COMPLAINT_TO_WISH)) {
+            response.setUserId(notification.getUser().getId());
+            response.setPhoto(notification.getUser().getPhoto());
+            response.setUserFirstName(notification.getUser().getFirstName());
+            response.setUserLastName(notification.getUser().getLastName());
+            response.setComplaintId(notification.getComplaintWish().getId());
+            response.setNotificationStatus(notification.getNotificationStatus());
+            response.setWishOrGiftOrHolidayId(notification.getWish().getId());
+            response.setWishOrGiftOrHolidayName(notification.getWish().getWishName());
+
         }
         response.setCreatedAt(notification.getCreatedAt());
         response.setRead(notification.isRead());

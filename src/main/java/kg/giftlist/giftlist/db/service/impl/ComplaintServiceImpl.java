@@ -7,6 +7,7 @@ import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
+import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -15,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.ws.rs.ForbiddenException;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -28,6 +30,7 @@ public class ComplaintServiceImpl {
     private final ComplaintRepository complaintRepository;
     private final WishViewMapper wishViewMapper;
     private final GiftViewMapper giftViewMapper;
+    private final NotificationRepository notificationRepository;
 
     @Transactional
     public SimpleResponse sendComplaintToWish(Long wishId, String text) {
@@ -40,6 +43,17 @@ public class ComplaintServiceImpl {
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
         log.info("Complaint to wish with id: {} successfully send", wish.getId());
+
+        Notification notification = new Notification();
+        notification.setNotificationStatus(NotificationStatus.COMPLAINT_TO_WISH);
+        notification.setCreatedAt(LocalDate.now());
+        notification.setUser(user);
+        notification.setWish(wish);
+        notification.setRecipientId(userRepo.findByRole().
+                orElseThrow(()->new NotFoundException("User by role ADMIN not found!")).getId());
+        notification.setComplaintWish(complaint);
+        user.addNotification(notification);
+        notificationRepository.save(notification);
         return new SimpleResponse("Отправлено! Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
 
     }
@@ -55,6 +69,17 @@ public class ComplaintServiceImpl {
         complaint.setFromUser(user);
         complaintRepository.save(complaint);
         log.info("Complaint to gift with id: {} successfully send", gift.getId());
+
+        Notification notification = new Notification();
+        notification.setNotificationStatus(NotificationStatus.COMPLAINT_TO_GIFT);
+        notification.setCreatedAt(LocalDate.now());
+        notification.setUser(user);
+        notification.setGift(gift);
+        notification.setRecipientId(userRepo.findByRole().
+                orElseThrow(()->new NotFoundException("User by role ADMIN not found!")).getId());
+        notification.setComplaintGift(complaint);
+        user.addNotification(notification);
+        notificationRepository.save(notification);
         return new SimpleResponse("Отправлено!Спасибо, что сообщили нам об этом", "Ваши отзывы помогают нам сделать сообщество GIFT LIST безопасной средой для всех");
 
     }
