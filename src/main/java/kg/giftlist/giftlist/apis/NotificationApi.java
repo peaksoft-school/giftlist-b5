@@ -18,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/notifications")
 @CrossOrigin
-@Tag(name = "Notification API", description = "User with role \"User\"  can findAll and findById notifications")
+@Tag(name = "Notification API", description = "User with role \"User\"\"ADMIN\"  can findAll and findById notifications")
 public class NotificationApi {
 
     private final UserServiceImpl userService;
@@ -41,21 +41,21 @@ public class NotificationApi {
         return giftService.getGiftById(giftId);
     }
 
+//    @PreAuthorize("hasAnyAuthority('ADMIN')")
+//    @Operation(summary = "Find complaint by giftId", description = "The user can find complaint")
+//    @GetMapping("complaint/{giftId}")
+//    public GiftResponse findComplaintByGiftId(@PathVariable Long giftId) {
+//        return complaintService.getComplaintGiftById(giftId);
+//    }
+//
+//    @PreAuthorize("hasAnyAuthority('ADMIN')")
+//    @Operation(summary = "Find complaint by wishId", description = "The user can find complaint")
+//    @GetMapping("complaint/{wishId}")
+//    public WishResponse findComplaintByWishId(@PathVariable Long wishId) {
+//        return complaintService.getComplaintWishById(wishId);
+//    }
+
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-    @Operation(summary = "Find complaint by giftId", description = "The user can find complaint")
-    @GetMapping("complaint/{giftId}")
-    public GiftResponse findComplaintByGiftId(@PathVariable Long giftId) {
-        return complaintService.getComplaintGiftById(giftId);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
-    @Operation(summary = "Find complaint by wishId", description = "The user can find complaint")
-    @GetMapping("complaint/{wishId}")
-    public WishResponse findComplaintByWishId(@PathVariable Long wishId) {
-        return complaintService.getComplaintWishById(wishId);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
     @Operation(summary = "Find wish by id", description = "The user can find wish")
     @GetMapping("wish/{wishId}")
     public WishResponse findWishById(@PathVariable Long wishId) {
