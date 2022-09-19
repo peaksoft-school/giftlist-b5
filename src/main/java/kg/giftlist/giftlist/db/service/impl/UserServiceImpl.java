@@ -78,7 +78,15 @@ public class UserServiceImpl implements UserService{
             );
         }
         if (user.getIsBlock()==true){
-            return null;
+            return new  AuthResponse(
+                    user.getId(),
+                    user.getFirstName(),
+                    null,
+                    null,
+                    user.getEmail(),
+                    null,
+                    null,
+                    "You're account is blocked");
         }
         String jwt = jwtUtils.generateJwt(user);
         log.info("User successfully logged in");
@@ -89,7 +97,8 @@ public class UserServiceImpl implements UserService{
                 user.getPhoto(),
                 user.getEmail(),
                 jwt,
-                user.getRole()
+                user.getRole(),
+                null
         );
     }
 
@@ -119,7 +128,8 @@ public class UserServiceImpl implements UserService{
                 user.getPhoto(),
                 user.getEmail(),
                 jwtUtils.generateJwt(user),
-                user.getRole()
+                user.getRole(),
+                null
         );
     }
 
@@ -162,7 +172,8 @@ public class UserServiceImpl implements UserService{
                     user.getPhoto(),
                     user.getEmail(),
                     jwtUtils.generateJwt(user),
-                    user.getRole()
+                    user.getRole(),
+                    null
             );
         }
     }
@@ -191,7 +202,8 @@ public class UserServiceImpl implements UserService{
                 user.getPhoto(),
                 user.getEmail(),
                 jwtUtils.generateJwt(user),
-                user.getRole()
+                user.getRole(),
+                null
         );
 
     }

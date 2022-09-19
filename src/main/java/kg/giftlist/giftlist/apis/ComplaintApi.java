@@ -58,14 +58,14 @@ public class ComplaintApi {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @Operation(summary = "Get complaint wish by id", description = "Admin can get wish by id")
-    @GetMapping("/{wishId}")
+    @GetMapping("wish/{wishId}")
     public WishResponse getComplaintWishById(@PathVariable Long wishId) {
         return complaintService.getComplaintWishById(wishId);
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     @Operation(summary = "Get complaint gift by id", description = "Admin can get gift by id")
-    @GetMapping("/{giftId}")
+    @GetMapping("gift/{giftId}")
     public GiftResponse getComplaintGiftById(@PathVariable Long giftId) {
         return complaintService.getComplaintGiftById(giftId);
     }

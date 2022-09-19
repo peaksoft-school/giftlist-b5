@@ -18,6 +18,7 @@ public class UserResponse {
     private String photo;
     private String jwt;
     private Role role;
+    private Boolean isBlock;
 
     public UserResponse(User user) {
         this.id = user.getId();
@@ -25,5 +26,6 @@ public class UserResponse {
         this.lastName= user.getLastName();
         this.email= user.getEmail();
         this.photo= user.getPhoto();
+        this.isBlock= user.getIsBlock();
     }
 }

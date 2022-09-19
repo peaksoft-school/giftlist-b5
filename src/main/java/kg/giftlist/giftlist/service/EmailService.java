@@ -9,6 +9,7 @@ import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
@@ -25,6 +26,8 @@ import java.io.IOException;
 public class EmailService {
 
     private final JavaMailSender mailSender;
+    @Value( "${SENDGRID_API_KEY}" )
+    private String SENDGRID_APIKEY;
 
     @Async
     public void send(String to, String htmlMessage, String subject) {
@@ -44,11 +47,11 @@ public class EmailService {
     }
 
     public void sendLinkToChangeUserPassword(String to, String linkForNewPassword) throws IOException {
-        Email from = new Email( "giftlist16@gmail.com" );
+        Email from = new Email( "elmirbekalisherov24@gmail.com" );
         Email toUser = new Email(to);
         Content content = new Content( "text/plain", linkForNewPassword );
         Mail mail = new Mail( from, "[GIFT LIST] password reset link ", toUser, content );
-        SendGrid sg = new SendGrid( "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" );
+        SendGrid sg = new SendGrid( SENDGRID_APIKEY );
         Request request = new Request();
         try {
             request.setMethod( Method.POST );
