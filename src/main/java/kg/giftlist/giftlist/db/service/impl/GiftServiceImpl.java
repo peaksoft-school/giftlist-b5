@@ -109,14 +109,14 @@ public class GiftServiceImpl implements GiftService {
     }
 
     @Override
-    public List<GiftResponse> getAll() {
+    public List<GiftResponse> getAllOwnGifts() {
         User user = getAuthenticatedUser();
         return giftViewMapper.getAllGifts(giftRepository.getAllUserGifts(user.getId()));
     }
 
-    public List<GiftResponse> getAllGifts(){
+    public List<GiftResponse> getAllGiftsForUser(){
         User user = getAuthenticatedUser();
-        List<Gift> allGifts = giftRepository.findAll();
+        List<Gift> allGifts = giftRepository.getAllGifts();
         List<Gift> gifts = new ArrayList<>();
         for (Gift gift : allGifts) {
             if (!user.getGifts().contains(gift)) {
@@ -126,9 +126,17 @@ public class GiftServiceImpl implements GiftService {
         return giftViewMapper.getAllGifts(gifts);
     }
 
+    public List<GiftResponse> getAllGiftsForAdmin() {
+        return giftViewMapper.getAllGifts(giftRepository.findAll());
+    }
+
     @Override
     public List<GiftResponse> filter(String search,Status status,Long categoryId,Long subCategoryId) {
         return giftViewMapper.getAllGifts(giftRepository.filterGift(search,status,categoryId,subCategoryId));
+    }
+
+    public List<GiftResponse> filterGiftForAdmin(String search,Status status,Long categoryId,Long subCategoryId) {
+        return giftViewMapper.getAllGifts(giftRepository.filterGiftForAdmin(search,status,categoryId,subCategoryId));
     }
 
     public GiftResponse getGiftById(Long giftId) {

@@ -18,7 +18,7 @@ public interface GiftRepository extends JpaRepository<Gift, Long> {
     @Query("select g from User u join u.gifts g where u.id=?1")
     List<Gift> getAllUserGifts(Long userId);
 
-    @Query("select g from Gift g where (upper(g.name) like upper(concat('%',:name,'%')) " +
+    @Query("select g from Gift g where g.isBlock=false and (upper(g.name) like upper(concat('%',:name,'%')) " +
             "or :name = 'all') and (g.status = :status or :status is null ) " +
             "and (:categoryId is null or :categoryId = g.category.id) " +
             "and (:subCategoryId is null or :subCategoryId = g.subCategory.id)")
@@ -26,5 +26,14 @@ public interface GiftRepository extends JpaRepository<Gift, Long> {
 
     @Query("select g from Gift g where g.complaints.size>0")
     List<Gift> getAllComplaintGifts();
+
+    @Query("select g from User u join u.gifts g where g.isBlock=false")
+    List<Gift> getAllGifts();
+
+    @Query("select g from Gift g where (upper(g.name) like upper(concat('%',:name,'%')) " +
+            "or :name = 'all') and (g.status = :status or :status is null ) " +
+            "and (:categoryId is null or :categoryId = g.category.id) " +
+            "and (:subCategoryId is null or :subCategoryId = g.subCategory.id)")
+    List<Gift> filterGiftForAdmin(String name,Status status,Long categoryId,Long subCategoryId);
 
 }
