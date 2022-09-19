@@ -57,5 +57,4 @@ public class WishApi {
     public WishResponse addFriendWishToMyWish(@PathVariable Long wishId) {
         return wishService.addToMyWish(wishId);
     }
-
 }
