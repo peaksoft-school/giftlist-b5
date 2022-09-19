@@ -6,6 +6,7 @@ import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.db.service.AdminService;
 import kg.giftlist.giftlist.db.service.UserService;
+import kg.giftlist.giftlist.dto.user.UserResponse;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -73,4 +74,9 @@ public class AdminApi {
         return adminService.unBlockGift(giftId);
     }
 
+    @Operation(summary = "Search users", description = "Admin can search by first name and last name")
+    @GetMapping("/{name}")
+    public List<UserResponse> findUser(@PathVariable String name){
+        return userService.findUser(name);
+    }
 }
