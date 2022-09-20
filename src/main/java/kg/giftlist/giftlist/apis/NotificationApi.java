@@ -18,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/notifications")
 @CrossOrigin
-@Tag(name = "Notification API", description = "User with role \"User\"\"ADMIN\"  can findAll and findById notifications")
+@Tag(name = "Notification API", description = "User with role \"User\"\"ADMIN\"  can see own notifications")
 public class NotificationApi {
 
     private final UserServiceImpl userService;
@@ -28,14 +28,14 @@ public class NotificationApi {
     private final ComplaintServiceImpl complaintService;
 
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-    @Operation(summary = "Get user by id", description = "User can get user by id")
+    @Operation(summary = "Get user by id", description = "User and Admin can get user by id")
     @GetMapping("/user/{userId}")
     public UserFriendProfileResponse findUserById(@PathVariable Long userId) {
         return userService.findUserByUserId(userId);
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-    @Operation(summary = "Find gift by id", description = "The user can find gift")
+    @Operation(summary = "Find gift by id", description = "User and Admin can find gift")
     @GetMapping("gift/{giftId}")
     public GiftResponse findGiftById(@PathVariable Long giftId) {
         return giftService.getGiftById(giftId);
@@ -56,28 +56,28 @@ public class NotificationApi {
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-    @Operation(summary = "Find wish by id", description = "The user can find wish")
+    @Operation(summary = "Find wish by id", description = "User and Admin can find wish")
     @GetMapping("wish/{wishId}")
     public WishResponse findWishById(@PathVariable Long wishId) {
         return wishService.findById(wishId);
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-    @Operation(summary = "Find holiday by id", description = "The user can find holiday")
+    @Operation(summary = "Find holiday by id", description = "User and Admin can find holiday")
     @GetMapping("holiday/{holidayId}")
     public HolidayResponse findHolidayById(@PathVariable Long holidayId) {
         return holidayService.findById(holidayId);
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-    @Operation(summary = "Get all notifications", description = "User can get all notifications")
+    @Operation(summary = "Get all notifications", description = "User and Admin can get all notifications")
     @GetMapping
     public List<NotificationResponse> findAll() {
         return userService.getAllNotifications();
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-    @Operation(summary = "mark as read", description = "mark as read return notifications list")
+    @Operation(summary = "Mark as read", description = "User and Admin can mark as read return notifications list")
     @PutMapping("/markAsRead")
     public List<NotificationResponse> markAsRead() {
         return userService.markAsRead();

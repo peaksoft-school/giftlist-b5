@@ -1,6 +1,7 @@
 package kg.giftlist.giftlist.enums;
 
 public enum NotificationStatus {
+
     REQUEST_TO_FRIEND,
     ADD_WISH,
     ADD_GIFT,

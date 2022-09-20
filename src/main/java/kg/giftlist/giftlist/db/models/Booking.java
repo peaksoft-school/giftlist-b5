@@ -23,9 +23,11 @@ public class Booking {
     @OneToOne
     @JsonIgnore
     private User user;
+
     @OneToMany(cascade = ALL)
     @JsonIgnore
     private List<Wish> wishes = new ArrayList<>();
+
     @OneToMany(cascade = ALL)
     @JsonIgnore
     private List<Gift> gifts = new ArrayList<>();
