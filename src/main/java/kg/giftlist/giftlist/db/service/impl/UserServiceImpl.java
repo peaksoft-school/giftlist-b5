@@ -6,13 +6,22 @@ import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseToken;
+import kg.giftlist.giftlist.config.security.JwtUtils;
+import kg.giftlist.giftlist.db.models.Notification;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.repositories.NotificationRepository;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
+import kg.giftlist.giftlist.db.service.UserService;
 import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
+import kg.giftlist.giftlist.dto.mapper.notification.NotificationViewMapper;
+import kg.giftlist.giftlist.dto.notification.NotificationResponse;
 import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
+import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.NotFoundException;
@@ -35,6 +44,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -47,6 +57,8 @@ public class UserServiceImpl implements UserService{
     private final UserEditMapper editMapper;
     private final UserViewMapper viewMapper;
     private final PasswordEncoder encoder;
+    private final NotificationRepository notificationRepository;
+    private final NotificationViewMapper notificationViewMapper;
 
     @Value("${app.firebase-configuration-file}")
     private String firebaseConfigPath;
@@ -244,7 +256,28 @@ public class UserServiceImpl implements UserService{
         }
         friend.addRequestToFriend(user);
         log.info("Request to friend successfully send");
+        Notification notification = new Notification();
+        notification.setNotificationStatus(NotificationStatus.REQUEST_TO_FRIEND);
+        notification.setCreatedAt(LocalDate.now());
+        notification.setUser(user);
+        notification.setRecipientId(friendId);
+        friend.addNotification(notification);
+        notificationRepository.saveAll(friend.getNotifications());
         return new SimpleResponse("Success","Request to friend successfully send");
+    }
+
+    public List<NotificationResponse> getAllNotifications() {
+        return notificationViewMapper.getAll(notificationRepository.
+                getAllNotifications(findById().getUserId()));
+    }
+
+    public List<NotificationResponse> markAsRead() {
+        List<Notification> notifications = notificationRepository.getAllNotifications(findById().getUserId());
+        for (Notification notification : notifications) {
+            notification.setRead(true);
+            notificationRepository.save(notification);
+        }
+        return notificationViewMapper.getAll(notificationRepository.getAllNotifications(findById().getUserId()));
     }
 
     @Override
@@ -338,5 +371,12 @@ public class UserServiceImpl implements UserService{
         User user = userRepo.findById(userId).orElseThrow(() ->
                 new NotFoundException("User with id "+userId+" not found"));
         return viewMapper.viewCommonFriendProfile(user);
+    }
+
+    public UserFriendProfileResponse findUserByUserId(Long userId) {
+        User user = userRepo.findById(userId).orElseThrow(() -> new NotFoundException(
+                "User with id: " + userId + " not found!"
+        ));
+        return viewMapper.viewFriendProfile(user);
     }
 }
