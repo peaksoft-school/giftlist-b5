@@ -1,4 +1,6 @@
 package kg.giftlist.giftlist.dto.mapper;
+import kg.giftlist.giftlist.db.models.Gift;
+import kg.giftlist.giftlist.db.models.Wish;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
@@ -14,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import javax.ws.rs.ForbiddenException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Component
@@ -104,9 +107,24 @@ public class UserViewMapper {
          commonUserProfileResponse.setEmail(user.getEmail());
          commonUserProfileResponse.setPhoto(user.getPhoto());
          commonUserProfileResponse.setUserInfo(user.getUserInfo());
-         commonUserProfileResponse.setWishes(wishViewMapper.getAllWishes(user.getWishes()));
+         List<Wish> wishes = user.getWishes();
+         List<Wish> sortWishes = new ArrayList<>();
+         for (Wish wish : wishes) {
+            if (wish.getIsBlock().equals(false)){
+                sortWishes.add(wish);
+            }
+         }
+         commonUserProfileResponse.setWishes(wishViewMapper.getAllWishes(sortWishes));
          commonUserProfileResponse.setHolidays(holidayViewMapper.view(user.getHolidays()));
-         commonUserProfileResponse.setGifts(giftViewMapper.getAllGifts(user.getGifts()));
+
+        List<Gift> gifts = user.getGifts();
+        List<Gift> sortGifts = new ArrayList<>();
+        for (Gift gift : gifts) {
+            if (gift.getIsBlock().equals(false)){
+                sortGifts.add(gift);
+            }
+        }
+         commonUserProfileResponse.setGifts(giftViewMapper.getAllGifts(sortGifts));
          commonUserProfileResponse.setIsBlock(user.getIsBlock());
         if (user1.getRequestToFriends().contains(user)) {
             commonUserProfileResponse.setFriendStatus(FriendStatus.REQUEST_TO_FRIEND);
