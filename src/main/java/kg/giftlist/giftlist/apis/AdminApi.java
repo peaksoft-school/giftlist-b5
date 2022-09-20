@@ -1,7 +1,6 @@
 package kg.giftlist.giftlist.apis;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kg.giftlist.giftlist.db.service.impl.ComplaintServiceImpl;
 import kg.giftlist.giftlist.db.service.impl.GiftServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
@@ -27,7 +26,6 @@ public class AdminApi {
 
     private final AdminService adminService;
     private final UserService userService;
-    private final ComplaintServiceImpl complaintService;
     private final GiftServiceImpl giftService;
 
     @Operation(summary = "Get all users", description = "Get all users ")
@@ -37,7 +35,7 @@ public class AdminApi {
     }
 
     @Operation(summary = "Get user profile ", description = "Find by id user profile")
-    @GetMapping("/{userId}")
+    @GetMapping("/user/{userId}")
     public CommonUserProfileResponse getUserProfile(@PathVariable Long userId) {
         return userService.getCommonFriendProfile(userId);
     }
@@ -79,7 +77,7 @@ public class AdminApi {
     }
 
     @Operation(summary = "Search users", description = "Admin can search by first name and last name")
-    @GetMapping("/{name}")
+    @GetMapping("/search/{name}")
     public List<UserResponse> findUser(@PathVariable String name){
         return userService.findUser(name);
     }
@@ -101,7 +99,7 @@ public class AdminApi {
     }
 
     @Operation(summary = "Find gift by id", description = "Admin can find gift by id")
-    @GetMapping("/{giftId}")
+    @GetMapping("/gift/{giftId}")
     public GiftResponse findGiftById(@PathVariable Long giftId) {
         return giftService.getGiftById(giftId);
     }
