@@ -2,11 +2,13 @@ package kg.giftlist.giftlist.db.service.impl;
 
 import kg.giftlist.giftlist.db.models.*;
 import kg.giftlist.giftlist.db.repositories.*;
+import kg.giftlist.giftlist.db.service.GiftService;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
+import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.enums.Status;
 import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.service.GiftService;
@@ -34,6 +36,7 @@ public class GiftServiceImpl implements GiftService {
     private final CategoryRepository categoryRepository;
     private final SubCategoryRepository subCategoryRepository;
     private final ComplaintRepository complaintRepository;
+    private final NotificationRepository notificationRepository;
 
     @Override
     public GiftResponse create(GiftRequest request) {
@@ -60,7 +63,19 @@ public class GiftServiceImpl implements GiftService {
         gift.setCreatedAt(LocalDate.now());
         giftRepository.save(gift);
         log.info("Gift with id: {} successfully saved in db", gift.getId());
-        return giftViewMapper.viewCommonGiftCard(user,gift);
+
+        for (User fr : user.getFriends()) {
+            Notification notification = new Notification();
+            notification.setNotificationStatus(NotificationStatus.ADD_GIFT);
+            notification.setCreatedAt(LocalDate.now());
+            notification.setUser(user);
+            notification.setGift(gift);
+            notification.setRecipientId(fr.getId());
+            user.addNotification(notification);
+            notificationRepository.save(notification);
+        }
+
+        return giftViewMapper.viewCommonGiftCard(user, gift);
     }
 
     @Override
@@ -109,14 +124,14 @@ public class GiftServiceImpl implements GiftService {
     }
 
     @Override
-    public List<GiftResponse> getAll() {
+    public List<GiftResponse> getAllOwnGifts() {
         User user = getAuthenticatedUser();
         return giftViewMapper.getAllGifts(giftRepository.getAllUserGifts(user.getId()));
     }
 
-    public List<GiftResponse> getAllGifts(){
+    public List<GiftResponse> getAllGiftsForUser(){
         User user = getAuthenticatedUser();
-        List<Gift> allGifts = giftRepository.findAll();
+        List<Gift> allGifts = giftRepository.getAllGifts();
         List<Gift> gifts = new ArrayList<>();
         for (Gift gift : allGifts) {
             if (!user.getGifts().contains(gift)) {
@@ -126,9 +141,17 @@ public class GiftServiceImpl implements GiftService {
         return giftViewMapper.getAllGifts(gifts);
     }
 
+    public List<GiftResponse> getAllGiftsForAdmin() {
+        return giftViewMapper.getAllGifts(giftRepository.findAll());
+    }
+
     @Override
     public List<GiftResponse> filter(String search,Status status,Long categoryId,Long subCategoryId) {
         return giftViewMapper.getAllGifts(giftRepository.filterGift(search,status,categoryId,subCategoryId));
+    }
+
+    public List<GiftResponse> filterGiftForAdmin(String search,Status status,Long categoryId,Long subCategoryId) {
+        return giftViewMapper.getAllGifts(giftRepository.filterGiftForAdmin(search,status,categoryId,subCategoryId));
     }
 
     public GiftResponse getGiftById(Long giftId) {

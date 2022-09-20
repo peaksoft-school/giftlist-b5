@@ -2,11 +2,15 @@ package kg.giftlist.giftlist.apis;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.ComplaintServiceImpl;
+import kg.giftlist.giftlist.db.service.impl.GiftServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
+import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.db.service.AdminService;
 import kg.giftlist.giftlist.db.service.UserService;
+import kg.giftlist.giftlist.dto.user.UserResponse;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
+import kg.giftlist.giftlist.enums.Status;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +28,7 @@ public class AdminApi {
     private final AdminService adminService;
     private final UserService userService;
     private final ComplaintServiceImpl complaintService;
+    private final GiftServiceImpl giftService;
 
     @Operation(summary = "Get all users", description = "Get all users ")
     @GetMapping("users")
@@ -73,4 +78,31 @@ public class AdminApi {
         return adminService.unBlockGift(giftId);
     }
 
+    @Operation(summary = "Search users", description = "Admin can search by first name and last name")
+    @GetMapping("/{name}")
+    public List<UserResponse> findUser(@PathVariable String name){
+        return userService.findUser(name);
+    }
+
+    @Operation(summary = "Get all gifts", description = "Admin can get all gifts")
+    @GetMapping("gifts")
+    public List<GiftResponse> getAllGifts() {
+        return giftService.getAllGiftsForAdmin();
+    }
+
+    @Operation(summary = "Search gifts by filter", description = "Admin can search gifts by filter")
+    @GetMapping("/filter")
+    public List<GiftResponse> filter(
+            @RequestParam(required = false,defaultValue = "all") String search,
+            @RequestParam(required = false) Status status,
+            @RequestParam(required = false) Long categoryId,
+            @RequestParam(required = false) Long subCategoryId){
+        return giftService.filterGiftForAdmin(search,status,categoryId,subCategoryId);
+    }
+
+    @Operation(summary = "Find gift by id", description = "Admin can find gift by id")
+    @GetMapping("/{giftId}")
+    public GiftResponse findGiftById(@PathVariable Long giftId) {
+        return giftService.getGiftById(giftId);
+    }
 }

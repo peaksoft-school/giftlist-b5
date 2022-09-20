@@ -19,15 +19,15 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 
-
 @Service
 @Log4j2
 @RequiredArgsConstructor
 public class EmailService {
 
     private final JavaMailSender mailSender;
-//    @Value( "${SENDGRID_API_KEY}" )
-//    private String SENDGRID_APIKEY;
+
+    @Value("${SENDGRID_API_KEY}")
+    private String SENDGRID_API_KEY;
 
     @Async
     public void send(String to, String htmlMessage, String subject) {
@@ -47,11 +47,11 @@ public class EmailService {
     }
 
     public void sendLinkToChangeUserPassword(String to, String linkForNewPassword) throws IOException {
-        Email from = new Email( "giftlist16@gmail.com" );
+        Email from = new Email( "elmirbekalisherov24@gmail.com" );
         Email toUser = new Email(to);
-        Content content = new Content( "text/plain", linkForNewPassword);
+        Content content = new Content( "text/plain", linkForNewPassword );
         Mail mail = new Mail( from, "[GIFT LIST] password reset link ", toUser, content );
-        SendGrid sg = new SendGrid( "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" );
+        SendGrid sg = new SendGrid( SENDGRID_API_KEY );
         Request request = new Request();
         try {
             request.setMethod( Method.POST );
