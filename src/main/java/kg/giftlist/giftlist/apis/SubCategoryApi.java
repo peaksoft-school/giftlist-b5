@@ -13,7 +13,7 @@ import java.util.List;
 @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @RequestMapping("api/subCategories")
 @Tag(name = "SubCategory API", description = "Any users can get all subCategories")
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class SubCategoryApi {
 
     private final SubCategoryService subCategoryService;
