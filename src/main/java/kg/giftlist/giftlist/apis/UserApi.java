@@ -50,7 +50,7 @@ public class UserApi {
     @Operation(summary = "Search users", description = "User can search by first name and last name")
     @GetMapping("/{name}")
     public List<UserResponse> findUser(@PathVariable String name){
-        return userService.findUser(name);
+        return userService.findUnblockUserByName(name);
     }
 
 }

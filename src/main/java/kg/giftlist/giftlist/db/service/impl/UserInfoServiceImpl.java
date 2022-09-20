@@ -58,8 +58,8 @@ public class UserInfoServiceImpl implements UserInfoService {
         if (!currentUserLastName.equals(newUserLastName)) {
             user.setLastName(newUserLastName);
         }
-        String currentPhoto = user.getLastName();
-        String newPhoto = userInfoRequest.getLastName();
+        String currentPhoto = user.getPhoto();
+        String newPhoto = userInfoRequest.getPhoto();
         if (!currentPhoto.equals(newPhoto)) {
             user.setPhoto(newPhoto);
         }
