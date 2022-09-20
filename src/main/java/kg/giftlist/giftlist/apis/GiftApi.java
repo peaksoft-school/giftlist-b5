@@ -41,8 +41,8 @@ public class GiftApi {
         return giftService.deleteById(giftId);
     }
 
-    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
-    @Operation(summary = "Find gift by id", description = "User and Admin can find gift")
+    @PreAuthorize("hasAnyAuthority('USER')")
+    @Operation(summary = "Find gift by id", description = "User can find gift")
     @GetMapping("/{giftId}")
     public GiftResponse findById(@PathVariable Long giftId) {
         return giftService.getGiftById(giftId);
@@ -52,18 +52,18 @@ public class GiftApi {
     @Operation(summary = "Get all own gifts", description = "User can get only own all gifts")
     @GetMapping("my-gifts")
     public List<GiftResponse> getAllOwnGifts() {
-        return giftService.getAll();
+        return giftService.getAllOwnGifts();
     }
 
-    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
-    @Operation(summary = "Get all gifts", description = "User and Admin can get all gifts")
+    @PreAuthorize("hasAnyAuthority('USER')")
+    @Operation(summary = "Get all gifts", description = "User can get all gifts")
     @GetMapping
     public List<GiftResponse> getAllGifts() {
-        return giftService.getAllGifts();
+        return giftService.getAllGiftsForUser();
     }
 
-    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
-    @Operation(summary = "Search gifts by filter", description = "User and Admin can search gifts by filter")
+    @PreAuthorize("hasAnyAuthority('USER')")
+    @Operation(summary = "Search gifts by filter", description = "User can search gifts by filter")
     @GetMapping("/filter")
     public List<GiftResponse> filter(
             @RequestParam(required = false,defaultValue = "all") String search,

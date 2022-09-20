@@ -195,6 +195,10 @@ public class UserServiceImpl implements UserService{
         return view(userRepo.searchAllByFirstNameAndLastName(name.toUpperCase()));
     }
 
+    public List<UserResponse> findUnblockUserByName(String name) {
+        return view(userRepo.searchUnblockUsersByFirstNameAndLastName(name.toUpperCase()));
+    }
+
     @Override
     @Transactional
     public AuthResponse changeNewPassword(Long userId, String newPassword) {
