@@ -11,6 +11,7 @@ import kg.giftlist.giftlist.config.security.JwtUtils;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.enums.FriendStatus;
+import kg.giftlist.giftlist.enums.Role;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -110,9 +111,13 @@ public class UserViewMapper {
          List<Wish> wishes = user.getWishes();
          List<Wish> sortWishes = new ArrayList<>();
          for (Wish wish : wishes) {
-            if (wish.getIsBlock().equals(false)){
-                sortWishes.add(wish);
-            }
+             if (user1.getRole().equals(Role.USER)) {
+                 if (wish.getIsBlock().equals(false)) {
+                     sortWishes.add(wish);
+                 }
+             }else if (user1.getRole().equals(Role.ADMIN)) {
+                 sortWishes.add(wish);
+             }
          }
          commonUserProfileResponse.setWishes(wishViewMapper.getAllWishes(sortWishes));
          commonUserProfileResponse.setHolidays(holidayViewMapper.view(user.getHolidays()));
@@ -120,8 +125,12 @@ public class UserViewMapper {
         List<Gift> gifts = user.getGifts();
         List<Gift> sortGifts = new ArrayList<>();
         for (Gift gift : gifts) {
-            if (gift.getIsBlock().equals(false)){
-                sortGifts.add(gift);
+            if (user1.getRole().equals(Role.USER)) {
+                if (gift.getIsBlock().equals(false)) {
+                    sortGifts.add(gift);
+                }
+            }else if (user1.getRole().equals(Role.ADMIN)) {
+                    sortGifts.add(gift);
             }
         }
          commonUserProfileResponse.setGifts(giftViewMapper.getAllGifts(sortGifts));

@@ -118,6 +118,14 @@ public class GiftServiceImpl implements GiftService {
         }
         List<Complaint> complaints = complaintRepository.findAll();
         complaints.removeIf(c -> Objects.equals(gift.getComplaints(), c));
+        List<Notification> notifications = notificationRepository.findAll();
+        for (Notification notification : notifications) {
+            if (notification.getGift().equals(gift)) {
+                if (notification.getGift()!=null) {
+                    notificationRepository.deleteById(notification.getId());
+                }
+            }
+        }
         giftRepository.deleteById(giftId);
         log.info("Gift with id: {} successfully deleted from db", giftId);
         return new SimpleResponse("Deleted!", "Gift successfully deleted!");
