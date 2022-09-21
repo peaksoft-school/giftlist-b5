@@ -26,8 +26,8 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${SENDGRID_API_KEY}")
-    private String SENDGRID_API_KEY;
+//    @Value("${SENDGRID_API_KEY}")
+    private String SENDGRID_API_KEY="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";
 
     @Async
     public void send(String to, String htmlMessage, String subject) {

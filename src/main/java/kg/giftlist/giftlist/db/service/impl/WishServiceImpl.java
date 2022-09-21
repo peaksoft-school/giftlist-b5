@@ -115,6 +115,15 @@ public class WishServiceImpl implements WishService {
         }
         List<Complaint> complaints = complaintRepository.findAll();
         complaints.removeIf(c -> Objects.equals(wish.getComplaints(), c));
+        List<Notification> notifications = notificationRepository.findAll();
+        for (Notification notification : notifications) {
+            if (notification.getWish().equals(wish)) {
+                if (notification.getWish()!=null) {
+                    notificationRepository.deleteById(notification.getId());
+                }
+            }
+        }
+
         wishRepository.deleteById(id);
         log.info("Wish with id: {} successfully deleted from db", id);
         return new SimpleResponse("Deleted!", "Wish successfully deleted!");

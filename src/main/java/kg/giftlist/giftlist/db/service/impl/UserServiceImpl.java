@@ -285,6 +285,14 @@ public class UserServiceImpl implements UserService{
     public SimpleResponse cancelRequestToFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
+        List<Notification> notifications = notificationRepository.findAll();
+        for (Notification notification : notifications) {
+            if (notification.getUser().equals(friend)) {
+                if (notification.getUser()!=null) {
+                    notificationRepository.deleteById(notification.getId());
+                }
+            }
+        }
         if (friend.getRequestToFriends().contains(user)) {
             friend.getRequestToFriends().remove(user);
         }else {
@@ -298,6 +306,14 @@ public class UserServiceImpl implements UserService{
     public SimpleResponse acceptToFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
+        List<Notification> notifications = notificationRepository.findAll();
+        for (Notification notification : notifications) {
+            if (notification.getUser().equals(friend)) {
+                if (notification.getUser()!=null) {
+                    notificationRepository.deleteById(notification.getId());
+                }
+            }
+        }
         if (user.getRequestToFriends().contains(friend)) {
             friend.acceptToFriend(user);
             user.getRequestToFriends().remove(friend);
@@ -315,6 +331,14 @@ public class UserServiceImpl implements UserService{
     public SimpleResponse rejectFriend(Long friendId) {
         User user = getAuthenticatedUser();
         User friend = findByUserId(friendId);
+        List<Notification> notifications = notificationRepository.findAll();
+        for (Notification notification : notifications) {
+            if (notification.getUser().equals(friend)) {
+                if (notification.getUser()!=null) {
+                    notificationRepository.deleteById(notification.getId());
+                }
+            }
+        }
         if (user.getRequestToFriends().contains(friend)) {
             user.getRequestToFriends().remove(friend);
             log.info("Successfully rejected user with id {}", friend.getId());

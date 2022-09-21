@@ -86,6 +86,14 @@ public class HolidayServiceImpl implements HolidayService {
         for (Wish wish : wishes) {
             wishService.deleteById(wish.getId());
         }
+        List<Notification> notificationList = notificationRepository.findAll();
+        for (Notification notification : notificationList) {
+            if (notification.getHoliday().equals(holiday)) {
+                if (notification.getHoliday()!=null) {
+                    notificationRepository.deleteById(notification.getId());
+                }
+            }
+        }
         holidayRepository.deleteById(id);
         log.info("Holiday with id: {} successfully deleted from db", id);
         return new SimpleResponse("Deleted!", "Holiday successfully deleted!");
