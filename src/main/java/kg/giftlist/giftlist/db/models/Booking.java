@@ -17,7 +17,7 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "booking_gen")
-    @SequenceGenerator(name = "booking_gen",sequenceName = "booking_seq", allocationSize = 1)
+    @SequenceGenerator(name = "booking_gen",sequenceName = "booking_seq", initialValue = 2, allocationSize = 1)
     private Long id;
 
     @OneToOne
