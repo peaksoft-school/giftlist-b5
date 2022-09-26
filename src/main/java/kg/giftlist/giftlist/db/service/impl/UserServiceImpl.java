@@ -287,8 +287,8 @@ public class UserServiceImpl implements UserService{
         User friend = findByUserId(friendId);
         List<Notification> notifications = notificationRepository.findAll();
         for (Notification notification : notifications) {
-            if (notification.getUser().equals(friend)) {
-                if (notification.getUser()!=null) {
+            if (notification.getUser()!=null) {
+                if (notification.getUser().equals(friend)) {
                     notificationRepository.deleteById(notification.getId());
                 }
             }
@@ -308,8 +308,8 @@ public class UserServiceImpl implements UserService{
         User friend = findByUserId(friendId);
         List<Notification> notifications = notificationRepository.findAll();
         for (Notification notification : notifications) {
-            if (notification.getUser().equals(friend)) {
-                if (notification.getUser()!=null) {
+            if (notification.getUser()!=null) {
+                if (notification.getUser().equals(friend)) {
                     notificationRepository.deleteById(notification.getId());
                 }
             }
@@ -333,8 +333,8 @@ public class UserServiceImpl implements UserService{
         User friend = findByUserId(friendId);
         List<Notification> notifications = notificationRepository.findAll();
         for (Notification notification : notifications) {
-            if (notification.getUser().equals(friend)) {
-                if (notification.getUser()!=null) {
+            if (notification.getUser()!=null) {
+                if (notification.getUser().equals(friend)) {
                     notificationRepository.deleteById(notification.getId());
                 }
             }

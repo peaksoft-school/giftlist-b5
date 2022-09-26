@@ -115,12 +115,16 @@ public class WishServiceImpl implements WishService {
         }
         List<Complaint> complaints = complaintRepository.findAll();
         complaints.removeIf(c -> Objects.equals(wish.getComplaints(), c));
+
         List<Notification> notifications = notificationRepository.findAll();
         for (Notification notification : notifications) {
-            if (notification.getWish().equals(wish)) {
-                if (notification.getWish()!=null) {
+            if (notification.getHoliday()!=null) {
+                if (notification.getHoliday().equals(wish.getHoliday()))
                     notificationRepository.deleteById(notification.getId());
-                }
+            }
+            if (notification.getWish()!=null) {
+                if (notification.getWish().equals(wish))
+                    notificationRepository.deleteById(notification.getId());
             }
         }
 
