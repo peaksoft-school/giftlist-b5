@@ -88,8 +88,8 @@ public class HolidayServiceImpl implements HolidayService {
         }
         List<Notification> notificationList = notificationRepository.findAll();
         for (Notification notification : notificationList) {
-            if (notification.getHoliday().equals(holiday)) {
-                if (notification.getHoliday()!=null) {
+            if (notification.getHoliday()!=null) {
+                if (notification.getHoliday().equals(holiday)) {
                     notificationRepository.deleteById(notification.getId());
                 }
             }
