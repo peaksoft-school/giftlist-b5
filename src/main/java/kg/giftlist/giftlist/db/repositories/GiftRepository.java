@@ -1,14 +1,10 @@
 package kg.giftlist.giftlist.db.repositories;
 
 import kg.giftlist.giftlist.db.models.Gift;
-import kg.giftlist.giftlist.db.models.Wish;
 import kg.giftlist.giftlist.enums.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.List;
 
 import java.util.List;
 
@@ -22,7 +18,7 @@ public interface GiftRepository extends JpaRepository<Gift, Long> {
             "or :name = 'all') and (g.status = :status or :status is null ) " +
             "and (:categoryId is null or :categoryId = g.category.id) " +
             "and (:subCategoryId is null or :subCategoryId = g.subCategory.id) order by g.createdAt desc")
-    List<Gift> filterGift(String name,Status status,Long categoryId,Long subCategoryId);
+    List<Gift> filterGift(String name, Status status, Long categoryId, Long subCategoryId);
 
     @Query("select g from Gift g where g.complaints.size>0")
     List<Gift> getAllComplaintGifts();
@@ -34,6 +30,6 @@ public interface GiftRepository extends JpaRepository<Gift, Long> {
             "or :name = 'all') and (g.status = :status or :status is null ) " +
             "and (:categoryId is null or :categoryId = g.category.id) " +
             "and (:subCategoryId is null or :subCategoryId = g.subCategory.id) order by g.createdAt desc ")
-    List<Gift> filterGiftForAdmin(String name,Status status,Long categoryId,Long subCategoryId);
+    List<Gift> filterGiftForAdmin(String name, Status status, Long categoryId, Long subCategoryId);
 
 }
