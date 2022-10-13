@@ -6,14 +6,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "notifications")
-@NoArgsConstructor
 @Getter
 @Setter
+@Entity
+@NoArgsConstructor
+@Table(name = "notifications")
 public class Notification {
 
     @Id
@@ -30,7 +42,7 @@ public class Notification {
 
     private Long recipientId;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST} )
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST})
     @JsonIgnore
     private User user;
 
@@ -54,4 +66,5 @@ public class Notification {
 
     @OneToOne
     private Complaint complaintWish;
+
 }

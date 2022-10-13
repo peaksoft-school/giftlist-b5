@@ -6,15 +6,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@Entity
-@Table(name = "mailingLists")
-@NoArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
+@Entity
 @Component
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "mailingLists")
 public class MailingList {
 
     @Id
@@ -23,4 +28,5 @@ public class MailingList {
     private Long id;
 
     private String email;
+
 }

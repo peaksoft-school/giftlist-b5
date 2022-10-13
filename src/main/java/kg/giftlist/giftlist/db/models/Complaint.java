@@ -5,14 +5,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-import static javax.persistence.CascadeType.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@Entity
-@Table(name = "complaints")
-@NoArgsConstructor
+import static javax.persistence.CascadeType.DETACH;
+import static javax.persistence.CascadeType.MERGE;
+import static javax.persistence.CascadeType.REFRESH;
+
 @Getter
 @Setter
+@Entity
+@NoArgsConstructor
+@Table(name = "complaints")
 public class Complaint {
 
     @Id
@@ -27,11 +38,12 @@ public class Complaint {
     @JsonIgnore
     private User fromUser;
 
-    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    @ManyToOne(cascade = {MERGE, REFRESH, DETACH})
     @JsonIgnore
     private Wish wishes;
 
-    @ManyToOne(cascade = {MERGE, REFRESH,DETACH})
+    @ManyToOne(cascade = {MERGE, REFRESH, DETACH})
     @JsonIgnore
     private Gift gift;
+
 }

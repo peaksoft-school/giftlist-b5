@@ -9,28 +9,37 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "usersInfo")
-@NoArgsConstructor
 @Getter
 @Setter
+@Entity
+@NoArgsConstructor
+@Table(name = "usersInfo")
 public class UserInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userInfo_gen")
-    @SequenceGenerator(name = "userInfo_gen",sequenceName = "userInfo_seq", initialValue = 7, allocationSize = 1)
+    @SequenceGenerator(name = "userInfo_gen", sequenceName = "userInfo_seq", initialValue = 7, allocationSize = 1)
     private Long id;
 
     private String city;
 
     @Past
-    @JsonFormat(pattern="dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy")
     @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate dateOfBirth;
 
@@ -74,4 +83,5 @@ public class UserInfo {
         this.facebookLink = userInfoRequest.getFacebookLink();
         this.vkLink = userInfoRequest.getVkLink();
     }
+
 }
