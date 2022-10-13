@@ -1,22 +1,38 @@
 package kg.giftlist.giftlist.db.service.impl;
 
-import kg.giftlist.giftlist.db.models.*;
-import kg.giftlist.giftlist.db.repositories.*;
+import kg.giftlist.giftlist.db.models.Complaint;
+import kg.giftlist.giftlist.db.models.Gift;
+import kg.giftlist.giftlist.db.models.Notification;
+import kg.giftlist.giftlist.db.models.User;
+import kg.giftlist.giftlist.db.models.Wish;
+
+import kg.giftlist.giftlist.db.repositories.ComplaintRepository;
+import kg.giftlist.giftlist.db.repositories.GiftRepository;
+import kg.giftlist.giftlist.db.repositories.NotificationRepository;
+import kg.giftlist.giftlist.db.repositories.UserRepository;
+import kg.giftlist.giftlist.db.repositories.WishRepository;
+
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
+
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.NotFoundException;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
+
 import java.util.List;
 
 @Service
@@ -50,7 +66,7 @@ public class ComplaintServiceImpl {
         notification.setUser(user);
         notification.setWish(wish);
         notification.setRecipientId(userRepo.findByRole().
-                orElseThrow(()->new NotFoundException("User by role ADMIN not found!")).getId());
+                orElseThrow(() -> new NotFoundException("User by role ADMIN not found!")).getId());
         notification.setComplaintWish(complaint);
         user.addNotification(notification);
         notificationRepository.save(notification);
@@ -76,7 +92,7 @@ public class ComplaintServiceImpl {
         notification.setUser(user);
         notification.setGift(gift);
         notification.setRecipientId(userRepo.findByRole().
-                orElseThrow(()->new NotFoundException("User by role ADMIN not found!")).getId());
+                orElseThrow(() -> new NotFoundException("User by role ADMIN not found!")).getId());
         notification.setComplaintGift(complaint);
         user.addNotification(notification);
         notificationRepository.save(notification);
@@ -114,13 +130,14 @@ public class ComplaintServiceImpl {
         Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
                 new NotFoundException("Wish with id " + wishId + " not found"));
         User user = wish.getUser();
-        return wishViewMapper.viewCommonWishCard(user,wish);
+        return wishViewMapper.viewCommonWishCard(user, wish);
     }
 
     public GiftResponse getComplaintGiftById(Long giftId) {
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
                 new NotFoundException("Wish with id " + giftId + " not found"));
         User user = gift.getUser();
-        return giftViewMapper.viewCommonGiftCard(user,gift);
+        return giftViewMapper.viewCommonGiftCard(user, gift);
     }
+
 }

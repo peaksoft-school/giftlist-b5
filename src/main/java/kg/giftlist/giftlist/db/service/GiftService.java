@@ -1,6 +1,5 @@
 package kg.giftlist.giftlist.db.service;
 
-
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
@@ -21,5 +20,6 @@ public interface GiftService {
 
     List<GiftResponse> getAllOwnGifts();
 
-    List<GiftResponse> filter(String search,Status status,Long categoryId,Long subCategoryId);
+    List<GiftResponse> filter(String search, Status status, Long categoryId, Long subCategoryId);
+
 }

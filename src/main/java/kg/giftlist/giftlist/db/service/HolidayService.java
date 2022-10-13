@@ -10,11 +10,12 @@ public interface HolidayService {
 
     HolidayResponse create(HolidayRequest request);
 
-    HolidayResponse update(Long id,HolidayRequest request);
+    HolidayResponse update(Long id, HolidayRequest request);
 
     HolidayResponse findById(Long id);
 
     SimpleResponse deleteById(Long id);
 
     List<HolidayResponse> getHolidays();
+
 }

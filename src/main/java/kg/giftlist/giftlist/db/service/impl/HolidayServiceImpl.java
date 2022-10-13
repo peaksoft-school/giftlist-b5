@@ -8,6 +8,7 @@ import kg.giftlist.giftlist.db.repositories.HolidayRepository;
 import kg.giftlist.giftlist.db.repositories.NotificationRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.HolidayService;
+
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
@@ -15,16 +16,20 @@ import kg.giftlist.giftlist.dto.mapper.holiday.HolidayEditMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
+
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.NotFoundException;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
+
 import java.util.List;
 
 @Service
@@ -41,10 +46,10 @@ public class HolidayServiceImpl implements HolidayService {
     private final NotificationRepository notificationRepository;
 
     public HolidayResponse create(HolidayRequest holidayRequest) {
-        Holiday holiday =editMapper.create(holidayRequest);
-        if (holidayRequest.getPhoto()==null){
+        Holiday holiday = editMapper.create(holidayRequest);
+        if (holidayRequest.getPhoto() == null) {
             holiday.setPhoto("https://giftlist-bucket.s3.amazonaws.com/1662787640327placeholder.webp");
-        }else {
+        } else {
             holiday.setPhoto(holidayRequest.getPhoto());
         }
         User user = getAuthenticatedUser();
@@ -61,7 +66,7 @@ public class HolidayServiceImpl implements HolidayService {
             user.addNotification(notification);
             notificationRepository.save(notification);
         }
-            return viewMapper.viewHoliday(holiday);
+        return viewMapper.viewHoliday(holiday);
 
     }
 
@@ -88,7 +93,7 @@ public class HolidayServiceImpl implements HolidayService {
         }
         List<Notification> notificationList = notificationRepository.findAll();
         for (Notification notification : notificationList) {
-            if (notification.getHoliday()!=null) {
+            if (notification.getHoliday() != null) {
                 if (notification.getHoliday().equals(holiday)) {
                     notificationRepository.deleteById(notification.getId());
                 }
@@ -117,4 +122,5 @@ public class HolidayServiceImpl implements HolidayService {
         return userRepository.findByEmail(login).orElseThrow(() ->
                 new ForbiddenException("User not found!"));
     }
+
 }

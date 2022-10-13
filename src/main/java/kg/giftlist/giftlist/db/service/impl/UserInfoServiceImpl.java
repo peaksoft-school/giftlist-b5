@@ -1,17 +1,21 @@
 package kg.giftlist.giftlist.db.service.impl;
 
 import kg.giftlist.giftlist.db.service.UserInfoService;
-import kg.giftlist.giftlist.dto.mapper.UserInfoEditMapper;
-import kg.giftlist.giftlist.dto.mapper.UserInfoViewMapper;
-import kg.giftlist.giftlist.dto.user.UserInfoRequest;
-import kg.giftlist.giftlist.dto.user.UserInfoResponse;
-import kg.giftlist.giftlist.exception.NotFoundException;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.models.UserInfo;
 import kg.giftlist.giftlist.db.repositories.UserInfoRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
+
+import kg.giftlist.giftlist.dto.mapper.UserInfoEditMapper;
+import kg.giftlist.giftlist.dto.mapper.UserInfoViewMapper;
+import kg.giftlist.giftlist.dto.user.UserInfoRequest;
+import kg.giftlist.giftlist.dto.user.UserInfoResponse;
+
+import kg.giftlist.giftlist.exception.NotFoundException;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -66,7 +70,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         UserInfo userInfo = findByUserInfoId(userInfoId);
         userInfoEditMapper.update(userInfo, userInfoRequest);
         log.info("User info with id: {} successfully updated in db", userInfo.getId());
-        return userInfoViewMapper.viewUserInfo(userInfoRepository.save(userInfo),user);
+        return userInfoViewMapper.viewUserInfo(userInfoRepository.save(userInfo), user);
     }
 
     public User getAuthenticatedUser() {

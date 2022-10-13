@@ -4,10 +4,14 @@ import kg.giftlist.giftlist.db.models.Category;
 import kg.giftlist.giftlist.db.models.SubCategory;
 import kg.giftlist.giftlist.db.repositories.CategoryRepository;
 import kg.giftlist.giftlist.db.service.SubCategoryService;
+
 import kg.giftlist.giftlist.dto.subCategories.SubCategoriesResponse;
+
 import kg.giftlist.giftlist.exception.NotFoundException;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,4 +37,5 @@ public class SubCategoryServiceImpl implements SubCategoryService {
         }
         return subCategoryResponses;
     }
+
 }

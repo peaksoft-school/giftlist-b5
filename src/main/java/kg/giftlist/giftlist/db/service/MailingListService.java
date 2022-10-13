@@ -5,12 +5,12 @@ import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mailing_list.SendMailingRequest;
 import org.springframework.http.ResponseEntity;
 
-
 public interface MailingListService {
 
     void save(MailingList mailingList);
 
     ResponseEntity<?> send(SendMailingRequest sendMailingRequest);
 
-    SimpleResponse sentLink(String to,String linkForNewPassword) throws Exception;
+    SimpleResponse sentLink(String to, String linkForNewPassword) throws Exception;
+
 }
