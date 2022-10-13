@@ -24,10 +24,7 @@ import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(
-        prePostEnabled = true,
-        securedEnabled = true
-)
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class WebAppSecurity {
 
     private final TokenVerifierFilter tokenVerifierFilter;
@@ -40,14 +37,11 @@ public class WebAppSecurity {
     AuthenticationProvider authenticationProvider(UserRepository userRepo) {
 
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-
         provider.setUserDetailsService((email) -> userRepo.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException(
                         "user with email = " + email + " not found!"
                 )));
-
         provider.setPasswordEncoder(passwordEncoder());
-
         return provider;
     }
 
@@ -65,7 +59,6 @@ public class WebAppSecurity {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.addFilterBefore(tokenVerifierFilter, UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
 
@@ -87,7 +80,7 @@ public class WebAppSecurity {
     }
 
     @Bean
-    public WebServerFactoryCustomizer<TomcatServletWebServerFactory> containerCustomizer(){
+    public WebServerFactoryCustomizer<TomcatServletWebServerFactory> containerCustomizer() {
         return new EmbeddedTomcatCustomizer();
     }
 

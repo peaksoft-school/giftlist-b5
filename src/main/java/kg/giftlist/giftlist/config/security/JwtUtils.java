@@ -1,30 +1,35 @@
 package kg.giftlist.giftlist.config.security;
 
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.UnsupportedJwtException;
+
 import lombok.Getter;
 import lombok.Setter;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Component
-@ConfigurationProperties(prefix = "app.jwt")
 @Getter
 @Setter
+@Component
+@ConfigurationProperties(prefix = "app.jwt")
 public class JwtUtils {
 
     private String secretWord;
-
     private long expiredAt;
 
-    public void setExpiredAt(long expiredAt)  {
+    public void setExpiredAt(long expiredAt) {
         this.expiredAt = expiredAt * 24 * 60 * 3600;
     }
 
     public String generateJwt(UserDetails userDetails) {
-
         return Jwts.builder()
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date())
@@ -35,9 +40,7 @@ public class JwtUtils {
 
     public void isValidToken(String jwt) {
         try {
-
             Jwts.parser().setSigningKey(secretWord).parseClaimsJws(jwt);
-
         } catch (ExpiredJwtException e) {
             throw new RuntimeException("JWT is expired!", e);
         } catch (UnsupportedJwtException e) {
@@ -53,6 +56,11 @@ public class JwtUtils {
     }
 
     public String getEmailFromJwt(String jwt) {
-        return Jwts.parser().setSigningKey(secretWord).parseClaimsJws(jwt).getBody().getSubject();
+        return Jwts.parser()
+                .setSigningKey(secretWord)
+                .parseClaimsJws(jwt)
+                .getBody()
+                .getSubject();
     }
+
 }
