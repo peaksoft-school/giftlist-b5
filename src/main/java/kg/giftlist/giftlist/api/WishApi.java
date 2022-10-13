@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.apis;
+package kg.giftlist.giftlist.api;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -8,16 +8,25 @@ import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.db.service.impl.WishServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/wish")
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('USER')")
-@Tag(name = "Wish API", description = "Users with role  \"User\"  can create, update or delete wish")
+@Tag(name = "Wish API", description = "Users with role \"User\" can create, update or delete wish")
 public class WishApi {
 
     private final WishServiceImpl wishService;
@@ -57,4 +66,5 @@ public class WishApi {
     public WishResponse addFriendWishToMyWish(@PathVariable Long wishId) {
         return wishService.addToMyWish(wishId);
     }
+
 }

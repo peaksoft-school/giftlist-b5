@@ -1,4 +1,5 @@
-package kg.giftlist.giftlist.apis;
+package kg.giftlist.giftlist.api;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.GiftServiceImpl;
@@ -8,13 +9,24 @@ import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.enums.Status;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/gifts")
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @Tag(name = "Gift API", description = "User with role \"User, Admin\"  can create, update or delete gifts")
 public class GiftApi {
 
@@ -66,10 +78,11 @@ public class GiftApi {
     @Operation(summary = "Search gifts by filter", description = "User can search gifts by filter")
     @GetMapping("/filter")
     public List<GiftResponse> filter(
-            @RequestParam(required = false,defaultValue = "all") String search,
+            @RequestParam(required = false, defaultValue = "all") String search,
             @RequestParam(required = false) Status status,
             @RequestParam(required = false) Long categoryId,
-            @RequestParam(required = false) Long subCategoryId){
-        return giftService.filter(search,status,categoryId,subCategoryId);
+            @RequestParam(required = false) Long subCategoryId) {
+        return giftService.filter(search, status, categoryId, subCategoryId);
     }
+
 }

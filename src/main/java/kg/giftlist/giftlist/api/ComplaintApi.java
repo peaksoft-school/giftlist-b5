@@ -1,21 +1,29 @@
-package kg.giftlist.giftlist.apis;
+package kg.giftlist.giftlist.api;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.ComplaintServiceImpl;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
-import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/complaints")
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @Tag(name = "Complaint API", description = "User with role \" User \"  can send complaints, but cannot see all complaints. Only Admin can see all complaints")
 public class ComplaintApi {
 

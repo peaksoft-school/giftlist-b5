@@ -1,4 +1,5 @@
-package kg.giftlist.giftlist.apis;
+package kg.giftlist.giftlist.api;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.GiftServiceImpl;
@@ -12,16 +13,23 @@ import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.enums.Status;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/admin")
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('ADMIN')")
-@Tag(name = "Admin API", description = "User with role 'Admin'  can block, unblock and get users")
+@Tag(name = "Admin API", description = "User with role 'Admin' can block, unblock and get users")
 public class AdminApi {
 
     private final AdminService adminService;
@@ -78,7 +86,7 @@ public class AdminApi {
 
     @Operation(summary = "Search users", description = "Admin can search by first name and last name")
     @GetMapping("/search/{name}")
-    public List<UserResponse> findUser(@PathVariable String name){
+    public List<UserResponse> findUser(@PathVariable String name) {
         return userService.findUser(name);
     }
 
@@ -91,11 +99,11 @@ public class AdminApi {
     @Operation(summary = "Search gifts by filter", description = "Admin can search gifts by filter")
     @GetMapping("/filter")
     public List<GiftResponse> filter(
-            @RequestParam(required = false,defaultValue = "all") String search,
+            @RequestParam(required = false, defaultValue = "all") String search,
             @RequestParam(required = false) Status status,
             @RequestParam(required = false) Long categoryId,
-            @RequestParam(required = false) Long subCategoryId){
-        return giftService.filterGiftForAdmin(search,status,categoryId,subCategoryId);
+            @RequestParam(required = false) Long subCategoryId) {
+        return giftService.filterGiftForAdmin(search, status, categoryId, subCategoryId);
     }
 
     @Operation(summary = "Find gift by id", description = "Admin can find gift by id")

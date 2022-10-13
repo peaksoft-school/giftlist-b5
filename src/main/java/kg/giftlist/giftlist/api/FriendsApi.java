@@ -1,4 +1,5 @@
-package kg.giftlist.giftlist.apis;
+package kg.giftlist.giftlist.api;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.dto.user.SimpleResponse;
@@ -7,15 +8,22 @@ import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 @RestController
-@RequestMapping("api/users/friends")
 @RequiredArgsConstructor
-@CrossOrigin
+@RequestMapping("api/users/friends")
+@CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('USER')")
-@Tag(name = "Friends API", description = "Users with role  \"User\" can add, delete friends")
+@Tag(name = "Friends API", description = "Users with role \"User\" can add, delete friends")
 public class FriendsApi {
 
     private final UserServiceImpl userService;
