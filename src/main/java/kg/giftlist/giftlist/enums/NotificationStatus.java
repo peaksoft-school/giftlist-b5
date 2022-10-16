@@ -10,4 +10,5 @@ public enum NotificationStatus {
     ADD_WISH_BOOKING,
     COMPLAINT_TO_GIFT,
     COMPLAINT_TO_WISH
+
 }

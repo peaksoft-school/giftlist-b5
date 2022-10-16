@@ -4,4 +4,5 @@ public enum AddWishStatus {
 
     NOT_ADD,
     ADDED
+
 }
