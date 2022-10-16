@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class GiftlistApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GiftlistApplication.class, args);
-		System.out.println("Welcome colleagues, project name is Giftlist!");
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(GiftlistApplication.class, args);
+        System.out.println("Welcome colleagues, project name is Giftlist!");
+    }
 
-	@GetMapping("/")
-	public String greetingPage(){
-		return "<h1>Welcome to Giftlist application!!!<h1/>";
-	}
+    @GetMapping("/")
+    public String greetingPage() {
+        return "<h1>Welcome to Giftlist application!!!<h1/>";
+    }
 
 }

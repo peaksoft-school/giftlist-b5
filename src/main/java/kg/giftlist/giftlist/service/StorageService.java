@@ -1,12 +1,16 @@
 package kg.giftlist.giftlist.service;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.*;
+
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
@@ -59,6 +63,6 @@ public class StorageService {
         return Map.of(
                 "message", fileLink + " has been deleted."
         );
-
     }
+
 }

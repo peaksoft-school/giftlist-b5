@@ -33,36 +33,37 @@ public class EmailService {
     public void send(String to, String htmlMessage, String subject) {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         try {
-            MimeMessageHelper helper = new MimeMessageHelper( mimeMessage, true, "UTF-8" );
-            helper.setSubject( "[GIFT LIST] " + subject );
-            helper.setFrom( "giftlist16@gmail.com" );
-            helper.setTo( to );
-            helper.setText( htmlMessage, true );
-            mailSender.send( mimeMessage );
-            log.info( "Mailing sent success" );
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+            helper.setSubject("[GIFT LIST] " + subject);
+            helper.setFrom("giftlist16@gmail.com");
+            helper.setTo(to);
+            helper.setText(htmlMessage, true);
+            mailSender.send(mimeMessage);
+            log.info("Mailing sent success");
         } catch (MessagingException e) {
             e.printStackTrace();
-            log.error( "Mailing not sent" );
+            log.error("Mailing not sent");
         }
     }
 
     public void sendLinkToChangeUserPassword(String to, String linkForNewPassword) throws IOException {
-        Email from = new Email( "elmirbekalisherov24@gmail.com" );
+        Email from = new Email("elmirbekalisherov24@gmail.com");
         Email toUser = new Email(to);
-        Content content = new Content( "text/plain", linkForNewPassword );
-        Mail mail = new Mail( from, "[GIFT LIST] password reset link ", toUser, content );
-        SendGrid sg = new SendGrid( SENDGRID_API_KEY );
+        Content content = new Content("text/plain", linkForNewPassword);
+        Mail mail = new Mail(from, "[GIFT LIST] password reset link ", toUser, content);
+        SendGrid sg = new SendGrid(SENDGRID_API_KEY);
         Request request = new Request();
         try {
-            request.setMethod( Method.POST );
-            request.setEndpoint( "mail/send" );
-            request.setBody( mail.build() );
-            Response response = sg.api( request );
-            System.out.println( response.getStatusCode() );
-            System.out.println( response.getBody() );
-            System.out.println( response.getHeaders() );
+            request.setMethod(Method.POST);
+            request.setEndpoint("mail/send");
+            request.setBody(mail.build());
+            Response response = sg.api(request);
+            System.out.println(response.getStatusCode());
+            System.out.println(response.getBody());
+            System.out.println(response.getHeaders());
         } catch (IOException ex) {
             throw ex;
         }
     }
+
 }
