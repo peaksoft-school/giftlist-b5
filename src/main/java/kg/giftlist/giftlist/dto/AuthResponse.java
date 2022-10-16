@@ -9,6 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class AuthResponse {
+
     private Long id;
     private String firstName;
     private String lastName;
@@ -17,4 +18,5 @@ public class AuthResponse {
     private String jwt;
     private Role role;
     private String message;
+
 }

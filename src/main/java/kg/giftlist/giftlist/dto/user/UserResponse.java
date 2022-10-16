@@ -22,10 +22,11 @@ public class UserResponse {
 
     public UserResponse(User user) {
         this.id = user.getId();
-        this.firstName= user.getFirstName();
-        this.lastName= user.getLastName();
-        this.email= user.getEmail();
-        this.photo= user.getPhoto();
-        this.isBlock= user.getIsBlock();
+        this.firstName = user.getFirstName();
+        this.lastName = user.getLastName();
+        this.email = user.getEmail();
+        this.photo = user.getPhoto();
+        this.isBlock = user.getIsBlock();
     }
+
 }

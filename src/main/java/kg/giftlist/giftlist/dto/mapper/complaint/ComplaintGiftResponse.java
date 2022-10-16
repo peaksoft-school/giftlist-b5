@@ -13,4 +13,5 @@ public class ComplaintGiftResponse {
     private Long complaintId;
     private String text;
     private UserGiftResponse fromUser;
+
 }

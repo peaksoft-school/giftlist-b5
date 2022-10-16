@@ -15,4 +15,5 @@ public class UserFriendProfileResponse {
     private int wishCount;
     private int holidayCount;
     private FriendStatus friendStatus;
+
 }

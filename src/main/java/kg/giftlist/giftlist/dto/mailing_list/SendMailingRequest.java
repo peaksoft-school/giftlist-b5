@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.mailing_list;
+
 import lombok.Getter;
 import lombok.Setter;
 

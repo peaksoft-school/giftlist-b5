@@ -21,7 +21,7 @@ public class WishCardResponse {
     private String wishName;
     private String wishLink;
     private String description;
-    @JsonFormat(pattern="dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy")
     @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate wishDate;
     private Boolean isBlock;
@@ -29,4 +29,5 @@ public class WishCardResponse {
     private AddWishStatus addWishStatus;
     private List<ComplaintResponse> complaints;
     private Booking booking;
+
 }

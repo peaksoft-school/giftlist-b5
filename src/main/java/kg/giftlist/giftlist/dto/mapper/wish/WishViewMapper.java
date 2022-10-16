@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.mapper.wish;
+
 import kg.giftlist.giftlist.db.models.Complaint;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
@@ -43,13 +44,13 @@ public class WishViewMapper {
 
         if (user.getWishes().stream().anyMatch(wish1 -> wish1.getWishName().equals(wish.getWishName()))) {
             wishCardResponse.setAddWishStatus(AddWishStatus.ADDED);
-        }else {
+        } else {
             wishCardResponse.setAddWishStatus(AddWishStatus.NOT_ADD);
-          }
+        }
         return wishCardResponse;
     }
 
-    public UserWishResponse viewUserWish(User user){
+    public UserWishResponse viewUserWish(User user) {
         if (user == null) {
             return null;
         }
@@ -58,7 +59,7 @@ public class WishViewMapper {
         userWishResponse.setFirstName(user.getFirstName());
         userWishResponse.setLastName(user.getLastName());
         userWishResponse.setPhoto(user.getPhoto());
-        if (user.getUserInfo()==null || user.getUserInfo().getPhoneNumber()==null){
+        if (user.getUserInfo() == null || user.getUserInfo().getPhoneNumber() == null) {
             return userWishResponse;
         }
         userWishResponse.setPhoneNumber(user.getUserInfo().getPhoneNumber());
@@ -72,7 +73,7 @@ public class WishViewMapper {
         WishResponse response = new WishResponse();
         response.setOwnerUser(viewUserWish(user));
         response.setWish(viewWish(wish));
-        if (wish.getBooking()==null || wish.getBooking().getUser()==null) {
+        if (wish.getBooking() == null || wish.getBooking().getUser() == null) {
             return response;
         }
         response.setBookedUser(viewUserWish(wish.getBooking().getUser()));
@@ -83,12 +84,12 @@ public class WishViewMapper {
         List<WishResponse> wishResponses = new ArrayList<>();
         for (Wish wish : wishes) {
             User user = wish.getUser();
-            wishResponses.add(viewCommonWishCard(user,wish));
+            wishResponses.add(viewCommonWishCard(user, wish));
         }
         return wishResponses;
     }
 
-    public User getAuthenticatedUser(){
+    public User getAuthenticatedUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String login = authentication.getName();
         return userRepository.findByEmail(login).orElseThrow(() ->
@@ -116,4 +117,5 @@ public class WishViewMapper {
         }
         return complaintResponses;
     }
+
 }

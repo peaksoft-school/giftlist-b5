@@ -99,4 +99,5 @@ public class NotificationViewMapper {
         }
         return responses;
     }
+
 }

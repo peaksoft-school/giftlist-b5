@@ -11,12 +11,13 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class UserInfoResponse {
+
     private String firstName;
     private String lastName;
     private String email;
     private String photo;
     private String city;
-    @JsonFormat(pattern="dd.MM.yyyy")
+    @JsonFormat(pattern = "dd.MM.yyyy")
     @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate dateOfBirth;
     private String phoneNumber;
@@ -28,4 +29,5 @@ public class UserInfoResponse {
     private String telegramLink;
     private String facebookLink;
     private String vkLink;
+
 }

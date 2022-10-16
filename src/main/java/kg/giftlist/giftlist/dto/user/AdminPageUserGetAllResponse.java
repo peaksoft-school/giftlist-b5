@@ -13,4 +13,5 @@ public class AdminPageUserGetAllResponse {
     private String photo;
     private int countGift;
     private Boolean isBlock;
+
 }

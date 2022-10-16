@@ -32,18 +32,18 @@ public class UserInfoEditMapper {
         return userInfo;
     }
 
-        public void update(UserInfo userInfo, UserInfoRequest userInfoRequest) {
-            userInfo.setCity(userInfoRequest.getCity());
-            userInfo.setDateOfBirth(userInfoRequest.getDateOfBirth());
-            userInfo.setPhoneNumber(userInfoRequest.getPhoneNumber());
-            userInfo.setClothingSize(userInfoRequest.getClothingSize());
-            userInfo.setShoeSize(userInfoRequest.getShoeSize());
-            userInfo.setHobby(userInfoRequest.getHobby());
-            userInfo.setImportantNote(userInfoRequest.getImportantNote());
-            userInfo.setInstagramLink(userInfoRequest.getInstagramLink());
-            userInfo.setTelegramLink(userInfoRequest.getTelegramLink());
-            userInfo.setFacebookLink(userInfoRequest.getFacebookLink());
-            userInfo.setVkLink(userInfoRequest.getVkLink());
-        }
+    public void update(UserInfo userInfo, UserInfoRequest userInfoRequest) {
+        userInfo.setCity(userInfoRequest.getCity());
+        userInfo.setDateOfBirth(userInfoRequest.getDateOfBirth());
+        userInfo.setPhoneNumber(userInfoRequest.getPhoneNumber());
+        userInfo.setClothingSize(userInfoRequest.getClothingSize());
+        userInfo.setShoeSize(userInfoRequest.getShoeSize());
+        userInfo.setHobby(userInfoRequest.getHobby());
+        userInfo.setImportantNote(userInfoRequest.getImportantNote());
+        userInfo.setInstagramLink(userInfoRequest.getInstagramLink());
+        userInfo.setTelegramLink(userInfoRequest.getTelegramLink());
+        userInfo.setFacebookLink(userInfoRequest.getFacebookLink());
+        userInfo.setVkLink(userInfoRequest.getVkLink());
+    }
 
 }

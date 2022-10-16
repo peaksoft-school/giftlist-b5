@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.subCategories;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,5 +12,6 @@ import lombok.Setter;
 public class SubCategoriesResponse {
 
     private Long id;
-    private String  name;
+    private String name;
+
 }
