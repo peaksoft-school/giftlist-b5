@@ -25,6 +25,7 @@ public class JwtUtils {
     private String secretWord;
     private long expiredAt;
 
+
     public void setExpiredAt(long expiredAt) {
         this.expiredAt = expiredAt * 24 * 60 * 3600;
     }
