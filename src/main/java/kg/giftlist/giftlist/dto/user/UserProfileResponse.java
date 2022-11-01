@@ -7,10 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserProfileResponse {
+
     private Long userId;
     private String photo;
     private String firstName;
     private String lastName;
     private String email;
     private UserInfo userInfo;
+
 }

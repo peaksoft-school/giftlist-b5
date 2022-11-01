@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.gift;
+
 import kg.giftlist.giftlist.enums.Status;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,4 +14,5 @@ public class GiftRequest {
     private Long subCategoryId;
     private Status status;
     private String description;
+
 }

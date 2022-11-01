@@ -12,4 +12,13 @@ public interface WishRepository extends JpaRepository<Wish, Long> {
 
     @Query("select w from User u join u.wishes w where u.id=?1")
     List<Wish> getAllUserWishes(Long userId);
+
+    @Query("select w from User u join u.friends f join f.wishes w where w.isBlock=false and u.id=?1 order by w.createdAt DESC")
+    List<Wish> getAllFriendWishes(Long userId);
+
+    @Query("select aw from Wish aw where aw.isBlock=false order by aw.createdAt DESC")
+    List<Wish> getAllWishes();
+
+    @Query("select w from Wish w where w.complaints.size>0")
+    List<Wish> getAllComplaintsWishes();
 }

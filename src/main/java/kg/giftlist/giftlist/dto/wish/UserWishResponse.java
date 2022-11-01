@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.wish;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,4 +12,5 @@ public class UserWishResponse {
     private String lastName;
     private String photo;
     private String phoneNumber;
+
 }

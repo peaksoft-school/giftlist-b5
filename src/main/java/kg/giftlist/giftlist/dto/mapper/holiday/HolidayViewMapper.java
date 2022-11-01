@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Component
 public class HolidayViewMapper {
 
@@ -20,16 +19,16 @@ public class HolidayViewMapper {
         response.setName(holiday.getName());
         response.setPhoto(holiday.getPhoto());
         response.setHolidayDate(holiday.getHolidayDate());
-
         return response;
     }
 
-        public List<HolidayResponse> view(List<Holiday> holidays) {
-            List<HolidayResponse> responses = new ArrayList<>();
-            for (Holiday holiday : holidays) {
-                responses.add(viewHoliday(holiday));
-            }
-            return responses;
+    public List<HolidayResponse> view(List<Holiday> holidays) {
+        List<HolidayResponse> responses = new ArrayList<>();
+        for (Holiday holiday : holidays) {
+            responses.add(viewHoliday(holiday));
         }
+        return responses;
     }
+
+}
 

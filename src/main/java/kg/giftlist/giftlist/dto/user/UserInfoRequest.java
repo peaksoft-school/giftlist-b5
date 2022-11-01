@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class UserInfoRequest {
+
     private String firstName;
     private String lastName;
     private String email;
@@ -24,4 +25,5 @@ public class UserInfoRequest {
     private String telegramLink;
     private String facebookLink;
     private String vkLink;
+
 }

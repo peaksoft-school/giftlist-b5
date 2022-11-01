@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.gift.mapper;
+
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import lombok.RequiredArgsConstructor;
@@ -8,22 +9,23 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class GiftEditMapper {
 
-    public Gift create(GiftRequest request){
-        if (request == null){
+    public Gift create(GiftRequest request) {
+        if (request == null) {
             return null;
         }
         Gift gift = new Gift();
         gift.setName(request.getName());
         gift.setPhoto(request.getPhoto());
-        gift.setStatus(request.getStatus());;
+        gift.setStatus(request.getStatus());
         gift.setDescription(request.getDescription());
         return gift;
     }
 
-    public void update(Gift gift, GiftRequest request){
+    public void update(Gift gift, GiftRequest request) {
         gift.setName(request.getName());
         gift.setPhoto(request.getPhoto());
         gift.setStatus(request.getStatus());
         gift.setDescription(request.getDescription());
     }
+
 }

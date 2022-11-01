@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(GiftForbiddenException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public ExceptionResponse handleForbiddenFoundException(GiftForbiddenException e) {
+    public ExceptionResponse handleForbiddenException(GiftForbiddenException e) {
         return new ExceptionResponse(HttpStatus.FORBIDDEN,
                 e.getClass().getSimpleName(),
                 e.getMessage());
@@ -41,5 +41,12 @@ public class GlobalExceptionHandler {
                 e.getMessage());
     }
 
+    @ExceptionHandler(UserForbiddenException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public ExceptionResponse UserForbiddenException(UserForbiddenException e) {
+        return new ExceptionResponse(HttpStatus.FORBIDDEN,
+                e.getClass().getSimpleName(),
+                e.getMessage());
+    }
 
 }

@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.mapper;
+
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
 import kg.giftlist.giftlist.dto.user.UserChangePasswordRequest;
 import kg.giftlist.giftlist.dto.user.UserRequest;
@@ -40,21 +41,24 @@ public class UserEditMapper {
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
     }
-    public AdminPageUserGetAllResponse createUser(User user) {
-              if (user == null) {
-                  return null;
-              }
-              AdminPageUserGetAllResponse adminUserGetAllResponse = new AdminPageUserGetAllResponse();
-              adminUserGetAllResponse.setId(user.getUserInfo().getId());
-              adminUserGetAllResponse.setCountGift(user.getGifts().size());
-              adminUserGetAllResponse.setFirst_name(user.getFirstName());
-              adminUserGetAllResponse.setLast_name(user.getLastName());
-              adminUserGetAllResponse.setPhoto(user.getPhoto());
 
-              return adminUserGetAllResponse;
-          }
+    public AdminPageUserGetAllResponse createUser(User user) {
+        if (user == null) {
+            return null;
+        }
+        AdminPageUserGetAllResponse adminUserGetAllResponse = new AdminPageUserGetAllResponse();
+        adminUserGetAllResponse.setId(user.getId());
+        adminUserGetAllResponse.setCountGift(user.getGifts().size());
+        adminUserGetAllResponse.setFirst_name(user.getFirstName());
+        adminUserGetAllResponse.setLast_name(user.getLastName());
+        adminUserGetAllResponse.setPhoto(user.getPhoto());
+        adminUserGetAllResponse.setIsBlock(user.getIsBlock());
+
+        return adminUserGetAllResponse;
+    }
 
     public void changePassword(User user, UserChangePasswordRequest userChangePasswordRequest) {
         user.setPassword(userChangePasswordRequest.getNewPassword());
     }
+
 }

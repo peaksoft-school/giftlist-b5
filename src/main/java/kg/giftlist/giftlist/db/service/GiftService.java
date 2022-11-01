@@ -1,13 +1,11 @@
 package kg.giftlist.giftlist.db.service;
 
-
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.enums.Status;
 
-import java.sql.Statement;
 import java.util.List;
 
 public interface GiftService {
@@ -20,7 +18,8 @@ public interface GiftService {
 
     SimpleResponse deleteById(Long id);
 
-    List<GiftResponse> getAll();
+    List<GiftResponse> getAllOwnGifts();
 
-    List<GiftResponse> filter(String search,Status status,Long categoryId,Long subCategoryId);
+    List<GiftResponse> filter(String search, Status status, Long categoryId, Long subCategoryId);
+
 }

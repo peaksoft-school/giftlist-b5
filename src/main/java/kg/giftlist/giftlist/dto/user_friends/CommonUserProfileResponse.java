@@ -7,6 +7,7 @@ import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.util.List;
 
 @Getter
@@ -23,4 +24,6 @@ public class CommonUserProfileResponse {
     private List<HolidayResponse> holidays;
     private List<GiftResponse> gifts;
     private FriendStatus friendStatus;
+    private Boolean isBlock;
+
 }

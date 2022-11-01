@@ -1,4 +1,5 @@
 package kg.giftlist.giftlist.dto.mapper.wish;
+
 import kg.giftlist.giftlist.dto.wish.WishRequest;
 import kg.giftlist.giftlist.db.models.Wish;
 import org.springframework.stereotype.Component;

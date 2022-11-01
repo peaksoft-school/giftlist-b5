@@ -23,4 +23,5 @@ public class HolidayEditMapper {
         holiday.setName(holidayRequest.getName());
         holiday.setHolidayDate(holidayRequest.getDate());
     }
+
 }

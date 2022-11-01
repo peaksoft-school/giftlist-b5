@@ -10,7 +10,6 @@ import lombok.Setter;
 public class SimpleResponse {
 
     private String status;
-
     private String message;
 
 }

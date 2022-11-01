@@ -1,16 +1,19 @@
 package kg.giftlist.giftlist.dto.wish;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModelProperty;
 import kg.giftlist.giftlist.db.models.Booking;
 import kg.giftlist.giftlist.db.models.Holiday;
-import lombok.Builder;
+import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintResponse;
+import kg.giftlist.giftlist.enums.AddWishStatus;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
-@Builder
 public class WishCardResponse {
 
     private Long wishId;
@@ -18,7 +21,13 @@ public class WishCardResponse {
     private String wishName;
     private String wishLink;
     private String description;
+    @JsonFormat(pattern = "dd.MM.yyyy")
+    @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate wishDate;
+    private Boolean isBlock;
     private Holiday holiday;
+    private AddWishStatus addWishStatus;
+    private List<ComplaintResponse> complaints;
     private Booking booking;
+
 }
