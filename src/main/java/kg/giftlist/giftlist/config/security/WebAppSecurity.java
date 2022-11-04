@@ -1,6 +1,7 @@
 package kg.giftlist.giftlist.config.security;
 
 import kg.giftlist.giftlist.db.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
@@ -23,31 +24,24 @@ import java.util.Arrays;
 import java.util.Collections;
 
 @Configuration
+@RequiredArgsConstructor
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class WebAppSecurity {
 
     private final TokenVerifierFilter tokenVerifierFilter;
 
-    public WebAppSecurity(TokenVerifierFilter tokenVerifierFilter) {
-        this.tokenVerifierFilter = tokenVerifierFilter;
-    }
-
     @Bean
     AuthenticationProvider authenticationProvider(UserRepository userRepo) {
-
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService((email) -> userRepo.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException(
-                        "user with email = " + email + " not found!"
-                )));
+        provider.setUserDetailsService((email) -> userRepo.findByEmail(email).orElseThrow(() ->
+                new UsernameNotFoundException("user with email = " + email + " not found!")));
         provider.setPasswordEncoder(passwordEncoder());
         return provider;
     }
 
     @Bean
     SecurityFilterChain authorization(HttpSecurity http) throws Exception {
-
         http.cors().and().csrf().disable()
                 .authorizeRequests(auth -> auth
                         .antMatchers("/api/files/**").permitAll()
@@ -57,7 +51,6 @@ public class WebAppSecurity {
                         .permitAll()
                 )
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
         http.addFilterBefore(tokenVerifierFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
@@ -94,4 +87,5 @@ public class WebAppSecurity {
             });
         }
     }
+
 }
