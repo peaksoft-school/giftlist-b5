@@ -43,49 +43,49 @@ public class AdminApi {
     }
 
     @Operation(summary = "Get user profile ", description = "Find by id user profile")
-    @GetMapping("/user/{userId}")
+    @GetMapping("user/{userId}")
     public CommonUserProfileResponse getUserProfile(@PathVariable Long userId) {
         return userService.getCommonFriendProfile(userId);
     }
 
-    @Operation(summary = "Block User", description = "block user by id")
-    @PutMapping("/blockUser/{userId}")
+    @Operation(summary = "Block User", description = "Block user by id")
+    @PutMapping("block-user/{userId}")
     public SimpleResponse block(@PathVariable("userId") Long id) {
         return adminService.blockUser(id);
     }
 
-    @Operation(summary = "UnBlock User", description = "UnBlock user by id")
-    @PutMapping("/unBlockUser/{userId}")
+    @Operation(summary = "Unblock user", description = "Unblock user by id")
+    @PutMapping("unblock-user/{userId}")
     public SimpleResponse unBlock(@PathVariable("userId") Long id) {
         return adminService.unBlockUser(id);
     }
 
-    @Operation(summary = "Block Wish", description = "block wish by id")
-    @PutMapping("/blockWish/{wishId}")
+    @Operation(summary = "Block wish", description = "Block wish by id")
+    @PutMapping("block-wish/{wishId}")
     public SimpleResponse blockWish(@PathVariable Long wishId) {
         return adminService.blockWish(wishId);
     }
 
-    @Operation(summary = "UnBlock Wish", description = "UnBlock wish by id")
-    @PutMapping("/unBlockWish/{wishId}")
+    @Operation(summary = "Unblock wish", description = "Unblock wish by id")
+    @PutMapping("unblock-wish/{wishId}")
     public SimpleResponse unBlockWish(@PathVariable Long wishId) {
         return adminService.unBlockWish(wishId);
     }
 
-    @Operation(summary = "Block Gift", description = "block gift by id")
-    @PutMapping("/blockGift/{giftId}")
+    @Operation(summary = "Block gift", description = "Block gift by id")
+    @PutMapping("block-gift/{giftId}")
     public SimpleResponse blockGift(@PathVariable Long giftId) {
         return adminService.blockGift(giftId);
     }
 
-    @Operation(summary = "UnBlock Gift", description = "UnBlock gift by id")
-    @PutMapping("/unBlockGift/{giftId}")
+    @Operation(summary = "Unblock gift", description = "Unblock gift by id")
+    @PutMapping("unblock-gift/{giftId}")
     public SimpleResponse unBlockGift(@PathVariable Long giftId) {
         return adminService.unBlockGift(giftId);
     }
 
     @Operation(summary = "Search users", description = "Admin can search by first name and last name")
-    @GetMapping("/search/{name}")
+    @GetMapping("search/{name}")
     public List<UserResponse> findUser(@PathVariable String name) {
         return userService.findUser(name);
     }
@@ -97,7 +97,7 @@ public class AdminApi {
     }
 
     @Operation(summary = "Search gifts by filter", description = "Admin can search gifts by filter")
-    @GetMapping("/filter")
+    @GetMapping("filter")
     public List<GiftResponse> filter(
             @RequestParam(required = false, defaultValue = "all") String search,
             @RequestParam(required = false) Status status,
@@ -107,8 +107,9 @@ public class AdminApi {
     }
 
     @Operation(summary = "Find gift by id", description = "Admin can find gift by id")
-    @GetMapping("/gift/{giftId}")
+    @GetMapping("gift/{giftId}")
     public GiftResponse findGiftById(@PathVariable Long giftId) {
         return giftService.getGiftById(giftId);
     }
+
 }
