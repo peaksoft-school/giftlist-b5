@@ -20,7 +20,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/users/friends")
+@RequestMapping("api/friends")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('USER')")
 @Tag(name = "Friends API", description = "Users with role \"User\" can add, delete friends")
@@ -34,7 +34,7 @@ public class FriendsApi {
         return userService.requestToFriend(userId);
     }
 
-    @Operation(summary = "Cancel Request to friend", description = "User can cancel request to friend")
+    @Operation(summary = "Cancel request to friend", description = "User can cancel request to friend")
     @PostMapping("cancel/{userId}")
     public SimpleResponse cancelRequestToFriend(@PathVariable Long userId) {
         return userService.cancelRequestToFriend(userId);
@@ -53,24 +53,24 @@ public class FriendsApi {
     }
 
     @Operation(summary = "Delete friend", description = "User can delete friend")
-    @PostMapping("/{id}")
+    @PostMapping("{id}")
     public SimpleResponse deleteFriend(@PathVariable Long id) {
         return userService.deleteFriend(id);
     }
 
     @Operation(summary = "Get Friend Profile", description = "User can get friend profile")
-    @GetMapping("/{userId}")
+    @GetMapping("{userId}")
     public UserFriendProfileResponse getFriendProfile(@PathVariable Long userId) {
         return userService.getFriendProfile(userId);
     }
 
-    @Operation(summary = "Get All Friends", description = "User can get all friends list")
+    @Operation(summary = "Get all friends", description = "User can get all friends list")
     @GetMapping
     public List<UserFriendProfileResponse> getAllFriends() {
         return userService.getAllFriends();
     }
 
-    @Operation(summary = "Get All Request to Friends", description = "User can get all request to friends list")
+    @Operation(summary = "Get all request to friends", description = "User can get all request to friends list")
     @GetMapping("requests")
     public List<UserFriendProfileResponse> getAllRequestToFriends() {
         return userService.getAllRequestToFriends();
