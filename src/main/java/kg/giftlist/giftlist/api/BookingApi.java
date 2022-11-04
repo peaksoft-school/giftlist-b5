@@ -30,37 +30,37 @@ public class BookingApi {
 
     private final BookingServiceImpl bookingService;
 
-    @Operation(summary = "Create Gift booking", description = "User can booking only gift.")
+    @Operation(summary = "Create gift booking", description = "User can booking only gift")
     @PostMapping("gift-create/{giftId}")
     public GiftCartResponse createBookingGift(@PathVariable Long giftId) {
         return bookingService.createBookingGift(giftId);
     }
 
-    @Operation(summary = "Cancel Gift booking", description = "User can cancel only gift booking.")
+    @Operation(summary = "Cancel gift booking", description = "User can cancel only gift booking")
     @PostMapping("gift-cancel/{giftId}")
     public SimpleResponse cancelBookingGift(@PathVariable Long giftId) {
         return bookingService.cancelBookingGift(giftId);
     }
 
-    @Operation(summary = "Create Wish booking", description = "User can booking only wish.")
+    @Operation(summary = "Create wish booking", description = "User can booking only wish")
     @PostMapping("wish-create/{wishId}")
     public WishCardResponse createBookingWish(@PathVariable Long wishId) {
         return bookingService.createBookingWish(wishId);
     }
 
-    @Operation(summary = "Cancel Wish booking", description = "User can cancel only wish booking.")
+    @Operation(summary = "Cancel wish booking", description = "User can cancel only wish booking")
     @PostMapping("wish-cancel/{wishId}")
     public SimpleResponse cancelBookingWish(@PathVariable Long wishId) {
         return bookingService.cancelBookingWish(wishId);
     }
 
-    @Operation(summary = "Get all booked wishes", description = "User can get own booked wishes.")
+    @Operation(summary = "Get all booked wishes", description = "User can get own booked wishes")
     @GetMapping("wishes")
     public List<WishResponse> getAllBookedWishes() {
         return bookingService.getAllBookedWishes();
     }
 
-    @Operation(summary = "Get all booked gifts", description = "User can get own booked gifts.")
+    @Operation(summary = "Get all booked gifts", description = "User can get own booked gifts")
     @GetMapping("gifts")
     public List<GiftResponse> getAllBookedGifts() {
         return bookingService.getAllBookedGift();
