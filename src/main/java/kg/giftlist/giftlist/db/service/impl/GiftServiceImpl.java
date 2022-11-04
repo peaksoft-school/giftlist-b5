@@ -6,7 +6,6 @@ import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.db.models.Notification;
 import kg.giftlist.giftlist.db.models.SubCategory;
 import kg.giftlist.giftlist.db.models.User;
-
 import kg.giftlist.giftlist.db.repositories.CategoryRepository;
 import kg.giftlist.giftlist.db.repositories.ComplaintRepository;
 import kg.giftlist.giftlist.db.repositories.GiftRepository;
@@ -14,21 +13,17 @@ import kg.giftlist.giftlist.db.repositories.NotificationRepository;
 import kg.giftlist.giftlist.db.repositories.SubCategoryRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.GiftService;
-
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
 import kg.giftlist.giftlist.dto.gift.GiftResponse;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftEditMapper;
 import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
-
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.enums.Status;
-
 import kg.giftlist.giftlist.exception.NotFoundException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -36,7 +31,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -91,7 +85,6 @@ public class GiftServiceImpl implements GiftService {
             user.addNotification(notification);
             notificationRepository.save(notification);
         }
-
         return giftViewMapper.viewCommonGiftCard(user, gift);
     }
 
