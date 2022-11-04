@@ -6,15 +6,12 @@ import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseToken;
-
 import kg.giftlist.giftlist.config.security.JwtUtils;
-
 import kg.giftlist.giftlist.db.models.Notification;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.NotificationRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.UserService;
-
 import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
@@ -28,17 +25,14 @@ import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.dto.user.UserResponse;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
-
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.enums.Role;
 import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.NotFoundException;
-
 import kg.giftlist.giftlist.exception.UserForbiddenException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -53,7 +47,6 @@ import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
 import java.time.LocalDate;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -61,6 +54,7 @@ import java.util.ArrayList;
 @Log4j2
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+
     private final UserRepository userRepo;
     private final JwtUtils jwtUtils;
     private final UserEditMapper editMapper;
@@ -76,7 +70,8 @@ public class UserServiceImpl implements UserService {
     public void initialize() {
         try {
             FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setCredentials(GoogleCredentials.fromStream(new ClassPathResource(firebaseConfigPath).getInputStream())).build();
+                    .setCredentials(GoogleCredentials.fromStream(
+                            new ClassPathResource(firebaseConfigPath).getInputStream())).build();
             if (FirebaseApp.getApps().isEmpty()) {
                 FirebaseApp.initializeApp(options);
                 log.info("Firebase application has been initialized");
@@ -87,10 +82,8 @@ public class UserServiceImpl implements UserService {
     }
 
     public AuthResponse authenticate(AuthRequest authRequest) {
-        User user = userRepo.findByEmail(authRequest.getEmail())
-                .orElseThrow(() -> new UsernameNotFoundException(
-                        "user with email = " + authRequest.getEmail() + " not found!"
-                ));
+        User user = userRepo.findByEmail(authRequest.getEmail()).orElseThrow(() ->
+                new UsernameNotFoundException("user with email = " + authRequest.getEmail() + " not found!"));
 
         if (!encoder.matches(authRequest.getPassword(), user.getPassword())) {
             log.error("invalid password");
@@ -125,7 +118,6 @@ public class UserServiceImpl implements UserService {
 
     public AuthResponse authenticateWithGoogle(String token) throws FirebaseAuthException {
         FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(token);
-
         User user;
         if (!userRepo.existsByEmail(decodedToken.getEmail())) {
             User newUser = new User(
@@ -156,9 +148,7 @@ public class UserServiceImpl implements UserService {
     public UserResponse userRegister(UserRequest request) {
         if (userRepo.existsByEmail(request.getEmail())) {
             log.error("Email already registered!");
-            throw new AlreadyExistException(
-                    "Email already registered!"
-            );
+            throw new AlreadyExistException("Email already registered!");
         }
         User user = editMapper.create(request);
         user.setPassword(encoder.encode(request.getPassword()));
@@ -179,8 +169,7 @@ public class UserServiceImpl implements UserService {
         User user = getAuthenticatedUser();
         if (!encoder.matches(userChangePasswordRequest.getCurrentPassword(), user.getPassword())) {
             log.error("invalid password");
-            throw new NotFoundException(
-                    "invalid password");
+            throw new NotFoundException("invalid password");
         } else {
             editMapper.changePassword(user, userChangePasswordRequest);
             user.setPassword(encoder.encode(userChangePasswordRequest.getNewPassword()));
@@ -210,11 +199,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public AuthResponse changeNewPassword(Long userId, String newPassword) {
-        User user = userRepo.findById(userId).orElseThrow(() -> new UsernameNotFoundException(
-                "user with id = " + userId + " not found!"
-        ));
+        User user = userRepo.findById(userId).orElseThrow(() ->
+                new UsernameNotFoundException("user with id = " + userId + " not found!"));
         user.setPassword(encoder.encode(newPassword));
-
         return new AuthResponse(
                 user.getId(),
                 user.getFirstName(),
@@ -225,7 +212,6 @@ public class UserServiceImpl implements UserService {
                 user.getRole(),
                 null
         );
-
     }
 
     private List<UserResponse> view(List<User> users) {
@@ -237,10 +223,8 @@ public class UserServiceImpl implements UserService {
     }
 
     public User findByUserId(Long userId) {
-        return userRepo.findById(userId)
-                .orElseThrow(() -> new NotFoundException(
-                        String.format("user with id = %s does not exists", userId)
-                ));
+        return userRepo.findById(userId).orElseThrow(() ->
+                new NotFoundException(String.format("user with id = %s does not exists", userId)));
     }
 
     public User getAuthenticatedUser() {
@@ -399,16 +383,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public CommonUserProfileResponse getCommonFriendProfile(Long userId) {
-
         User user = userRepo.findById(userId).orElseThrow(() ->
                 new NotFoundException("User with id " + userId + " not found"));
         return viewMapper.viewCommonFriendProfile(user);
     }
 
     public UserFriendProfileResponse findUserByUserId(Long userId) {
-        User user = userRepo.findById(userId).orElseThrow(() -> new NotFoundException(
-                "User with id: " + userId + " not found!"
-        ));
+        User user = userRepo.findById(userId).orElseThrow(() ->
+                new NotFoundException("User with id: " + userId + " not found!"));
         return viewMapper.viewFriendProfile(user);
     }
 
