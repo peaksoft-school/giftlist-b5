@@ -52,7 +52,7 @@ public class TokenVerifierFilter extends OncePerRequestFilter {
                         user.getAuthorities()
                 )
         );
-
         filterChain.doFilter(request, response);
     }
+
 }
