@@ -1,7 +1,7 @@
 package kg.giftlist.giftlist.dto.gift;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.swagger.annotations.ApiModelProperty;
+//import io.swagger.annotations.ApiModelProperty;
 import kg.giftlist.giftlist.db.models.SubCategory;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintGiftResponse;
 import kg.giftlist.giftlist.enums.Status;
@@ -23,7 +23,7 @@ public class GiftCartResponse {
     private String photo;
     private Status status;
     @JsonFormat(pattern = "dd.MM.yyyy")
-    @ApiModelProperty(dataType = "java.sql.Date")
+//    @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate createdAt;
     private String description;
     private Category category;

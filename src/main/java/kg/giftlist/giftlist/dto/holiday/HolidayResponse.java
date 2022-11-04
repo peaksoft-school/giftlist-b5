@@ -1,7 +1,7 @@
 package kg.giftlist.giftlist.dto.holiday;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.swagger.annotations.ApiModelProperty;
+//import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +15,7 @@ public class HolidayResponse {
     private String name;
     private String photo;
     @JsonFormat(pattern = "dd.MM.yyyy")
-    @ApiModelProperty(dataType = "java.sql.Date")
+//    @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate holidayDate;
 
 }
