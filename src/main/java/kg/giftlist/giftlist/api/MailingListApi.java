@@ -17,18 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/mailing")
+@RequestMapping("api/mailings")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('ADMIN')")
-@Tag(name = "Mailing API", description = "User with role \" Admin \" can send mailing to user's email")
+@Tag(name = "Mailing API", description = "User with role \"Admin\" can send mailing to user's email")
 public class MailingListApi {
 
     private final MailingListServiceImpl mailingListService;
 
     @Operation(summary = "Send mailing", description = "Admin can send mailing")
-    @PostMapping("/send")
+    @PostMapping("send")
     public ResponseEntity<?> sendMail(@RequestBody SendMailingRequest sendMailingRequest) {
-        mailingListService.send( sendMailingRequest );
-        return ResponseEntity.ok( HttpStatus.OK );
+        mailingListService.send(sendMailingRequest);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
+
 }
