@@ -24,6 +24,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -77,10 +78,6 @@ public class User implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Notification> notifications = new ArrayList<>();
 
-    public void addNotification(Notification newNotification) {
-        notifications.add(newNotification);
-    }
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Holiday> holidays = new ArrayList<>();
 
@@ -94,6 +91,10 @@ public class User implements UserDetails {
     private UserInfo userInfo;
 
     private String photo;
+
+    public void addNotification(Notification newNotification) {
+        notifications.add(newNotification);
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
