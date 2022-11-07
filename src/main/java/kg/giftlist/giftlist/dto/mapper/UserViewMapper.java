@@ -3,7 +3,7 @@ package kg.giftlist.giftlist.dto.mapper;
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.db.models.Wish;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
-import kg.giftlist.giftlist.dto.gift.mapper.GiftViewMapper;
+import kg.giftlist.giftlist.dto.mapper.gift.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.user.*;

@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.dto.gift.mapper;
+package kg.giftlist.giftlist.dto.mapper.gift;
 
 import kg.giftlist.giftlist.db.models.Gift;
 import kg.giftlist.giftlist.dto.gift.GiftRequest;
