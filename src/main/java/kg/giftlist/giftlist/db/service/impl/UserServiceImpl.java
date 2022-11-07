@@ -18,7 +18,7 @@ import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.mapper.UserViewMapper;
 import kg.giftlist.giftlist.dto.mapper.notification.NotificationViewMapper;
 import kg.giftlist.giftlist.dto.notification.NotificationResponse;
-import kg.giftlist.giftlist.dto.user.SimpleResponse;
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.user.UserChangePasswordRequest;
 import kg.giftlist.giftlist.dto.user.UserProfileResponse;
 import kg.giftlist.giftlist.dto.user.UserRequest;

@@ -7,7 +7,7 @@ import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.impl.MailingListServiceImpl;
 import kg.giftlist.giftlist.dto.AuthRequest;
 import kg.giftlist.giftlist.dto.AuthResponse;
-import kg.giftlist.giftlist.dto.user.SimpleResponse;
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.dto.user.UserResponse;
 import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
