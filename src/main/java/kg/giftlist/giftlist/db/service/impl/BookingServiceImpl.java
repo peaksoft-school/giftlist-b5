@@ -20,7 +20,7 @@ import kg.giftlist.giftlist.dto.wish.WishResponse;
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.AlreadyExistException;
 import kg.giftlist.giftlist.exception.NotFoundException;
-import kg.giftlist.giftlist.exception.handler.GiftForbiddenException;
+import kg.giftlist.giftlist.exception.GiftForbiddenException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

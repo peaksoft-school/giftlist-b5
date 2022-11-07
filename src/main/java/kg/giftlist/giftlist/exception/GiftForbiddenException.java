@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.exception.handler;
+package kg.giftlist.giftlist.exception;
 
 public class GiftForbiddenException extends RuntimeException {
 
