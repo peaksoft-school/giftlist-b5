@@ -53,7 +53,6 @@ public class UserEditMapper {
         adminUserGetAllResponse.setLast_name(user.getLastName());
         adminUserGetAllResponse.setPhoto(user.getPhoto());
         adminUserGetAllResponse.setIsBlock(user.getIsBlock());
-
         return adminUserGetAllResponse;
     }
 
