@@ -2,7 +2,6 @@ package kg.giftlist.giftlist.db.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,7 +18,10 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 import java.util.List;
 
-import static javax.persistence.CascadeType.*;
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.CascadeType.DETACH;
+import static javax.persistence.CascadeType.MERGE;
+import static javax.persistence.CascadeType.REFRESH;
 
 @Getter
 @Setter
@@ -38,7 +40,6 @@ public class Holiday {
     private String photo;
 
     @JsonFormat(pattern = "dd.MM.yyyy")
-    @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate holidayDate;
 
     @ManyToOne(cascade = {MERGE, REFRESH, DETACH})

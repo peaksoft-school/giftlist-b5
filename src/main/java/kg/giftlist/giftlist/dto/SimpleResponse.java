@@ -12,4 +12,7 @@ public class SimpleResponse {
     private String status;
     private String message;
 
+    public SimpleResponse() {
+    }
+
 }

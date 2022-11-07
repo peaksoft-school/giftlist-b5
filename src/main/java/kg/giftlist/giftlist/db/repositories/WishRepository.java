@@ -21,4 +21,5 @@ public interface WishRepository extends JpaRepository<Wish, Long> {
 
     @Query("select w from Wish w where w.complaints.size>0")
     List<Wish> getAllComplaintsWishes();
+
 }

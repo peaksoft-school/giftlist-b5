@@ -15,4 +15,5 @@ public class CategoryResponse {
         this.id = category.getId();
         this.name = category.getName();
     }
+
 }

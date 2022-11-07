@@ -7,11 +7,9 @@ import kg.giftlist.giftlist.db.repositories.WishRepository;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.AdminService;
-
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.mapper.UserEditMapper;
 import kg.giftlist.giftlist.dto.user.AdminPageUserGetAllResponse;
-
 import kg.giftlist.giftlist.exception.NotFoundException;
 
 import lombok.AllArgsConstructor;
@@ -47,8 +45,7 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public SimpleResponse blockUser(Long id) {
         User user = userRepository.findById(id).orElseThrow(() ->
-                new NotFoundException(
-                        String.format("user with id = %s not found", id)));
+                new NotFoundException(String.format("user with id = %s not found", id)));
         user.setIsBlock(true);
         log.info("Successfully blocked user with id: {}", user.getId());
         return new SimpleResponse("BLOCK", "user with id = " + String.valueOf(id) + " blocked");
@@ -58,8 +55,7 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public SimpleResponse unBlockUser(Long id) {
         User user = userRepository.findById(id).orElseThrow(() ->
-                new NotFoundException(
-                        String.format("user with id = %s not found", id)));
+                new NotFoundException(String.format("user with id = %s not found", id)));
         user.setIsBlock(false);
         log.info("Successfully unblocked user with id: {}", user.getId());
         return new SimpleResponse("UNBLOCK", "user with id = " + String.valueOf(id) + " unblocked");
@@ -69,8 +65,7 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public SimpleResponse blockWish(Long wishId) {
         Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
-                new NotFoundException(
-                        String.format("Wish with id = %s not found", wishId)));
+                new NotFoundException(String.format("Wish with id = %s not found", wishId)));
         wish.setIsBlock(true);
         log.info("Successfully blocked Wish with id: {}", wish.getId());
         return new SimpleResponse("BLOCK", "Wish with id = " + String.valueOf(wishId) + " blocked");
@@ -80,8 +75,7 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public SimpleResponse unBlockWish(Long wishId) {
         Wish wish = wishRepository.findById(wishId).orElseThrow(() ->
-                new NotFoundException(
-                        String.format("Wish with id = %s not found", wishId)));
+                new NotFoundException(String.format("Wish with id = %s not found", wishId)));
         wish.setIsBlock(false);
         log.info("Successfully unblocked Wish with id: {}", wish.getId());
         return new SimpleResponse("UNBLOCK", "Wish with id = " + String.valueOf(wishId) + " unblocked");
@@ -91,8 +85,7 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public SimpleResponse blockGift(Long giftId) {
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
-                new NotFoundException(
-                        String.format("Gift with id = %s not found", giftId)));
+                new NotFoundException(String.format("Gift with id = %s not found", giftId)));
         gift.setIsBlock(true);
         log.info("Successfully blocked Gift with id: {}", gift.getId());
         return new SimpleResponse("BLOCK", "Gift with id = " + String.valueOf(giftId) + " blocked");
@@ -103,8 +96,7 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public SimpleResponse unBlockGift(Long giftId) {
         Gift gift = giftRepository.findById(giftId).orElseThrow(() ->
-                new NotFoundException(
-                        String.format("Gift with id = %s not found", giftId)));
+                new NotFoundException(String.format("Gift with id = %s not found", giftId)));
         gift.setIsBlock(false);
         log.info("Successfully unblocked Gift with id: {}", gift.getId());
         return new SimpleResponse("UNBLOCK", "Gift with id = " + String.valueOf(giftId) + " unblocked");

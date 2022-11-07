@@ -8,7 +8,6 @@ import kg.giftlist.giftlist.db.repositories.HolidayRepository;
 import kg.giftlist.giftlist.db.repositories.NotificationRepository;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.HolidayService;
-
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.holiday.HolidayRequest;
 import kg.giftlist.giftlist.dto.holiday.HolidayResponse;
@@ -16,20 +15,17 @@ import kg.giftlist.giftlist.dto.mapper.holiday.HolidayEditMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
 import kg.giftlist.giftlist.dto.wish.WishResponse;
-
 import kg.giftlist.giftlist.enums.NotificationStatus;
 import kg.giftlist.giftlist.exception.NotFoundException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.ws.rs.ForbiddenException;
 import java.time.LocalDate;
-
 import java.util.List;
 
 @Service
@@ -67,7 +63,6 @@ public class HolidayServiceImpl implements HolidayService {
             notificationRepository.save(notification);
         }
         return viewMapper.viewHoliday(holiday);
-
     }
 
     public HolidayResponse update(Long id, HolidayRequest holidayRequest) {

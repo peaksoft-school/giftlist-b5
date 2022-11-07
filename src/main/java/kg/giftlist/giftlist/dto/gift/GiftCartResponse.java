@@ -1,7 +1,6 @@
 package kg.giftlist.giftlist.dto.gift;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.swagger.annotations.ApiModelProperty;
 import kg.giftlist.giftlist.db.models.SubCategory;
 import kg.giftlist.giftlist.dto.mapper.complaint.ComplaintGiftResponse;
 import kg.giftlist.giftlist.enums.Status;
@@ -11,7 +10,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-
 import java.util.List;
 
 @Getter
@@ -22,13 +20,15 @@ public class GiftCartResponse {
     private String name;
     private String photo;
     private Status status;
+
     @JsonFormat(pattern = "dd.MM.yyyy")
-    @ApiModelProperty(dataType = "java.sql.Date")
     private LocalDate createdAt;
+
     private String description;
     private Category category;
     private SubCategory subCategory;
     private Boolean isBlock;
     private List<ComplaintGiftResponse> complaints;
     private Booking booking;
+
 }

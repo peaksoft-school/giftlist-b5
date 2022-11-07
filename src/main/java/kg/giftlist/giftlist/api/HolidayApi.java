@@ -25,10 +25,10 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/holiday")
+@RequestMapping("api/holidays")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('USER')")
-@Tag(name = "Holiday API", description = "User with role \"User\"  can create, update or delete holidays")
+@Tag(name = "Holiday API", description = "User with role \"User\" can create, update or delete holidays")
 public class HolidayApi {
 
     private final HolidayService service;
@@ -41,19 +41,19 @@ public class HolidayApi {
     }
 
     @Operation(summary = "Update holiday", description = "User can update a holiday")
-    @PutMapping("/{id}")
+    @PutMapping("{id}")
     public HolidayResponse update(@PathVariable Long id, @RequestBody HolidayRequest request) {
         return service.update(id, request);
     }
 
     @Operation(summary = "Get holiday", description = "User can get holiday")
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public HolidayResponse findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
     @Operation(summary = "Delete holiday", description = "User can delete holiday")
-    @DeleteMapping("/{id}")
+    @DeleteMapping("{id}")
     public SimpleResponse delete(@PathVariable Long id) {
         return service.deleteById(id);
     }

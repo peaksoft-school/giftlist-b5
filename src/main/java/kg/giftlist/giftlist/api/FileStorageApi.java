@@ -22,22 +22,24 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/file")
+@RequestMapping("api/files")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-@Tag(name = "AWS S3 API", description = "Any user can upload, delete files")
+@Tag(name = "Storage API", description = "Any user can upload, delete files")
 public class FileStorageApi {
 
     private final StorageService s3service;
 
     @Operation(summary = "Upload file", description = "Any user can upload file")
-    @PostMapping(path = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/upload",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     Map<String, String> upload(@RequestPart(name = "file", required = false) MultipartFile file) throws IOException {
         return s3service.upload(file);
     }
 
     @Operation(summary = "Delete file", description = "Any user can delete file")
-    @DeleteMapping("/delete")
+    @DeleteMapping()
     Map<String, String> delete(@RequestParam String fileLink) {
         return s3service.delete(fileLink);
     }

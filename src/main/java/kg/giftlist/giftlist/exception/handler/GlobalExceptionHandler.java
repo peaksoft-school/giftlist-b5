@@ -1,6 +1,11 @@
 package kg.giftlist.giftlist.exception.handler;
 
-import kg.giftlist.giftlist.exception.*;
+import kg.giftlist.giftlist.exception.AlreadyExistException;
+import kg.giftlist.giftlist.exception.ExceptionResponse;
+import kg.giftlist.giftlist.exception.GiftForbiddenException;
+import kg.giftlist.giftlist.exception.NotFoundException;
+import kg.giftlist.giftlist.exception.UserForbiddenException;
+import kg.giftlist.giftlist.exception.WishNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

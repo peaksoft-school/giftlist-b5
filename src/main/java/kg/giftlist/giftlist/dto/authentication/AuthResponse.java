@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.dto;
+package kg.giftlist.giftlist.dto.authentication;
 
 import kg.giftlist.giftlist.enums.Role;
 import lombok.AllArgsConstructor;

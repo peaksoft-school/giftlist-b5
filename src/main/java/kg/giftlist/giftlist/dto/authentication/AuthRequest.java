@@ -1,4 +1,4 @@
-package kg.giftlist.giftlist.dto;
+package kg.giftlist.giftlist.dto.authentication;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -5,9 +5,9 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.db.service.impl.MailingListServiceImpl;
-import kg.giftlist.giftlist.dto.AuthRequest;
-import kg.giftlist.giftlist.dto.AuthResponse;
-import kg.giftlist.giftlist.dto.user.SimpleResponse;
+import kg.giftlist.giftlist.dto.authentication.AuthRequest;
+import kg.giftlist.giftlist.dto.authentication.AuthResponse;
+import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.user.UserRequest;
 import kg.giftlist.giftlist.dto.user.UserResponse;
 import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
@@ -45,7 +45,7 @@ public class AuthApi {
     }
 
     @Operation(summary = "Google authentication", description = "Any users with Google account can authenticate")
-    @PostMapping("auth/google")
+    @PostMapping("auth-google")
     public AuthResponse loginWithGoogle(@RequestParam String token) throws FirebaseAuthException {
         return service.authenticateWithGoogle(token);
     }
@@ -57,7 +57,7 @@ public class AuthApi {
     }
 
     @Operation(summary = "Send link to user email", description = "Send change password link to user email")
-    @PostMapping("/password")
+    @PostMapping("password")
     public SimpleResponse forgotPassword(@RequestParam String to, @RequestParam String link) throws Exception {
         if (!userRepository.existsByEmail(to)) {
             return new SimpleResponse("WRONG", "This email is not in the database!");

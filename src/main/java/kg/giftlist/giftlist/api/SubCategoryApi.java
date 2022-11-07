@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/subCategories")
+@RequestMapping("api/sub-categories")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
 @Tag(name = "SubCategory API", description = "Any users can get all subCategories")

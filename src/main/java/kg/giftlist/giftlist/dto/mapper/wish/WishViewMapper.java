@@ -25,7 +25,6 @@ public class WishViewMapper {
     private final UserRepository userRepository;
 
     public WishCardResponse viewWish(Wish wish) {
-
         if (wish == null) {
             return null;
         }

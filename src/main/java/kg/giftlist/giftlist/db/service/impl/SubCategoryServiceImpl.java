@@ -4,9 +4,7 @@ import kg.giftlist.giftlist.db.models.Category;
 import kg.giftlist.giftlist.db.models.SubCategory;
 import kg.giftlist.giftlist.db.repositories.CategoryRepository;
 import kg.giftlist.giftlist.db.service.SubCategoryService;
-
 import kg.giftlist.giftlist.dto.subCategories.SubCategoriesResponse;
-
 import kg.giftlist.giftlist.exception.NotFoundException;
 
 import lombok.RequiredArgsConstructor;
@@ -23,9 +21,8 @@ public class SubCategoryServiceImpl implements SubCategoryService {
 
     @Override
     public List<SubCategoriesResponse> getAllSubCategories(Long categoryId) {
-        Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new NotFoundException(
-                "category with id = " + categoryId + " not found!"
-        ));
+        Category category = categoryRepository.findById(categoryId).orElseThrow(() ->
+                new NotFoundException("category with id = " + categoryId + " not found!"));
         List<SubCategory> subCategories = category.getSubCategories();
         List<SubCategoriesResponse> subCategoryResponses = new ArrayList<>();
 

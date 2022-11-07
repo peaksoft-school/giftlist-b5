@@ -61,10 +61,6 @@ public class Wish {
     @JsonIgnore
     private User user;
 
-    public Long getUserId() {
-        return user.getId();
-    }
-
     @ManyToOne
     @JsonIgnore
     private User fromUser;
@@ -77,5 +73,9 @@ public class Wish {
     @OneToMany(cascade = ALL, mappedBy = "wishes")
     @JsonIgnore
     private List<Complaint> complaints;
+
+    public Long getUserId() {
+        return user.getId();
+    }
 
 }

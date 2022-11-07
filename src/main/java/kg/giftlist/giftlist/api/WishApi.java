@@ -23,7 +23,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/wish")
+@RequestMapping("api/wishes")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('USER')")
 @Tag(name = "Wish API", description = "Users with role \"User\" can create, update or delete wish")
@@ -38,19 +38,19 @@ public class WishApi {
     }
 
     @Operation(summary = "Update wish", description = "User can update information only own wish, which was created before")
-    @PutMapping("/{wishId}")
+    @PutMapping("{wishId}")
     public WishResponse update(@PathVariable Long wishId, @RequestBody WishRequest request) {
         return wishService.update(wishId, request);
     }
 
     @Operation(summary = "Get wish", description = "User can get wish by id")
-    @GetMapping("/{wishId}")
+    @GetMapping("{wishId}")
     public WishResponse findById(@PathVariable Long wishId) {
         return wishService.findById(wishId);
     }
 
     @Operation(summary = "Delete wish", description = "User can delete wishlist, when we delete wish, holiday and user will not be deleted")
-    @DeleteMapping("/{wishId}")
+    @DeleteMapping("{wishId}")
     public SimpleResponse delete(@PathVariable Long wishId) {
         return wishService.deleteById(wishId);
     }

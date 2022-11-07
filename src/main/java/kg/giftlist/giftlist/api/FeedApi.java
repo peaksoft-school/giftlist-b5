@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/feed")
+@RequestMapping("api/feeds")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @PreAuthorize("hasAnyAuthority('USER')")
 @Tag(name = "Feed API", description = "Users with role \"User\" can see feed")
