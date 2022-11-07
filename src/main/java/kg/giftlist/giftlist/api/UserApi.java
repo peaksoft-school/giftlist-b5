@@ -2,7 +2,7 @@ package kg.giftlist.giftlist.api;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kg.giftlist.giftlist.dto.AuthResponse;
+import kg.giftlist.giftlist.dto.authentication.AuthResponse;
 import kg.giftlist.giftlist.db.service.impl.UserInfoServiceImpl;
 import kg.giftlist.giftlist.db.service.impl.UserServiceImpl;
 import kg.giftlist.giftlist.dto.user.UserChangePasswordRequest;

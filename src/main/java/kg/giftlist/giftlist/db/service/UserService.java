@@ -1,6 +1,6 @@
 package kg.giftlist.giftlist.db.service;
 
-import kg.giftlist.giftlist.dto.AuthResponse;
+import kg.giftlist.giftlist.dto.authentication.AuthResponse;
 import kg.giftlist.giftlist.dto.SimpleResponse;
 import kg.giftlist.giftlist.dto.user.UserChangePasswordRequest;
 import kg.giftlist.giftlist.dto.user.UserProfileResponse;
