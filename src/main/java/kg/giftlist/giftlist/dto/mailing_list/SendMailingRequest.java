@@ -28,4 +28,5 @@ public class SendMailingRequest {
                 photo, text
         );
     }
+
 }
