@@ -3,7 +3,7 @@ package kg.giftlist.giftlist.api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kg.giftlist.giftlist.db.service.impl.MailingListServiceImpl;
-import kg.giftlist.giftlist.dto.mailing_list.SendMailingRequest;
+import kg.giftlist.giftlist.dto.mailingList.SendMailingRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

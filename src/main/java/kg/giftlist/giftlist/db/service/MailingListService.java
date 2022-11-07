@@ -2,7 +2,7 @@ package kg.giftlist.giftlist.db.service;
 
 import kg.giftlist.giftlist.db.models.MailingList;
 import kg.giftlist.giftlist.dto.SimpleResponse;
-import kg.giftlist.giftlist.dto.mailing_list.SendMailingRequest;
+import kg.giftlist.giftlist.dto.mailingList.SendMailingRequest;
 import org.springframework.http.ResponseEntity;
 
 public interface MailingListService {
