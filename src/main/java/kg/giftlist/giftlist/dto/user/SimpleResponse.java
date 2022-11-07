@@ -17,4 +17,5 @@ public class SimpleResponse {
         this.status = status;
         this.message = message;
     }
+
 }
