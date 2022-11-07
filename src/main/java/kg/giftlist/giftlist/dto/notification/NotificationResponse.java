@@ -23,7 +23,6 @@ public class NotificationResponse {
     private boolean isRead;
 
     public NotificationResponse() {
-
     }
 
 }
