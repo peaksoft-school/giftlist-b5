@@ -12,7 +12,6 @@ import java.util.List;
 public class NotificationViewMapper {
 
     public NotificationResponse viewNotification(Notification notification) {
-
         NotificationResponse response = new NotificationResponse();
         response.setNotificationId(notification.getId());
         if (notification.getNotificationStatus().equals(NotificationStatus.REQUEST_TO_FRIEND)) {
