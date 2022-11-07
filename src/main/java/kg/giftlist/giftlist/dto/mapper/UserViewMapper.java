@@ -6,23 +6,25 @@ import kg.giftlist.giftlist.db.repositories.UserRepository;
 import kg.giftlist.giftlist.dto.mapper.gift.GiftViewMapper;
 import kg.giftlist.giftlist.dto.mapper.holiday.HolidayViewMapper;
 import kg.giftlist.giftlist.dto.mapper.wish.WishViewMapper;
-import kg.giftlist.giftlist.dto.user.*;
 import kg.giftlist.giftlist.db.models.User;
 import kg.giftlist.giftlist.config.security.JwtUtils;
+import kg.giftlist.giftlist.dto.user.UserProfileResponse;
+import kg.giftlist.giftlist.dto.user.UserResponse;
 import kg.giftlist.giftlist.dto.user_friends.CommonUserProfileResponse;
 import kg.giftlist.giftlist.dto.user_friends.UserFriendProfileResponse;
 import kg.giftlist.giftlist.enums.FriendStatus;
 import kg.giftlist.giftlist.enums.Role;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.ForbiddenException;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class UserViewMapper {
 
     private final JwtUtils utils;
@@ -30,14 +32,6 @@ public class UserViewMapper {
     private final GiftViewMapper giftViewMapper;
     private final WishViewMapper wishViewMapper;
     private final HolidayViewMapper holidayViewMapper;
-
-    public UserViewMapper(JwtUtils utils, UserRepository userRepository, GiftViewMapper giftViewMapper, WishViewMapper wishViewMapper, HolidayViewMapper holidayViewMapper) {
-        this.utils = utils;
-        this.userRepository = userRepository;
-        this.giftViewMapper = giftViewMapper;
-        this.wishViewMapper = wishViewMapper;
-        this.holidayViewMapper = holidayViewMapper;
-    }
 
     public UserResponse viewUser(User user) {
         if (user == null) {
